@@ -19,7 +19,7 @@ import org.springframework.data.domain.*;
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @ValidateProperties(rulePrefix = "validator.BasCat")
-@ApiModel(value = "BasCatDTO", description = "bas_cat")
+@ApiModel(value = "BasCatDTO", description = "目录定义")
 @EntityFeature(
   entityName = "BasCatDTO",
   idField = "id",
@@ -174,78 +174,6 @@ public class BasCatDTO implements Serializable {
   private Integer version;
 
   @FieldMeta(
-    name = "active",
-    scene = "",
-    nameCN = "是否当前版本",
-    comment = "是否当前版本",
-    nameEN = "active",
-    type = "布尔",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "active",
-    value = "是否当前版本",
-    dataType = "布尔",
-    notes = "5b2dc0287c51e0fcf5a04021"
-  )
-  private Boolean active;
-
-  @FieldMeta(
-    name = "code",
-    scene = "",
-    nameCN = "代码",
-    comment = "代码",
-    nameEN = "code",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "code",
-    value = "代码",
-    dataType = "字符串",
-    notes = "5b2dc0287c51e0fcf5a04023"
-  )
-  private String code;
-
-  @FieldMeta(
     name = "deleted1",
     scene = "",
     nameCN = "软删除标记",
@@ -277,7 +205,7 @@ public class BasCatDTO implements Serializable {
     name = "deleted1",
     value = "软删除标记",
     dataType = "长整型",
-    notes = "5b2dc0287c51e0fcf5a04025"
+    notes = "5b2df0ef7c51e0fcf5b69228"
   )
   private Long deleted1;
 
@@ -313,7 +241,7 @@ public class BasCatDTO implements Serializable {
     name = "enabled1",
     value = "是否启用",
     dataType = "布尔",
-    notes = "5b2dc0287c51e0fcf5a04027"
+    notes = "5b2df0ef7c51e0fcf5b6922a"
   )
   private Boolean enabled1;
 
@@ -349,45 +277,9 @@ public class BasCatDTO implements Serializable {
     name = "isDefault",
     value = "是否默认",
     dataType = "字符串",
-    notes = "5b2dc0287c51e0fcf5a0402c"
+    notes = "5b2df0ef7c51e0fcf5b6922c"
   )
   private String isDefault;
-
-  @FieldMeta(
-    name = "isEnabled",
-    scene = "",
-    nameCN = "是否可用",
-    comment = "是否可用",
-    nameEN = "is_enabled",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "isEnabled",
-    value = "是否可用",
-    dataType = "字符串",
-    notes = "5b2dc0287c51e0fcf5a04029"
-  )
-  private String isEnabled;
 
   @FieldMeta(
     name = "isMulti",
@@ -421,45 +313,9 @@ public class BasCatDTO implements Serializable {
     name = "isMulti",
     value = "是否允许对象多次挂接",
     dataType = "字符串",
-    notes = "5b2dc0287c51e0fcf5a0402e"
+    notes = "5b2df0ef7c51e0fcf5b6922e"
   )
   private String isMulti;
-
-  @FieldMeta(
-    name = "name",
-    scene = "",
-    nameCN = "名称",
-    comment = "名称",
-    nameEN = "name",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "name",
-    value = "名称",
-    dataType = "字符串",
-    notes = "5b2dc0287c51e0fcf5a04034"
-  )
-  private String name;
 
   @FieldMeta(
     name = "remark",
@@ -493,45 +349,9 @@ public class BasCatDTO implements Serializable {
     name = "remark",
     value = "备注",
     dataType = "字符串",
-    notes = "5b2dc0287c51e0fcf5a04032"
+    notes = "5b2df0ef7c51e0fcf5b69230"
   )
   private String remark;
-
-  @FieldMeta(
-    name = "searchWord",
-    scene = "",
-    nameCN = "搜索关键词",
-    comment = "搜索关键词",
-    nameEN = "search_word",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "searchWord",
-    value = "搜索关键词",
-    dataType = "字符串",
-    notes = "5b2dc0287c51e0fcf5a04030"
-  )
-  private String searchWord;
 
   @FieldMeta(
     name = "showOrder",
@@ -565,7 +385,7 @@ public class BasCatDTO implements Serializable {
     name = "showOrder",
     value = "排序",
     dataType = "整型",
-    notes = "5b2dc0287c51e0fcf5a04036"
+    notes = "5b2df0ef7c51e0fcf5b69232"
   )
   private Integer showOrder;
 
@@ -601,9 +421,45 @@ public class BasCatDTO implements Serializable {
     name = "tableId",
     value = "元Id",
     dataType = "整型",
-    notes = "5b2dc0287c51e0fcf5a04038"
+    notes = "5b2df0ef7c51e0fcf5b69236"
   )
   private Integer tableId;
+
+  @FieldMeta(
+    name = "code",
+    scene = "fff",
+    nameCN = "代码",
+    comment = "代码",
+    nameEN = "code",
+    type = "字符串",
+    format = "ll",
+    displayLen = 23,
+    formSize = "",
+    constraint = "ll",
+    constraintParams = "{\"prefix\":\"fx_er\"}",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "code",
+    value = "代码",
+    dataType = "字符串",
+    notes = "5b2defe27c51e0fcf5b5d268"
+  )
+  private String code;
 
   /** 存储页面post请求的分页参数 */
   private Pageable pageable;

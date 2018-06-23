@@ -43,18 +43,32 @@ public class DataDubboController {
   public static final Map<String, String> DTO_PACKAGES = new HashMap<>();
 
   static {
-    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.pur_apply_detailDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_orgDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.pur_apply_headDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.inv_depotDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_cat_classDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_districtDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_cat_class_relDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_org_bal_bankDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.sal_consign_headDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_org_balDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_catDTO");
-    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.sal_consign_detailDTO");
   }
 
   /** api包名 * */
   public static final Map<String, String> API_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(API_PACKAGES, "com.pagoda.api.group.pur_apply_headService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_orgService");
     putInMap(API_PACKAGES, "com.pagoda.api.group.bas_catService");
-    putInMap(API_PACKAGES, "com.pagoda.api.group.pur_apply_detailService");
-    putInMap(API_PACKAGES, "com.pagoda.api.group.sal_consign_detailService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.inv_depotService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_cat_class_relService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_org_balService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_cat_classService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_districtService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.sal_consign_headService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_org_bal_bankService");
   }
 
   /** 查询方法名 * */

@@ -9,7 +9,7 @@ import java.rmi.Remote;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * bas_cat服务接口BasCatService，可以添加自定义的业务接口。
+ * 目录定义服务接口BasCatService，可以添加自定义的业务接口。
  *
  * @author ???
  */

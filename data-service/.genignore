@@ -1,4 +1,11 @@
 # 在此文件中列出不想被代码生成器覆盖的文件名
+inv_depotServiceImpl.java
 bas_catServiceImpl.java
-sal_consign_detailServiceImpl.java
-pur_apply_detailServiceImpl.java
+bas_orgServiceImpl.java
+bas_cat_classServiceImpl.java
+bas_districtServiceImpl.java
+bas_cat_class_relServiceImpl.java
+bas_org_bal_bankServiceImpl.java
+sal_consign_headServiceImpl.java
+bas_org_balServiceImpl.java
+pur_apply_headServiceImpl.java

@@ -24,7 +24,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * bas_cat实体树形闭包扩展表定义
+ * 目录定义实体树形闭包扩展表定义
  *
  * @author PagodaGenerator
  * @generated
@@ -34,7 +34,7 @@ import java.util.List;
 @DynamicUpdate
 @DynamicInsert
 @Table(name = "`bas_cat_tree`")
-@org.hibernate.annotations.Table(appliesTo = "`bas_cat_tree`", comment = "bas_cat 树形闭包扩展表")
+@org.hibernate.annotations.Table(appliesTo = "`bas_cat_tree`", comment = "目录定义 树形闭包扩展表")
 @EntityListeners({AuditingEntityListener.class, PagodaEntityListener.class})
 public class BasCatTree implements Serializable {
   @Id

@@ -110,50 +110,30 @@ public class BasCatController {
    * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
    * "资源属性对应的模型字段"))
    *
-   * @param active
-   * @param code
    * @param deleted1
    * @param enabled1
    * @param isDefault
-   * @param isEnabled
    * @param isMulti
-   * @param name
    * @param remark
-   * @param searchWord
    * @param showOrder
    * @param tableId
+   * @param code
    * @param pageable
    * @return
    */
   @Timed
   @GetMapping(value = "/findBy")
   public Page<BasCatDTO> findBy(
-      @RequestParam(required = false, value = "active") Boolean active,
-      @RequestParam(required = false, value = "code") String code,
       @RequestParam(required = false, value = "deleted1") Long deleted1,
       @RequestParam(required = false, value = "enabled1") Boolean enabled1,
       @RequestParam(required = false, value = "isDefault") String isDefault,
-      @RequestParam(required = false, value = "isEnabled") String isEnabled,
       @RequestParam(required = false, value = "isMulti") String isMulti,
-      @RequestParam(required = false, value = "name") String name,
       @RequestParam(required = false, value = "remark") String remark,
-      @RequestParam(required = false, value = "searchWord") String searchWord,
       @RequestParam(required = false, value = "showOrder") Integer showOrder,
       @RequestParam(required = false, value = "tableId") Integer tableId,
+      @RequestParam(required = false, value = "code") String code,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
     return basCatService.findBy(
-        active,
-        code,
-        deleted1,
-        enabled1,
-        isDefault,
-        isEnabled,
-        isMulti,
-        name,
-        remark,
-        searchWord,
-        showOrder,
-        tableId,
-        pageable);
+        deleted1, enabled1, isDefault, isMulti, remark, showOrder, tableId, code, pageable);
   }
 }

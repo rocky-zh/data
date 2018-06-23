@@ -21,66 +21,50 @@ public interface BasCatRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param active
-   * @param code
    * @param deleted1
    * @param enabled1
    * @param is_default
-   * @param is_enabled
    * @param is_multi
-   * @param name
    * @param remark
-   * @param search_word
    * @param show_order
    * @param table_id
+   * @param code
    * @param pageable
    * @return
    */
   Page<BasCatDTO> findBy(
-      @Param("active") Boolean active,
-      @Param("code") String code,
       @Param("deleted1") Long deleted1,
       @Param("enabled1") Boolean enabled1,
       @Param("isDefault") String isDefault,
-      @Param("isEnabled") String isEnabled,
       @Param("isMulti") String isMulti,
-      @Param("name") String name,
       @Param("remark") String remark,
-      @Param("searchWord") String searchWord,
       @Param("showOrder") Integer showOrder,
       @Param("tableId") Integer tableId,
+      @Param("code") String code,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param active
-   * @param code
    * @param deleted1
    * @param enabled1
    * @param is_default
-   * @param is_enabled
    * @param is_multi
-   * @param name
    * @param remark
-   * @param search_word
    * @param show_order
    * @param table_id
+   * @param code
    * @return
    */
   List<BasCatDTO> findBy(
-      @Param("active") Boolean active,
-      @Param("code") String code,
       @Param("deleted1") Long deleted1,
       @Param("enabled1") Boolean enabled1,
       @Param("isDefault") String isDefault,
-      @Param("isEnabled") String isEnabled,
       @Param("isMulti") String isMulti,
-      @Param("name") String name,
       @Param("remark") String remark,
-      @Param("searchWord") String searchWord,
       @Param("showOrder") Integer showOrder,
-      @Param("tableId") Integer tableId);
+      @Param("tableId") Integer tableId,
+      @Param("code") String code);
 
   /**
    * 通用分页查询，用于后台查询

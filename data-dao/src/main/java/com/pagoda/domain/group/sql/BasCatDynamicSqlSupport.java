@@ -9,7 +9,7 @@ import org.mybatis.dynamic.sql.*;
 import org.mybatis.dynamic.sql.SqlTable;
 
 /**
- * bas_cat实体表定义
+ * 目录定义实体表定义
  *
  * @author PagodaGenerator
  * @generated
@@ -29,18 +29,14 @@ public class BasCatDynamicSqlSupport {
   public static SqlColumn<String> modifierName = basCatTable.modifierName;
   public static SqlColumn<String> modifierOrgCode = basCatTable.modifierOrgCode;
   public static SqlColumn<Integer> version = basCatTable.version;
-  public static SqlColumn<Boolean> active = basCatTable.active;
-  public static SqlColumn<String> code = basCatTable.code;
   public static SqlColumn<Long> deleted1 = basCatTable.deleted1;
   public static SqlColumn<Boolean> enabled1 = basCatTable.enabled1;
   public static SqlColumn<String> isDefault = basCatTable.isDefault;
-  public static SqlColumn<String> isEnabled = basCatTable.isEnabled;
   public static SqlColumn<String> isMulti = basCatTable.isMulti;
-  public static SqlColumn<String> name = basCatTable.name;
   public static SqlColumn<String> remark = basCatTable.remark;
-  public static SqlColumn<String> searchWord = basCatTable.searchWord;
   public static SqlColumn<Integer> showOrder = basCatTable.showOrder;
   public static SqlColumn<Integer> tableId = basCatTable.tableId;
+  public static SqlColumn<String> code = basCatTable.code;
 
   public static final class BasCatTable extends SqlTable {
     public final SqlColumn<Long> id = column("id", JDBCType.BIGINT);
@@ -58,18 +54,14 @@ public class BasCatDynamicSqlSupport {
     public final SqlColumn<String> modifierOrgCode = column("modifier_org_code", JDBCType.VARCHAR);
     public final SqlColumn<Integer> version = column("version", JDBCType.INTEGER);
 
-    public final SqlColumn<Boolean> active = column("active", JDBCType.BOOLEAN);
-    public final SqlColumn<String> code = column("code", JDBCType.VARCHAR);
     public final SqlColumn<Long> deleted1 = column("deleted1", JDBCType.BIGINT);
     public final SqlColumn<Boolean> enabled1 = column("enabled1", JDBCType.BOOLEAN);
     public final SqlColumn<String> isDefault = column("is_default", JDBCType.VARCHAR);
-    public final SqlColumn<String> isEnabled = column("is_enabled", JDBCType.VARCHAR);
     public final SqlColumn<String> isMulti = column("is_multi", JDBCType.VARCHAR);
-    public final SqlColumn<String> name = column("name", JDBCType.VARCHAR);
     public final SqlColumn<String> remark = column("remark", JDBCType.VARCHAR);
-    public final SqlColumn<String> searchWord = column("search_word", JDBCType.VARCHAR);
     public final SqlColumn<Integer> showOrder = column("show_order", JDBCType.INTEGER);
     public final SqlColumn<Integer> tableId = column("table_id", JDBCType.INTEGER);
+    public final SqlColumn<String> code = column("code", JDBCType.VARCHAR);
 
     public BasCatTable() {
       super("BasCat");

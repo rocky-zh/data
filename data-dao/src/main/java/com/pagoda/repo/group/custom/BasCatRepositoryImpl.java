@@ -28,32 +28,24 @@ public class BasCatRepositoryImpl extends BaseRepositoryCustomImpl<BasCat, Long>
 
   @Override
   public Page<BasCatDTO> findBy(
-      @Param("active") Boolean active,
-      @Param("code") String code,
       @Param("deleted1") Long deleted1,
       @Param("enabled1") Boolean enabled1,
       @Param("isDefault") String isDefault,
-      @Param("isEnabled") String isEnabled,
       @Param("isMulti") String isMulti,
-      @Param("name") String name,
       @Param("remark") String remark,
-      @Param("searchWord") String searchWord,
       @Param("showOrder") Integer showOrder,
       @Param("tableId") Integer tableId,
+      @Param("code") String code,
       @Param("pageable") Pageable pageable) {
     BasCat obj = BasCat.toExample();
-    obj.setActive(active);
-    obj.setCode(code);
     obj.setDeleted1(deleted1);
     obj.setEnabled1(enabled1);
     obj.setIsDefault(isDefault);
-    obj.setIsEnabled(isEnabled);
     obj.setIsMulti(isMulti);
-    obj.setName(name);
     obj.setRemark(remark);
-    obj.setSearchWord(searchWord);
     obj.setShowOrder(showOrder);
     obj.setTableId(tableId);
+    obj.setCode(code);
     Example<BasCat> example = Example.of(obj);
 
     return findAll(example, pageable).map(BasCat.DTO_CONVERTER);
@@ -61,31 +53,23 @@ public class BasCatRepositoryImpl extends BaseRepositoryCustomImpl<BasCat, Long>
 
   @Override
   public List<BasCatDTO> findBy(
-      @Param("active") Boolean active,
-      @Param("code") String code,
       @Param("deleted1") Long deleted1,
       @Param("enabled1") Boolean enabled1,
       @Param("isDefault") String isDefault,
-      @Param("isEnabled") String isEnabled,
       @Param("isMulti") String isMulti,
-      @Param("name") String name,
       @Param("remark") String remark,
-      @Param("searchWord") String searchWord,
       @Param("showOrder") Integer showOrder,
-      @Param("tableId") Integer tableId) {
+      @Param("tableId") Integer tableId,
+      @Param("code") String code) {
     BasCat obj = BasCat.toExample();
-    obj.setActive(active);
-    obj.setCode(code);
     obj.setDeleted1(deleted1);
     obj.setEnabled1(enabled1);
     obj.setIsDefault(isDefault);
-    obj.setIsEnabled(isEnabled);
     obj.setIsMulti(isMulti);
-    obj.setName(name);
     obj.setRemark(remark);
-    obj.setSearchWord(searchWord);
     obj.setShowOrder(showOrder);
     obj.setTableId(tableId);
+    obj.setCode(code);
     Example<BasCat> example = Example.of(obj);
     return findAll(example, null).map(BasCat.DTO_CONVERTER).getContent();
   }

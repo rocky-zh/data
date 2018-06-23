@@ -73,19 +73,47 @@ public class DataDubboApplication {
       staticDeserializerMap.put(Sort.class, SortParamDeserializer.instance);
       // 处理DTO序列化
       staticSerializerMap.put(
+          com.pagoda.domain.group.InvDepot.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.InvDepotDTO.class, serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
           com.pagoda.domain.group.BasCat.class,
           new DtoSerializer(
               com.pagoda.api.dto.group.BasCatDTO.class, serializerFactory.getClassLoader()));
       staticSerializerMap.put(
-          com.pagoda.domain.group.SalConsignDetail.class,
+          com.pagoda.domain.group.BasOrg.class,
           new DtoSerializer(
-              com.pagoda.api.dto.group.SalConsignDetailDTO.class,
+              com.pagoda.api.dto.group.BasOrgDTO.class, serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.BasCatClass.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.BasCatClassDTO.class, serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.BasDistrict.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.BasDistrictDTO.class, serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.BasCatClassRel.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.BasCatClassRelDTO.class,
               serializerFactory.getClassLoader()));
       staticSerializerMap.put(
-          com.pagoda.domain.group.PurApplyDetail.class,
+          com.pagoda.domain.group.BasOrgBalBank.class,
           new DtoSerializer(
-              com.pagoda.api.dto.group.PurApplyDetailDTO.class,
+              com.pagoda.api.dto.group.BasOrgBalBankDTO.class, serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.SalConsignHead.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.SalConsignHeadDTO.class,
               serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.BasOrgBal.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.BasOrgBalDTO.class, serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.PurApplyHead.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.PurApplyHeadDTO.class, serializerFactory.getClassLoader()));
     } catch (Exception e) {
       log.error("addDubboSerializer", e);
     }

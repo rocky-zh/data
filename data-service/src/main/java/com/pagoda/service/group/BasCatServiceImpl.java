@@ -26,7 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * bas_cat服务实现类BasCatServiceImpl，可以添加自定义的业务实现。
+ * 目录定义服务实现类BasCatServiceImpl，可以添加自定义的业务实现。
  *
  * @author ???
  */

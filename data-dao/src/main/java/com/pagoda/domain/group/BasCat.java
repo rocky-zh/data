@@ -28,7 +28,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * bas_cat实体定义
+ * 目录定义实体定义
  *
  * @author PagodaGenerator
  * @generated
@@ -40,7 +40,7 @@ import java.util.List;
 @DynamicUpdate
 @DynamicInsert
 @Table(name = "`bas_cat`")
-@org.hibernate.annotations.Table(appliesTo = "`bas_cat`", comment = "bas_cat")
+@org.hibernate.annotations.Table(appliesTo = "`bas_cat`", comment = "目录定义")
 @SQLDelete(sql = "update `bas_cat` set deleted = id where id = ? and version = ?")
 @Where(clause = "deleted = 0")
 @EntityListeners({AuditingEntityListener.class, PagodaEntityListener.class})
@@ -202,80 +202,6 @@ public class BasCat extends BasCatDTO implements Serializable {
   private Integer version;
 
   @FieldMeta(
-    name = "active",
-    scene = "",
-    nameCN = "是否当前版本",
-    comment = "是否当前版本",
-    nameEN = "active",
-    type = "布尔",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"active\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "布尔   COMMENT '是否当前版本'"
-  )
-  private Boolean active;
-
-  @FieldMeta(
-    name = "code",
-    scene = "",
-    nameCN = "代码",
-    comment = "代码",
-    nameEN = "code",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"code\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "字符串   COMMENT '代码'"
-  )
-  private String code;
-
-  @FieldMeta(
     name = "deleted1",
     scene = "",
     nameCN = "软删除标记",
@@ -387,43 +313,6 @@ public class BasCat extends BasCatDTO implements Serializable {
   private String isDefault;
 
   @FieldMeta(
-    name = "isEnabled",
-    scene = "",
-    nameCN = "是否可用",
-    comment = "是否可用",
-    nameEN = "is_enabled",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"is_enabled\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "字符串   COMMENT '是否可用'"
-  )
-  private String isEnabled;
-
-  @FieldMeta(
     name = "isMulti",
     scene = "",
     nameCN = "是否允许对象多次挂接",
@@ -461,43 +350,6 @@ public class BasCat extends BasCatDTO implements Serializable {
   private String isMulti;
 
   @FieldMeta(
-    name = "name",
-    scene = "",
-    nameCN = "名称",
-    comment = "名称",
-    nameEN = "name",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"name\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "字符串   COMMENT '名称'"
-  )
-  private String name;
-
-  @FieldMeta(
     name = "remark",
     scene = "",
     nameCN = "备注",
@@ -533,43 +385,6 @@ public class BasCat extends BasCatDTO implements Serializable {
     columnDefinition = "字符串   COMMENT '备注'"
   )
   private String remark;
-
-  @FieldMeta(
-    name = "searchWord",
-    scene = "",
-    nameCN = "搜索关键词",
-    comment = "搜索关键词",
-    nameEN = "search_word",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"search_word\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "字符串   COMMENT '搜索关键词'"
-  )
-  private String searchWord;
 
   @FieldMeta(
     name = "showOrder",
@@ -644,6 +459,43 @@ public class BasCat extends BasCatDTO implements Serializable {
     columnDefinition = "整型   COMMENT '元Id'"
   )
   private Integer tableId;
+
+  @FieldMeta(
+    name = "code",
+    scene = "fff",
+    nameCN = "代码",
+    comment = "代码",
+    nameEN = "code",
+    type = "字符串",
+    format = "ll",
+    displayLen = 23,
+    formSize = "",
+    constraint = "ll",
+    constraintParams = "{\"prefix\":\"fx_er\"}",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"code\"",
+    nullable = true,
+    precision = 0,
+    scale = 4,
+    columnDefinition = "字符串   COMMENT '代码'"
+  )
+  private String code;
 
   static MapperFacade mapper;
 

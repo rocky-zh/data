@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.*;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * bas_cat服务实现类BasCatServiceImpl继承的父类,实现一些平台共用的方法
+ * 目录定义服务实现类BasCatServiceImpl继承的父类,实现一些平台共用的方法
  *
  * @author PagodaGenerator
  * @generated
@@ -480,35 +480,19 @@ public abstract class BaseBasCatServiceImpl implements BasCatService, Initializi
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
   public Page<BasCatDTO> findBy(
-      @ApiParam("active") Boolean active,
-      @ApiParam("code") String code,
       @ApiParam("deleted1") Long deleted1,
       @ApiParam("enabled1") Boolean enabled1,
       @ApiParam("isDefault") String isDefault,
-      @ApiParam("isEnabled") String isEnabled,
       @ApiParam("isMulti") String isMulti,
-      @ApiParam("name") String name,
       @ApiParam("remark") String remark,
-      @ApiParam("searchWord") String searchWord,
       @ApiParam("showOrder") Integer showOrder,
       @ApiParam("tableId") Integer tableId,
+      @ApiParam("code") String code,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
       return repository.findBy(
-          active,
-          code,
-          deleted1,
-          enabled1,
-          isDefault,
-          isEnabled,
-          isMulti,
-          name,
-          remark,
-          searchWord,
-          showOrder,
-          tableId,
-          pageable);
+          deleted1, enabled1, isDefault, isMulti, remark, showOrder, tableId, code, pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
