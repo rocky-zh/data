@@ -1483,8 +1483,6 @@ public class SalConsignDetail extends SalConsignDetailDTO implements Serializabl
   public static SalConsignDetail toExample() {
     SalConsignDetail example = new SalConsignDetail();
     // example.deleted = null;
-    example.enabled = null;
-    example.active = null;
     return example;
   }
 

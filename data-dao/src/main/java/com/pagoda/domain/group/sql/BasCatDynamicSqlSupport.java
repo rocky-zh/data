@@ -19,7 +19,6 @@ public class BasCatDynamicSqlSupport {
   public static BasCatTable basCatTable = new BasCatTable();
   public static SqlColumn<Long> id = basCatTable.id;
   public static SqlColumn<Long> deleted = basCatTable.deleted;
-  public static SqlColumn<Boolean> enabled = basCatTable.enabled;
   public static SqlColumn<String> treePath = basCatTable.treePath;
   public static SqlColumn<Date> createdAt = basCatTable.createdAt;
   public static SqlColumn<String> creatorCode = basCatTable.creatorCode;
@@ -30,7 +29,6 @@ public class BasCatDynamicSqlSupport {
   public static SqlColumn<String> modifierName = basCatTable.modifierName;
   public static SqlColumn<String> modifierOrgCode = basCatTable.modifierOrgCode;
   public static SqlColumn<Integer> version = basCatTable.version;
-  public static SqlColumn<Boolean> active = basCatTable.active;
   public static SqlColumn<Boolean> active = basCatTable.active;
   public static SqlColumn<String> code = basCatTable.code;
   public static SqlColumn<Long> deleted1 = basCatTable.deleted1;

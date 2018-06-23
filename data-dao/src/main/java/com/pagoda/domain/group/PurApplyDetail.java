@@ -1250,8 +1250,6 @@ public class PurApplyDetail extends PurApplyDetailDTO implements Serializable {
   public static PurApplyDetail toExample() {
     PurApplyDetail example = new PurApplyDetail();
     // example.deleted = null;
-    example.enabled = null;
-    example.active = null;
     return example;
   }
 

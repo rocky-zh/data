@@ -19,7 +19,6 @@ public class PurApplyDetailDynamicSqlSupport {
   public static PurApplyDetailTable purApplyDetailTable = new PurApplyDetailTable();
   public static SqlColumn<Long> id = purApplyDetailTable.id;
   public static SqlColumn<Long> deleted = purApplyDetailTable.deleted;
-  public static SqlColumn<Boolean> enabled = purApplyDetailTable.enabled;
   public static SqlColumn<Date> createdAt = purApplyDetailTable.createdAt;
   public static SqlColumn<String> creatorCode = purApplyDetailTable.creatorCode;
   public static SqlColumn<String> creatorName = purApplyDetailTable.creatorName;
@@ -29,7 +28,6 @@ public class PurApplyDetailDynamicSqlSupport {
   public static SqlColumn<String> modifierName = purApplyDetailTable.modifierName;
   public static SqlColumn<String> modifierOrgCode = purApplyDetailTable.modifierOrgCode;
   public static SqlColumn<Integer> version = purApplyDetailTable.version;
-  public static SqlColumn<Boolean> active = purApplyDetailTable.active;
   public static SqlColumn<Long> applyId = purApplyDetailTable.applyId;
   public static SqlColumn<java.math.BigDecimal> applyPrice = purApplyDetailTable.applyPrice;
   public static SqlColumn<Integer> applyQty = purApplyDetailTable.applyQty;

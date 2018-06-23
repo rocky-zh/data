@@ -19,7 +19,6 @@ public class SalConsignDetailDynamicSqlSupport {
   public static SalConsignDetailTable salConsignDetailTable = new SalConsignDetailTable();
   public static SqlColumn<Long> id = salConsignDetailTable.id;
   public static SqlColumn<Long> deleted = salConsignDetailTable.deleted;
-  public static SqlColumn<Boolean> enabled = salConsignDetailTable.enabled;
   public static SqlColumn<String> treePath = salConsignDetailTable.treePath;
   public static SqlColumn<Date> createdAt = salConsignDetailTable.createdAt;
   public static SqlColumn<String> creatorCode = salConsignDetailTable.creatorCode;
@@ -30,7 +29,6 @@ public class SalConsignDetailDynamicSqlSupport {
   public static SqlColumn<String> modifierName = salConsignDetailTable.modifierName;
   public static SqlColumn<String> modifierOrgCode = salConsignDetailTable.modifierOrgCode;
   public static SqlColumn<Integer> version = salConsignDetailTable.version;
-  public static SqlColumn<Boolean> active = salConsignDetailTable.active;
   public static SqlColumn<java.math.BigDecimal> actualAmt = salConsignDetailTable.actualAmt;
   public static SqlColumn<Long> conId = salConsignDetailTable.conId;
   public static SqlColumn<String> conNo = salConsignDetailTable.conNo;

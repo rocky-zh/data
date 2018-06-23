@@ -669,8 +669,6 @@ public class BasCat extends BasCatDTO implements Serializable {
   public static BasCat toExample() {
     BasCat example = new BasCat();
     // example.deleted = null;
-    example.enabled = null;
-    example.active = null;
     return example;
   }
 
