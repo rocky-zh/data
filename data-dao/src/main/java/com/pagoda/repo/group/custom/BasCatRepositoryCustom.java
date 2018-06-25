@@ -11,52 +11,76 @@ import org.springframework.data.repository.query.*;
 import java.util.*;
 
 /**
- * BasDistrict扩展数据访问接口
+ * BasCat扩展数据访问接口
  *
  * @author PagodaGenerator
  * @generated
  */
-public interface BasDistrictRepositoryCustom {
+public interface BasCatRepositoryCustom {
 
   /**
    * 包含所有可查询的字段
    *
+   * @param entId
+   * @param isDefault
+   * @param isEnabled
+   * @param isMulti
+   * @param remark
+   * @param searchWord
+   * @param showOrder
+   * @param tableId
    * @param active
    * @param code
    * @param enabled
-   * @param levelType
    * @param name
-   * @param pid
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findBy(
+  Page<BasCatDTO> findBy(
+      @Param("entId") Long entId,
+      @Param("isDefault") String isDefault,
+      @Param("isEnabled") String isEnabled,
+      @Param("isMulti") String isMulti,
+      @Param("remark") String remark,
+      @Param("searchWord") String searchWord,
+      @Param("showOrder") Integer showOrder,
+      @Param("tableId") Integer tableId,
       @Param("active") Boolean active,
       @Param("code") String code,
       @Param("enabled") Boolean enabled,
-      @Param("levelType") Integer levelType,
       @Param("name") String name,
-      @Param("pid") Long pid,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
+   * @param entId
+   * @param isDefault
+   * @param isEnabled
+   * @param isMulti
+   * @param remark
+   * @param searchWord
+   * @param showOrder
+   * @param tableId
    * @param active
    * @param code
    * @param enabled
-   * @param levelType
    * @param name
-   * @param pid
    * @return
    */
-  List<BasDistrictDTO> findBy(
+  List<BasCatDTO> findBy(
+      @Param("entId") Long entId,
+      @Param("isDefault") String isDefault,
+      @Param("isEnabled") String isEnabled,
+      @Param("isMulti") String isMulti,
+      @Param("remark") String remark,
+      @Param("searchWord") String searchWord,
+      @Param("showOrder") Integer showOrder,
+      @Param("tableId") Integer tableId,
       @Param("active") Boolean active,
       @Param("code") String code,
       @Param("enabled") Boolean enabled,
-      @Param("levelType") Integer levelType,
-      @Param("name") String name,
-      @Param("pid") Long pid);
+      @Param("name") String name);
 
   /**
    * 通用分页查询，用于后台查询
@@ -65,8 +89,8 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByExample(
-      @Param("example") BasDistrict example, @Param("pageable") Pageable pageable);
+  Page<BasCatDTO> findByExample(
+      @Param("example") BasCat example, @Param("pageable") Pageable pageable);
 
   /**
    * 通用查询，用于后台查询
@@ -74,7 +98,7 @@ public interface BasDistrictRepositoryCustom {
    * @param example
    * @return
    */
-  List<BasDistrictDTO> findByExample(@Param("example") BasDistrict example);
+  List<BasCatDTO> findByExample(@Param("example") BasCat example);
 
   /**
    * 复杂条件分页查询，支持between范围，in列表，like模糊查询等条件
@@ -83,7 +107,7 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByBuilder(
+  Page<BasCatDTO> findByBuilder(
       @Param("builder") JpaQueryBuilder builder, @Param("pageable") Pageable pageable);
 
   /**
@@ -92,7 +116,7 @@ public interface BasDistrictRepositoryCustom {
    * @param builder
    * @return
    */
-  List<BasDistrictDTO> findByBuilder(@Param("builder") JpaQueryBuilder builder);
+  List<BasCatDTO> findByBuilder(@Param("builder") JpaQueryBuilder builder);
 
   /**
    * 复杂条件更新
@@ -112,8 +136,8 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByFuzzySearch(
-      @Param("example") BasDistrict example,
+  Page<BasCatDTO> findByFuzzySearch(
+      @Param("example") BasCat example,
       @Param("fields") List<String> fields,
       @Param("stringMatcher") ExampleMatcher.StringMatcher stringMatcher,
       @Param("pageable") Pageable pageable);
@@ -128,7 +152,7 @@ public interface BasDistrictRepositoryCustom {
    * @throws NoSuchFieldException
    * @throws IllegalAccessException
    */
-  Page<BasDistrictDTO> findByField(
+  Page<BasCatDTO> findByField(
       @Param("fieldName") String fieldName,
       @Param("value") Object value,
       @Param("pageable") Pageable pageable)
@@ -144,7 +168,6 @@ public interface BasDistrictRepositoryCustom {
    * @throws NoSuchFieldException
    * @throws IllegalAccessException
    */
-  List<BasDistrictDTO> findByField(
-      @Param("fieldName") String fieldName, @Param("value") Object value)
+  List<BasCatDTO> findByField(@Param("fieldName") String fieldName, @Param("value") Object value)
       throws NoSuchFieldException, IllegalAccessException;
 }

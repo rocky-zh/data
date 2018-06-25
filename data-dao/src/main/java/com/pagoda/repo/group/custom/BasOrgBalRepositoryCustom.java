@@ -11,52 +11,76 @@ import org.springframework.data.repository.query.*;
 import java.util.*;
 
 /**
- * BasDistrict扩展数据访问接口
+ * BasOrgBal扩展数据访问接口
  *
  * @author PagodaGenerator
  * @generated
  */
-public interface BasDistrictRepositoryCustom {
+public interface BasOrgBalRepositoryCustom {
 
   /**
    * 包含所有可查询的字段
    *
+   * @param billAddress
+   * @param billName
+   * @param billTelephone
+   * @param isDetailPrior
+   * @param isGoodsPrior
+   * @param legalPerson
+   * @param maxBillAmt
+   * @param orgId
+   * @param orgProperty
+   * @param taxNumber
    * @param active
-   * @param code
    * @param enabled
-   * @param levelType
-   * @param name
-   * @param pid
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findBy(
+  Page<BasOrgBalDTO> findBy(
+      @Param("billAddress") String billAddress,
+      @Param("billName") String billName,
+      @Param("billTelephone") String billTelephone,
+      @Param("isDetailPrior") Integer isDetailPrior,
+      @Param("isGoodsPrior") Integer isGoodsPrior,
+      @Param("legalPerson") String legalPerson,
+      @Param("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @Param("orgId") Long orgId,
+      @Param("orgProperty") Integer orgProperty,
+      @Param("taxNumber") String taxNumber,
       @Param("active") Boolean active,
-      @Param("code") String code,
       @Param("enabled") Boolean enabled,
-      @Param("levelType") Integer levelType,
-      @Param("name") String name,
-      @Param("pid") Long pid,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
+   * @param billAddress
+   * @param billName
+   * @param billTelephone
+   * @param isDetailPrior
+   * @param isGoodsPrior
+   * @param legalPerson
+   * @param maxBillAmt
+   * @param orgId
+   * @param orgProperty
+   * @param taxNumber
    * @param active
-   * @param code
    * @param enabled
-   * @param levelType
-   * @param name
-   * @param pid
    * @return
    */
-  List<BasDistrictDTO> findBy(
+  List<BasOrgBalDTO> findBy(
+      @Param("billAddress") String billAddress,
+      @Param("billName") String billName,
+      @Param("billTelephone") String billTelephone,
+      @Param("isDetailPrior") Integer isDetailPrior,
+      @Param("isGoodsPrior") Integer isGoodsPrior,
+      @Param("legalPerson") String legalPerson,
+      @Param("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @Param("orgId") Long orgId,
+      @Param("orgProperty") Integer orgProperty,
+      @Param("taxNumber") String taxNumber,
       @Param("active") Boolean active,
-      @Param("code") String code,
-      @Param("enabled") Boolean enabled,
-      @Param("levelType") Integer levelType,
-      @Param("name") String name,
-      @Param("pid") Long pid);
+      @Param("enabled") Boolean enabled);
 
   /**
    * 通用分页查询，用于后台查询
@@ -65,8 +89,8 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByExample(
-      @Param("example") BasDistrict example, @Param("pageable") Pageable pageable);
+  Page<BasOrgBalDTO> findByExample(
+      @Param("example") BasOrgBal example, @Param("pageable") Pageable pageable);
 
   /**
    * 通用查询，用于后台查询
@@ -74,7 +98,7 @@ public interface BasDistrictRepositoryCustom {
    * @param example
    * @return
    */
-  List<BasDistrictDTO> findByExample(@Param("example") BasDistrict example);
+  List<BasOrgBalDTO> findByExample(@Param("example") BasOrgBal example);
 
   /**
    * 复杂条件分页查询，支持between范围，in列表，like模糊查询等条件
@@ -83,7 +107,7 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByBuilder(
+  Page<BasOrgBalDTO> findByBuilder(
       @Param("builder") JpaQueryBuilder builder, @Param("pageable") Pageable pageable);
 
   /**
@@ -92,7 +116,7 @@ public interface BasDistrictRepositoryCustom {
    * @param builder
    * @return
    */
-  List<BasDistrictDTO> findByBuilder(@Param("builder") JpaQueryBuilder builder);
+  List<BasOrgBalDTO> findByBuilder(@Param("builder") JpaQueryBuilder builder);
 
   /**
    * 复杂条件更新
@@ -112,8 +136,8 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByFuzzySearch(
-      @Param("example") BasDistrict example,
+  Page<BasOrgBalDTO> findByFuzzySearch(
+      @Param("example") BasOrgBal example,
       @Param("fields") List<String> fields,
       @Param("stringMatcher") ExampleMatcher.StringMatcher stringMatcher,
       @Param("pageable") Pageable pageable);
@@ -128,7 +152,7 @@ public interface BasDistrictRepositoryCustom {
    * @throws NoSuchFieldException
    * @throws IllegalAccessException
    */
-  Page<BasDistrictDTO> findByField(
+  Page<BasOrgBalDTO> findByField(
       @Param("fieldName") String fieldName,
       @Param("value") Object value,
       @Param("pageable") Pageable pageable)
@@ -144,7 +168,6 @@ public interface BasDistrictRepositoryCustom {
    * @throws NoSuchFieldException
    * @throws IllegalAccessException
    */
-  List<BasDistrictDTO> findByField(
-      @Param("fieldName") String fieldName, @Param("value") Object value)
+  List<BasOrgBalDTO> findByField(@Param("fieldName") String fieldName, @Param("value") Object value)
       throws NoSuchFieldException, IllegalAccessException;
 }

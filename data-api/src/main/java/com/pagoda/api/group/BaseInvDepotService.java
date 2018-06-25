@@ -19,7 +19,7 @@ import org.springframework.validation.annotation.Validated;
  * @generated
  */
 @Validated
-public interface BaseBasDistrictService {
+public interface BaseInvDepotService {
 
   /**
    * Create a given entity. Use the returned instance for further operations as the save operation
@@ -30,7 +30,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "create", notes = "新增一条记录")
-  BasDistrictDTO create(@ApiParam(value = "entity", required = true) @Valid BasDistrictDTO entity)
+  InvDepotDTO create(@ApiParam(value = "entity", required = true) @Valid InvDepotDTO entity)
       throws ServiceException;
 
   /**
@@ -42,8 +42,8 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchCreate", notes = "批量插入多条记录")
-  Iterable<BasDistrictDTO> batchCreate(
-      @ApiParam(value = "entities", required = true) @Valid Iterable<BasDistrictDTO> entities)
+  Iterable<InvDepotDTO> batchCreate(
+      @ApiParam(value = "entities", required = true) @Valid Iterable<InvDepotDTO> entities)
       throws ServiceException;
 
   /**
@@ -55,7 +55,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "update", notes = "更新一条记录")
-  BasDistrictDTO update(@ApiParam(value = "entity", required = true) BasDistrictDTO entity)
+  InvDepotDTO update(@ApiParam(value = "entity", required = true) InvDepotDTO entity)
       throws ServiceException;
 
   /**
@@ -67,8 +67,8 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchUpdate", notes = "批量更新多条记录")
-  Iterable<BasDistrictDTO> batchUpdate(
-      @ApiParam(value = "entities", required = true) Iterable<BasDistrictDTO> entities)
+  Iterable<InvDepotDTO> batchUpdate(
+      @ApiParam(value = "entities", required = true) Iterable<InvDepotDTO> entities)
       throws ServiceException;
 
   /**
@@ -101,7 +101,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "getById", notes = "根据id查询记录")
-  BasDistrictDTO getById(@ApiParam(value = "id", required = true) Long id) throws ServiceException;
+  InvDepotDTO getById(@ApiParam(value = "id", required = true) Long id) throws ServiceException;
 
   /**
    * 根据主键id批量查询
@@ -111,7 +111,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchGetByIds", notes = "根据主键id批量查询")
-  Iterable<BasDistrictDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
+  Iterable<InvDepotDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
       throws ServiceException;
 
   /**
@@ -123,31 +123,103 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "findByExample", notes = "根据非空字段查询")
-  Page<BasDistrictDTO> findByExample(
-      @ApiParam("example") BasDistrictDTO example, @ApiParam("pageable") Pageable pageable)
+  Page<InvDepotDTO> findByExample(
+      @ApiParam("example") InvDepotDTO example, @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 
   /**
    * 所有可查询的字段
    *
+   * @param adCode
+   * @param adLat
+   * @param adLng
+   * @param address
+   * @param balOrgId
+   * @param currentPeriod
+   * @param depotCenterId
+   * @param isAllowInvOut
+   * @param isAllowPostReturn
+   * @param isCheckByAdd
+   * @param isCheckByNegative
+   * @param isCheckByPost
+   * @param isCheckInputNeedCheck
+   * @param isCheckQtyZero
+   * @param isCheckShowFinQty
+   * @param isDualDepot
+   * @param isPickAllocation
+   * @param isPostCheckAll
+   * @param isPostDaily
+   * @param isPostDailyDetail
+   * @param isPurRecIn
+   * @param isPurRetOut
+   * @param isSalConIn
+   * @param isSalConOut
+   * @param isSalRetIn
+   * @param isSalRetOut
+   * @param isStoEnabled
+   * @param isTurnExistNoPost
+   * @param manageType
+   * @param measureType
+   * @param phone
+   * @param stoCurrentPeriod
+   * @param turnDateTime
+   * @param turnUserCode
+   * @param turnUserName
    * @param active
    * @param code
    * @param enabled
-   * @param levelType
+   * @param entId
    * @param name
-   * @param pid
+   * @param orgId
+   * @param searchWord
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
-  Page<BasDistrictDTO> findBy(
+  Page<InvDepotDTO> findBy(
+      @ApiParam("adCode") String adCode,
+      @ApiParam("adLat") String adLat,
+      @ApiParam("adLng") String adLng,
+      @ApiParam("address") String address,
+      @ApiParam("balOrgId") Long balOrgId,
+      @ApiParam("currentPeriod") String currentPeriod,
+      @ApiParam("depotCenterId") Integer depotCenterId,
+      @ApiParam("isAllowInvOut") Integer isAllowInvOut,
+      @ApiParam("isAllowPostReturn") Integer isAllowPostReturn,
+      @ApiParam("isCheckByAdd") Integer isCheckByAdd,
+      @ApiParam("isCheckByNegative") Integer isCheckByNegative,
+      @ApiParam("isCheckByPost") Integer isCheckByPost,
+      @ApiParam("isCheckInputNeedCheck") Integer isCheckInputNeedCheck,
+      @ApiParam("isCheckQtyZero") Integer isCheckQtyZero,
+      @ApiParam("isCheckShowFinQty") Integer isCheckShowFinQty,
+      @ApiParam("isDualDepot") Integer isDualDepot,
+      @ApiParam("isPickAllocation") Integer isPickAllocation,
+      @ApiParam("isPostCheckAll") Integer isPostCheckAll,
+      @ApiParam("isPostDaily") Integer isPostDaily,
+      @ApiParam("isPostDailyDetail") Integer isPostDailyDetail,
+      @ApiParam("isPurRecIn") Integer isPurRecIn,
+      @ApiParam("isPurRetOut") Integer isPurRetOut,
+      @ApiParam("isSalConIn") Integer isSalConIn,
+      @ApiParam("isSalConOut") Integer isSalConOut,
+      @ApiParam("isSalRetIn") Integer isSalRetIn,
+      @ApiParam("isSalRetOut") Integer isSalRetOut,
+      @ApiParam("isStoEnabled") Integer isStoEnabled,
+      @ApiParam("isTurnExistNoPost") Integer isTurnExistNoPost,
+      @ApiParam("manageType") Integer manageType,
+      @ApiParam("measureType") Integer measureType,
+      @ApiParam("phone") String phone,
+      @ApiParam("stoCurrentPeriod") Integer stoCurrentPeriod,
+      @ApiParam("turnDateTime") java.sql.Timestamp turnDateTime,
+      @ApiParam("turnUserCode") String turnUserCode,
+      @ApiParam("turnUserName") String turnUserName,
       @ApiParam("active") Boolean active,
       @ApiParam("code") String code,
       @ApiParam("enabled") Boolean enabled,
-      @ApiParam("levelType") Integer levelType,
+      @ApiParam("entId") Long entId,
       @ApiParam("name") String name,
-      @ApiParam("pid") Long pid,
+      @ApiParam("orgId") Long orgId,
+      @ApiParam("searchWord") String searchWord,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }

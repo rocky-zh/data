@@ -19,7 +19,7 @@ import org.springframework.validation.annotation.Validated;
  * @generated
  */
 @Validated
-public interface BaseBasDistrictService {
+public interface BaseBasOrgBalService {
 
   /**
    * Create a given entity. Use the returned instance for further operations as the save operation
@@ -30,7 +30,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "create", notes = "新增一条记录")
-  BasDistrictDTO create(@ApiParam(value = "entity", required = true) @Valid BasDistrictDTO entity)
+  BasOrgBalDTO create(@ApiParam(value = "entity", required = true) @Valid BasOrgBalDTO entity)
       throws ServiceException;
 
   /**
@@ -42,8 +42,8 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchCreate", notes = "批量插入多条记录")
-  Iterable<BasDistrictDTO> batchCreate(
-      @ApiParam(value = "entities", required = true) @Valid Iterable<BasDistrictDTO> entities)
+  Iterable<BasOrgBalDTO> batchCreate(
+      @ApiParam(value = "entities", required = true) @Valid Iterable<BasOrgBalDTO> entities)
       throws ServiceException;
 
   /**
@@ -55,7 +55,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "update", notes = "更新一条记录")
-  BasDistrictDTO update(@ApiParam(value = "entity", required = true) BasDistrictDTO entity)
+  BasOrgBalDTO update(@ApiParam(value = "entity", required = true) BasOrgBalDTO entity)
       throws ServiceException;
 
   /**
@@ -67,8 +67,8 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchUpdate", notes = "批量更新多条记录")
-  Iterable<BasDistrictDTO> batchUpdate(
-      @ApiParam(value = "entities", required = true) Iterable<BasDistrictDTO> entities)
+  Iterable<BasOrgBalDTO> batchUpdate(
+      @ApiParam(value = "entities", required = true) Iterable<BasOrgBalDTO> entities)
       throws ServiceException;
 
   /**
@@ -101,7 +101,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "getById", notes = "根据id查询记录")
-  BasDistrictDTO getById(@ApiParam(value = "id", required = true) Long id) throws ServiceException;
+  BasOrgBalDTO getById(@ApiParam(value = "id", required = true) Long id) throws ServiceException;
 
   /**
    * 根据主键id批量查询
@@ -111,7 +111,7 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchGetByIds", notes = "根据主键id批量查询")
-  Iterable<BasDistrictDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
+  Iterable<BasOrgBalDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
       throws ServiceException;
 
   /**
@@ -123,31 +123,43 @@ public interface BaseBasDistrictService {
    * @throws ServiceException
    */
   @ApiOperation(value = "findByExample", notes = "根据非空字段查询")
-  Page<BasDistrictDTO> findByExample(
-      @ApiParam("example") BasDistrictDTO example, @ApiParam("pageable") Pageable pageable)
+  Page<BasOrgBalDTO> findByExample(
+      @ApiParam("example") BasOrgBalDTO example, @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 
   /**
    * 所有可查询的字段
    *
+   * @param billAddress
+   * @param billName
+   * @param billTelephone
+   * @param isDetailPrior
+   * @param isGoodsPrior
+   * @param legalPerson
+   * @param maxBillAmt
+   * @param orgId
+   * @param orgProperty
+   * @param taxNumber
    * @param active
-   * @param code
    * @param enabled
-   * @param levelType
-   * @param name
-   * @param pid
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
-  Page<BasDistrictDTO> findBy(
+  Page<BasOrgBalDTO> findBy(
+      @ApiParam("billAddress") String billAddress,
+      @ApiParam("billName") String billName,
+      @ApiParam("billTelephone") String billTelephone,
+      @ApiParam("isDetailPrior") Integer isDetailPrior,
+      @ApiParam("isGoodsPrior") Integer isGoodsPrior,
+      @ApiParam("legalPerson") String legalPerson,
+      @ApiParam("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @ApiParam("orgId") Long orgId,
+      @ApiParam("orgProperty") Integer orgProperty,
+      @ApiParam("taxNumber") String taxNumber,
       @ApiParam("active") Boolean active,
-      @ApiParam("code") String code,
       @ApiParam("enabled") Boolean enabled,
-      @ApiParam("levelType") Integer levelType,
-      @ApiParam("name") String name,
-      @ApiParam("pid") Long pid,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }

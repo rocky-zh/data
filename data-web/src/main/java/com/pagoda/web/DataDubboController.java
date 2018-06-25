@@ -43,13 +43,19 @@ public class DataDubboController {
   public static final Map<String, String> DTO_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.inv_depotDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_districtDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_org_balDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_catDTO");
   }
 
   /** api包名 * */
   public static final Map<String, String> API_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_catService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.inv_depotService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_org_balService");
     putInMap(API_PACKAGES, "com.pagoda.api.group.bas_districtService");
   }
 
