@@ -450,6 +450,43 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
   private java.math.BigDecimal maxBillAmt;
 
   @FieldMeta(
+    name = "orgId",
+    scene = "",
+    nameCN = "所属往来单位Id",
+    comment = "所属往来单位Id",
+    nameEN = "org_id",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"org_id\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "长整型   COMMENT '所属往来单位Id'"
+  )
+  private Long orgId;
+
+  @FieldMeta(
     name = "orgProperty",
     scene = "",
     nameCN = "机构属性",
@@ -525,7 +562,7 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
 
   @FieldMeta(
     name = "active",
-    scene = "a",
+    scene = "",
     nameCN = "是否当前版本",
     comment = "是否当前版本",
     nameEN = "active",
@@ -559,6 +596,43 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
     columnDefinition = "布尔   COMMENT '是否当前版本'"
   )
   private Boolean active;
+
+  @FieldMeta(
+    name = "enabled",
+    scene = "",
+    nameCN = "是否启用",
+    comment = "是否启用",
+    nameEN = "enabled",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"enabled\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "布尔   COMMENT '是否启用'"
+  )
+  private Boolean enabled;
 
   static MapperFacade mapper;
 

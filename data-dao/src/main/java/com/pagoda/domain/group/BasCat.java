@@ -202,11 +202,11 @@ public class BasCat extends BasCatDTO implements Serializable {
   private Integer version;
 
   @FieldMeta(
-    name = "deleted1",
+    name = "entId",
     scene = "",
-    nameCN = "软删除标记",
-    comment = "软删除标记",
-    nameEN = "deleted1",
+    nameCN = "企业ID",
+    comment = "企业ID",
+    nameEN = "ent_id",
     type = "长整型",
     format = "",
     displayLen = 1,
@@ -215,7 +215,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     constraintParams = "",
     persistent = true,
     canQuery = true,
-    readOnly = false,
+    readOnly = true,
     required = false,
     visible = true,
     defaultValue = "",
@@ -230,50 +230,13 @@ public class BasCat extends BasCatDTO implements Serializable {
     index = 0
   )
   @Column(
-    name = "\"deleted1\"",
+    name = "\"ent_id\"",
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "长整型   COMMENT '软删除标记'"
+    columnDefinition = "长整型   COMMENT '企业ID'"
   )
-  private Long deleted1;
-
-  @FieldMeta(
-    name = "enabled1",
-    scene = "",
-    nameCN = "是否启用",
-    comment = "是否启用",
-    nameEN = "enabled1",
-    type = "布尔",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"enabled1\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "布尔   COMMENT '是否启用'"
-  )
-  private Boolean enabled1;
+  private Long entId;
 
   @FieldMeta(
     name = "isDefault",
@@ -311,6 +274,43 @@ public class BasCat extends BasCatDTO implements Serializable {
     columnDefinition = "字符串   COMMENT '是否默认'"
   )
   private String isDefault;
+
+  @FieldMeta(
+    name = "isEnabled",
+    scene = "",
+    nameCN = "是否可用",
+    comment = "是否可用",
+    nameEN = "is_enabled",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"is_enabled\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "字符串   COMMENT '是否可用'"
+  )
+  private String isEnabled;
 
   @FieldMeta(
     name = "isMulti",
@@ -387,6 +387,43 @@ public class BasCat extends BasCatDTO implements Serializable {
   private String remark;
 
   @FieldMeta(
+    name = "searchWord",
+    scene = "",
+    nameCN = "搜索关键词",
+    comment = "搜索关键词",
+    nameEN = "search_word",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"search_word\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "字符串   COMMENT '搜索关键词'"
+  )
+  private String searchWord;
+
+  @FieldMeta(
     name = "showOrder",
     scene = "",
     nameCN = "排序",
@@ -461,17 +498,54 @@ public class BasCat extends BasCatDTO implements Serializable {
   private Integer tableId;
 
   @FieldMeta(
+    name = "active",
+    scene = "",
+    nameCN = "是否当前版本",
+    comment = "是否当前版本",
+    nameEN = "active",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"active\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "布尔   COMMENT '是否当前版本'"
+  )
+  private Boolean active;
+
+  @FieldMeta(
     name = "code",
-    scene = "fff",
+    scene = "",
     nameCN = "代码",
     comment = "代码",
     nameEN = "code",
     type = "字符串",
-    format = "ll",
-    displayLen = 23,
+    format = "",
+    displayLen = 1,
     formSize = "",
-    constraint = "ll",
-    constraintParams = "{\"prefix\":\"fx_er\"}",
+    constraint = "",
+    constraintParams = "",
     persistent = true,
     canQuery = true,
     readOnly = false,
@@ -492,10 +566,84 @@ public class BasCat extends BasCatDTO implements Serializable {
     name = "\"code\"",
     nullable = true,
     precision = 0,
-    scale = 4,
+    scale = 0,
     columnDefinition = "字符串   COMMENT '代码'"
   )
   private String code;
+
+  @FieldMeta(
+    name = "enabled",
+    scene = "",
+    nameCN = "是否启用",
+    comment = "是否启用",
+    nameEN = "enabled",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"enabled\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "布尔   COMMENT '是否启用'"
+  )
+  private Boolean enabled;
+
+  @FieldMeta(
+    name = "name",
+    scene = "",
+    nameCN = "名称",
+    comment = "名称",
+    nameEN = "name",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"name\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "字符串   COMMENT '名称'"
+  )
+  private String name;
 
   static MapperFacade mapper;
 

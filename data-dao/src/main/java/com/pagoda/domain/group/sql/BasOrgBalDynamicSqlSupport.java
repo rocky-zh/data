@@ -35,9 +35,11 @@ public class BasOrgBalDynamicSqlSupport {
   public static SqlColumn<Integer> isGoodsPrior = basOrgBalTable.isGoodsPrior;
   public static SqlColumn<String> legalPerson = basOrgBalTable.legalPerson;
   public static SqlColumn<java.math.BigDecimal> maxBillAmt = basOrgBalTable.maxBillAmt;
+  public static SqlColumn<Long> orgId = basOrgBalTable.orgId;
   public static SqlColumn<Integer> orgProperty = basOrgBalTable.orgProperty;
   public static SqlColumn<String> taxNumber = basOrgBalTable.taxNumber;
   public static SqlColumn<Boolean> active = basOrgBalTable.active;
+  public static SqlColumn<Boolean> enabled = basOrgBalTable.enabled;
 
   public static final class BasOrgBalTable extends SqlTable {
     public final SqlColumn<Long> id = column("id", JDBCType.BIGINT);
@@ -62,9 +64,11 @@ public class BasOrgBalDynamicSqlSupport {
     public final SqlColumn<String> legalPerson = column("legal_person", JDBCType.VARCHAR);
     public final SqlColumn<java.math.BigDecimal> maxBillAmt =
         column("max_bill_amt", JDBCType.DECIMAL);
+    public final SqlColumn<Long> orgId = column("org_id", JDBCType.BIGINT);
     public final SqlColumn<Integer> orgProperty = column("org_property", JDBCType.INTEGER);
     public final SqlColumn<String> taxNumber = column("tax_number", JDBCType.VARCHAR);
     public final SqlColumn<Boolean> active = column("active", JDBCType.BOOLEAN);
+    public final SqlColumn<Boolean> enabled = column("enabled", JDBCType.BOOLEAN);
 
     public BasOrgBalTable() {
       super("BasOrgBal");

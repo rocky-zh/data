@@ -268,7 +268,7 @@ dubbo:
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
 
 
 ---
@@ -281,7 +281,7 @@ dubbo:
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
   
 
 
@@ -295,7 +295,7 @@ dubbo:
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
 
 
 ---
@@ -308,4 +308,4 @@ dubbo:
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1  
+  registry: zookeeper://127.0.0.1:27701  

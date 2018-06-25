@@ -256,28 +256,36 @@ public interface BaseBasCatService {
   /**
    * 所有可查询的字段
    *
-   * @param deleted1
-   * @param enabled1
-   * @param is_default
-   * @param is_multi
+   * @param entId
+   * @param isDefault
+   * @param isEnabled
+   * @param isMulti
    * @param remark
-   * @param show_order
-   * @param table_id
+   * @param searchWord
+   * @param showOrder
+   * @param tableId
+   * @param active
    * @param code
+   * @param enabled
+   * @param name
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   Page<BasCatDTO> findBy(
-      @ApiParam("deleted1") Long deleted1,
-      @ApiParam("enabled1") Boolean enabled1,
+      @ApiParam("entId") Long entId,
       @ApiParam("isDefault") String isDefault,
+      @ApiParam("isEnabled") String isEnabled,
       @ApiParam("isMulti") String isMulti,
       @ApiParam("remark") String remark,
+      @ApiParam("searchWord") String searchWord,
       @ApiParam("showOrder") Integer showOrder,
       @ApiParam("tableId") Integer tableId,
+      @ApiParam("active") Boolean active,
       @ApiParam("code") String code,
+      @ApiParam("enabled") Boolean enabled,
+      @ApiParam("name") String name,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }

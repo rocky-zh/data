@@ -196,12 +196,16 @@ public abstract class BaseBasDistrictServiceImpl implements BasDistrictService, 
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
   public Page<BasDistrictDTO> findBy(
-      @ApiParam("levelType") Integer levelType,
+      @ApiParam("active") Boolean active,
       @ApiParam("code") String code,
+      @ApiParam("enabled") Boolean enabled,
+      @ApiParam("levelType") Integer levelType,
+      @ApiParam("name") String name,
+      @ApiParam("pid") Long pid,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findBy(levelType, code, pageable);
+      return repository.findBy(active, code, enabled, levelType, name, pid, pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }

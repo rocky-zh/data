@@ -130,16 +130,24 @@ public interface BaseBasDistrictService {
   /**
    * 所有可查询的字段
    *
-   * @param level_type
+   * @param active
    * @param code
+   * @param enabled
+   * @param levelType
+   * @param name
+   * @param pid
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   Page<BasDistrictDTO> findBy(
-      @ApiParam("levelType") Integer levelType,
+      @ApiParam("active") Boolean active,
       @ApiParam("code") String code,
+      @ApiParam("enabled") Boolean enabled,
+      @ApiParam("levelType") Integer levelType,
+      @ApiParam("name") String name,
+      @ApiParam("pid") Long pid,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }

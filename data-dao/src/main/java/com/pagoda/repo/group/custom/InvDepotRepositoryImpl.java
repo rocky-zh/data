@@ -28,16 +28,13 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
 
   @Override
   public Page<InvDepotDTO> findBy(
-      @Param("active") Boolean active,
       @Param("adCode") String adCode,
       @Param("adLat") String adLat,
       @Param("adLng") String adLng,
       @Param("address") String address,
       @Param("balOrgId") Long balOrgId,
-      @Param("code") String code,
       @Param("currentPeriod") String currentPeriod,
       @Param("depotCenterId") Integer depotCenterId,
-      @Param("enabled") Boolean enabled,
       @Param("isAllowInvOut") Integer isAllowInvOut,
       @Param("isAllowPostReturn") Integer isAllowPostReturn,
       @Param("isCheckByAdd") Integer isCheckByAdd,
@@ -47,7 +44,6 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
       @Param("isCheckQtyZero") Integer isCheckQtyZero,
       @Param("isCheckShowFinQty") Integer isCheckShowFinQty,
       @Param("isDualDepot") Integer isDualDepot,
-      @Param("isEnabled") Integer isEnabled,
       @Param("isPickAllocation") Integer isPickAllocation,
       @Param("isPostCheckAll") Integer isPostCheckAll,
       @Param("isPostDaily") Integer isPostDaily,
@@ -62,26 +58,27 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
       @Param("isTurnExistNoPost") Integer isTurnExistNoPost,
       @Param("manageType") Integer manageType,
       @Param("measureType") Integer measureType,
-      @Param("name") String name,
-      @Param("orgId") Long orgId,
       @Param("phone") String phone,
-      @Param("searchWord") String searchWord,
       @Param("stoCurrentPeriod") Integer stoCurrentPeriod,
       @Param("turnDateTime") java.sql.Timestamp turnDateTime,
       @Param("turnUserCode") String turnUserCode,
       @Param("turnUserName") String turnUserName,
+      @Param("active") Boolean active,
+      @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("entId") Long entId,
+      @Param("name") String name,
+      @Param("orgId") Long orgId,
+      @Param("searchWord") String searchWord,
       @Param("pageable") Pageable pageable) {
     InvDepot obj = InvDepot.toExample();
-    obj.setActive(active);
     obj.setAdCode(adCode);
     obj.setAdLat(adLat);
     obj.setAdLng(adLng);
     obj.setAddress(address);
     obj.setBalOrgId(balOrgId);
-    obj.setCode(code);
     obj.setCurrentPeriod(currentPeriod);
     obj.setDepotCenterId(depotCenterId);
-    obj.setEnabled(enabled);
     obj.setIsAllowInvOut(isAllowInvOut);
     obj.setIsAllowPostReturn(isAllowPostReturn);
     obj.setIsCheckByAdd(isCheckByAdd);
@@ -91,7 +88,6 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
     obj.setIsCheckQtyZero(isCheckQtyZero);
     obj.setIsCheckShowFinQty(isCheckShowFinQty);
     obj.setIsDualDepot(isDualDepot);
-    obj.setIsEnabled(isEnabled);
     obj.setIsPickAllocation(isPickAllocation);
     obj.setIsPostCheckAll(isPostCheckAll);
     obj.setIsPostDaily(isPostDaily);
@@ -106,14 +102,18 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
     obj.setIsTurnExistNoPost(isTurnExistNoPost);
     obj.setManageType(manageType);
     obj.setMeasureType(measureType);
-    obj.setName(name);
-    obj.setOrgId(orgId);
     obj.setPhone(phone);
-    obj.setSearchWord(searchWord);
     obj.setStoCurrentPeriod(stoCurrentPeriod);
     obj.setTurnDateTime(turnDateTime);
     obj.setTurnUserCode(turnUserCode);
     obj.setTurnUserName(turnUserName);
+    obj.setActive(active);
+    obj.setCode(code);
+    obj.setEnabled(enabled);
+    obj.setEntId(entId);
+    obj.setName(name);
+    obj.setOrgId(orgId);
+    obj.setSearchWord(searchWord);
     Example<InvDepot> example = Example.of(obj);
 
     return findAll(example, pageable).map(InvDepot.DTO_CONVERTER);
@@ -121,16 +121,13 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
 
   @Override
   public List<InvDepotDTO> findBy(
-      @Param("active") Boolean active,
       @Param("adCode") String adCode,
       @Param("adLat") String adLat,
       @Param("adLng") String adLng,
       @Param("address") String address,
       @Param("balOrgId") Long balOrgId,
-      @Param("code") String code,
       @Param("currentPeriod") String currentPeriod,
       @Param("depotCenterId") Integer depotCenterId,
-      @Param("enabled") Boolean enabled,
       @Param("isAllowInvOut") Integer isAllowInvOut,
       @Param("isAllowPostReturn") Integer isAllowPostReturn,
       @Param("isCheckByAdd") Integer isCheckByAdd,
@@ -140,7 +137,6 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
       @Param("isCheckQtyZero") Integer isCheckQtyZero,
       @Param("isCheckShowFinQty") Integer isCheckShowFinQty,
       @Param("isDualDepot") Integer isDualDepot,
-      @Param("isEnabled") Integer isEnabled,
       @Param("isPickAllocation") Integer isPickAllocation,
       @Param("isPostCheckAll") Integer isPostCheckAll,
       @Param("isPostDaily") Integer isPostDaily,
@@ -155,25 +151,26 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
       @Param("isTurnExistNoPost") Integer isTurnExistNoPost,
       @Param("manageType") Integer manageType,
       @Param("measureType") Integer measureType,
-      @Param("name") String name,
-      @Param("orgId") Long orgId,
       @Param("phone") String phone,
-      @Param("searchWord") String searchWord,
       @Param("stoCurrentPeriod") Integer stoCurrentPeriod,
       @Param("turnDateTime") java.sql.Timestamp turnDateTime,
       @Param("turnUserCode") String turnUserCode,
-      @Param("turnUserName") String turnUserName) {
+      @Param("turnUserName") String turnUserName,
+      @Param("active") Boolean active,
+      @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("entId") Long entId,
+      @Param("name") String name,
+      @Param("orgId") Long orgId,
+      @Param("searchWord") String searchWord) {
     InvDepot obj = InvDepot.toExample();
-    obj.setActive(active);
     obj.setAdCode(adCode);
     obj.setAdLat(adLat);
     obj.setAdLng(adLng);
     obj.setAddress(address);
     obj.setBalOrgId(balOrgId);
-    obj.setCode(code);
     obj.setCurrentPeriod(currentPeriod);
     obj.setDepotCenterId(depotCenterId);
-    obj.setEnabled(enabled);
     obj.setIsAllowInvOut(isAllowInvOut);
     obj.setIsAllowPostReturn(isAllowPostReturn);
     obj.setIsCheckByAdd(isCheckByAdd);
@@ -183,7 +180,6 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
     obj.setIsCheckQtyZero(isCheckQtyZero);
     obj.setIsCheckShowFinQty(isCheckShowFinQty);
     obj.setIsDualDepot(isDualDepot);
-    obj.setIsEnabled(isEnabled);
     obj.setIsPickAllocation(isPickAllocation);
     obj.setIsPostCheckAll(isPostCheckAll);
     obj.setIsPostDaily(isPostDaily);
@@ -198,14 +194,18 @@ public class InvDepotRepositoryImpl extends BaseRepositoryCustomImpl<InvDepot, L
     obj.setIsTurnExistNoPost(isTurnExistNoPost);
     obj.setManageType(manageType);
     obj.setMeasureType(measureType);
-    obj.setName(name);
-    obj.setOrgId(orgId);
     obj.setPhone(phone);
-    obj.setSearchWord(searchWord);
     obj.setStoCurrentPeriod(stoCurrentPeriod);
     obj.setTurnDateTime(turnDateTime);
     obj.setTurnUserCode(turnUserCode);
     obj.setTurnUserName(turnUserName);
+    obj.setActive(active);
+    obj.setCode(code);
+    obj.setEnabled(enabled);
+    obj.setEntId(entId);
+    obj.setName(name);
+    obj.setOrgId(orgId);
+    obj.setSearchWord(searchWord);
     Example<InvDepot> example = Example.of(obj);
     return findAll(example, null).map(InvDepot.DTO_CONVERTER).getContent();
   }

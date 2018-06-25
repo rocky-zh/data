@@ -117,9 +117,11 @@ public class BasOrgBalController {
    * @param isGoodsPrior
    * @param legalPerson
    * @param maxBillAmt
+   * @param orgId
    * @param orgProperty
    * @param taxNumber
    * @param active
+   * @param enabled
    * @param pageable
    * @return
    */
@@ -133,9 +135,11 @@ public class BasOrgBalController {
       @RequestParam(required = false, value = "isGoodsPrior") Integer isGoodsPrior,
       @RequestParam(required = false, value = "legalPerson") String legalPerson,
       @RequestParam(required = false, value = "maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @RequestParam(required = false, value = "orgId") Long orgId,
       @RequestParam(required = false, value = "orgProperty") Integer orgProperty,
       @RequestParam(required = false, value = "taxNumber") String taxNumber,
       @RequestParam(required = false, value = "active") Boolean active,
+      @RequestParam(required = false, value = "enabled") Boolean enabled,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
     return basOrgBalService.findBy(
         billAddress,
@@ -145,9 +149,11 @@ public class BasOrgBalController {
         isGoodsPrior,
         legalPerson,
         maxBillAmt,
+        orgId,
         orgProperty,
         taxNumber,
         active,
+        enabled,
         pageable);
   }
 }

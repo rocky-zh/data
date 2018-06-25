@@ -21,16 +21,18 @@ public interface BasOrgBalRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param bill_address
-   * @param bill_name
-   * @param bill_telephone
-   * @param is_detail_prior
-   * @param is_goods_prior
-   * @param legal_person
-   * @param max_bill_amt
-   * @param org_property
-   * @param tax_number
+   * @param billAddress
+   * @param billName
+   * @param billTelephone
+   * @param isDetailPrior
+   * @param isGoodsPrior
+   * @param legalPerson
+   * @param maxBillAmt
+   * @param orgId
+   * @param orgProperty
+   * @param taxNumber
    * @param active
+   * @param enabled
    * @param pageable
    * @return
    */
@@ -42,24 +44,28 @@ public interface BasOrgBalRepositoryCustom {
       @Param("isGoodsPrior") Integer isGoodsPrior,
       @Param("legalPerson") String legalPerson,
       @Param("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @Param("orgId") Long orgId,
       @Param("orgProperty") Integer orgProperty,
       @Param("taxNumber") String taxNumber,
       @Param("active") Boolean active,
+      @Param("enabled") Boolean enabled,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param bill_address
-   * @param bill_name
-   * @param bill_telephone
-   * @param is_detail_prior
-   * @param is_goods_prior
-   * @param legal_person
-   * @param max_bill_amt
-   * @param org_property
-   * @param tax_number
+   * @param billAddress
+   * @param billName
+   * @param billTelephone
+   * @param isDetailPrior
+   * @param isGoodsPrior
+   * @param legalPerson
+   * @param maxBillAmt
+   * @param orgId
+   * @param orgProperty
+   * @param taxNumber
    * @param active
+   * @param enabled
    * @return
    */
   List<BasOrgBalDTO> findBy(
@@ -70,9 +76,11 @@ public interface BasOrgBalRepositoryCustom {
       @Param("isGoodsPrior") Integer isGoodsPrior,
       @Param("legalPerson") String legalPerson,
       @Param("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @Param("orgId") Long orgId,
       @Param("orgProperty") Integer orgProperty,
       @Param("taxNumber") String taxNumber,
-      @Param("active") Boolean active);
+      @Param("active") Boolean active,
+      @Param("enabled") Boolean enabled);
 
   /**
    * 通用分页查询，用于后台查询
@@ -155,7 +163,6 @@ public interface BasOrgBalRepositoryCustom {
    *
    * @param fieldName 模型字段名字（表字段，通常是外键，与父表的主键id匹配）
    * @param value 字段取值
-   * @param pageable
    * @return
    * @throws NoSuchFieldException
    * @throws IllegalAccessException

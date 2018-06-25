@@ -110,16 +110,13 @@ public class InvDepotController {
    * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
    * "资源属性对应的模型字段"))
    *
-   * @param active
    * @param adCode
    * @param adLat
    * @param adLng
    * @param address
    * @param balOrgId
-   * @param code
    * @param currentPeriod
    * @param depotCenterId
-   * @param enabled
    * @param isAllowInvOut
    * @param isAllowPostReturn
    * @param isCheckByAdd
@@ -129,7 +126,6 @@ public class InvDepotController {
    * @param isCheckQtyZero
    * @param isCheckShowFinQty
    * @param isDualDepot
-   * @param isEnabled
    * @param isPickAllocation
    * @param isPostCheckAll
    * @param isPostDaily
@@ -144,30 +140,31 @@ public class InvDepotController {
    * @param isTurnExistNoPost
    * @param manageType
    * @param measureType
-   * @param name
-   * @param orgId
    * @param phone
-   * @param searchWord
    * @param stoCurrentPeriod
    * @param turnDateTime
    * @param turnUserCode
    * @param turnUserName
+   * @param active
+   * @param code
+   * @param enabled
+   * @param entId
+   * @param name
+   * @param orgId
+   * @param searchWord
    * @param pageable
    * @return
    */
   @Timed
   @GetMapping(value = "/findBy")
   public Page<InvDepotDTO> findBy(
-      @RequestParam(required = false, value = "active") Boolean active,
       @RequestParam(required = false, value = "adCode") String adCode,
       @RequestParam(required = false, value = "adLat") String adLat,
       @RequestParam(required = false, value = "adLng") String adLng,
       @RequestParam(required = false, value = "address") String address,
       @RequestParam(required = false, value = "balOrgId") Long balOrgId,
-      @RequestParam(required = false, value = "code") String code,
       @RequestParam(required = false, value = "currentPeriod") String currentPeriod,
       @RequestParam(required = false, value = "depotCenterId") Integer depotCenterId,
-      @RequestParam(required = false, value = "enabled") Boolean enabled,
       @RequestParam(required = false, value = "isAllowInvOut") Integer isAllowInvOut,
       @RequestParam(required = false, value = "isAllowPostReturn") Integer isAllowPostReturn,
       @RequestParam(required = false, value = "isCheckByAdd") Integer isCheckByAdd,
@@ -178,7 +175,6 @@ public class InvDepotController {
       @RequestParam(required = false, value = "isCheckQtyZero") Integer isCheckQtyZero,
       @RequestParam(required = false, value = "isCheckShowFinQty") Integer isCheckShowFinQty,
       @RequestParam(required = false, value = "isDualDepot") Integer isDualDepot,
-      @RequestParam(required = false, value = "isEnabled") Integer isEnabled,
       @RequestParam(required = false, value = "isPickAllocation") Integer isPickAllocation,
       @RequestParam(required = false, value = "isPostCheckAll") Integer isPostCheckAll,
       @RequestParam(required = false, value = "isPostDaily") Integer isPostDaily,
@@ -193,26 +189,27 @@ public class InvDepotController {
       @RequestParam(required = false, value = "isTurnExistNoPost") Integer isTurnExistNoPost,
       @RequestParam(required = false, value = "manageType") Integer manageType,
       @RequestParam(required = false, value = "measureType") Integer measureType,
-      @RequestParam(required = false, value = "name") String name,
-      @RequestParam(required = false, value = "orgId") Long orgId,
       @RequestParam(required = false, value = "phone") String phone,
-      @RequestParam(required = false, value = "searchWord") String searchWord,
       @RequestParam(required = false, value = "stoCurrentPeriod") Integer stoCurrentPeriod,
       @RequestParam(required = false, value = "turnDateTime") java.sql.Timestamp turnDateTime,
       @RequestParam(required = false, value = "turnUserCode") String turnUserCode,
       @RequestParam(required = false, value = "turnUserName") String turnUserName,
+      @RequestParam(required = false, value = "active") Boolean active,
+      @RequestParam(required = false, value = "code") String code,
+      @RequestParam(required = false, value = "enabled") Boolean enabled,
+      @RequestParam(required = false, value = "entId") Long entId,
+      @RequestParam(required = false, value = "name") String name,
+      @RequestParam(required = false, value = "orgId") Long orgId,
+      @RequestParam(required = false, value = "searchWord") String searchWord,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
     return invDepotService.findBy(
-        active,
         adCode,
         adLat,
         adLng,
         address,
         balOrgId,
-        code,
         currentPeriod,
         depotCenterId,
-        enabled,
         isAllowInvOut,
         isAllowPostReturn,
         isCheckByAdd,
@@ -222,7 +219,6 @@ public class InvDepotController {
         isCheckQtyZero,
         isCheckShowFinQty,
         isDualDepot,
-        isEnabled,
         isPickAllocation,
         isPostCheckAll,
         isPostDaily,
@@ -237,14 +233,18 @@ public class InvDepotController {
         isTurnExistNoPost,
         manageType,
         measureType,
-        name,
-        orgId,
         phone,
-        searchWord,
         stoCurrentPeriod,
         turnDateTime,
         turnUserCode,
         turnUserName,
+        active,
+        code,
+        enabled,
+        entId,
+        name,
+        orgId,
+        searchWord,
         pageable);
   }
 }

@@ -188,7 +188,7 @@ public class BasOrgBalDTO implements Serializable {
     name = "billAddress",
     value = "开票地址",
     dataType = "字符串",
-    notes = "5b2dff3d7c51e0fcf5c315e0"
+    notes = "5b30adfa7c51e0fcf53e8fa8"
   )
   private String billAddress;
 
@@ -224,7 +224,7 @@ public class BasOrgBalDTO implements Serializable {
     name = "billName",
     value = "发票名头",
     dataType = "字符串",
-    notes = "5b2dff3d7c51e0fcf5c315e4"
+    notes = "5b30adfa7c51e0fcf53e8fa7"
   )
   private String billName;
 
@@ -260,7 +260,7 @@ public class BasOrgBalDTO implements Serializable {
     name = "billTelephone",
     value = "开票电话",
     dataType = "字符串",
-    notes = "5b2dff3d7c51e0fcf5c315e6"
+    notes = "5b30adfa7c51e0fcf53e8fb0"
   )
   private String billTelephone;
 
@@ -296,7 +296,7 @@ public class BasOrgBalDTO implements Serializable {
     name = "isDetailPrior",
     value = "是否明细优先",
     dataType = "整型",
-    notes = "5b2dff3d7c51e0fcf5c315ec"
+    notes = "5b30adfa7c51e0fcf53e8faa"
   )
   private Integer isDetailPrior;
 
@@ -332,7 +332,7 @@ public class BasOrgBalDTO implements Serializable {
     name = "isGoodsPrior",
     value = "是否货款优先",
     dataType = "整型",
-    notes = "5b2dff3d7c51e0fcf5c315e8"
+    notes = "5b30adfa7c51e0fcf53e8fae"
   )
   private Integer isGoodsPrior;
 
@@ -368,7 +368,7 @@ public class BasOrgBalDTO implements Serializable {
     name = "legalPerson",
     value = "法人,结算时维护",
     dataType = "字符串",
-    notes = "5b2dff3d7c51e0fcf5c315e3"
+    notes = "5b30adfa7c51e0fcf53e8fad"
   )
   private String legalPerson;
 
@@ -404,9 +404,45 @@ public class BasOrgBalDTO implements Serializable {
     name = "maxBillAmt",
     value = "最大开发票金额",
     dataType = "小数",
-    notes = "5b2dff3d7c51e0fcf5c315ea"
+    notes = "5b30adfa7c51e0fcf53e8fb5"
   )
   private java.math.BigDecimal maxBillAmt;
+
+  @FieldMeta(
+    name = "orgId",
+    scene = "",
+    nameCN = "所属往来单位Id",
+    comment = "所属往来单位Id",
+    nameEN = "org_id",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "orgId",
+    value = "所属往来单位Id",
+    dataType = "长整型",
+    notes = "5b30adfa7c51e0fcf53e8fb4"
+  )
+  private Long orgId;
 
   @FieldMeta(
     name = "orgProperty",
@@ -440,7 +476,7 @@ public class BasOrgBalDTO implements Serializable {
     name = "orgProperty",
     value = "机构属性",
     dataType = "整型",
-    notes = "5b2dff3d7c51e0fcf5c315f2"
+    notes = "5b30adfa7c51e0fcf53e8fb7"
   )
   private Integer orgProperty;
 
@@ -476,13 +512,13 @@ public class BasOrgBalDTO implements Serializable {
     name = "taxNumber",
     value = "纳税识别号,结算时维护",
     dataType = "字符串",
-    notes = "5b2dff3d7c51e0fcf5c315ee"
+    notes = "5b30adfa7c51e0fcf53e8fb9"
   )
   private String taxNumber;
 
   @FieldMeta(
     name = "active",
-    scene = "a",
+    scene = "",
     nameCN = "是否当前版本",
     comment = "是否当前版本",
     nameEN = "active",
@@ -512,9 +548,45 @@ public class BasOrgBalDTO implements Serializable {
     name = "active",
     value = "是否当前版本",
     dataType = "布尔",
-    notes = "5b2dfabc7c51e0fcf5be988d"
+    notes = "5b3065327c51e0fcf5345d15"
   )
   private Boolean active;
+
+  @FieldMeta(
+    name = "enabled",
+    scene = "",
+    nameCN = "是否启用",
+    comment = "是否启用",
+    nameEN = "enabled",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "enabled",
+    value = "是否启用",
+    dataType = "布尔",
+    notes = "5b3065327c51e0fcf5345d19"
+  )
+  private Boolean enabled;
 
   /** 存储页面post请求的分页参数 */
   private Pageable pageable;

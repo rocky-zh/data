@@ -21,62 +21,59 @@ public interface InvDepotRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param active
-   * @param ad_code
-   * @param ad_lat
-   * @param ad_lng
+   * @param adCode
+   * @param adLat
+   * @param adLng
    * @param address
-   * @param bal_org_id
-   * @param code
-   * @param current_period
-   * @param depot_center_id
-   * @param enabled
-   * @param is_allow_inv_out
-   * @param is_allow_post_return
-   * @param is_check_by_add
-   * @param is_check_by_negative
-   * @param is_check_by_post
-   * @param is_check_input_need_check
-   * @param is_check_qty_zero
-   * @param is_check_show_fin_qty
-   * @param is_dual_depot
-   * @param is_enabled
-   * @param is_pick_allocation
-   * @param is_post_check_all
-   * @param is_post_daily
-   * @param is_post_daily_detail
-   * @param is_pur_rec_in
-   * @param is_pur_ret_out
-   * @param is_sal_con_in
-   * @param is_sal_con_out
-   * @param is_sal_ret_in
-   * @param is_sal_ret_out
-   * @param is_sto_enabled
-   * @param is_turn_exist_no_post
-   * @param manage_type
-   * @param measure_type
-   * @param name
-   * @param org_id
+   * @param balOrgId
+   * @param currentPeriod
+   * @param depotCenterId
+   * @param isAllowInvOut
+   * @param isAllowPostReturn
+   * @param isCheckByAdd
+   * @param isCheckByNegative
+   * @param isCheckByPost
+   * @param isCheckInputNeedCheck
+   * @param isCheckQtyZero
+   * @param isCheckShowFinQty
+   * @param isDualDepot
+   * @param isPickAllocation
+   * @param isPostCheckAll
+   * @param isPostDaily
+   * @param isPostDailyDetail
+   * @param isPurRecIn
+   * @param isPurRetOut
+   * @param isSalConIn
+   * @param isSalConOut
+   * @param isSalRetIn
+   * @param isSalRetOut
+   * @param isStoEnabled
+   * @param isTurnExistNoPost
+   * @param manageType
+   * @param measureType
    * @param phone
-   * @param search_word
-   * @param sto_current_period
-   * @param turn_date_time
-   * @param turn_user_code
-   * @param turn_user_name
+   * @param stoCurrentPeriod
+   * @param turnDateTime
+   * @param turnUserCode
+   * @param turnUserName
+   * @param active
+   * @param code
+   * @param enabled
+   * @param entId
+   * @param name
+   * @param orgId
+   * @param searchWord
    * @param pageable
    * @return
    */
   Page<InvDepotDTO> findBy(
-      @Param("active") Boolean active,
       @Param("adCode") String adCode,
       @Param("adLat") String adLat,
       @Param("adLng") String adLng,
       @Param("address") String address,
       @Param("balOrgId") Long balOrgId,
-      @Param("code") String code,
       @Param("currentPeriod") String currentPeriod,
       @Param("depotCenterId") Integer depotCenterId,
-      @Param("enabled") Boolean enabled,
       @Param("isAllowInvOut") Integer isAllowInvOut,
       @Param("isAllowPostReturn") Integer isAllowPostReturn,
       @Param("isCheckByAdd") Integer isCheckByAdd,
@@ -86,7 +83,6 @@ public interface InvDepotRepositoryCustom {
       @Param("isCheckQtyZero") Integer isCheckQtyZero,
       @Param("isCheckShowFinQty") Integer isCheckShowFinQty,
       @Param("isDualDepot") Integer isDualDepot,
-      @Param("isEnabled") Integer isEnabled,
       @Param("isPickAllocation") Integer isPickAllocation,
       @Param("isPostCheckAll") Integer isPostCheckAll,
       @Param("isPostDaily") Integer isPostDaily,
@@ -101,74 +97,75 @@ public interface InvDepotRepositoryCustom {
       @Param("isTurnExistNoPost") Integer isTurnExistNoPost,
       @Param("manageType") Integer manageType,
       @Param("measureType") Integer measureType,
-      @Param("name") String name,
-      @Param("orgId") Long orgId,
       @Param("phone") String phone,
-      @Param("searchWord") String searchWord,
       @Param("stoCurrentPeriod") Integer stoCurrentPeriod,
       @Param("turnDateTime") java.sql.Timestamp turnDateTime,
       @Param("turnUserCode") String turnUserCode,
       @Param("turnUserName") String turnUserName,
+      @Param("active") Boolean active,
+      @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("entId") Long entId,
+      @Param("name") String name,
+      @Param("orgId") Long orgId,
+      @Param("searchWord") String searchWord,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param active
-   * @param ad_code
-   * @param ad_lat
-   * @param ad_lng
+   * @param adCode
+   * @param adLat
+   * @param adLng
    * @param address
-   * @param bal_org_id
-   * @param code
-   * @param current_period
-   * @param depot_center_id
-   * @param enabled
-   * @param is_allow_inv_out
-   * @param is_allow_post_return
-   * @param is_check_by_add
-   * @param is_check_by_negative
-   * @param is_check_by_post
-   * @param is_check_input_need_check
-   * @param is_check_qty_zero
-   * @param is_check_show_fin_qty
-   * @param is_dual_depot
-   * @param is_enabled
-   * @param is_pick_allocation
-   * @param is_post_check_all
-   * @param is_post_daily
-   * @param is_post_daily_detail
-   * @param is_pur_rec_in
-   * @param is_pur_ret_out
-   * @param is_sal_con_in
-   * @param is_sal_con_out
-   * @param is_sal_ret_in
-   * @param is_sal_ret_out
-   * @param is_sto_enabled
-   * @param is_turn_exist_no_post
-   * @param manage_type
-   * @param measure_type
-   * @param name
-   * @param org_id
+   * @param balOrgId
+   * @param currentPeriod
+   * @param depotCenterId
+   * @param isAllowInvOut
+   * @param isAllowPostReturn
+   * @param isCheckByAdd
+   * @param isCheckByNegative
+   * @param isCheckByPost
+   * @param isCheckInputNeedCheck
+   * @param isCheckQtyZero
+   * @param isCheckShowFinQty
+   * @param isDualDepot
+   * @param isPickAllocation
+   * @param isPostCheckAll
+   * @param isPostDaily
+   * @param isPostDailyDetail
+   * @param isPurRecIn
+   * @param isPurRetOut
+   * @param isSalConIn
+   * @param isSalConOut
+   * @param isSalRetIn
+   * @param isSalRetOut
+   * @param isStoEnabled
+   * @param isTurnExistNoPost
+   * @param manageType
+   * @param measureType
    * @param phone
-   * @param search_word
-   * @param sto_current_period
-   * @param turn_date_time
-   * @param turn_user_code
-   * @param turn_user_name
+   * @param stoCurrentPeriod
+   * @param turnDateTime
+   * @param turnUserCode
+   * @param turnUserName
+   * @param active
+   * @param code
+   * @param enabled
+   * @param entId
+   * @param name
+   * @param orgId
+   * @param searchWord
    * @return
    */
   List<InvDepotDTO> findBy(
-      @Param("active") Boolean active,
       @Param("adCode") String adCode,
       @Param("adLat") String adLat,
       @Param("adLng") String adLng,
       @Param("address") String address,
       @Param("balOrgId") Long balOrgId,
-      @Param("code") String code,
       @Param("currentPeriod") String currentPeriod,
       @Param("depotCenterId") Integer depotCenterId,
-      @Param("enabled") Boolean enabled,
       @Param("isAllowInvOut") Integer isAllowInvOut,
       @Param("isAllowPostReturn") Integer isAllowPostReturn,
       @Param("isCheckByAdd") Integer isCheckByAdd,
@@ -178,7 +175,6 @@ public interface InvDepotRepositoryCustom {
       @Param("isCheckQtyZero") Integer isCheckQtyZero,
       @Param("isCheckShowFinQty") Integer isCheckShowFinQty,
       @Param("isDualDepot") Integer isDualDepot,
-      @Param("isEnabled") Integer isEnabled,
       @Param("isPickAllocation") Integer isPickAllocation,
       @Param("isPostCheckAll") Integer isPostCheckAll,
       @Param("isPostDaily") Integer isPostDaily,
@@ -193,14 +189,18 @@ public interface InvDepotRepositoryCustom {
       @Param("isTurnExistNoPost") Integer isTurnExistNoPost,
       @Param("manageType") Integer manageType,
       @Param("measureType") Integer measureType,
-      @Param("name") String name,
-      @Param("orgId") Long orgId,
       @Param("phone") String phone,
-      @Param("searchWord") String searchWord,
       @Param("stoCurrentPeriod") Integer stoCurrentPeriod,
       @Param("turnDateTime") java.sql.Timestamp turnDateTime,
       @Param("turnUserCode") String turnUserCode,
-      @Param("turnUserName") String turnUserName);
+      @Param("turnUserName") String turnUserName,
+      @Param("active") Boolean active,
+      @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("entId") Long entId,
+      @Param("name") String name,
+      @Param("orgId") Long orgId,
+      @Param("searchWord") String searchWord);
 
   /**
    * 通用分页查询，用于后台查询
@@ -283,7 +283,6 @@ public interface InvDepotRepositoryCustom {
    *
    * @param fieldName 模型字段名字（表字段，通常是外键，与父表的主键id匹配）
    * @param value 字段取值
-   * @param pageable
    * @return
    * @throws NoSuchFieldException
    * @throws IllegalAccessException

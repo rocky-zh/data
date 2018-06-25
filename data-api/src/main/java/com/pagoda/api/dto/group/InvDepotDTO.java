@@ -157,42 +157,6 @@ public class InvDepotDTO implements Serializable {
   private Integer version;
 
   @FieldMeta(
-    name = "active",
-    scene = "",
-    nameCN = "是否当前版本",
-    comment = "是否当前版本",
-    nameEN = "active",
-    type = "布尔",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "active",
-    value = "是否当前版本",
-    dataType = "布尔",
-    notes = "5b2defe27c51e0fcf5b5d25b"
-  )
-  private Boolean active;
-
-  @FieldMeta(
     name = "adCode",
     scene = "",
     nameCN = "高德地址码",
@@ -224,7 +188,7 @@ public class InvDepotDTO implements Serializable {
     name = "adCode",
     value = "高德地址码",
     dataType = "字符串",
-    notes = "5b2defe27c51e0fcf5b5d25f"
+    notes = "5b30ae0c7c51e0fcf53e90f0"
   )
   private String adCode;
 
@@ -260,7 +224,7 @@ public class InvDepotDTO implements Serializable {
     name = "adLat",
     value = "高德地址纬度",
     dataType = "字符串",
-    notes = "5b2defe27c51e0fcf5b5d25d"
+    notes = "5b30ae0c7c51e0fcf53e90fa"
   )
   private String adLat;
 
@@ -296,7 +260,7 @@ public class InvDepotDTO implements Serializable {
     name = "adLng",
     value = "高德地址经度",
     dataType = "字符串",
-    notes = "5b2defe27c51e0fcf5b5d261"
+    notes = "5b30ae0c7c51e0fcf53e90f8"
   )
   private String adLng;
 
@@ -332,7 +296,7 @@ public class InvDepotDTO implements Serializable {
     name = "address",
     value = "地址",
     dataType = "字符串",
-    notes = "5b2defe27c51e0fcf5b5d263"
+    notes = "5b30ae0c7c51e0fcf53e90f4"
   )
   private String address;
 
@@ -368,45 +332,9 @@ public class InvDepotDTO implements Serializable {
     name = "balOrgId",
     value = "所属往来单位结算机构ID",
     dataType = "长整型",
-    notes = "5b2defe27c51e0fcf5b5d265"
+    notes = "5b30ae0c7c51e0fcf53e90f2"
   )
   private Long balOrgId;
-
-  @FieldMeta(
-    name = "code",
-    scene = "fff",
-    nameCN = "代码",
-    comment = "代码",
-    nameEN = "code",
-    type = "字符串",
-    format = "ll",
-    displayLen = 23,
-    formSize = "",
-    constraint = "ll",
-    constraintParams = "{\"prefix\":\"fx_er\"}",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "code",
-    value = "代码",
-    dataType = "字符串",
-    notes = "5b2defe27c51e0fcf5b5d268"
-  )
-  private String code;
 
   @FieldMeta(
     name = "currentPeriod",
@@ -440,7 +368,7 @@ public class InvDepotDTO implements Serializable {
     name = "currentPeriod",
     value = "当前核算期",
     dataType = "字符串",
-    notes = "5b2defe27c51e0fcf5b5d271"
+    notes = "5b30ae0c7c51e0fcf53e90f6"
   )
   private String currentPeriod;
 
@@ -476,45 +404,9 @@ public class InvDepotDTO implements Serializable {
     name = "depotCenterId",
     value = "存货库房中心ID",
     dataType = "整型",
-    notes = "5b2defe27c51e0fcf5b5d26d"
+    notes = "5b30ae0c7c51e0fcf53e9102"
   )
   private Integer depotCenterId;
-
-  @FieldMeta(
-    name = "enabled",
-    scene = "",
-    nameCN = "是否启用",
-    comment = "是否启用",
-    nameEN = "enabled",
-    type = "布尔",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "enabled",
-    value = "是否启用",
-    dataType = "布尔",
-    notes = "5b2defe27c51e0fcf5b5d26f"
-  )
-  private Boolean enabled;
 
   @FieldMeta(
     name = "isAllowInvOut",
@@ -548,7 +440,7 @@ public class InvDepotDTO implements Serializable {
     name = "isAllowInvOut",
     value = "允许负库存出库",
     dataType = "整型",
-    notes = "5b2defe27c51e0fcf5b5d273"
+    notes = "5b30ae0c7c51e0fcf53e9101"
   )
   private Integer isAllowInvOut;
 
@@ -584,7 +476,7 @@ public class InvDepotDTO implements Serializable {
     name = "isAllowPostReturn",
     value = "是否允许库存反记帐",
     dataType = "整型",
-    notes = "5b2defe27c51e0fcf5b5d26b"
+    notes = "5b30ae0c7c51e0fcf53e9104"
   )
   private Integer isAllowPostReturn;
 
@@ -620,7 +512,7 @@ public class InvDepotDTO implements Serializable {
     name = "isCheckByAdd",
     value = "是否盘点无主帐的单品",
     dataType = "整型",
-    notes = "5b2defe27c51e0fcf5b5d275"
+    notes = "5b30ae0c7c51e0fcf53e90fc"
   )
   private Integer isCheckByAdd;
 
@@ -656,7 +548,7 @@ public class InvDepotDTO implements Serializable {
     name = "isCheckByNegative",
     value = "是否允许盘点数量为负数",
     dataType = "整型",
-    notes = "5b2defe27c51e0fcf5b5d279"
+    notes = "5b30ae0c7c51e0fcf53e90fe"
   )
   private Integer isCheckByNegative;
 
@@ -692,7 +584,7 @@ public class InvDepotDTO implements Serializable {
     name = "isCheckByPost",
     value = "是否本核算期盘点后允许记帐",
     dataType = "整型",
-    notes = "5b2defe27c51e0fcf5b5d277"
+    notes = "5b30ae0c7c51e0fcf53e9106"
   )
   private Integer isCheckByPost;
 
@@ -728,7 +620,7 @@ public class InvDepotDTO implements Serializable {
     name = "isCheckInputNeedCheck",
     value = "是否盘点手工录入需要审核",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d27f"
+    notes = "5b30ae0c7c51e0fcf53e9108"
   )
   private Integer isCheckInputNeedCheck;
 
@@ -764,7 +656,7 @@ public class InvDepotDTO implements Serializable {
     name = "isCheckQtyZero",
     value = "是否盘点实盘数读入为0{1:读入为0, 0:读入为账面数量}",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d27b"
+    notes = "5b30ae0c7c51e0fcf53e9110"
   )
   private Integer isCheckQtyZero;
 
@@ -800,7 +692,7 @@ public class InvDepotDTO implements Serializable {
     name = "isCheckShowFinQty",
     value = "是否盘点显示现有库存量",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d27d"
+    notes = "5b30ae0c7c51e0fcf53e9112"
   )
   private Integer isCheckShowFinQty;
 
@@ -836,45 +728,9 @@ public class InvDepotDTO implements Serializable {
     name = "isDualDepot",
     value = "是否虚拟库",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d282"
+    notes = "5b30ae0c7c51e0fcf53e910a"
   )
   private Integer isDualDepot;
-
-  @FieldMeta(
-    name = "isEnabled",
-    scene = "",
-    nameCN = "是否可用",
-    comment = "是否可用",
-    nameEN = "is_enabled",
-    type = "整型",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "isEnabled",
-    value = "是否可用",
-    dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d28b"
-  )
-  private Integer isEnabled;
 
   @FieldMeta(
     name = "isPickAllocation",
@@ -908,7 +764,7 @@ public class InvDepotDTO implements Serializable {
     name = "isPickAllocation",
     value = "是否提货启用占用量",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d285"
+    notes = "5b30ae0c7c51e0fcf53e910e"
   )
   private Integer isPickAllocation;
 
@@ -944,7 +800,7 @@ public class InvDepotDTO implements Serializable {
     name = "isPostCheckAll",
     value = "是否整单记账",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d287"
+    notes = "5b30ae0c7c51e0fcf53e910c"
   )
   private Integer isPostCheckAll;
 
@@ -980,7 +836,7 @@ public class InvDepotDTO implements Serializable {
     name = "isPostDaily",
     value = "是否记日账",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d28f"
+    notes = "5b30ae0c7c51e0fcf53e9114"
   )
   private Integer isPostDaily;
 
@@ -1016,7 +872,7 @@ public class InvDepotDTO implements Serializable {
     name = "isPostDailyDetail",
     value = "是否记录日帐明细表",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d289"
+    notes = "5b30ae0c7c51e0fcf53e9116"
   )
   private Integer isPostDailyDetail;
 
@@ -1052,7 +908,7 @@ public class InvDepotDTO implements Serializable {
     name = "isPurRecIn",
     value = "是否允许采购到货",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d28e"
+    notes = "5b30ae0c7c51e0fcf53e9118"
   )
   private Integer isPurRecIn;
 
@@ -1088,7 +944,7 @@ public class InvDepotDTO implements Serializable {
     name = "isPurRetOut",
     value = "是否允许采购退货",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d291"
+    notes = "5b30ae0c7c51e0fcf53e911c"
   )
   private Integer isPurRetOut;
 
@@ -1124,7 +980,7 @@ public class InvDepotDTO implements Serializable {
     name = "isSalConIn",
     value = "是否允许销售到货",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d293"
+    notes = "5b30ae0c7c51e0fcf53e911a"
   )
   private Integer isSalConIn;
 
@@ -1160,7 +1016,7 @@ public class InvDepotDTO implements Serializable {
     name = "isSalConOut",
     value = "是否允许销售出库",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d295"
+    notes = "5b30ae0c7c51e0fcf53e911e"
   )
   private Integer isSalConOut;
 
@@ -1196,7 +1052,7 @@ public class InvDepotDTO implements Serializable {
     name = "isSalRetIn",
     value = "是否允许销售退货入库",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d2af"
+    notes = "5b30ae0c7c51e0fcf53e9120"
   )
   private Integer isSalRetIn;
 
@@ -1232,7 +1088,7 @@ public class InvDepotDTO implements Serializable {
     name = "isSalRetOut",
     value = "是否允许销售退货出库",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d297"
+    notes = "5b30ae0c7c51e0fcf53e9122"
   )
   private Integer isSalRetOut;
 
@@ -1268,7 +1124,7 @@ public class InvDepotDTO implements Serializable {
     name = "isStoEnabled",
     value = "是否启用存货",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d2b8"
+    notes = "5b30ae0d7c51e0fcf53e9124"
   )
   private Integer isStoEnabled;
 
@@ -1304,7 +1160,7 @@ public class InvDepotDTO implements Serializable {
     name = "isTurnExistNoPost",
     value = "是否允许结转存在未记帐单据",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d2bf"
+    notes = "5b30ae0d7c51e0fcf53e9126"
   )
   private Integer isTurnExistNoPost;
 
@@ -1340,7 +1196,7 @@ public class InvDepotDTO implements Serializable {
     name = "manageType",
     value = "库房管理细度标识",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d2c2"
+    notes = "5b30ae0d7c51e0fcf53e9128"
   )
   private Integer manageType;
 
@@ -1376,81 +1232,9 @@ public class InvDepotDTO implements Serializable {
     name = "measureType",
     value = "多单位标识",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d2b2"
+    notes = "5b30ae0d7c51e0fcf53e912c"
   )
   private Integer measureType;
-
-  @FieldMeta(
-    name = "name",
-    scene = "",
-    nameCN = "名称",
-    comment = "名称",
-    nameEN = "name",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "name",
-    value = "名称",
-    dataType = "字符串",
-    notes = "5b2defe37c51e0fcf5b5d2c7"
-  )
-  private String name;
-
-  @FieldMeta(
-    name = "orgId",
-    scene = "",
-    nameCN = "所属往来单位Id",
-    comment = "所属往来单位Id",
-    nameEN = "org_id",
-    type = "长整型",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "orgId",
-    value = "所属往来单位Id",
-    dataType = "长整型",
-    notes = "5b2defe37c51e0fcf5b5d2c9"
-  )
-  private Long orgId;
 
   @FieldMeta(
     name = "phone",
@@ -1484,45 +1268,9 @@ public class InvDepotDTO implements Serializable {
     name = "phone",
     value = "联系电话",
     dataType = "字符串",
-    notes = "5b2defe37c51e0fcf5b5d2cb"
+    notes = "5b30ae0d7c51e0fcf53e912a"
   )
   private String phone;
-
-  @FieldMeta(
-    name = "searchWord",
-    scene = "",
-    nameCN = "搜索关键词",
-    comment = "搜索关键词",
-    nameEN = "search_word",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "searchWord",
-    value = "搜索关键词",
-    dataType = "字符串",
-    notes = "5b2defe37c51e0fcf5b5d2cd"
-  )
-  private String searchWord;
 
   @FieldMeta(
     name = "stoCurrentPeriod",
@@ -1556,7 +1304,7 @@ public class InvDepotDTO implements Serializable {
     name = "stoCurrentPeriod",
     value = "存货当前核算期",
     dataType = "整型",
-    notes = "5b2defe37c51e0fcf5b5d2cf"
+    notes = "5b30ae0d7c51e0fcf53e912e"
   )
   private Integer stoCurrentPeriod;
 
@@ -1592,7 +1340,7 @@ public class InvDepotDTO implements Serializable {
     name = "turnDateTime",
     value = "库房结转时间",
     dataType = "时间",
-    notes = "5b2defe37c51e0fcf5b5d2d1"
+    notes = "5b30ae0d7c51e0fcf53e9130"
   )
   private java.sql.Timestamp turnDateTime;
 
@@ -1628,7 +1376,7 @@ public class InvDepotDTO implements Serializable {
     name = "turnUserCode",
     value = "库房结转用户代码",
     dataType = "字符串",
-    notes = "5b2defe37c51e0fcf5b5d2d4"
+    notes = "5b30ae0d7c51e0fcf53e9134"
   )
   private String turnUserCode;
 
@@ -1664,9 +1412,261 @@ public class InvDepotDTO implements Serializable {
     name = "turnUserName",
     value = "库房结转用户名称",
     dataType = "字符串",
-    notes = "5b2defe37c51e0fcf5b5d2d6"
+    notes = "5b30ae0d7c51e0fcf53e9132"
   )
   private String turnUserName;
+
+  @FieldMeta(
+    name = "active",
+    scene = "",
+    nameCN = "是否当前版本",
+    comment = "是否当前版本",
+    nameEN = "active",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "active",
+    value = "是否当前版本",
+    dataType = "布尔",
+    notes = "5b3065327c51e0fcf5345d15"
+  )
+  private Boolean active;
+
+  @FieldMeta(
+    name = "code",
+    scene = "",
+    nameCN = "代码",
+    comment = "代码",
+    nameEN = "code",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "code",
+    value = "代码",
+    dataType = "字符串",
+    notes = "5b3065327c51e0fcf5345d17"
+  )
+  private String code;
+
+  @FieldMeta(
+    name = "enabled",
+    scene = "",
+    nameCN = "是否启用",
+    comment = "是否启用",
+    nameEN = "enabled",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "enabled",
+    value = "是否启用",
+    dataType = "布尔",
+    notes = "5b3065327c51e0fcf5345d19"
+  )
+  private Boolean enabled;
+
+  @FieldMeta(
+    name = "entId",
+    scene = "",
+    nameCN = "企业ID",
+    comment = "企业ID",
+    nameEN = "ent_id",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = true,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "entId",
+    value = "企业ID",
+    dataType = "长整型",
+    notes = "5b30adeb7c51e0fcf53e8e80"
+  )
+  private Long entId;
+
+  @FieldMeta(
+    name = "name",
+    scene = "",
+    nameCN = "名称",
+    comment = "名称",
+    nameEN = "name",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "name",
+    value = "名称",
+    dataType = "字符串",
+    notes = "5b3065327c51e0fcf5345d1b"
+  )
+  private String name;
+
+  @FieldMeta(
+    name = "orgId",
+    scene = "",
+    nameCN = "所属往来单位Id",
+    comment = "所属往来单位Id",
+    nameEN = "org_id",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "orgId",
+    value = "所属往来单位Id",
+    dataType = "长整型",
+    notes = "5b30adfa7c51e0fcf53e8fb4"
+  )
+  private Long orgId;
+
+  @FieldMeta(
+    name = "searchWord",
+    scene = "",
+    nameCN = "搜索关键词",
+    comment = "搜索关键词",
+    nameEN = "search_word",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "searchWord",
+    value = "搜索关键词",
+    dataType = "字符串",
+    notes = "5b30adeb7c51e0fcf53e8e84"
+  )
+  private String searchWord;
 
   /** 存储页面post请求的分页参数 */
   private Pageable pageable;

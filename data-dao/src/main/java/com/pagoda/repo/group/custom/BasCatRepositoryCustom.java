@@ -21,50 +21,66 @@ public interface BasCatRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param deleted1
-   * @param enabled1
-   * @param is_default
-   * @param is_multi
+   * @param entId
+   * @param isDefault
+   * @param isEnabled
+   * @param isMulti
    * @param remark
-   * @param show_order
-   * @param table_id
+   * @param searchWord
+   * @param showOrder
+   * @param tableId
+   * @param active
    * @param code
+   * @param enabled
+   * @param name
    * @param pageable
    * @return
    */
   Page<BasCatDTO> findBy(
-      @Param("deleted1") Long deleted1,
-      @Param("enabled1") Boolean enabled1,
+      @Param("entId") Long entId,
       @Param("isDefault") String isDefault,
+      @Param("isEnabled") String isEnabled,
       @Param("isMulti") String isMulti,
       @Param("remark") String remark,
+      @Param("searchWord") String searchWord,
       @Param("showOrder") Integer showOrder,
       @Param("tableId") Integer tableId,
+      @Param("active") Boolean active,
       @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("name") String name,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param deleted1
-   * @param enabled1
-   * @param is_default
-   * @param is_multi
+   * @param entId
+   * @param isDefault
+   * @param isEnabled
+   * @param isMulti
    * @param remark
-   * @param show_order
-   * @param table_id
+   * @param searchWord
+   * @param showOrder
+   * @param tableId
+   * @param active
    * @param code
+   * @param enabled
+   * @param name
    * @return
    */
   List<BasCatDTO> findBy(
-      @Param("deleted1") Long deleted1,
-      @Param("enabled1") Boolean enabled1,
+      @Param("entId") Long entId,
       @Param("isDefault") String isDefault,
+      @Param("isEnabled") String isEnabled,
       @Param("isMulti") String isMulti,
       @Param("remark") String remark,
+      @Param("searchWord") String searchWord,
       @Param("showOrder") Integer showOrder,
       @Param("tableId") Integer tableId,
-      @Param("code") String code);
+      @Param("active") Boolean active,
+      @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("name") String name);
 
   /**
    * 通用分页查询，用于后台查询
@@ -147,7 +163,6 @@ public interface BasCatRepositoryCustom {
    *
    * @param fieldName 模型字段名字（表字段，通常是外键，与父表的主键id匹配）
    * @param value 字段取值
-   * @param pageable
    * @return
    * @throws NoSuchFieldException
    * @throws IllegalAccessException

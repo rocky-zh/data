@@ -21,24 +21,42 @@ public interface BasDistrictRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param level_type
+   * @param active
    * @param code
+   * @param enabled
+   * @param levelType
+   * @param name
+   * @param pid
    * @param pageable
    * @return
    */
   Page<BasDistrictDTO> findBy(
-      @Param("levelType") Integer levelType,
+      @Param("active") Boolean active,
       @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("levelType") Integer levelType,
+      @Param("name") String name,
+      @Param("pid") Long pid,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param level_type
+   * @param active
    * @param code
+   * @param enabled
+   * @param levelType
+   * @param name
+   * @param pid
    * @return
    */
-  List<BasDistrictDTO> findBy(@Param("levelType") Integer levelType, @Param("code") String code);
+  List<BasDistrictDTO> findBy(
+      @Param("active") Boolean active,
+      @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("levelType") Integer levelType,
+      @Param("name") String name,
+      @Param("pid") Long pid);
 
   /**
    * 通用分页查询，用于后台查询
@@ -121,7 +139,6 @@ public interface BasDistrictRepositoryCustom {
    *
    * @param fieldName 模型字段名字（表字段，通常是外键，与父表的主键id匹配）
    * @param value 字段取值
-   * @param pageable
    * @return
    * @throws NoSuchFieldException
    * @throws IllegalAccessException

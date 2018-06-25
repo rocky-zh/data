@@ -28,8 +28,12 @@ public class BasDistrictDynamicSqlSupport {
   public static SqlColumn<String> modifierName = basDistrictTable.modifierName;
   public static SqlColumn<String> modifierOrgCode = basDistrictTable.modifierOrgCode;
   public static SqlColumn<Integer> version = basDistrictTable.version;
-  public static SqlColumn<Integer> levelType = basDistrictTable.levelType;
+  public static SqlColumn<Boolean> active = basDistrictTable.active;
   public static SqlColumn<String> code = basDistrictTable.code;
+  public static SqlColumn<Boolean> enabled = basDistrictTable.enabled;
+  public static SqlColumn<Integer> levelType = basDistrictTable.levelType;
+  public static SqlColumn<String> name = basDistrictTable.name;
+  public static SqlColumn<Long> pid = basDistrictTable.pid;
 
   public static final class BasDistrictTable extends SqlTable {
     public final SqlColumn<Long> id = column("id", JDBCType.BIGINT);
@@ -46,8 +50,12 @@ public class BasDistrictDynamicSqlSupport {
     public final SqlColumn<String> modifierOrgCode = column("modifier_org_code", JDBCType.VARCHAR);
     public final SqlColumn<Integer> version = column("version", JDBCType.INTEGER);
 
-    public final SqlColumn<Integer> levelType = column("level_type", JDBCType.INTEGER);
+    public final SqlColumn<Boolean> active = column("active", JDBCType.BOOLEAN);
     public final SqlColumn<String> code = column("code", JDBCType.VARCHAR);
+    public final SqlColumn<Boolean> enabled = column("enabled", JDBCType.BOOLEAN);
+    public final SqlColumn<Integer> levelType = column("level_type", JDBCType.INTEGER);
+    public final SqlColumn<String> name = column("name", JDBCType.VARCHAR);
+    public final SqlColumn<Long> pid = column("pid", JDBCType.BIGINT);
 
     public BasDistrictTable() {
       super("BasDistrict");

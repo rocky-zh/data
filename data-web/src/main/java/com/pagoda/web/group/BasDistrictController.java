@@ -110,17 +110,25 @@ public class BasDistrictController {
    * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
    * "资源属性对应的模型字段"))
    *
-   * @param levelType
+   * @param active
    * @param code
+   * @param enabled
+   * @param levelType
+   * @param name
+   * @param pid
    * @param pageable
    * @return
    */
   @Timed
   @GetMapping(value = "/findBy")
   public Page<BasDistrictDTO> findBy(
-      @RequestParam(required = false, value = "levelType") Integer levelType,
+      @RequestParam(required = false, value = "active") Boolean active,
       @RequestParam(required = false, value = "code") String code,
+      @RequestParam(required = false, value = "enabled") Boolean enabled,
+      @RequestParam(required = false, value = "levelType") Integer levelType,
+      @RequestParam(required = false, value = "name") String name,
+      @RequestParam(required = false, value = "pid") Long pid,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
-    return basDistrictService.findBy(levelType, code, pageable);
+    return basDistrictService.findBy(active, code, enabled, levelType, name, pid, pageable);
   }
 }

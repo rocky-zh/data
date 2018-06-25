@@ -110,30 +110,50 @@ public class BasCatController {
    * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
    * "资源属性对应的模型字段"))
    *
-   * @param deleted1
-   * @param enabled1
+   * @param entId
    * @param isDefault
+   * @param isEnabled
    * @param isMulti
    * @param remark
+   * @param searchWord
    * @param showOrder
    * @param tableId
+   * @param active
    * @param code
+   * @param enabled
+   * @param name
    * @param pageable
    * @return
    */
   @Timed
   @GetMapping(value = "/findBy")
   public Page<BasCatDTO> findBy(
-      @RequestParam(required = false, value = "deleted1") Long deleted1,
-      @RequestParam(required = false, value = "enabled1") Boolean enabled1,
+      @RequestParam(required = false, value = "entId") Long entId,
       @RequestParam(required = false, value = "isDefault") String isDefault,
+      @RequestParam(required = false, value = "isEnabled") String isEnabled,
       @RequestParam(required = false, value = "isMulti") String isMulti,
       @RequestParam(required = false, value = "remark") String remark,
+      @RequestParam(required = false, value = "searchWord") String searchWord,
       @RequestParam(required = false, value = "showOrder") Integer showOrder,
       @RequestParam(required = false, value = "tableId") Integer tableId,
+      @RequestParam(required = false, value = "active") Boolean active,
       @RequestParam(required = false, value = "code") String code,
+      @RequestParam(required = false, value = "enabled") Boolean enabled,
+      @RequestParam(required = false, value = "name") String name,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
     return basCatService.findBy(
-        deleted1, enabled1, isDefault, isMulti, remark, showOrder, tableId, code, pageable);
+        entId,
+        isDefault,
+        isEnabled,
+        isMulti,
+        remark,
+        searchWord,
+        showOrder,
+        tableId,
+        active,
+        code,
+        enabled,
+        name,
+        pageable);
   }
 }

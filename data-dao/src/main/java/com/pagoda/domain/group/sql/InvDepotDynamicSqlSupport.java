@@ -28,16 +28,13 @@ public class InvDepotDynamicSqlSupport {
   public static SqlColumn<String> modifierName = invDepotTable.modifierName;
   public static SqlColumn<String> modifierOrgCode = invDepotTable.modifierOrgCode;
   public static SqlColumn<Integer> version = invDepotTable.version;
-  public static SqlColumn<Boolean> active = invDepotTable.active;
   public static SqlColumn<String> adCode = invDepotTable.adCode;
   public static SqlColumn<String> adLat = invDepotTable.adLat;
   public static SqlColumn<String> adLng = invDepotTable.adLng;
   public static SqlColumn<String> address = invDepotTable.address;
   public static SqlColumn<Long> balOrgId = invDepotTable.balOrgId;
-  public static SqlColumn<String> code = invDepotTable.code;
   public static SqlColumn<String> currentPeriod = invDepotTable.currentPeriod;
   public static SqlColumn<Integer> depotCenterId = invDepotTable.depotCenterId;
-  public static SqlColumn<Boolean> enabled = invDepotTable.enabled;
   public static SqlColumn<Integer> isAllowInvOut = invDepotTable.isAllowInvOut;
   public static SqlColumn<Integer> isAllowPostReturn = invDepotTable.isAllowPostReturn;
   public static SqlColumn<Integer> isCheckByAdd = invDepotTable.isCheckByAdd;
@@ -47,7 +44,6 @@ public class InvDepotDynamicSqlSupport {
   public static SqlColumn<Integer> isCheckQtyZero = invDepotTable.isCheckQtyZero;
   public static SqlColumn<Integer> isCheckShowFinQty = invDepotTable.isCheckShowFinQty;
   public static SqlColumn<Integer> isDualDepot = invDepotTable.isDualDepot;
-  public static SqlColumn<Integer> isEnabled = invDepotTable.isEnabled;
   public static SqlColumn<Integer> isPickAllocation = invDepotTable.isPickAllocation;
   public static SqlColumn<Integer> isPostCheckAll = invDepotTable.isPostCheckAll;
   public static SqlColumn<Integer> isPostDaily = invDepotTable.isPostDaily;
@@ -62,14 +58,18 @@ public class InvDepotDynamicSqlSupport {
   public static SqlColumn<Integer> isTurnExistNoPost = invDepotTable.isTurnExistNoPost;
   public static SqlColumn<Integer> manageType = invDepotTable.manageType;
   public static SqlColumn<Integer> measureType = invDepotTable.measureType;
-  public static SqlColumn<String> name = invDepotTable.name;
-  public static SqlColumn<Long> orgId = invDepotTable.orgId;
   public static SqlColumn<String> phone = invDepotTable.phone;
-  public static SqlColumn<String> searchWord = invDepotTable.searchWord;
   public static SqlColumn<Integer> stoCurrentPeriod = invDepotTable.stoCurrentPeriod;
   public static SqlColumn<java.sql.Timestamp> turnDateTime = invDepotTable.turnDateTime;
   public static SqlColumn<String> turnUserCode = invDepotTable.turnUserCode;
   public static SqlColumn<String> turnUserName = invDepotTable.turnUserName;
+  public static SqlColumn<Boolean> active = invDepotTable.active;
+  public static SqlColumn<String> code = invDepotTable.code;
+  public static SqlColumn<Boolean> enabled = invDepotTable.enabled;
+  public static SqlColumn<Long> entId = invDepotTable.entId;
+  public static SqlColumn<String> name = invDepotTable.name;
+  public static SqlColumn<Long> orgId = invDepotTable.orgId;
+  public static SqlColumn<String> searchWord = invDepotTable.searchWord;
 
   public static final class InvDepotTable extends SqlTable {
     public final SqlColumn<Long> id = column("id", JDBCType.BIGINT);
@@ -86,16 +86,13 @@ public class InvDepotDynamicSqlSupport {
     public final SqlColumn<String> modifierOrgCode = column("modifier_org_code", JDBCType.VARCHAR);
     public final SqlColumn<Integer> version = column("version", JDBCType.INTEGER);
 
-    public final SqlColumn<Boolean> active = column("active", JDBCType.BOOLEAN);
     public final SqlColumn<String> adCode = column("ad_code", JDBCType.VARCHAR);
     public final SqlColumn<String> adLat = column("ad_lat", JDBCType.VARCHAR);
     public final SqlColumn<String> adLng = column("ad_lng", JDBCType.VARCHAR);
     public final SqlColumn<String> address = column("address", JDBCType.VARCHAR);
     public final SqlColumn<Long> balOrgId = column("bal_org_id", JDBCType.BIGINT);
-    public final SqlColumn<String> code = column("code", JDBCType.VARCHAR);
     public final SqlColumn<String> currentPeriod = column("current_period", JDBCType.VARCHAR);
     public final SqlColumn<Integer> depotCenterId = column("depot_center_id", JDBCType.INTEGER);
-    public final SqlColumn<Boolean> enabled = column("enabled", JDBCType.BOOLEAN);
     public final SqlColumn<Integer> isAllowInvOut = column("is_allow_inv_out", JDBCType.INTEGER);
     public final SqlColumn<Integer> isAllowPostReturn =
         column("is_allow_post_return", JDBCType.INTEGER);
@@ -109,7 +106,6 @@ public class InvDepotDynamicSqlSupport {
     public final SqlColumn<Integer> isCheckShowFinQty =
         column("is_check_show_fin_qty", JDBCType.INTEGER);
     public final SqlColumn<Integer> isDualDepot = column("is_dual_depot", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isEnabled = column("is_enabled", JDBCType.INTEGER);
     public final SqlColumn<Integer> isPickAllocation =
         column("is_pick_allocation", JDBCType.INTEGER);
     public final SqlColumn<Integer> isPostCheckAll = column("is_post_check_all", JDBCType.INTEGER);
@@ -127,16 +123,20 @@ public class InvDepotDynamicSqlSupport {
         column("is_turn_exist_no_post", JDBCType.INTEGER);
     public final SqlColumn<Integer> manageType = column("manage_type", JDBCType.INTEGER);
     public final SqlColumn<Integer> measureType = column("measure_type", JDBCType.INTEGER);
-    public final SqlColumn<String> name = column("name", JDBCType.VARCHAR);
-    public final SqlColumn<Long> orgId = column("org_id", JDBCType.BIGINT);
     public final SqlColumn<String> phone = column("phone", JDBCType.VARCHAR);
-    public final SqlColumn<String> searchWord = column("search_word", JDBCType.VARCHAR);
     public final SqlColumn<Integer> stoCurrentPeriod =
         column("sto_current_period", JDBCType.INTEGER);
     public final SqlColumn<java.sql.Timestamp> turnDateTime =
         column("turn_date_time", JDBCType.TIMESTAMP);
     public final SqlColumn<String> turnUserCode = column("turn_user_code", JDBCType.VARCHAR);
     public final SqlColumn<String> turnUserName = column("turn_user_name", JDBCType.VARCHAR);
+    public final SqlColumn<Boolean> active = column("active", JDBCType.BOOLEAN);
+    public final SqlColumn<String> code = column("code", JDBCType.VARCHAR);
+    public final SqlColumn<Boolean> enabled = column("enabled", JDBCType.BOOLEAN);
+    public final SqlColumn<Long> entId = column("ent_id", JDBCType.BIGINT);
+    public final SqlColumn<String> name = column("name", JDBCType.VARCHAR);
+    public final SqlColumn<Long> orgId = column("org_id", JDBCType.BIGINT);
+    public final SqlColumn<String> searchWord = column("search_word", JDBCType.VARCHAR);
 
     public InvDepotTable() {
       super("InvDepot");

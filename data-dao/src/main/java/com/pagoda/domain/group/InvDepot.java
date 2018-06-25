@@ -191,43 +191,6 @@ public class InvDepot extends InvDepotDTO implements Serializable {
   private Integer version;
 
   @FieldMeta(
-    name = "active",
-    scene = "",
-    nameCN = "是否当前版本",
-    comment = "是否当前版本",
-    nameEN = "active",
-    type = "布尔",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"active\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "布尔   COMMENT '是否当前版本'"
-  )
-  private Boolean active;
-
-  @FieldMeta(
     name = "adCode",
     scene = "",
     nameCN = "高德地址码",
@@ -413,43 +376,6 @@ public class InvDepot extends InvDepotDTO implements Serializable {
   private Long balOrgId;
 
   @FieldMeta(
-    name = "code",
-    scene = "fff",
-    nameCN = "代码",
-    comment = "代码",
-    nameEN = "code",
-    type = "字符串",
-    format = "ll",
-    displayLen = 23,
-    formSize = "",
-    constraint = "ll",
-    constraintParams = "{\"prefix\":\"fx_er\"}",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"code\"",
-    nullable = true,
-    precision = 0,
-    scale = 4,
-    columnDefinition = "字符串   COMMENT '代码'"
-  )
-  private String code;
-
-  @FieldMeta(
     name = "currentPeriod",
     scene = "",
     nameCN = "当前核算期",
@@ -522,43 +448,6 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     columnDefinition = "整型   COMMENT '存货库房中心ID'"
   )
   private Integer depotCenterId;
-
-  @FieldMeta(
-    name = "enabled",
-    scene = "",
-    nameCN = "是否启用",
-    comment = "是否启用",
-    nameEN = "enabled",
-    type = "布尔",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"enabled\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "布尔   COMMENT '是否启用'"
-  )
-  private Boolean enabled;
 
   @FieldMeta(
     name = "isAllowInvOut",
@@ -892,43 +781,6 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     columnDefinition = "整型   COMMENT '是否虚拟库'"
   )
   private Integer isDualDepot;
-
-  @FieldMeta(
-    name = "isEnabled",
-    scene = "",
-    nameCN = "是否可用",
-    comment = "是否可用",
-    nameEN = "is_enabled",
-    type = "整型",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"is_enabled\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "整型   COMMENT '是否可用'"
-  )
-  private Integer isEnabled;
 
   @FieldMeta(
     name = "isPickAllocation",
@@ -1449,80 +1301,6 @@ public class InvDepot extends InvDepotDTO implements Serializable {
   private Integer measureType;
 
   @FieldMeta(
-    name = "name",
-    scene = "",
-    nameCN = "名称",
-    comment = "名称",
-    nameEN = "name",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"name\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "字符串   COMMENT '名称'"
-  )
-  private String name;
-
-  @FieldMeta(
-    name = "orgId",
-    scene = "",
-    nameCN = "所属往来单位Id",
-    comment = "所属往来单位Id",
-    nameEN = "org_id",
-    type = "长整型",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"org_id\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "长整型   COMMENT '所属往来单位Id'"
-  )
-  private Long orgId;
-
-  @FieldMeta(
     name = "phone",
     scene = "",
     nameCN = "联系电话",
@@ -1558,43 +1336,6 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     columnDefinition = "字符串   COMMENT '联系电话'"
   )
   private String phone;
-
-  @FieldMeta(
-    name = "searchWord",
-    scene = "",
-    nameCN = "搜索关键词",
-    comment = "搜索关键词",
-    nameEN = "search_word",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"search_word\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "字符串   COMMENT '搜索关键词'"
-  )
-  private String searchWord;
 
   @FieldMeta(
     name = "stoCurrentPeriod",
@@ -1743,6 +1484,265 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     columnDefinition = "字符串   COMMENT '库房结转用户名称'"
   )
   private String turnUserName;
+
+  @FieldMeta(
+    name = "active",
+    scene = "",
+    nameCN = "是否当前版本",
+    comment = "是否当前版本",
+    nameEN = "active",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"active\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "布尔   COMMENT '是否当前版本'"
+  )
+  private Boolean active;
+
+  @FieldMeta(
+    name = "code",
+    scene = "",
+    nameCN = "代码",
+    comment = "代码",
+    nameEN = "code",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"code\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "字符串   COMMENT '代码'"
+  )
+  private String code;
+
+  @FieldMeta(
+    name = "enabled",
+    scene = "",
+    nameCN = "是否启用",
+    comment = "是否启用",
+    nameEN = "enabled",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"enabled\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "布尔   COMMENT '是否启用'"
+  )
+  private Boolean enabled;
+
+  @FieldMeta(
+    name = "entId",
+    scene = "",
+    nameCN = "企业ID",
+    comment = "企业ID",
+    nameEN = "ent_id",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = true,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"ent_id\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "长整型   COMMENT '企业ID'"
+  )
+  private Long entId;
+
+  @FieldMeta(
+    name = "name",
+    scene = "",
+    nameCN = "名称",
+    comment = "名称",
+    nameEN = "name",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"name\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "字符串   COMMENT '名称'"
+  )
+  private String name;
+
+  @FieldMeta(
+    name = "orgId",
+    scene = "",
+    nameCN = "所属往来单位Id",
+    comment = "所属往来单位Id",
+    nameEN = "org_id",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"org_id\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "长整型   COMMENT '所属往来单位Id'"
+  )
+  private Long orgId;
+
+  @FieldMeta(
+    name = "searchWord",
+    scene = "",
+    nameCN = "搜索关键词",
+    comment = "搜索关键词",
+    nameEN = "search_word",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"search_word\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "字符串   COMMENT '搜索关键词'"
+  )
+  private String searchWord;
 
   static MapperFacade mapper;
 

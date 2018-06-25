@@ -480,19 +480,35 @@ public abstract class BaseBasCatServiceImpl implements BasCatService, Initializi
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
   public Page<BasCatDTO> findBy(
-      @ApiParam("deleted1") Long deleted1,
-      @ApiParam("enabled1") Boolean enabled1,
+      @ApiParam("entId") Long entId,
       @ApiParam("isDefault") String isDefault,
+      @ApiParam("isEnabled") String isEnabled,
       @ApiParam("isMulti") String isMulti,
       @ApiParam("remark") String remark,
+      @ApiParam("searchWord") String searchWord,
       @ApiParam("showOrder") Integer showOrder,
       @ApiParam("tableId") Integer tableId,
+      @ApiParam("active") Boolean active,
       @ApiParam("code") String code,
+      @ApiParam("enabled") Boolean enabled,
+      @ApiParam("name") String name,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
       return repository.findBy(
-          deleted1, enabled1, isDefault, isMulti, remark, showOrder, tableId, code, pageable);
+          entId,
+          isDefault,
+          isEnabled,
+          isMulti,
+          remark,
+          searchWord,
+          showOrder,
+          tableId,
+          active,
+          code,
+          enabled,
+          name,
+          pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }

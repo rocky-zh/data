@@ -130,16 +130,18 @@ public interface BaseBasOrgBalService {
   /**
    * 所有可查询的字段
    *
-   * @param bill_address
-   * @param bill_name
-   * @param bill_telephone
-   * @param is_detail_prior
-   * @param is_goods_prior
-   * @param legal_person
-   * @param max_bill_amt
-   * @param org_property
-   * @param tax_number
+   * @param billAddress
+   * @param billName
+   * @param billTelephone
+   * @param isDetailPrior
+   * @param isGoodsPrior
+   * @param legalPerson
+   * @param maxBillAmt
+   * @param orgId
+   * @param orgProperty
+   * @param taxNumber
    * @param active
+   * @param enabled
    * @param pageable
    * @return
    * @throws ServiceException
@@ -153,9 +155,11 @@ public interface BaseBasOrgBalService {
       @ApiParam("isGoodsPrior") Integer isGoodsPrior,
       @ApiParam("legalPerson") String legalPerson,
       @ApiParam("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @ApiParam("orgId") Long orgId,
       @ApiParam("orgProperty") Integer orgProperty,
       @ApiParam("taxNumber") String taxNumber,
       @ApiParam("active") Boolean active,
+      @ApiParam("enabled") Boolean enabled,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }

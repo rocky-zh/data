@@ -191,12 +191,12 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
   private Integer version;
 
   @FieldMeta(
-    name = "levelType",
+    name = "active",
     scene = "",
-    nameCN = "省份城市的等级",
-    comment = "省份城市的等级",
-    nameEN = "level_type",
-    type = "整型",
+    nameCN = "是否当前版本",
+    comment = "是否当前版本",
+    nameEN = "active",
+    type = "布尔",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -219,13 +219,13 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     index = 0
   )
   @Column(
-    name = "\"level_type\"",
+    name = "\"active\"",
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '省份城市的等级'"
+    columnDefinition = "布尔   COMMENT '是否当前版本'"
   )
-  private Integer levelType;
+  private Boolean active;
 
   @FieldMeta(
     name = "code",
@@ -263,6 +263,154 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     columnDefinition = "字符串   COMMENT '代码'"
   )
   private String code;
+
+  @FieldMeta(
+    name = "enabled",
+    scene = "",
+    nameCN = "是否启用",
+    comment = "是否启用",
+    nameEN = "enabled",
+    type = "布尔",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"enabled\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "布尔   COMMENT '是否启用'"
+  )
+  private Boolean enabled;
+
+  @FieldMeta(
+    name = "levelType",
+    scene = "",
+    nameCN = "省份城市的等级",
+    comment = "省份城市的等级",
+    nameEN = "level_type",
+    type = "整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"level_type\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "整型   COMMENT '省份城市的等级'"
+  )
+  private Integer levelType;
+
+  @FieldMeta(
+    name = "name",
+    scene = "",
+    nameCN = "名称",
+    comment = "名称",
+    nameEN = "name",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"name\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "字符串   COMMENT '名称'"
+  )
+  private String name;
+
+  @FieldMeta(
+    name = "pid",
+    scene = "",
+    nameCN = "省份中存储 上级id",
+    comment = "省份中存储 上级id",
+    nameEN = "pid",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = true,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"pid\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "长整型   COMMENT '省份中存储 上级id'"
+  )
+  private Long pid;
 
   static MapperFacade mapper;
 

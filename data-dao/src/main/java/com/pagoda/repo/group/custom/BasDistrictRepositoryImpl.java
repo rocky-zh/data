@@ -28,12 +28,20 @@ public class BasDistrictRepositoryImpl extends BaseRepositoryCustomImpl<BasDistr
 
   @Override
   public Page<BasDistrictDTO> findBy(
-      @Param("levelType") Integer levelType,
+      @Param("active") Boolean active,
       @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("levelType") Integer levelType,
+      @Param("name") String name,
+      @Param("pid") Long pid,
       @Param("pageable") Pageable pageable) {
     BasDistrict obj = BasDistrict.toExample();
-    obj.setLevelType(levelType);
+    obj.setActive(active);
     obj.setCode(code);
+    obj.setEnabled(enabled);
+    obj.setLevelType(levelType);
+    obj.setName(name);
+    obj.setPid(pid);
     Example<BasDistrict> example = Example.of(obj);
 
     return findAll(example, pageable).map(BasDistrict.DTO_CONVERTER);
@@ -41,10 +49,19 @@ public class BasDistrictRepositoryImpl extends BaseRepositoryCustomImpl<BasDistr
 
   @Override
   public List<BasDistrictDTO> findBy(
-      @Param("levelType") Integer levelType, @Param("code") String code) {
+      @Param("active") Boolean active,
+      @Param("code") String code,
+      @Param("enabled") Boolean enabled,
+      @Param("levelType") Integer levelType,
+      @Param("name") String name,
+      @Param("pid") Long pid) {
     BasDistrict obj = BasDistrict.toExample();
-    obj.setLevelType(levelType);
+    obj.setActive(active);
     obj.setCode(code);
+    obj.setEnabled(enabled);
+    obj.setLevelType(levelType);
+    obj.setName(name);
+    obj.setPid(pid);
     Example<BasDistrict> example = Example.of(obj);
     return findAll(example, null).map(BasDistrict.DTO_CONVERTER).getContent();
   }

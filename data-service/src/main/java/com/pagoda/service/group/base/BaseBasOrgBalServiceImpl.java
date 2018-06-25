@@ -203,9 +203,11 @@ public abstract class BaseBasOrgBalServiceImpl implements BasOrgBalService, Init
       @ApiParam("isGoodsPrior") Integer isGoodsPrior,
       @ApiParam("legalPerson") String legalPerson,
       @ApiParam("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @ApiParam("orgId") Long orgId,
       @ApiParam("orgProperty") Integer orgProperty,
       @ApiParam("taxNumber") String taxNumber,
       @ApiParam("active") Boolean active,
+      @ApiParam("enabled") Boolean enabled,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
@@ -217,9 +219,11 @@ public abstract class BaseBasOrgBalServiceImpl implements BasOrgBalService, Init
           isGoodsPrior,
           legalPerson,
           maxBillAmt,
+          orgId,
           orgProperty,
           taxNumber,
           active,
+          enabled,
           pageable);
     } catch (Exception e) {
       throw new ServiceException(e);

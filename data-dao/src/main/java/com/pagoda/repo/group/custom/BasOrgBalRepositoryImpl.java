@@ -35,9 +35,11 @@ public class BasOrgBalRepositoryImpl extends BaseRepositoryCustomImpl<BasOrgBal,
       @Param("isGoodsPrior") Integer isGoodsPrior,
       @Param("legalPerson") String legalPerson,
       @Param("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @Param("orgId") Long orgId,
       @Param("orgProperty") Integer orgProperty,
       @Param("taxNumber") String taxNumber,
       @Param("active") Boolean active,
+      @Param("enabled") Boolean enabled,
       @Param("pageable") Pageable pageable) {
     BasOrgBal obj = BasOrgBal.toExample();
     obj.setBillAddress(billAddress);
@@ -47,9 +49,11 @@ public class BasOrgBalRepositoryImpl extends BaseRepositoryCustomImpl<BasOrgBal,
     obj.setIsGoodsPrior(isGoodsPrior);
     obj.setLegalPerson(legalPerson);
     obj.setMaxBillAmt(maxBillAmt);
+    obj.setOrgId(orgId);
     obj.setOrgProperty(orgProperty);
     obj.setTaxNumber(taxNumber);
     obj.setActive(active);
+    obj.setEnabled(enabled);
     Example<BasOrgBal> example = Example.of(obj);
 
     return findAll(example, pageable).map(BasOrgBal.DTO_CONVERTER);
@@ -64,9 +68,11 @@ public class BasOrgBalRepositoryImpl extends BaseRepositoryCustomImpl<BasOrgBal,
       @Param("isGoodsPrior") Integer isGoodsPrior,
       @Param("legalPerson") String legalPerson,
       @Param("maxBillAmt") java.math.BigDecimal maxBillAmt,
+      @Param("orgId") Long orgId,
       @Param("orgProperty") Integer orgProperty,
       @Param("taxNumber") String taxNumber,
-      @Param("active") Boolean active) {
+      @Param("active") Boolean active,
+      @Param("enabled") Boolean enabled) {
     BasOrgBal obj = BasOrgBal.toExample();
     obj.setBillAddress(billAddress);
     obj.setBillName(billName);
@@ -75,9 +81,11 @@ public class BasOrgBalRepositoryImpl extends BaseRepositoryCustomImpl<BasOrgBal,
     obj.setIsGoodsPrior(isGoodsPrior);
     obj.setLegalPerson(legalPerson);
     obj.setMaxBillAmt(maxBillAmt);
+    obj.setOrgId(orgId);
     obj.setOrgProperty(orgProperty);
     obj.setTaxNumber(taxNumber);
     obj.setActive(active);
+    obj.setEnabled(enabled);
     Example<BasOrgBal> example = Example.of(obj);
     return findAll(example, null).map(BasOrgBal.DTO_CONVERTER).getContent();
   }
