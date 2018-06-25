@@ -33,6 +33,7 @@ public class BasDistrictDynamicSqlSupport {
   public static SqlColumn<Boolean> enabled = basDistrictTable.enabled;
   public static SqlColumn<Integer> levelType = basDistrictTable.levelType;
   public static SqlColumn<String> name = basDistrictTable.name;
+  public static SqlColumn<Long> pid = basDistrictTable.pid;
 
   public static final class BasDistrictTable extends SqlTable {
     public final SqlColumn<Long> id = column("id", JDBCType.BIGINT);
@@ -54,6 +55,7 @@ public class BasDistrictDynamicSqlSupport {
     public final SqlColumn<Boolean> enabled = column("enabled", JDBCType.BOOLEAN);
     public final SqlColumn<Integer> levelType = column("level_type", JDBCType.INTEGER);
     public final SqlColumn<String> name = column("name", JDBCType.VARCHAR);
+    public final SqlColumn<Long> pid = column("pid", JDBCType.BIGINT);
 
     public BasDistrictTable() {
       super("BasDistrict");

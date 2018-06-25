@@ -336,6 +336,42 @@ public class BasDistrictDTO implements Serializable {
   )
   private String name;
 
+  @FieldMeta(
+    name = "pid",
+    scene = "",
+    nameCN = "省份中存储 上级id",
+    comment = "省份中存储 上级id",
+    nameEN = "pid",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = true,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @ApiModelProperty(
+    name = "pid",
+    value = "省份中存储 上级id",
+    dataType = "长整型",
+    notes = "5b3065337c51e0fcf5345d1f"
+  )
+  private Long pid;
+
   /** 存储页面post请求的分页参数 */
   private Pageable pageable;
 }
