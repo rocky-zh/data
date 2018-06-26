@@ -584,13 +584,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uat</id>
-            <properties>
-                <package.environment>default,uat</package.environment>
-                <war.name>data-service</war.name>
-            </properties>
-        </profile>
-        <profile>
             <id>production</id>
             <properties>
                 <package.environment>default,production</package.environment>

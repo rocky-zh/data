@@ -268,7 +268,7 @@ dubbo:
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
 
 
 ---
@@ -281,21 +281,21 @@ dubbo:
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
   
 
 
 ---
 spring:
-  profiles: uat
-# uat环境
+  profiles: staging
+# staging环境
 
 dubbo:
 # 是否启用dubbo，本地调试可以设置成false禁用dubbo
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
 
 
 ---
@@ -308,4 +308,4 @@ dubbo:
   enabled: true
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1  
+  registry: zookeeper://127.0.0.1:27701  

@@ -234,7 +234,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "长整型   COMMENT '企业ID'"
+    columnDefinition = "BIGINT   COMMENT '企业ID'"
   )
   private Long entId;
 
@@ -271,7 +271,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '是否默认'"
+    columnDefinition = "varchar(1)   COMMENT '是否默认'"
   )
   private String isDefault;
 
@@ -308,7 +308,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '是否可用'"
+    columnDefinition = "varchar(1)   COMMENT '是否可用'"
   )
   private String isEnabled;
 
@@ -345,7 +345,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '是否允许对象多次挂接'"
+    columnDefinition = "varchar(1)   COMMENT '是否允许对象多次挂接'"
   )
   private String isMulti;
 
@@ -382,7 +382,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '备注'"
+    columnDefinition = "varchar(512)   COMMENT '备注'"
   )
   private String remark;
 
@@ -419,7 +419,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '搜索关键词'"
+    columnDefinition = "varchar(256)   COMMENT '搜索关键词'"
   )
   private String searchWord;
 
@@ -456,7 +456,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '排序'"
+    columnDefinition = "INTEGER   COMMENT '排序'"
   )
   private Integer showOrder;
 
@@ -493,7 +493,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '元Id'"
+    columnDefinition = "INTEGER   COMMENT '元Id'"
   )
   private Integer tableId;
 
@@ -530,7 +530,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "布尔   COMMENT '是否当前版本'"
+    columnDefinition = "BOOLEAN   COMMENT '是否当前版本'"
   )
   private Boolean active;
 
@@ -567,7 +567,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '代码'"
+    columnDefinition = "varchar(32)   COMMENT '代码'"
   )
   private String code;
 
@@ -604,7 +604,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "布尔   COMMENT '是否启用'"
+    columnDefinition = "BOOLEAN   COMMENT '是否启用'"
   )
   private Boolean enabled;
 
@@ -641,7 +641,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '名称'"
+    columnDefinition = "varchar(64)   COMMENT '名称'"
   )
   private String name;
 

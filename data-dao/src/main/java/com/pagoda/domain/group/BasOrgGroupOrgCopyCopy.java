@@ -28,24 +28,29 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 结算机构明细表实体定义
+ * 虚拟机构组对应机构明细表实体定义
  *
  * @author PagodaGenerator
  * @generated
  */
 @Data
 @Accessors(chain = true)
-@ValidateProperties(rulePrefix = "validator.BasOrgBal")
+@ValidateProperties(rulePrefix = "validator.BasOrgGroupOrgCopyCopy")
 @Entity
 @DynamicUpdate
 @DynamicInsert
-@Table(name = "`bas_org_bal`")
-@org.hibernate.annotations.Table(appliesTo = "`bas_org_bal`", comment = "结算机构明细表")
-@SQLDelete(sql = "update `bas_org_bal` set deleted = id where id = ? and version = ?")
+@Table(name = "`bas_org_group_org_copy_copy`")
+@org.hibernate.annotations.Table(
+  appliesTo = "`bas_org_group_org_copy_copy`",
+  comment = "虚拟机构组对应机构明细表"
+)
+@SQLDelete(
+  sql = "update `bas_org_group_org_copy_copy` set deleted = id where id = ? and version = ?"
+)
 @Where(clause = "deleted = 0")
 @EntityListeners({AuditingEntityListener.class, PagodaEntityListener.class})
 @EntityFeature(
-  entityName = "BasOrgBal",
+  entityName = "BasOrgGroupOrgCopyCopy",
   idField = "id",
   persistent = true,
   generationType = "auto",
@@ -57,7 +62,7 @@ import java.util.List;
   requestUrl = "",
   tableMultiSelect = false
 )
-public class BasOrgBal extends BasOrgBalDTO implements Serializable {
+public class BasOrgGroupOrgCopyCopy extends BasOrgGroupOrgCopyCopyDTO implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -191,11 +196,11 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
   private Integer version;
 
   @FieldMeta(
-    name = "billAddress",
+    name = "orgGroupCode",
     scene = "",
-    nameCN = "开票地址",
-    comment = "开票地址",
-    nameEN = "bill_address",
+    nameCN = "虚拟机构组代码",
+    comment = "虚拟机构组代码",
+    nameEN = "org_group_code",
     type = "字符串",
     format = "",
     displayLen = 1,
@@ -219,242 +224,20 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
     index = 0
   )
   @Column(
-    name = "\"bill_address\"",
+    name = "\"org_group_code\"",
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "varchar(300)   COMMENT '开票地址'"
+    columnDefinition = "varchar(15)   COMMENT '虚拟机构组代码'"
   )
-  private String billAddress;
+  private String orgGroupCode;
 
   @FieldMeta(
-    name = "billName",
+    name = "orgGroupId",
     scene = "",
-    nameCN = "发票名头",
-    comment = "发票名头",
-    nameEN = "bill_name",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"bill_name\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "varchar(60)   COMMENT '发票名头'"
-  )
-  private String billName;
-
-  @FieldMeta(
-    name = "billTelephone",
-    scene = "",
-    nameCN = "开票电话",
-    comment = "开票电话",
-    nameEN = "bill_telephone",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"bill_telephone\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "varchar(30)   COMMENT '开票电话'"
-  )
-  private String billTelephone;
-
-  @FieldMeta(
-    name = "isDetailPrior",
-    scene = "",
-    nameCN = "是否明细优先",
-    comment = "是否明细优先",
-    nameEN = "is_detail_prior",
-    type = "整型",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"is_detail_prior\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "INTEGER   COMMENT '是否明细优先'"
-  )
-  private Integer isDetailPrior;
-
-  @FieldMeta(
-    name = "isGoodsPrior",
-    scene = "",
-    nameCN = "是否货款优先",
-    comment = "是否货款优先",
-    nameEN = "is_goods_prior",
-    type = "整型",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"is_goods_prior\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "INTEGER   COMMENT '是否货款优先'"
-  )
-  private Integer isGoodsPrior;
-
-  @FieldMeta(
-    name = "legalPerson",
-    scene = "",
-    nameCN = "法人,结算时维护",
-    comment = "法人,结算时维护",
-    nameEN = "legal_person",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"legal_person\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "varchar(60)   COMMENT '法人,结算时维护'"
-  )
-  private String legalPerson;
-
-  @FieldMeta(
-    name = "maxBillAmt",
-    scene = "",
-    nameCN = "最大开发票金额",
-    comment = "最大开发票金额",
-    nameEN = "max_bill_amt",
-    type = "小数",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"max_bill_amt\"",
-    nullable = true,
-    precision = 0,
-    scale = 10,
-    columnDefinition = "decimal(15,10)   COMMENT '最大开发票金额'"
-  )
-  private java.math.BigDecimal maxBillAmt;
-
-  @FieldMeta(
-    name = "orgId",
-    scene = "",
-    nameCN = "所属往来单位Id",
-    comment = "所属往来单位Id",
-    nameEN = "org_id",
+    nameCN = "虚拟机构组ID",
+    comment = "虚拟机构组ID",
+    nameEN = "org_group_id",
     type = "长整型",
     format = "",
     displayLen = 1,
@@ -478,57 +261,20 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
     index = 0
   )
   @Column(
-    name = "\"org_id\"",
+    name = "\"org_group_id\"",
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "BIGINT   COMMENT '所属往来单位Id'"
+    columnDefinition = "BIGINT   COMMENT '虚拟机构组ID'"
   )
-  private Long orgId;
+  private Long orgGroupId;
 
   @FieldMeta(
-    name = "orgProperty",
+    name = "orgGroupName",
     scene = "",
-    nameCN = "机构属性",
-    comment = "机构属性",
-    nameEN = "org_property",
-    type = "整型",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"org_property\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "INTEGER   COMMENT '机构属性'"
-  )
-  private Integer orgProperty;
-
-  @FieldMeta(
-    name = "taxNumber",
-    scene = "",
-    nameCN = "纳税识别号,结算时维护",
-    comment = "纳税识别号,结算时维护",
-    nameEN = "tax_number",
+    nameCN = "虚拟机构组名称",
+    comment = "虚拟机构组名称",
+    nameEN = "org_group_name",
     type = "字符串",
     format = "",
     displayLen = 1,
@@ -552,21 +298,21 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
     index = 0
   )
   @Column(
-    name = "\"tax_number\"",
+    name = "\"org_group_name\"",
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "varchar(60)   COMMENT '纳税识别号,结算时维护'"
+    columnDefinition = "varchar(60)   COMMENT '虚拟机构组名称'"
   )
-  private String taxNumber;
+  private String orgGroupName;
 
   @FieldMeta(
-    name = "active",
+    name = "orgOrgCode",
     scene = "",
-    nameCN = "是否当前版本",
-    comment = "是否当前版本",
-    nameEN = "active",
-    type = "布尔",
+    nameCN = "机构代码",
+    comment = "机构代码",
+    nameEN = "org_org_code",
+    type = "字符串",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -589,21 +335,21 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
     index = 0
   )
   @Column(
-    name = "\"active\"",
+    name = "\"org_org_code\"",
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "BOOLEAN   COMMENT '是否当前版本'"
+    columnDefinition = "varchar(15)   COMMENT '机构代码'"
   )
-  private Boolean active;
+  private String orgOrgCode;
 
   @FieldMeta(
-    name = "enabled",
+    name = "orgOrgId",
     scene = "",
-    nameCN = "是否启用",
-    comment = "是否启用",
-    nameEN = "enabled",
-    type = "布尔",
+    nameCN = "机构ID",
+    comment = "机构ID",
+    nameEN = "org_org_id",
+    type = "长整型",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -626,20 +372,57 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
     index = 0
   )
   @Column(
-    name = "\"enabled\"",
+    name = "\"org_org_id\"",
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "BOOLEAN   COMMENT '是否启用'"
+    columnDefinition = "BIGINT   COMMENT '机构ID'"
   )
-  private Boolean enabled;
+  private Long orgOrgId;
+
+  @FieldMeta(
+    name = "orgOrgName",
+    scene = "",
+    nameCN = "机构名称",
+    comment = "机构名称",
+    nameEN = "org_org_name",
+    type = "字符串",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = true,
+    canQuery = true,
+    readOnly = false,
+    required = false,
+    visible = true,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = 0
+  )
+  @Column(
+    name = "\"org_org_name\"",
+    nullable = true,
+    precision = 0,
+    scale = 0,
+    columnDefinition = "varchar(60)   COMMENT '机构名称'"
+  )
+  private String orgOrgName;
 
   static MapperFacade mapper;
 
   static {
     MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
     mapperFactory
-        .classMap(BasOrgBal.class, BasOrgBalDTO.class)
+        .classMap(BasOrgGroupOrgCopyCopy.class, BasOrgGroupOrgCopyCopyDTO.class)
         .mapNulls(false)
         .mapNullsInReverse(false)
         .exclude("pageable")
@@ -648,15 +431,15 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
     mapper = mapperFactory.getMapperFacade();
   }
 
-  public BasOrgBal() {}
+  public BasOrgGroupOrgCopyCopy() {}
 
   /**
    * 生成用于查询的对象，将有默认值的字段重置为null
    *
    * @return
    */
-  public static BasOrgBal toExample() {
-    BasOrgBal example = new BasOrgBal();
+  public static BasOrgGroupOrgCopyCopy toExample() {
+    BasOrgGroupOrgCopyCopy example = new BasOrgGroupOrgCopyCopy();
     // example.deleted = null;
     return example;
   }
@@ -671,40 +454,42 @@ public class BasOrgBal extends BasOrgBalDTO implements Serializable {
    */
   public void setFeildValue(String fieldName, Object value)
       throws NoSuchFieldException, IllegalAccessException {
-    Field field = BasOrgBal.class.getDeclaredField(fieldName);
+    Field field = BasOrgGroupOrgCopyCopy.class.getDeclaredField(fieldName);
     field.setAccessible(true);
     field.set(this, value);
   }
 
-  public BasOrgBalDTO toDTO() {
-    return mapper.map(this, BasOrgBalDTO.class);
+  public BasOrgGroupOrgCopyCopyDTO toDTO() {
+    return mapper.map(this, BasOrgGroupOrgCopyCopyDTO.class);
   }
 
-  public static BasOrgBal convertDTO(BasOrgBalDTO dto) {
-    return mapper.map(dto, BasOrgBal.class);
+  public static BasOrgGroupOrgCopyCopy convertDTO(BasOrgGroupOrgCopyCopyDTO dto) {
+    return mapper.map(dto, BasOrgGroupOrgCopyCopy.class);
   }
 
-  public static Iterable<BasOrgBal> batchConvertDTO(Iterable<BasOrgBalDTO> dtos) {
-    List<BasOrgBal> entities = new ArrayList<>();
+  public static Iterable<BasOrgGroupOrgCopyCopy> batchConvertDTO(
+      Iterable<BasOrgGroupOrgCopyCopyDTO> dtos) {
+    List<BasOrgGroupOrgCopyCopy> entities = new ArrayList<>();
     if (dtos != null) {
       dtos.forEach(d -> entities.add(convertDTO(d)));
     }
     return entities;
   }
 
-  public static Iterable<BasOrgBalDTO> batchConvert(Iterable<BasOrgBal> entities) {
-    List<BasOrgBalDTO> dtos = new ArrayList<>();
+  public static Iterable<BasOrgGroupOrgCopyCopyDTO> batchConvert(
+      Iterable<BasOrgGroupOrgCopyCopy> entities) {
+    List<BasOrgGroupOrgCopyCopyDTO> dtos = new ArrayList<>();
     if (entities != null) {
       entities.forEach(e -> dtos.add(e));
     }
     return dtos;
   }
 
-  public static Converter<BasOrgBal, BasOrgBalDTO> DTO_CONVERTER =
-      new Converter<BasOrgBal, BasOrgBalDTO>() {
+  public static Converter<BasOrgGroupOrgCopyCopy, BasOrgGroupOrgCopyCopyDTO> DTO_CONVERTER =
+      new Converter<BasOrgGroupOrgCopyCopy, BasOrgGroupOrgCopyCopyDTO>() {
 
         @Override
-        public BasOrgBalDTO convert(BasOrgBal source) {
+        public BasOrgGroupOrgCopyCopyDTO convert(BasOrgGroupOrgCopyCopy source) {
           return source.toDTO();
         }
       };

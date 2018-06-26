@@ -88,6 +88,21 @@ public class DataDubboApplication {
           com.pagoda.domain.group.InvDepot.class,
           new DtoSerializer(
               com.pagoda.api.dto.group.InvDepotDTO.class, serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.BasOrgGroupOrg.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.BasOrgGroupOrgDTO.class,
+              serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.BasOrgGroupOrgCopy.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.BasOrgGroupOrgCopyDTO.class,
+              serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.domain.group.BasOrgGroupOrgCopyCopy.class,
+          new DtoSerializer(
+              com.pagoda.api.dto.group.BasOrgGroupOrgCopyCopyDTO.class,
+              serializerFactory.getClassLoader()));
     } catch (Exception e) {
       log.error("addDubboSerializer", e);
     }

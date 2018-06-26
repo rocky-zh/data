@@ -11,52 +11,52 @@ import org.springframework.data.repository.query.*;
 import java.util.*;
 
 /**
- * BasDistrict扩展数据访问接口
+ * BasOrgGroupOrgCopy扩展数据访问接口
  *
  * @author PagodaGenerator
  * @generated
  */
-public interface BasDistrictRepositoryCustom {
+public interface BasOrgGroupOrgCopyRepositoryCustom {
 
   /**
    * 包含所有可查询的字段
    *
-   * @param active
-   * @param code
-   * @param enabled
-   * @param levelType
-   * @param name
-   * @param pid
+   * @param orgGroupCode
+   * @param orgGroupId
+   * @param orgGroupName
+   * @param orgOrgCode
+   * @param orgOrgId
+   * @param orgOrgName
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findBy(
-      @Param("active") Boolean active,
-      @Param("code") String code,
-      @Param("enabled") Boolean enabled,
-      @Param("levelType") Integer levelType,
-      @Param("name") String name,
-      @Param("pid") Long pid,
+  Page<BasOrgGroupOrgCopyDTO> findBy(
+      @Param("orgGroupCode") String orgGroupCode,
+      @Param("orgGroupId") Long orgGroupId,
+      @Param("orgGroupName") String orgGroupName,
+      @Param("orgOrgCode") String orgOrgCode,
+      @Param("orgOrgId") Long orgOrgId,
+      @Param("orgOrgName") String orgOrgName,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param active
-   * @param code
-   * @param enabled
-   * @param levelType
-   * @param name
-   * @param pid
+   * @param orgGroupCode
+   * @param orgGroupId
+   * @param orgGroupName
+   * @param orgOrgCode
+   * @param orgOrgId
+   * @param orgOrgName
    * @return
    */
-  List<BasDistrictDTO> findBy(
-      @Param("active") Boolean active,
-      @Param("code") String code,
-      @Param("enabled") Boolean enabled,
-      @Param("levelType") Integer levelType,
-      @Param("name") String name,
-      @Param("pid") Long pid);
+  List<BasOrgGroupOrgCopyDTO> findBy(
+      @Param("orgGroupCode") String orgGroupCode,
+      @Param("orgGroupId") Long orgGroupId,
+      @Param("orgGroupName") String orgGroupName,
+      @Param("orgOrgCode") String orgOrgCode,
+      @Param("orgOrgId") Long orgOrgId,
+      @Param("orgOrgName") String orgOrgName);
 
   /**
    * 通用分页查询，用于后台查询
@@ -65,8 +65,8 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByExample(
-      @Param("example") BasDistrict example, @Param("pageable") Pageable pageable);
+  Page<BasOrgGroupOrgCopyDTO> findByExample(
+      @Param("example") BasOrgGroupOrgCopy example, @Param("pageable") Pageable pageable);
 
   /**
    * 通用查询，用于后台查询
@@ -74,7 +74,7 @@ public interface BasDistrictRepositoryCustom {
    * @param example
    * @return
    */
-  List<BasDistrictDTO> findByExample(@Param("example") BasDistrict example);
+  List<BasOrgGroupOrgCopyDTO> findByExample(@Param("example") BasOrgGroupOrgCopy example);
 
   /**
    * 复杂条件分页查询，支持between范围，in列表，like模糊查询等条件
@@ -83,7 +83,7 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByBuilder(
+  Page<BasOrgGroupOrgCopyDTO> findByBuilder(
       @Param("builder") JpaQueryBuilder builder, @Param("pageable") Pageable pageable);
 
   /**
@@ -92,7 +92,7 @@ public interface BasDistrictRepositoryCustom {
    * @param builder
    * @return
    */
-  List<BasDistrictDTO> findByBuilder(@Param("builder") JpaQueryBuilder builder);
+  List<BasOrgGroupOrgCopyDTO> findByBuilder(@Param("builder") JpaQueryBuilder builder);
 
   /**
    * 复杂条件更新
@@ -112,8 +112,8 @@ public interface BasDistrictRepositoryCustom {
    * @param pageable
    * @return
    */
-  Page<BasDistrictDTO> findByFuzzySearch(
-      @Param("example") BasDistrict example,
+  Page<BasOrgGroupOrgCopyDTO> findByFuzzySearch(
+      @Param("example") BasOrgGroupOrgCopy example,
       @Param("fields") List<String> fields,
       @Param("stringMatcher") ExampleMatcher.StringMatcher stringMatcher,
       @Param("pageable") Pageable pageable);
@@ -128,7 +128,7 @@ public interface BasDistrictRepositoryCustom {
    * @throws NoSuchFieldException
    * @throws IllegalAccessException
    */
-  Page<BasDistrictDTO> findByField(
+  Page<BasOrgGroupOrgCopyDTO> findByField(
       @Param("fieldName") String fieldName,
       @Param("value") Object value,
       @Param("pageable") Pageable pageable)
@@ -143,7 +143,7 @@ public interface BasDistrictRepositoryCustom {
    * @throws NoSuchFieldException
    * @throws IllegalAccessException
    */
-  List<BasDistrictDTO> findByField(
+  List<BasOrgGroupOrgCopyDTO> findByField(
       @Param("fieldName") String fieldName, @Param("value") Object value)
       throws NoSuchFieldException, IllegalAccessException;
 }

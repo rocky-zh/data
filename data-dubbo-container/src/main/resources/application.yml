@@ -100,7 +100,7 @@ dubbo:
   consumer: false
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
 
 
 ---
@@ -113,21 +113,21 @@ dubbo:
   consumer: false
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
   
 
 
 ---
 spring:
-  profiles: uat
-# uat环境
+  profiles: staging
+# staging环境
 
 dubbo:
 # 是否调用其他模块的dubbo服务，注意还需要在pom引入调用api模块，在XXXConsumerConfiguration的DubboReferenceScan注解中加入调用api服务的包名
   consumer: false
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1
+  registry: zookeeper://127.0.0.1:27701
 
 
 ---
@@ -140,4 +140,4 @@ dubbo:
   consumer: false
   port: 20880
   timeout: 5000
-  registry: zookeeper:127.0.0.1  
+  registry: zookeeper://127.0.0.1:27701  

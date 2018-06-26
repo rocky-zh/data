@@ -43,9 +43,12 @@ public class DataDubboController {
   public static final Map<String, String> DTO_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_org_group_org_copyDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.inv_depotDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_districtDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_org_balDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_org_group_orgDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_org_group_org_copy_copyDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.group.bas_catDTO");
   }
 
@@ -54,9 +57,12 @@ public class DataDubboController {
 
   static {
     putInMap(API_PACKAGES, "com.pagoda.api.group.bas_catService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_org_group_orgService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_org_group_org_copy_copyService");
     putInMap(API_PACKAGES, "com.pagoda.api.group.inv_depotService");
     putInMap(API_PACKAGES, "com.pagoda.api.group.bas_org_balService");
     putInMap(API_PACKAGES, "com.pagoda.api.group.bas_districtService");
+    putInMap(API_PACKAGES, "com.pagoda.api.group.bas_org_group_org_copyService");
   }
 
   /** 查询方法名 * */

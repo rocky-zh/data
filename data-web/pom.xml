@@ -721,14 +721,6 @@
             </properties>
         </profile>
         <profile>
-            <id>uat</id>
-            <properties>
-                <package.environment>default,uat</package.environment>
-                <war.name>data-web</war.name>
-                <dubbo.enabled>true</dubbo.enabled>
-            </properties>
-        </profile>
-        <profile>
             <id>production</id>
             <properties>
                 <package.environment>default,production</package.environment>

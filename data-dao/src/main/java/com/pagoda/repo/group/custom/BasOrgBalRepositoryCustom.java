@@ -163,7 +163,6 @@ public interface BasOrgBalRepositoryCustom {
    *
    * @param fieldName 模型字段名字（表字段，通常是外键，与父表的主键id匹配）
    * @param value 字段取值
-   * @param pageable
    * @return
    * @throws NoSuchFieldException
    * @throws IllegalAccessException

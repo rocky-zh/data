@@ -223,7 +223,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '高德地址码'"
+    columnDefinition = "varchar(32)   COMMENT '高德地址码'"
   )
   private String adCode;
 
@@ -260,7 +260,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '高德地址纬度'"
+    columnDefinition = "varchar(32)   COMMENT '高德地址纬度'"
   )
   private String adLat;
 
@@ -297,7 +297,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '高德地址经度'"
+    columnDefinition = "varchar(32)   COMMENT '高德地址经度'"
   )
   private String adLng;
 
@@ -334,7 +334,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '地址'"
+    columnDefinition = "varchar(128)   COMMENT '地址'"
   )
   private String address;
 
@@ -371,7 +371,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "长整型   COMMENT '所属往来单位结算机构ID'"
+    columnDefinition = "BIGINT   COMMENT '所属往来单位结算机构ID'"
   )
   private Long balOrgId;
 
@@ -408,7 +408,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '当前核算期'"
+    columnDefinition = "varchar(16)   COMMENT '当前核算期'"
   )
   private String currentPeriod;
 
@@ -445,7 +445,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '存货库房中心ID'"
+    columnDefinition = "INTEGER   COMMENT '存货库房中心ID'"
   )
   private Integer depotCenterId;
 
@@ -482,7 +482,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '允许负库存出库'"
+    columnDefinition = "INTEGER   COMMENT '允许负库存出库'"
   )
   private Integer isAllowInvOut;
 
@@ -519,7 +519,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许库存反记帐'"
+    columnDefinition = "INTEGER   COMMENT '是否允许库存反记帐'"
   )
   private Integer isAllowPostReturn;
 
@@ -556,7 +556,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否盘点无主帐的单品'"
+    columnDefinition = "INTEGER   COMMENT '是否盘点无主帐的单品'"
   )
   private Integer isCheckByAdd;
 
@@ -593,7 +593,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许盘点数量为负数'"
+    columnDefinition = "INTEGER   COMMENT '是否允许盘点数量为负数'"
   )
   private Integer isCheckByNegative;
 
@@ -630,7 +630,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否本核算期盘点后允许记帐'"
+    columnDefinition = "INTEGER   COMMENT '是否本核算期盘点后允许记帐'"
   )
   private Integer isCheckByPost;
 
@@ -667,7 +667,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否盘点手工录入需要审核'"
+    columnDefinition = "INTEGER   COMMENT '是否盘点手工录入需要审核'"
   )
   private Integer isCheckInputNeedCheck;
 
@@ -704,7 +704,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否盘点实盘数读入为0{1:读入为0, 0:读入为账面数量}'"
+    columnDefinition = "INTEGER   COMMENT '是否盘点实盘数读入为0{1:读入为0, 0:读入为账面数量}'"
   )
   private Integer isCheckQtyZero;
 
@@ -741,7 +741,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否盘点显示现有库存量'"
+    columnDefinition = "INTEGER   COMMENT '是否盘点显示现有库存量'"
   )
   private Integer isCheckShowFinQty;
 
@@ -778,7 +778,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否虚拟库'"
+    columnDefinition = "INTEGER   COMMENT '是否虚拟库'"
   )
   private Integer isDualDepot;
 
@@ -815,7 +815,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否提货启用占用量'"
+    columnDefinition = "INTEGER   COMMENT '是否提货启用占用量'"
   )
   private Integer isPickAllocation;
 
@@ -852,7 +852,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否整单记账'"
+    columnDefinition = "INTEGER   COMMENT '是否整单记账'"
   )
   private Integer isPostCheckAll;
 
@@ -889,7 +889,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否记日账'"
+    columnDefinition = "INTEGER   COMMENT '是否记日账'"
   )
   private Integer isPostDaily;
 
@@ -926,7 +926,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否记录日帐明细表'"
+    columnDefinition = "INTEGER   COMMENT '是否记录日帐明细表'"
   )
   private Integer isPostDailyDetail;
 
@@ -963,7 +963,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许采购到货'"
+    columnDefinition = "INTEGER   COMMENT '是否允许采购到货'"
   )
   private Integer isPurRecIn;
 
@@ -1000,7 +1000,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许采购退货'"
+    columnDefinition = "INTEGER   COMMENT '是否允许采购退货'"
   )
   private Integer isPurRetOut;
 
@@ -1037,7 +1037,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许销售到货'"
+    columnDefinition = "INTEGER   COMMENT '是否允许销售到货'"
   )
   private Integer isSalConIn;
 
@@ -1074,7 +1074,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许销售出库'"
+    columnDefinition = "INTEGER   COMMENT '是否允许销售出库'"
   )
   private Integer isSalConOut;
 
@@ -1111,7 +1111,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许销售退货入库'"
+    columnDefinition = "INTEGER   COMMENT '是否允许销售退货入库'"
   )
   private Integer isSalRetIn;
 
@@ -1148,7 +1148,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许销售退货出库'"
+    columnDefinition = "INTEGER   COMMENT '是否允许销售退货出库'"
   )
   private Integer isSalRetOut;
 
@@ -1185,7 +1185,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否启用存货'"
+    columnDefinition = "INTEGER   COMMENT '是否启用存货'"
   )
   private Integer isStoEnabled;
 
@@ -1222,7 +1222,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '是否允许结转存在未记帐单据'"
+    columnDefinition = "INTEGER   COMMENT '是否允许结转存在未记帐单据'"
   )
   private Integer isTurnExistNoPost;
 
@@ -1259,7 +1259,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '库房管理细度标识'"
+    columnDefinition = "INTEGER   COMMENT '库房管理细度标识'"
   )
   private Integer manageType;
 
@@ -1296,7 +1296,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '多单位标识'"
+    columnDefinition = "INTEGER   COMMENT '多单位标识'"
   )
   private Integer measureType;
 
@@ -1333,7 +1333,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '联系电话'"
+    columnDefinition = "varchar(32)   COMMENT '联系电话'"
   )
   private String phone;
 
@@ -1370,7 +1370,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '存货当前核算期'"
+    columnDefinition = "INTEGER   COMMENT '存货当前核算期'"
   )
   private Integer stoCurrentPeriod;
 
@@ -1407,7 +1407,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "时间   COMMENT '库房结转时间'"
+    columnDefinition = "TIMESTAMP   COMMENT '库房结转时间'"
   )
   private java.sql.Timestamp turnDateTime;
 
@@ -1444,7 +1444,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '库房结转用户代码'"
+    columnDefinition = "varchar(32)   COMMENT '库房结转用户代码'"
   )
   private String turnUserCode;
 
@@ -1481,7 +1481,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '库房结转用户名称'"
+    columnDefinition = "varchar(32)   COMMENT '库房结转用户名称'"
   )
   private String turnUserName;
 
@@ -1518,7 +1518,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "布尔   COMMENT '是否当前版本'"
+    columnDefinition = "BOOLEAN   COMMENT '是否当前版本'"
   )
   private Boolean active;
 
@@ -1555,7 +1555,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '代码'"
+    columnDefinition = "varchar(32)   COMMENT '代码'"
   )
   private String code;
 
@@ -1592,7 +1592,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "布尔   COMMENT '是否启用'"
+    columnDefinition = "BOOLEAN   COMMENT '是否启用'"
   )
   private Boolean enabled;
 
@@ -1629,7 +1629,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "长整型   COMMENT '企业ID'"
+    columnDefinition = "BIGINT   COMMENT '企业ID'"
   )
   private Long entId;
 
@@ -1666,7 +1666,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '名称'"
+    columnDefinition = "varchar(64)   COMMENT '名称'"
   )
   private String name;
 
@@ -1703,7 +1703,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "长整型   COMMENT '所属往来单位Id'"
+    columnDefinition = "BIGINT   COMMENT '所属往来单位Id'"
   )
   private Long orgId;
 
@@ -1740,7 +1740,7 @@ public class InvDepot extends InvDepotDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '搜索关键词'"
+    columnDefinition = "varchar(256)   COMMENT '搜索关键词'"
   )
   private String searchWord;
 

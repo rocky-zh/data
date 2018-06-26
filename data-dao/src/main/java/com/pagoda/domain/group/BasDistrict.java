@@ -223,7 +223,7 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "布尔   COMMENT '是否当前版本'"
+    columnDefinition = "BOOLEAN   COMMENT '是否当前版本'"
   )
   private Boolean active;
 
@@ -260,7 +260,7 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '代码'"
+    columnDefinition = "varchar(32)   COMMENT '代码'"
   )
   private String code;
 
@@ -297,7 +297,7 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "布尔   COMMENT '是否启用'"
+    columnDefinition = "BOOLEAN   COMMENT '是否启用'"
   )
   private Boolean enabled;
 
@@ -334,7 +334,7 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "整型   COMMENT '省份城市的等级'"
+    columnDefinition = "INTEGER   COMMENT '省份城市的等级'"
   )
   private Integer levelType;
 
@@ -371,7 +371,7 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "字符串   COMMENT '名称'"
+    columnDefinition = "varchar(64)   COMMENT '名称'"
   )
   private String name;
 
@@ -408,7 +408,7 @@ public class BasDistrict extends BasDistrictDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "长整型   COMMENT '省份中存储 上级id'"
+    columnDefinition = "BIGINT   COMMENT '省份中存储 上级id'"
   )
   private Long pid;
 
