@@ -1,0 +1,8 @@
+# 在此文件中列出不想被代码生成器覆盖的文件名
+BasDistrictServiceImpl.java
+BasCatServiceImpl.java
+BasOrgBalServiceImpl.java
+InvDepotServiceImpl.java
+BasOrgGroupOrgServiceImpl.java
+BasOrgGroupOrgCopyServiceImpl.java
+BasOrgGroupOrgCopyCopyServiceImpl.java
