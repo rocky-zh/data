@@ -1,0 +1,2 @@
+# 在此文件中列出不想被代码生成器覆盖的文件名
+inv_check_stock_headService.java
