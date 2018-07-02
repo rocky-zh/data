@@ -708,9 +708,9 @@ public class SalPreOrderHeadDTO extends AbstractDTO implements Serializable {
 
   public static ValidatorBuilder<SalPreOrderHeadDTO> validatorExample() {
     ValidatorBuilder<SalPreOrderHeadDTO> builder = new ValidatorBuilder<>();
-    builder.field(_entryDate, notNull, "录入完成日期为空");
-    builder.field(_totalAmt, notNull, "总金额[配送价*数量]为空");
-    builder.field(_totalRequestQty, notNull, "总需求量为空");
+    builder.field("_entryDate", "notNull", "录入完成日期为空");
+    builder.field("_totalAmt", "notNull", "总金额[配送价*数量]为空");
+    builder.field("_totalRequestQty", "notNull", "总需求量为空");
     return builder;
   }
 

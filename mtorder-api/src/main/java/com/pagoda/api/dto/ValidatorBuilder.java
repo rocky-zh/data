@@ -18,15 +18,6 @@ public class ValidatorBuilder<T> {
 
   List<ValidatorItem> validators = new LinkedList<>();
 
-  /**
-   * 创建一个验证类
-   *
-   * @return
-   */
-  public ValidatorBuilder<T> create() {
-    return new ValidatorBuilder<>();
-  }
-
   public ValidatorBuilder field(Function getter, Predicate predicate, String error) {
     ValidatorItem item = new ValidatorItem();
     item.getter = getter;
