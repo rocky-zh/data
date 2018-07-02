@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.pagoda</groupId>
+    <artifactId>mtorder-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>mtorder-parent</name>
+    <version>2.0.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <!-- 跳过测试 -->
+        <maven.test.skip>true</maven.test.skip>
+    </properties>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.12.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <modules>
+        <!-- 不包括springboot项目 -->
+                <module>mtorder-api</module>
+        <!-- 不包括springboot项目 -->
+                <module>mtorder-dao</module>
+        <!-- 不包括springboot项目 -->
+                <module>mtorder-service</module>
+        <!-- 不包括springboot项目 -->
+        <!-- 不包括springboot项目 -->
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <version>1.0-m5</version>
+                <configuration>
+                    <flowInitContext>
+                        <masterBranchName>master</masterBranchName>
+                        <developBranchName>develop</developBranchName>
+                        <featureBranchPrefix>feature-</featureBranchPrefix>
+                        <releaseBranchPrefix>release-</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+                        <versionTagPrefix>tag-</versionTagPrefix>
+                    </flowInitContext>
+                    <!--<username>name@9188.com</username>-->
+                    <!--<password>yourpassword</password>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+ <!--项目发布-->
+    <distributionManagement>
+        <repository>
+            <id>user-release</id>
+            <name>User Project Release</name>
+            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/repositories/releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>user-snapshots</id>
+            <name>User Project SNAPSHOTS</name>
+            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
