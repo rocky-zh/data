@@ -225,8 +225,8 @@ public class SalConsignOutExceptionLogDTO extends AbstractDTO implements Seriali
         o -> o.getAmount();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalConsignOutExceptionLogDTO> validatorExample() {
+    ValidatorBuilder<SalConsignOutExceptionLogDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

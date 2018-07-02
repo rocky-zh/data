@@ -451,8 +451,8 @@ public class SalConsignReturnDetailDTO extends AbstractDTO implements Serializab
         o -> o.getReturnPrice();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalConsignReturnDetailDTO> validatorExample() {
+    ValidatorBuilder<SalConsignReturnDetailDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

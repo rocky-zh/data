@@ -485,8 +485,8 @@ public class SalConsignOutDetailDTO extends AbstractDTO implements Serializable 
     public static final Function<SalConsignOutDetailDTO, String> _note = o -> o.getNote();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalConsignOutDetailDTO> validatorExample() {
+    ValidatorBuilder<SalConsignOutDetailDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

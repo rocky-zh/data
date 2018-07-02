@@ -1232,8 +1232,8 @@ public class SalOrderDetailDTO extends AbstractDTO implements Serializable {
     public static final Function<SalOrderDetailDTO, String> _sourceNo = o -> o.getSourceNo();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalOrderDetailDTO> validatorExample() {
+    ValidatorBuilder<SalOrderDetailDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

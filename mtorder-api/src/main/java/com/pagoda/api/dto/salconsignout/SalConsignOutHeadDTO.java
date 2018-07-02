@@ -1162,8 +1162,8 @@ public class SalConsignOutHeadDTO extends AbstractDTO implements Serializable {
         o -> o.getConfirmTime();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalConsignOutHeadDTO> validatorExample() {
+    ValidatorBuilder<SalConsignOutHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

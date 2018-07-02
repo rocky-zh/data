@@ -564,8 +564,8 @@ public class SalConsignReturnHeadDTO extends AbstractDTO implements Serializable
     public static final Function<SalConsignReturnHeadDTO, Integer> _status = o -> o.getStatus();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalConsignReturnHeadDTO> validatorExample() {
+    ValidatorBuilder<SalConsignReturnHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

@@ -1383,8 +1383,8 @@ public class PurApplyDetailDTO extends AbstractDTO implements Serializable {
         o -> o.getCalPurRate();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<PurApplyDetailDTO> validatorExample() {
+    ValidatorBuilder<PurApplyDetailDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

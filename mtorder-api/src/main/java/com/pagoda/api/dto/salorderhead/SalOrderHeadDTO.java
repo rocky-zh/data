@@ -928,8 +928,8 @@ public class SalOrderHeadDTO extends AbstractDTO implements Serializable {
         o -> o.getEntryDate();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalOrderHeadDTO> validatorExample() {
+    ValidatorBuilder<SalOrderHeadDTO> builder = new ValidatorBuilder<>();
     builder.field(_entryDate, notNull, "录入完成日期为空");
     return builder;
   }

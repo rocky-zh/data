@@ -673,8 +673,8 @@ public class PriceAdjustSalHeadDTO extends AbstractDTO implements Serializable {
     public static final Function<PriceAdjustSalHeadDTO, String> _note = o -> o.getNote();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<PriceAdjustSalHeadDTO> validatorExample() {
+    ValidatorBuilder<PriceAdjustSalHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

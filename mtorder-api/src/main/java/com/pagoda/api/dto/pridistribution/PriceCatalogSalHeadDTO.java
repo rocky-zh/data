@@ -521,8 +521,8 @@ public class PriceCatalogSalHeadDTO extends AbstractDTO implements Serializable 
     public static final Function<PriceCatalogSalHeadDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<PriceCatalogSalHeadDTO> validatorExample() {
+    ValidatorBuilder<PriceCatalogSalHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

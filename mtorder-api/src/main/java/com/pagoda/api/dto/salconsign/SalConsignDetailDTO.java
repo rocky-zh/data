@@ -1047,8 +1047,8 @@ public class SalConsignDetailDTO extends AbstractDTO implements Serializable {
         o -> o.getShippedCount();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalConsignDetailDTO> validatorExample() {
+    ValidatorBuilder<SalConsignDetailDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

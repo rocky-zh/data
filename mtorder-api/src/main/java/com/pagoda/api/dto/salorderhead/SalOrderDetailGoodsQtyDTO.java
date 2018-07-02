@@ -524,8 +524,8 @@ public class SalOrderDetailGoodsQtyDTO extends AbstractDTO implements Serializab
     public static final Function<SalOrderDetailGoodsQtyDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SalOrderDetailGoodsQtyDTO> validatorExample() {
+    ValidatorBuilder<SalOrderDetailGoodsQtyDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

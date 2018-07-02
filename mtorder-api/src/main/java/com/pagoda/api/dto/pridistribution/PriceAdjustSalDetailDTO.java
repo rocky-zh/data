@@ -899,8 +899,8 @@ public class PriceAdjustSalDetailDTO extends AbstractDTO implements Serializable
     public static final Function<PriceAdjustSalDetailDTO, Integer> _status = o -> o.getStatus();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<PriceAdjustSalDetailDTO> validatorExample() {
+    ValidatorBuilder<PriceAdjustSalDetailDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 
