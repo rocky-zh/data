@@ -930,7 +930,7 @@ public class SalOrderHeadDTO extends AbstractDTO implements Serializable {
 
   public static ValidatorBuilder<SalOrderHeadDTO> validatorExample() {
     ValidatorBuilder<SalOrderHeadDTO> builder = new ValidatorBuilder<>();
-    builder.field("_entryDate", "notNull", "录入完成日期为空");
+    builder.field(_entryDate, notNull, "录入完成日期为空");
     return builder;
   }
 
