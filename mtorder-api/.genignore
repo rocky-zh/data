@@ -1,0 +1,24 @@
+# 在此文件中列出不想被代码生成器覆盖的文件名
+PurApplyHeadService.java
+PurApplyDetailService.java
+SalOrderDetailService.java
+SalOrderHeadService.java
+SalPreOrderDetailService.java
+SalPreOrderHeadService.java
+SalOrderDetailGoodsQtyService.java
+PriceAdjustPurHeadService.java
+PriceCatalogSalDetailService.java
+PriceCatalogSalHeadService.java
+PriceAdjustSalDetailService.java
+PriceAdjustSalHeadService.java
+PriceAdjustPurDetailService.java
+SalConsignHeadService.java
+SalConsignDetailService.java
+SalConsignOutHeadService.java
+SalConsignOutDetailService.java
+SalConsignOutExceptionLogService.java
+SalConsignReturnHeadService.java
+SalConsignReturnDetailService.java
+PurOrderHeadService.java
+PurOrderDetailService.java
+SalOrgCusService.java
