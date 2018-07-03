@@ -285,7 +285,7 @@ public class FindSalConsignOutHeadDTO implements Serializable {
     nameCN = "创建时间",
     comment = "创建时间",
     nameEN = "",
-    type = "时间",
+    type = "日期",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -308,7 +308,7 @@ public class FindSalConsignOutHeadDTO implements Serializable {
     index = -1
   )
   @ApiModelProperty(name = "createdAt", value = "创建时间", dataType = "", notes = "")
-  private java.sql.Timestamp createdAt;
+  private java.util.Date createdAt;
 
   @FieldMeta(
     name = "remark",

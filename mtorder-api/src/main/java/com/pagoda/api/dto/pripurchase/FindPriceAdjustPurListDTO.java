@@ -172,7 +172,7 @@ public class FindPriceAdjustPurListDTO implements Serializable {
     nameCN = "创建时间",
     comment = "创建时间",
     nameEN = "",
-    type = "时间",
+    type = "日期",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -195,7 +195,7 @@ public class FindPriceAdjustPurListDTO implements Serializable {
     index = -1
   )
   @ApiModelProperty(name = "createdAt", value = "创建时间", dataType = "", notes = "")
-  private java.sql.Timestamp createdAt;
+  private java.util.Date createdAt;
 
   @FieldMeta(
     name = "creatorName",
@@ -414,7 +414,7 @@ public class FindPriceAdjustPurListDTO implements Serializable {
     nameCN = "最近修改时间",
     comment = "最近修改时间",
     nameEN = "",
-    type = "时间",
+    type = "日期",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -437,5 +437,5 @@ public class FindPriceAdjustPurListDTO implements Serializable {
     index = -1
   )
   @ApiModelProperty(name = "lastModifiedAt", value = "最近修改时间", dataType = "", notes = "")
-  private java.sql.Timestamp lastModifiedAt;
+  private java.util.Date lastModifiedAt;
 }

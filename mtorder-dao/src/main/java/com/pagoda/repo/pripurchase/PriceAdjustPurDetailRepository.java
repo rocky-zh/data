@@ -56,10 +56,10 @@ public interface PriceAdjustPurDetailRepository
       @Param("goods_name") String goodsName,
       @Param("effect_date1") java.util.Date effectDate1,
       @Param("effect_date2") java.util.Date effectDate2,
-      @Param("created_at1") java.sql.Timestamp createdAt1,
-      @Param("created_at2") java.sql.Timestamp createdAt2,
-      @Param("last_modified_at1") java.sql.Timestamp lastModifiedAt1,
-      @Param("last_modified_at2") java.sql.Timestamp lastModifiedAt2,
+      @Param("created_at1") java.util.Date createdAt1,
+      @Param("created_at2") java.util.Date createdAt2,
+      @Param("last_modified_at1") java.util.Date lastModifiedAt1,
+      @Param("last_modified_at2") java.util.Date lastModifiedAt2,
       @Param("creator_code") String creatorCode,
       @Param("pageable") Pageable pageable);
 
@@ -93,10 +93,10 @@ public interface PriceAdjustPurDetailRepository
       @Param("goods_name") String goodsName,
       @Param("effect_date1") java.util.Date effectDate1,
       @Param("effect_date2") java.util.Date effectDate2,
-      @Param("created_at1") java.sql.Timestamp createdAt1,
-      @Param("created_at2") java.sql.Timestamp createdAt2,
-      @Param("last_modified_at1") java.sql.Timestamp lastModifiedAt1,
-      @Param("last_modified_at2") java.sql.Timestamp lastModifiedAt2,
+      @Param("created_at1") java.util.Date createdAt1,
+      @Param("created_at2") java.util.Date createdAt2,
+      @Param("last_modified_at1") java.util.Date lastModifiedAt1,
+      @Param("last_modified_at2") java.util.Date lastModifiedAt2,
       @Param("creator_code") String creatorCode);
 
   /**

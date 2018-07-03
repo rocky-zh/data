@@ -273,10 +273,10 @@ public abstract class BasePriceAdjustPurDetailServiceImpl
       @ApiParam("goods_name") String goodsName,
       @ApiParam("effect_date1") java.util.Date effectDate1,
       @ApiParam("effect_date2") java.util.Date effectDate2,
-      @ApiParam("created_at1") java.sql.Timestamp createdAt1,
-      @ApiParam("created_at2") java.sql.Timestamp createdAt2,
-      @ApiParam("last_modified_at1") java.sql.Timestamp lastModifiedAt1,
-      @ApiParam("last_modified_at2") java.sql.Timestamp lastModifiedAt2,
+      @ApiParam("created_at1") java.util.Date createdAt1,
+      @ApiParam("created_at2") java.util.Date createdAt2,
+      @ApiParam("last_modified_at1") java.util.Date lastModifiedAt1,
+      @ApiParam("last_modified_at2") java.util.Date lastModifiedAt2,
       @ApiParam("creator_code") String creatorCode,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {

@@ -280,7 +280,7 @@ public class FindGoodsLastPriceAdjustDTO implements Serializable {
     nameCN = "创建时间",
     comment = "创建时间",
     nameEN = "",
-    type = "时间",
+    type = "日期",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -303,7 +303,7 @@ public class FindGoodsLastPriceAdjustDTO implements Serializable {
     index = -1
   )
   @ApiModelProperty(name = "createdAt", value = "创建时间", dataType = "", notes = "")
-  private java.sql.Timestamp createdAt;
+  private java.util.Date createdAt;
 
   @FieldMeta(
     name = "remark",
@@ -491,7 +491,7 @@ public class FindGoodsLastPriceAdjustDTO implements Serializable {
     nameCN = "审核时间",
     comment = "审核时间",
     nameEN = "",
-    type = "时间",
+    type = "日期",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -514,7 +514,7 @@ public class FindGoodsLastPriceAdjustDTO implements Serializable {
     index = -1
   )
   @ApiModelProperty(name = "approvalAt", value = "审核时间", dataType = "", notes = "")
-  private java.sql.Timestamp approvalAt;
+  private java.util.Date approvalAt;
 
   @FieldMeta(
     name = "creatorName",
