@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.salorderhead.SalPreOrderHeadDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -706,8 +709,8 @@ public class SalPreOrderHeadDTO extends AbstractDTO implements Serializable {
         o -> o.getTotalRequestQty();
   }
 
-  public static ValidatorBuilder<SalPreOrderHeadDTO> validatorExample() {
-    ValidatorBuilder<SalPreOrderHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     builder.field(_entryDate, notNull, "录入完成日期为空");
     builder.field(_totalAmt, notNull, "总金额[配送价*数量]为空");
     builder.field(_totalRequestQty, notNull, "总需求量为空");

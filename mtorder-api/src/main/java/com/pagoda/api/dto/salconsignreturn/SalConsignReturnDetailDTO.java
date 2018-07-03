@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.salconsignreturn.SalConsignReturnDetailDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -451,8 +454,8 @@ public class SalConsignReturnDetailDTO extends AbstractDTO implements Serializab
         o -> o.getReturnPrice();
   }
 
-  public static ValidatorBuilder<SalConsignReturnDetailDTO> validatorExample() {
-    ValidatorBuilder<SalConsignReturnDetailDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.pridistribution.PriceCatalogSalDetailDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -749,8 +752,8 @@ public class PriceCatalogSalDetailDTO extends AbstractDTO implements Serializabl
     public static final Function<PriceCatalogSalDetailDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<PriceCatalogSalDetailDTO> validatorExample() {
-    ValidatorBuilder<PriceCatalogSalDetailDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.purapplyorder.PurApplyDetailDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -1383,8 +1386,8 @@ public class PurApplyDetailDTO extends AbstractDTO implements Serializable {
         o -> o.getCalPurRate();
   }
 
-  public static ValidatorBuilder<PurApplyDetailDTO> validatorExample() {
-    ValidatorBuilder<PurApplyDetailDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

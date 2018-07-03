@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.salconsignout.SalConsignOutDetailDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -485,8 +488,8 @@ public class SalConsignOutDetailDTO extends AbstractDTO implements Serializable 
     public static final Function<SalConsignOutDetailDTO, String> _note = o -> o.getNote();
   }
 
-  public static ValidatorBuilder<SalConsignOutDetailDTO> validatorExample() {
-    ValidatorBuilder<SalConsignOutDetailDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

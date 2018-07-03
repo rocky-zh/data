@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.salconsignout.SalConsignOutExceptionLogDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -225,8 +228,8 @@ public class SalConsignOutExceptionLogDTO extends AbstractDTO implements Seriali
         o -> o.getAmount();
   }
 
-  public static ValidatorBuilder<SalConsignOutExceptionLogDTO> validatorExample() {
-    ValidatorBuilder<SalConsignOutExceptionLogDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

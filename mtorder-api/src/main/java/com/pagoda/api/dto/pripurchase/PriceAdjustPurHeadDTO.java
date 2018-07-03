@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.pripurchase.PriceAdjustPurHeadDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -748,8 +751,8 @@ public class PriceAdjustPurHeadDTO extends AbstractDTO implements Serializable {
     public static final Function<PriceAdjustPurHeadDTO, String> _note = o -> o.getNote();
   }
 
-  public static ValidatorBuilder<PriceAdjustPurHeadDTO> validatorExample() {
-    ValidatorBuilder<PriceAdjustPurHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

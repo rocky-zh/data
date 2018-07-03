@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.salconsign.SalConsignDetailDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -1047,8 +1050,8 @@ public class SalConsignDetailDTO extends AbstractDTO implements Serializable {
         o -> o.getShippedCount();
   }
 
-  public static ValidatorBuilder<SalConsignDetailDTO> validatorExample() {
-    ValidatorBuilder<SalConsignDetailDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 

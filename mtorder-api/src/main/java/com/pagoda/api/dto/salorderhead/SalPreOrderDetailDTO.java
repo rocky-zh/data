@@ -13,6 +13,9 @@ import io.swagger.annotations.*;
 import org.springframework.data.domain.*;
 import org.springframework.validation.*;
 
+import static com.pagoda.api.dto.ValidatorBuilder.Predicates.*;
+import static com.pagoda.api.dto.salorderhead.SalPreOrderDetailDTO.Getters.*;
+
 /**
  * 查询方法返回的DTO对象
  *
@@ -1274,8 +1277,8 @@ public class SalPreOrderDetailDTO extends AbstractDTO implements Serializable {
     public static final Function<SalPreOrderDetailDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<SalPreOrderDetailDTO> validatorExample() {
-    ValidatorBuilder<SalPreOrderDetailDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
+    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
     return builder;
   }
 
