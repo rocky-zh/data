@@ -775,8 +775,8 @@ public class PurOrgVenDTO extends AbstractDTO implements Serializable {
     public static final Function<PurOrgVenDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<PurOrgVenDTO> validatorExample() {
+    ValidatorBuilder<PurOrgVenDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

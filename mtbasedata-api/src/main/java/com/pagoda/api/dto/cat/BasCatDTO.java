@@ -551,8 +551,8 @@ public class BasCatDTO extends AbstractDTO implements Serializable {
     public static final Function<BasCatDTO, String> _searchWord = o -> o.getSearchWord();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasCatDTO> validatorExample() {
+    ValidatorBuilder<BasCatDTO> builder = new ValidatorBuilder();
     builder.field(_searchWord, notNull, "搜索关键词(存储name字段首字母)为空");
     return builder;
   }

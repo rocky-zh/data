@@ -1101,8 +1101,8 @@ public class BasOrgDTO extends AbstractDTO implements Serializable {
     public static final Function<BasOrgDTO, Integer> _showOrder = o -> o.getShowOrder();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasOrgDTO> validatorExample() {
+    ValidatorBuilder<BasOrgDTO> builder = new ValidatorBuilder();
     builder.field(_showOrder, notNull, "排序为空");
     return builder;
   }

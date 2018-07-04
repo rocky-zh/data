@@ -781,8 +781,8 @@ public class BasVenRebateHeadDTO extends AbstractDTO implements Serializable {
     public static final Function<BasVenRebateHeadDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasVenRebateHeadDTO> validatorExample() {
+    ValidatorBuilder<BasVenRebateHeadDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

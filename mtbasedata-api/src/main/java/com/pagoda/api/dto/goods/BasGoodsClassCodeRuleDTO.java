@@ -490,8 +490,8 @@ public class BasGoodsClassCodeRuleDTO extends AbstractDTO implements Serializabl
     public static final Function<BasGoodsClassCodeRuleDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasGoodsClassCodeRuleDTO> validatorExample() {
+    ValidatorBuilder<BasGoodsClassCodeRuleDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

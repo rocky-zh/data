@@ -509,8 +509,8 @@ public class BasPostDTO extends AbstractDTO implements Serializable {
     public static final Function<BasPostDTO, Integer> _isEnabled = o -> o.getIsEnabled();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasPostDTO> validatorExample() {
+    ValidatorBuilder<BasPostDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

@@ -1722,8 +1722,8 @@ public class BasOrgGoodsDTO extends AbstractDTO implements Serializable {
         o -> o.getSalRetOutDepotId();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasOrgGoodsDTO> validatorExample() {
+    ValidatorBuilder<BasOrgGoodsDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

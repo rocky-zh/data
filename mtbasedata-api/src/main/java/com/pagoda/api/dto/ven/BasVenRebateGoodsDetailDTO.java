@@ -830,8 +830,8 @@ public class BasVenRebateGoodsDetailDTO extends AbstractDTO implements Serializa
     public static final Function<BasVenRebateGoodsDetailDTO, String> _remark = o -> o.getRemark();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasVenRebateGoodsDetailDTO> validatorExample() {
+    ValidatorBuilder<BasVenRebateGoodsDetailDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

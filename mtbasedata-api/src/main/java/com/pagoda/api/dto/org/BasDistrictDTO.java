@@ -443,8 +443,8 @@ public class BasDistrictDTO extends AbstractDTO implements Serializable {
     public static final Function<BasDistrictDTO, java.math.BigDecimal> _adLng = o -> o.getAdLng();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasDistrictDTO> validatorExample() {
+    ValidatorBuilder<BasDistrictDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

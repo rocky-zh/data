@@ -403,8 +403,8 @@ public class BasUnitDTO extends AbstractDTO implements Serializable {
     public static final Function<BasUnitDTO, Integer> _showOrder = o -> o.getShowOrder();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasUnitDTO> validatorExample() {
+    ValidatorBuilder<BasUnitDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

@@ -1739,8 +1739,8 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
     public static final Function<BasGoodsDTO, String> _mnemWord = o -> o.getMnemWord();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasGoodsDTO> validatorExample() {
+    ValidatorBuilder<BasGoodsDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

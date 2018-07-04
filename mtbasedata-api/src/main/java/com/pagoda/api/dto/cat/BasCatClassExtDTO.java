@@ -373,8 +373,8 @@ public class BasCatClassExtDTO extends AbstractDTO implements Serializable {
     public static final Function<BasCatClassExtDTO, Long> _entId = o -> o.getEntId();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasCatClassExtDTO> validatorExample() {
+    ValidatorBuilder<BasCatClassExtDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

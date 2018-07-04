@@ -787,8 +787,8 @@ public class BasCatClassDTO extends AbstractDTO implements Serializable {
     public static final Function<BasCatClassDTO, Long> _tableId = o -> o.getTableId();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasCatClassDTO> validatorExample() {
+    ValidatorBuilder<BasCatClassDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

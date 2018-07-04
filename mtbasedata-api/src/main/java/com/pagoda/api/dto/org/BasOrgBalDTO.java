@@ -556,8 +556,8 @@ public class BasOrgBalDTO extends AbstractDTO implements Serializable {
     public static final Function<BasOrgBalDTO, String> _billTelephone = o -> o.getBillTelephone();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasOrgBalDTO> validatorExample() {
+    ValidatorBuilder<BasOrgBalDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

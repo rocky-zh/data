@@ -593,8 +593,8 @@ public class BasGoodsUnitDTO extends AbstractDTO implements Serializable {
     public static final Function<BasGoodsUnitDTO, Integer> _sourceType = o -> o.getSourceType();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasGoodsUnitDTO> validatorExample() {
+    ValidatorBuilder<BasGoodsUnitDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

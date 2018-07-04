@@ -330,8 +330,8 @@ public class BasOrgDepDTO extends AbstractDTO implements Serializable {
     public static final Function<BasOrgDepDTO, Long> _orgId = o -> o.getOrgId();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasOrgDepDTO> validatorExample() {
+    ValidatorBuilder<BasOrgDepDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

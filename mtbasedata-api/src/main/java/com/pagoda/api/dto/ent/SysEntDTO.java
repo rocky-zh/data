@@ -292,8 +292,8 @@ public class SysEntDTO extends AbstractDTO implements Serializable {
     public static final Function<SysEntDTO, Integer> _isEnabled = o -> o.getIsEnabled();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SysEntDTO> validatorExample() {
+    ValidatorBuilder<SysEntDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

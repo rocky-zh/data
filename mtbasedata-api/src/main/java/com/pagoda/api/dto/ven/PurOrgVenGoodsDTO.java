@@ -1155,8 +1155,8 @@ public class PurOrgVenGoodsDTO extends AbstractDTO implements Serializable {
     public static final Function<PurOrgVenGoodsDTO, Integer> _isAllowRec = o -> o.getIsAllowRec();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<PurOrgVenGoodsDTO> validatorExample() {
+    ValidatorBuilder<PurOrgVenGoodsDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

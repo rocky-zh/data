@@ -293,8 +293,8 @@ public class BasOrgVenDTO extends AbstractDTO implements Serializable {
     public static final Function<BasOrgVenDTO, Integer> _enabledStatus = o -> o.getEnabledStatus();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasOrgVenDTO> validatorExample() {
+    ValidatorBuilder<BasOrgVenDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

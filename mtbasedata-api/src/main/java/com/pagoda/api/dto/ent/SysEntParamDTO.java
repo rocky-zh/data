@@ -331,8 +331,8 @@ public class SysEntParamDTO extends AbstractDTO implements Serializable {
     public static final Function<SysEntParamDTO, Long> _entId = o -> o.getEntId();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<SysEntParamDTO> validatorExample() {
+    ValidatorBuilder<SysEntParamDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

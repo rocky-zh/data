@@ -562,8 +562,8 @@ public class BasGoodsProcessHeadDTO extends AbstractDTO implements Serializable 
     public static final Function<BasGoodsProcessHeadDTO, Long> _entId = o -> o.getEntId();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasGoodsProcessHeadDTO> validatorExample() {
+    ValidatorBuilder<BasGoodsProcessHeadDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

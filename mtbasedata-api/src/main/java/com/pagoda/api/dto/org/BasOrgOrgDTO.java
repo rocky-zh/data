@@ -554,8 +554,8 @@ public class BasOrgOrgDTO extends AbstractDTO implements Serializable {
         o -> o.getPurRetOutDepotId();
   }
 
-  public static ValidatorBuilder<InvCheckStockHeadDTO> validatorExample() {
-    ValidatorBuilder<InvCheckStockHeadDTO> builder = new ValidatorBuilder<>();
+  public static ValidatorBuilder<BasOrgOrgDTO> validatorExample() {
+    ValidatorBuilder<BasOrgOrgDTO> builder = new ValidatorBuilder();
     return builder;
   }
 
