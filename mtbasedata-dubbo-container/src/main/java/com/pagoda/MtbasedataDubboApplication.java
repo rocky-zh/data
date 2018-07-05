@@ -154,10 +154,6 @@ public class MtbasedataDubboApplication {
           new DtoSerializer(
               com.pagoda.api.dto.ent.SysEntParamDTO.class, serializerFactory.getClassLoader()));
       staticSerializerMap.put(
-          com.pagoda.domain.cat.BasCat.class,
-          new DtoSerializer(
-              com.pagoda.api.dto.cat.BasCatDTO.class, serializerFactory.getClassLoader()));
-      staticSerializerMap.put(
           com.pagoda.domain.cat.BasCatClass.class,
           new DtoSerializer(
               com.pagoda.api.dto.cat.BasCatClassDTO.class, serializerFactory.getClassLoader()));
@@ -169,10 +165,6 @@ public class MtbasedataDubboApplication {
           com.pagoda.domain.cat.BasCatClassRel.class,
           new DtoSerializer(
               com.pagoda.api.dto.cat.BasCatClassRelDTO.class, serializerFactory.getClassLoader()));
-      staticSerializerMap.put(
-          com.pagoda.domain.goods.BasGoods.class,
-          new DtoSerializer(
-              com.pagoda.api.dto.goods.BasGoodsDTO.class, serializerFactory.getClassLoader()));
       staticSerializerMap.put(
           com.pagoda.domain.goods.BasGoodsClassCodeRule.class,
           new DtoSerializer(

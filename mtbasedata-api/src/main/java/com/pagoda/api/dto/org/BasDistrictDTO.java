@@ -444,7 +444,7 @@ public class BasDistrictDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasDistrictDTO> validatorExample() {
-    ValidatorBuilder<BasDistrictDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasDistrictDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

@@ -526,7 +526,7 @@ public class BasGoodsProcessDetailDTO extends AbstractDTO implements Serializabl
   }
 
   public static ValidatorBuilder<BasGoodsProcessDetailDTO> validatorExample() {
-    ValidatorBuilder<BasGoodsProcessDetailDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasGoodsProcessDetailDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

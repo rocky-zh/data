@@ -18,11 +18,9 @@ PurOrgVenServiceImpl.java
 PurOrgVenGoodsServiceImpl.java
 SysEntServiceImpl.java
 SysEntParamServiceImpl.java
-BasCatServiceImpl.java
 BasCatClassServiceImpl.java
 BasCatClassExtServiceImpl.java
 BasCatClassRelServiceImpl.java
-BasGoodsServiceImpl.java
 BasGoodsClassCodeRuleServiceImpl.java
 BasOrgBalBankServiceImpl.java
 BasDistrictServiceImpl.java

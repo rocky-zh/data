@@ -491,7 +491,7 @@ public class BasGoodsClassCodeRuleDTO extends AbstractDTO implements Serializabl
   }
 
   public static ValidatorBuilder<BasGoodsClassCodeRuleDTO> validatorExample() {
-    ValidatorBuilder<BasGoodsClassCodeRuleDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasGoodsClassCodeRuleDTO> builder = new ValidatorBuilder();
     builder.field(_codeRuleId, notNull, "编码规则ID为空");
     builder.field(_name, notNull, "产成商品名为空");
     builder.field(_goodsClassId, notNull, "商品分类ID为空");

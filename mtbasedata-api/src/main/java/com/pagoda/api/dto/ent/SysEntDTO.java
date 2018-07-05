@@ -293,7 +293,7 @@ public class SysEntDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<SysEntDTO> validatorExample() {
-    ValidatorBuilder<SysEntDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<SysEntDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

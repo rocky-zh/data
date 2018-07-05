@@ -782,7 +782,7 @@ public class BasVenRebateHeadDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasVenRebateHeadDTO> validatorExample() {
-    ValidatorBuilder<BasVenRebateHeadDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasVenRebateHeadDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

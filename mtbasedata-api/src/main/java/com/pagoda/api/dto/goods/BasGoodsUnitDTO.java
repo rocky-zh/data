@@ -594,7 +594,7 @@ public class BasGoodsUnitDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasGoodsUnitDTO> validatorExample() {
-    ValidatorBuilder<BasGoodsUnitDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasGoodsUnitDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

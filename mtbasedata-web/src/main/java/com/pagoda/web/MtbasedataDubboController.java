@@ -46,11 +46,9 @@ public class MtbasedataDubboController {
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.SeleteGroupOrgWithRelInfoDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.cat.basCatClassDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.basDistrictDTO");
-    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.goods.FindGoodsInDefineDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.basOrgDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.ent.sysEntDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.ent.sysEntParamDTO");
-    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.cat.basCatDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.goods.basOrgGoodsDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.SelectBasOrgForListDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.cat.basCatClassRelDTO");
@@ -58,7 +56,6 @@ public class MtbasedataDubboController {
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.basOrgGroupOrgDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.basOrgVenDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.ven.basVenRebateGoodsDetailDTO");
-    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.goods.basGoodsDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.ven.basVenRebateOrgDetailDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.ven.purOrgVenDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.SelectInvByCodeNameOrgIdAndCatRelDTO");
@@ -69,7 +66,6 @@ public class MtbasedataDubboController {
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.unit.basUnitDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.org.basOrgBalDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.goods.basGoodsProcessDetailDTO");
-    putInMap(DTO_PACKAGES, "com.pagoda.api.dto.goods.FindGoodsOnCatClassDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.ven.purOrgVenGoodsDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.goods.basGoodsClassCodeRuleDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.api.dto.cat.basCatClassExtDTO");
@@ -98,7 +94,6 @@ public class MtbasedataDubboController {
     putInMap(API_PACKAGES, "com.pagoda.api.ent.sysEntParamService");
     putInMap(API_PACKAGES, "com.pagoda.api.ven.basVenRebateHeadService");
     putInMap(API_PACKAGES, "com.pagoda.api.org.basOrgDepService");
-    putInMap(API_PACKAGES, "com.pagoda.api.cat.basCatService");
     putInMap(API_PACKAGES, "com.pagoda.api.cat.basCatClassService");
     putInMap(API_PACKAGES, "com.pagoda.api.goods.basGoodsUnitService");
     putInMap(API_PACKAGES, "com.pagoda.api.ent.sysEntService");
@@ -112,7 +107,6 @@ public class MtbasedataDubboController {
     putInMap(API_PACKAGES, "com.pagoda.api.ven.purOrgVenService");
     putInMap(API_PACKAGES, "com.pagoda.api.goods.basGoodsBomHeadService");
     putInMap(API_PACKAGES, "com.pagoda.api.cat.basCatClassRelService");
-    putInMap(API_PACKAGES, "com.pagoda.api.goods.basGoodsService");
     putInMap(API_PACKAGES, "com.pagoda.api.org.basOrgBalBankService");
     putInMap(API_PACKAGES, "com.pagoda.api.ven.basVenRebateOrgDetailService");
     putInMap(API_PACKAGES, "com.pagoda.api.ven.purOrgVenGoodsService");

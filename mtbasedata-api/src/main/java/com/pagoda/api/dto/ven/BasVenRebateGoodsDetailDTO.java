@@ -831,7 +831,7 @@ public class BasVenRebateGoodsDetailDTO extends AbstractDTO implements Serializa
   }
 
   public static ValidatorBuilder<BasVenRebateGoodsDetailDTO> validatorExample() {
-    ValidatorBuilder<BasVenRebateGoodsDetailDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasVenRebateGoodsDetailDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

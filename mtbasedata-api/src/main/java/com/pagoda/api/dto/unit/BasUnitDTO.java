@@ -404,7 +404,7 @@ public class BasUnitDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasUnitDTO> validatorExample() {
-    ValidatorBuilder<BasUnitDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasUnitDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

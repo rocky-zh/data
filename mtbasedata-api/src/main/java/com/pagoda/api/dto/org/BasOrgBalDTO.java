@@ -557,7 +557,7 @@ public class BasOrgBalDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasOrgBalDTO> validatorExample() {
-    ValidatorBuilder<BasOrgBalDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasOrgBalDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

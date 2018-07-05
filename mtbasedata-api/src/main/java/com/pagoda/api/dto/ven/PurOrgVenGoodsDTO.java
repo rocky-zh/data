@@ -1156,7 +1156,7 @@ public class PurOrgVenGoodsDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<PurOrgVenGoodsDTO> validatorExample() {
-    ValidatorBuilder<PurOrgVenGoodsDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<PurOrgVenGoodsDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

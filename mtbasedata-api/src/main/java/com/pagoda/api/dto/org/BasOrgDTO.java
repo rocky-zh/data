@@ -1102,7 +1102,7 @@ public class BasOrgDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasOrgDTO> validatorExample() {
-    ValidatorBuilder<BasOrgDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasOrgDTO> builder = new ValidatorBuilder();
     builder.field(_showOrder, notNull, "排序为空");
     return builder;
   }

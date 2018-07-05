@@ -374,7 +374,7 @@ public class BasCatClassExtDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasCatClassExtDTO> validatorExample() {
-    ValidatorBuilder<BasCatClassExtDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasCatClassExtDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

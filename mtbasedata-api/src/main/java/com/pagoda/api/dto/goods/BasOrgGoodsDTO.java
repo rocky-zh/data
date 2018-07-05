@@ -1723,7 +1723,7 @@ public class BasOrgGoodsDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasOrgGoodsDTO> validatorExample() {
-    ValidatorBuilder<BasOrgGoodsDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasOrgGoodsDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

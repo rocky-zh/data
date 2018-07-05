@@ -563,7 +563,7 @@ public class BasGoodsProcessHeadDTO extends AbstractDTO implements Serializable 
   }
 
   public static ValidatorBuilder<BasGoodsProcessHeadDTO> validatorExample() {
-    ValidatorBuilder<BasGoodsProcessHeadDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasGoodsProcessHeadDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

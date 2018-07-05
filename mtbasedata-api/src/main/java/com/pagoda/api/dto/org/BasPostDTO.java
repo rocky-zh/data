@@ -510,7 +510,7 @@ public class BasPostDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasPostDTO> validatorExample() {
-    ValidatorBuilder<BasPostDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasPostDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

@@ -818,7 +818,7 @@ public class BasGoodsBomHeadDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<BasGoodsBomHeadDTO> validatorExample() {
-    ValidatorBuilder<BasGoodsBomHeadDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<BasGoodsBomHeadDTO> builder = new ValidatorBuilder();
     return builder;
   }
 

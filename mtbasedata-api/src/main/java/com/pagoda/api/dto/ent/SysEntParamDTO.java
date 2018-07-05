@@ -332,7 +332,7 @@ public class SysEntParamDTO extends AbstractDTO implements Serializable {
   }
 
   public static ValidatorBuilder<SysEntParamDTO> validatorExample() {
-    ValidatorBuilder<SysEntParamDTO> builder = new ValidatorBuilder<>();
+    ValidatorBuilder<SysEntParamDTO> builder = new ValidatorBuilder();
     return builder;
   }
 
