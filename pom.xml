@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pagoda</groupId>
-    <artifactId>data-parent</artifactId>
+    <artifactId>mongo1-parent</artifactId>
     <packaging>pom</packaging>
-    <name>data-parent</name>
-    <version>1.0</version>
+    <name>mongo1-parent</name>
+    <version>1.0.0</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -20,11 +20,11 @@
         <relativePath/>
     </parent>
     <modules>
-            <module>data-api</module>
-            <module>data-dao</module>
-            <module>data-service</module>
-            <module>data-dubbo-container</module>
-            <module>data-web</module>
+            <module>mongo1-api</module>
+            <module>mongo1-dao</module>
+            <module>mongo1-service</module>
+            <module>mongo1-dubbo-container</module>
+            <module>mongo1-web</module>
     </modules>
 
     <build>

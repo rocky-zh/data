@@ -1,8 +1,0 @@
-# 在此文件中列出不想被代码生成器覆盖的文件名
-bas_districtService.java
-bas_catService.java
-bas_org_balService.java
-inv_depotService.java
-bas_org_group_orgService.java
-bas_org_group_org_copyService.java
-bas_org_group_org_copy_copyService.java
