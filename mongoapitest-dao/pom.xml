@@ -36,18 +36,6 @@
         <version>1.0.1</version>
         <relativePath/>
     </parent>
-     <!-- 导入平台依赖的jar版本 -->
-     <!--<dependencyManagement>-->
-        <!--<dependencies>-->
-            <!--<dependency>-->
-                <!--<groupId>com.pagoda.platform</groupId>-->
-                <!--<artifactId>jms-dependencies</artifactId>-->
-                <!--<version>${pagoda-jms.version}</version>-->
-                <!--<type>pom</type>-->
-                <!--<scope>import</scope>-->
-            <!--</dependency>-->
-        <!--</dependencies>-->
-    <!--</dependencyManagement>-->
 
     <dependencies>
         <!-- 分页参数导致dubbo序列化问题 -->
@@ -56,10 +44,6 @@
             <artifactId>spring-data-commons</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.pagoda.platform</groupId>
-            <artifactId>jms-annotation</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.pagoda.platform</groupId>
             <artifactId>jpa-core</artifactId>
@@ -116,11 +100,6 @@
         </dependency>
 
         <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
         </dependency>
@@ -151,13 +130,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-
-        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>
@@ -181,67 +153,6 @@
         </dependency>
     </dependencies>
 
-    <organization>
-        <name>pagoda</name>
-        <url>https://www.pagoda.com.cn</url>
-    </organization>
-
-    <!-- issue -->
-    <issueManagement>
-        <system>JIRA Issue</system>
-        <url>http://jira.pagoda.com.cn/secure/Dashboard.jspa</url>
-    </issueManagement>
-
-    <!-- 配置Nexus私服地址 -->
-    <repositories>
-        <repository>
-            <id>dev-nexus</id>
-            <name>nexus</name>
-            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </snapshots>
-        </repository>
-
-    </repositories>
-
-    <!-- 插件依赖地址-->
-    <pluginRepositories>
-        <pluginRepository>
-            <id>dev-nexus</id>
-            <name>nexus</name>
-            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <!--项目发布-->
-    <distributionManagement>
-        <repository>
-            <id>user-release</id>
-            <name>User Project Release</name>
-            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/repositories/releases</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>user-snapshots</id>
-            <name>User Project SNAPSHOTS</name>
-            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <scm>
         <connection>scm:git:https://github.com/penghaige/data.git</connection>
         <url>scm:git:https://github.com/penghaige/data.git</url>
@@ -251,20 +162,6 @@
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <testSource>${java.version}</testSource>
-                    <testTarget>${java.version}</testTarget>
-                </configuration>
-            </plugin>
              <!-- 生成JPA实体的字段元数据 -->
               <plugin>
                 <groupId>org.bsc.maven</groupId>
@@ -289,97 +186,6 @@
                         <groupId>org.hibernate</groupId>
                         <artifactId>hibernate-jpamodelgen</artifactId>
                         <version>${hibernate-jpamodelgen.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            
-            <!--配置生成Javadoc包-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin.version}</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <aggregate>true</aggregate>
-                    <charset>UTF-8</charset>
-                    <docencoding>UTF-8</docencoding>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <!--配置生成源码包-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>${maven-source-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- automatically formatted on each build -->
-            <plugin>
-                <groupId>com.coveo</groupId>
-                <artifactId>fmt-maven-plugin</artifactId>
-                <version>${fmt-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>format</goal>
-                            <!--<goal>check</goal>-->
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- https://github.com/alibaba/p3c -->
-            <!-- mvn pmd:pmd -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>${maven-pmd-plugin.version}</version>
-                <configuration>
-                    <rulesets>
-                        <ruleset>rulesets/java/ali-comment.xml</ruleset>
-                        <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
-                        <ruleset>rulesets/java/ali-constant.xml</ruleset>
-                        <ruleset>rulesets/java/ali-exception.xml</ruleset>
-                        <ruleset>rulesets/java/ali-flowcontrol.xml</ruleset>
-                        <ruleset>rulesets/java/ali-naming.xml</ruleset>
-                        <ruleset>rulesets/java/ali-oop.xml</ruleset>
-                        <ruleset>rulesets/java/ali-orm.xml</ruleset>
-                        <ruleset>rulesets/java/ali-other.xml</ruleset>
-                        <ruleset>rulesets/java/ali-set.xml</ruleset>
-                    </rulesets>
-                    <failOnViolation>false</failOnViolation>
-                    <printFailingErrors>true</printFailingErrors>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.alibaba.p3c</groupId>
-                        <artifactId>p3c-pmd</artifactId>
-                        <version>${p3c-pmd.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -414,23 +220,6 @@
                             <version>${findsecbugs-plugin.version}</version>
                         </plugin>
                     </plugins>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>external.atlassian.jgitflow</groupId>
-                <artifactId>jgitflow-maven-plugin</artifactId>
-                <version>${jgitflow-maven-plugin.version}</version>
-                <configuration>
-                    <flowInitContext>
-                        <masterBranchName>master</masterBranchName>
-                        <developBranchName>develop</developBranchName>
-                        <featureBranchPrefix>feature-</featureBranchPrefix>
-                        <releaseBranchPrefix>release-</releaseBranchPrefix>
-                        <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
-                        <versionTagPrefix>tag-</versionTagPrefix>
-                    </flowInitContext>
-                    <!--<username>name@9188.com</username>-->
-                    <!--<password>yourpassword</password>-->
                 </configuration>
             </plugin>
         </plugins>

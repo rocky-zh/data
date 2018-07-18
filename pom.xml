@@ -36,6 +36,7 @@
         <relativePath/>
     </parent>
     <modules>
+            <module>mongoapitest-parent</module>
             <module>mongoapitest-api</module>
             <module>mongoapitest-dao</module>
             <module>mongoapitest-service</module>
