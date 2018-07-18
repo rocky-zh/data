@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.pagoda.test</groupId>
+    <artifactId>mongoapitest-build</artifactId>
+    <packaging>pom</packaging>
+    <name>mongoapitest-build</name>
+    <version>1.0.1</version>
+    <properties>
+        <java.version>1.8</java.version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    
+          <!-- Build args -->
+        <argline>-server -Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m -Dfile.encoding=UTF-8
+            -Djava.net.preferIPv4Stack=true
+        </argline>
+        <arguments/>
+
+        <!-- Maven plugins -->
+        <!--<maven-release-plugin.version>2.5.3</maven-release-plugin.version>-->
+        <!--<jgitflow-maven-plugin.version>1.0-m5</jgitflow-maven-plugin.version>-->
+        <!--<sync-maven-plugin.version>1.0</sync-maven-plugin.version>-->
+        <!--<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>-->
+
+        <!-- 跳过测试 -->
+        <maven.test.skip>true</maven.test.skip>
+    </properties>
+    <parent>
+        <groupId>com.pagoda.platform</groupId>
+        <artifactId>jms-parent</artifactId>
+        <version>1.0.5</version>
+        <relativePath/>
+    </parent>
+    <modules>
+            <module>mongoapitest-api</module>
+            <module>mongoapitest-dao</module>
+            <module>mongoapitest-service</module>
+            <module>mongoapitest-dubbo-container</module>
+            <module>mongoapitest-web</module>
+    </modules>
+
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>dev-nexus</id>
+            <name>nexus</name>
+            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+ <!--项目发布-->
+    <distributionManagement>
+        <repository>
+            <id>user-release</id>
+            <name>User Project Release</name>
+            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/repositories/releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>user-snapshots</id>
+            <name>User Project SNAPSHOTS</name>
+            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
