@@ -59,6 +59,37 @@
         </plugins>
     </build>
 
+<!-- 配置Nexus私服地址 -->
+    <repositories>
+        <repository>
+            <id>dev-nexus</id>
+            <name>nexus</name>
+            <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+      <pluginRepositories>
+            <pluginRepository>
+                <id>dev-nexus</id>
+                <name>nexus</name>
+                <url>http://maven.dev.pagoda.com.cn:10008/nexus/content/groups/public</url>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+            </pluginRepository>
+        </pluginRepositories>
  <!--项目发布-->
     <distributionManagement>
         <repository>
