@@ -31,9 +31,9 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <parent>
-        <groupId>com.pagoda.platform</groupId>
-        <artifactId>jms-parent</artifactId>
-        <version>1.0.5</version>
+        <groupId>com.pagoda.test</groupId>
+        <artifactId>mongoapitest-parent</artifactId>
+        <version>1.0.1</version>
         <relativePath/>
     </parent>
      <!-- 导入平台依赖的jar版本 -->
