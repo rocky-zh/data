@@ -1,8 +1,8 @@
 
-模块名：Mtorder
-项目名称：BACKUP3
-包名：com.pagoda
-版本号：2.0.0-SNAPSHOT
+模块名：TestTime
+项目名称：testPro
+包名：com.pagoda.test
+版本号：1.0.1
 git地址：https://github.com/penghaige/data.git
 
 install.bat 将各模块编译成jar包后复制到本地的maven仓库
