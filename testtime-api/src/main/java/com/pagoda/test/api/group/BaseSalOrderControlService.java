@@ -190,4 +190,20 @@ public interface BaseSalOrderControlService {
       @ApiParam("remark") String remark,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
+
+  /**
+   * 根据时分秒查询
+   *
+   * @param placeOrderTime1
+   * @param idList
+   * @param pageable
+   * @return
+   * @throws ServiceException
+   */
+  @ApiOperation(value = "selectWithTime", notes = "")
+  Page<SalOrderControlDTO> selectWithTime(
+      @ApiParam("place_order_time1") String placeOrderTime1,
+      @ApiParam("idList") List<Long> idList,
+      @ApiParam("pageable") Pageable pageable)
+      throws ServiceException;
 }

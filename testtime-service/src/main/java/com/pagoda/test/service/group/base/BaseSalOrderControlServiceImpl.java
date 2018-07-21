@@ -280,6 +280,20 @@ public abstract class BaseSalOrderControlServiceImpl
     }
   }
 
+  @ApiOperation(value = "selectWithTime", notes = "根据时分秒查询")
+  @Override
+  public Page<SalOrderControlDTO> selectWithTime(
+      @ApiParam("place_order_time1") String placeOrderTime1,
+      @ApiParam("idList") List<Long> idList,
+      @ApiParam("pageable") Pageable pageable)
+      throws ServiceException {
+    try {
+      return repository.selectWithTime(placeOrderTime1, idList, pageable);
+    } catch (Exception e) {
+      throw new ServiceException(e);
+    }
+  }
+
   /*  // 动态sql演示，正式的sql需要在开发平台定义 ， 参考 https://blog.olowolo.com/post/new-mybatis-dynamic-sql/
    public Page<SalOrderControlDTO> dynamicSqlSelectTest(@ApiParam("nameVal") String nameVal){
         // 开发测试
