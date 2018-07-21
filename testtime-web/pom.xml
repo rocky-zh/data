@@ -116,7 +116,7 @@
 
         <dependency>
             <groupId>com.pagoda.test</groupId>
-            <artifactId>testtime-api</artifactId>
+            <artifactId>testtime-api-auto</artifactId>
             <version>1.0.1</version>
         </dependency>
 

@@ -37,9 +37,9 @@
     <modules>
     <!-- 不包括springboot项目 -->
                 <module>testtime-parent</module>
-                <module>testtime-api</module>
-                <module>testtime-dao</module>
-                <module>testtime-service</module>
+                <module>testtime-api-auto</module>
+                <module>testtime-dao-auto</module>
+                <module>testtime-service-auto</module>
     </modules>
 
     <build>

@@ -46,7 +46,7 @@
     <dependencies>
         <dependency>
             <groupId>com.pagoda.test</groupId>
-            <artifactId>testtime-service</artifactId>
+            <artifactId>testtime-service-auto</artifactId>
             <version>1.0.1</version>
         </dependency>
         <dependency>
