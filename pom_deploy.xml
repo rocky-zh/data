@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.pagoda.test</groupId>
-    <artifactId>testtime-build</artifactId>
+    <groupId>com.test</groupId>
+    <artifactId>person-build</artifactId>
     <packaging>pom</packaging>
-    <name>testtime-build</name>
-    <version>1.0.1</version>
+    <name>person-build</name>
+    <version>1.0.0</version>
     <properties>
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
@@ -36,10 +36,10 @@
 
     <modules>
     <!-- 不包括springboot项目 -->
-                <module>testtime-parent</module>
-                <module>testtime-api-auto</module>
-                <module>testtime-dao-auto</module>
-                <module>testtime-service-auto</module>
+                <module>person-parent</module>
+                <module>person-api-auto</module>
+                <module>person-dao-auto</module>
+                <module>person-service-auto</module>
     </modules>
 
     <build>
