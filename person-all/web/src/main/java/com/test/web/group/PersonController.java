@@ -31,40 +31,42 @@ import static com.test.api.dto.group.PersonDTO.Getters.*;
 @RequestMapping("/PersonService")
 @Slf4j
 public class PersonController implements InitializingBean {
-  @Autowired private PersonService personService;
+    @Autowired
+    private PersonService personService;
 
-  @Autowired private PersonValidator personValidator;
+    @Autowired
+    private PersonValidator personValidator;
 
-  @Override
-  public void afterPropertiesSet() throws Exception {
-    // 初始化自定义验证器
-
-  }
-
-  @InitBinder()
-  public void setupBinder(WebDataBinder binder) {
-    if (binder.getTarget() == null) {
-      return;
+    @Override
+    public void afterPropertiesSet() throws Exception {
+       // 初始化自定义验证器
+            
     }
-    if (personValidator.supports(binder.getTarget().getClass())) {
-      binder.addValidators(personValidator);
+
+    @InitBinder()
+    public void setupBinder(WebDataBinder binder) {
+        if(binder.getTarget() == null) {
+            return ;
+        }
+        if(personValidator.supports(binder.getTarget().getClass())) {
+            binder.addValidators(personValidator);
+        }
     }
-  }
 
-  /**
-   * 插入一条Person记录
-   *
-   * @param dto
-   * @return
-   */
-  @Timed
-  @ApiOperation(value = "create", notes = "插入一条Person记录")
-  @PostMapping(value = "/create")
-  public PersonDTO create(@Valid @RequestBody PersonDTO dto) {
-    return personService.create(dto);
-  }
+    /**
+     * 插入一条Person记录
+     *
+     * @param dto
+     * @return
+     */
+    @Timed
+    @ApiOperation(value = "create", notes = "插入一条Person记录")
+    @PostMapping(value = "/create")
+    public PersonDTO create(@Valid @RequestBody PersonDTO dto) {
+        return personService.create(dto);
+    }
 
-  /**
+    /**
    * 删除一条Person记录
    *
    * @param id
@@ -88,13 +90,13 @@ public class PersonController implements InitializingBean {
   @ApiOperation(value = "update", notes = "更新一条Person记录")
   @PostMapping(value = "/update")
   public PersonDTO update(@RequestBody PersonDTO dto) {
-    Objects.requireNonNull(dto.getId(), "id is null");
+    Objects.requireNonNull(dto.getId(),"id is null");
     return personService.update(dto);
   }
 
-  /**
+   /**
    * 根据主键查询Person记录
-   *
+   * 
    * @param id
    * @return
    */
@@ -114,28 +116,24 @@ public class PersonController implements InitializingBean {
   @Timed
   @ApiOperation(value = "batchGetByIds", notes = "根据主键批量查询{entity.upperCaseName}}记录，不分页")
   @GetMapping(value = "/batchGetByIds")
-  public Iterable<PersonDTO> batchGetByIds(
-      @RequestParam(required = true, value = "idList") List<Long> idList) {
+  public Iterable<PersonDTO> batchGetByIds(@RequestParam(required = true, value = "idList") List<Long> idList) {
     return personService.batchGetByIds(idList);
   }
 
-  /**
-   * 针对前端页面, 所有可查询的字段。
-   * 权限控制需要添加如下的注解，取值要跟权限系统的配置参数一致，CAS配置也要启用，用户登录后会查询其拥有的所有的权限。 @RequiresOperation(page =
-   * "需要权限访问的页面", operations = "需要具备的操作权限", note =
-   * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
-   * "资源属性对应的模型字段"))
-   *
-   * @param orderTime
-   * @param pageable
-   * @return
-   */
-  @Timed
-  @ApiOperation(value = "findBy", notes = "前端页面查询接口, 包含所有可查询的字段")
-  @GetMapping(value = "/findBy")
-  public Page<PersonDTO> findBy(
-      @RequestParam(required = false, value = "orderTime") java.sql.Time orderTime,
-      @RequestParam(required = false, value = "pageable") Pageable pageable) {
-    return personService.findBy(orderTime, pageable);
-  }
+    /**
+     * 针对前端页面, 所有可查询的字段。
+     * 权限控制需要添加如下的注解，取值要跟权限系统的配置参数一致，CAS配置也要启用，用户登录后会查询其拥有的所有的权限。
+     * @RequiresOperation(page = "需要权限访问的页面", operations = "需要具备的操作权限", note = "说明")
+     * @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field = "资源属性对应的模型字段"))
+     *
+     * @param orderTime
+     * @param pageable
+     * @return
+     */   
+    @Timed
+    @ApiOperation(value = "findBy", notes = "前端页面查询接口, 包含所有可查询的字段")
+    @GetMapping(value = "/findBy")
+    public Page<PersonDTO> findBy(@RequestParam(required=false, value="orderTime")null orderTime, @RequestParam(required = false, value = "pageable") Pageable pageable) {
+        return personService.findBy(orderTime, pageable);
+    }
 }

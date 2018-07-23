@@ -36,7 +36,7 @@
 
     <modules>
     <!-- 不包括springboot项目 -->
-                <module>person-parent</module>
+                <module>person-parent-auto</module>
                 <module>person-api-auto</module>
                 <module>person-dao-auto</module>
                 <module>person-service-auto</module>

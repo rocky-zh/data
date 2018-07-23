@@ -20,12 +20,6 @@
         </argline>
         <arguments/>
 
-        <!-- Maven plugins -->
-        <!--<maven-release-plugin.version>2.5.3</maven-release-plugin.version>-->
-        <!--<jgitflow-maven-plugin.version>1.0-m5</jgitflow-maven-plugin.version>-->
-        <!--<sync-maven-plugin.version>1.0</sync-maven-plugin.version>-->
-        <!--<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>-->
-
         <!-- 跳过测试 -->
         <maven.test.skip>true</maven.test.skip>
     </properties>
@@ -37,9 +31,9 @@
     </parent>
     <modules>
             <module>person-parent</module>
-            <module>person-api-auto</module>
-            <module>person-dao-auto</module>
-            <module>person-service-auto</module>
+            <module>person-api</module>
+            <module>person-dao</module>
+            <module>person-service</module>
             <module>person-dubbo-container</module>
             <module>person-web</module>
     </modules>

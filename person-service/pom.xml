@@ -28,17 +28,6 @@
         <sonar.language>java</sonar.language>
         <sonar.java.binaries>target/classes</sonar.java.binaries>
 
-        <!-- Maven plugins -->
-        <!--<p3c-pmd.version>1.3.0</p3c-pmd.version>-->
-        <!--<spotbugs.version>3.1.1</spotbugs.version>-->
-        <!--<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>-->
-        <!--<maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>-->
-        <!--<tomcat7-maven-plugin.version>2.1</tomcat7-maven-plugin.version>-->
-        <!--<fmt-maven-plugin.version>2.3.0</fmt-maven-plugin.version>-->
-        <!--<jgitflow-maven-plugin.version>1.0-m5</jgitflow-maven-plugin.version>-->
-        <!--<spotbugs-maven-plugin.version>3.1.1</spotbugs-maven-plugin.version>-->
-
-
         <!-- 它表示构建的开始时间。可通过变量 ${maven.build.timestamp}，在 POM 中的任何地方使用此变量 -->
         <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
         <!-- 跳过测试 -->
@@ -49,7 +38,7 @@
 
     <parent>
         <groupId>com.test</groupId>
-        <artifactId>person-parent</artifactId>
+        <artifactId>person-parent-auto</artifactId>
         <version>1.0.0</version>
         <relativePath/>
     </parent>
@@ -71,6 +60,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-archaius</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

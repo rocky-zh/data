@@ -16,23 +16,18 @@
 
         <pagoda-jms.version>1.0.5</pagoda-jms.version>
 
-        <!-- Maven plugins -->
-        <!--<spotbugs-maven-plugin.version>3.1.1</spotbugs-maven-plugin.version>-->
-        <!--<p3c-pmd.version>1.3.0</p3c-pmd.version>-->
-        <!--<maven-processor-plugin.version>2.0.5</maven-processor-plugin.version>-->
-        <!--<hibernate-jpamodelgen.version>5.3.1.Final</hibernate-jpamodelgen.version>-->
-        <!--<spotbugs.version>3.1.1</spotbugs.version>-->
-
         <!-- 它表示构建的开始时间。可通过变量 ${maven.build.timestamp}，在 POM 中的任何地方使用此变量 -->
         <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
 
         <!-- 跳过测试 -->
         <maven.test.skip>true</maven.test.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
+        <pmd.skip>true</pmd.skip>
+        <cpd.skip>true</cpd.skip>
     </properties>
     <parent>
         <groupId>com.test</groupId>
-        <artifactId>person-parent</artifactId>
+        <artifactId>person-parent-auto</artifactId>
         <version>1.0.0</version>
         <relativePath/>
     </parent>
