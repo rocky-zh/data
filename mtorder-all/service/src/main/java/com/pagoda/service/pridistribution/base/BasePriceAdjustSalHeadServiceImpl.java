@@ -290,32 +290,32 @@ public abstract class BasePriceAdjustSalHeadServiceImpl
   @ApiOperation(value = "findAdjusNoList", notes = "配送调价单列表")
   @Override
   public Page<FindAdjusNoListDTO> findAdjusNoList(
+      @ApiParam("seqno") String seqno,
       @ApiParam("con_org_code_list") List<String> conOrgCodeList,
       @ApiParam("price_cat_code_list") List<String> priceCatCodeList,
       @ApiParam("effect_date1") java.util.Date effectDate1,
-      @ApiParam("created_at1") java.util.Date createdAt1,
-      @ApiParam("creator_org_code") List<String> creatorOrgCode,
-      @ApiParam("seqno") String seqno,
       @ApiParam("effect_date2") java.util.Date effectDate2,
       @ApiParam("status") Integer status,
+      @ApiParam("created_at1") java.util.Date createdAt1,
       @ApiParam("created_at2") java.util.Date createdAt2,
       @ApiParam("last_modified_at1") java.util.Date lastModifiedAt1,
       @ApiParam("last_modified_at2") java.util.Date lastModifiedAt2,
+      @ApiParam("creator_org_code") List<String> creatorOrgCode,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
       return repository.findAdjusNoList(
+          seqno,
           conOrgCodeList,
           priceCatCodeList,
           effectDate1,
-          createdAt1,
-          creatorOrgCode,
-          seqno,
           effectDate2,
           status,
+          createdAt1,
           createdAt2,
           lastModifiedAt1,
           lastModifiedAt2,
+          creatorOrgCode,
           pageable);
     } catch (Exception e) {
       throw new ServiceException(e);

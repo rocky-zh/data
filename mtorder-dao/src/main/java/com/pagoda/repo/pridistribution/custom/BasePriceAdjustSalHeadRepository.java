@@ -105,72 +105,72 @@ public interface BasePriceAdjustSalHeadRepository
   /**
    * 配送调价单列表
    *
+   * @param seqno
    * @param conOrgCodeList
    * @param priceCatCodeList
    * @param effectDate1
-   * @param createdAt1
-   * @param creatorOrgCode
-   * @param seqno
    * @param effectDate2
    * @param status
+   * @param createdAt1
    * @param createdAt2
    * @param lastModifiedAt1
    * @param lastModifiedAt2
+   * @param creatorOrgCode
    * @param pageable
    * @return
    */
   @SqlTemplate(
     name = "findAdjusNoList",
     sql =
-        "SELECT ph.id ph_id,pch.id pch_id,seqno,pch.con_org_id,pch.con_org_code,pch.con_org_name,ph.price_cat_id,ph.price_cat_code,ph.price_cat_name,effect_date,ph.status,ph.creator_code,ph.creator_name,ph.created_at,ph.modifier_name,ph.last_modified_at,ph.remark,ph.note,ph.version FROM price_adjust_sal_head ph,price_catalog_sal_head pch WHERE ph.price_cat_id = pch.id and ph.deleted = 0 and pch.deleted = 0{{ #seqno}} and seqno =:seqno{{/seqno}}{{#con_org_code_list_exists}} and pch.con_org_code in ({{#con_org_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/con_org_code_list}}){{/con_org_code_list_exists}}{{#price_cat_code_list_exists}} and ph.price_cat_code in ({{#price_cat_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/price_cat_code_list}}){{/price_cat_code_list_exists}}{{#effect_date1}} and ph.effect_date>=:effect_date1{{/effect_date1}}{{ #effect_date2}} and effect_date<=:effect_date2{{/effect_date2}}{{ #status}} and ph.status=:status{{/status}}{{#created_at1}} and ph.created_at>=:created_at1{{/created_at1}}{{ #created_at2}} and ph.created_at<=:created_at2{{/created_at2}}{{ #last_modified_at1}} and ph.last_modified_at>=:last_modified_at1{{/last_modified_at1}}{{ #last_modified_at2}} and ph.last_modified_at <=:last_modified_at2{{/last_modified_at2}}{{ #creator_org_code}} and ph.creator_org_code in ({{#creator_org_code}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creator_org_code}}){{/creator_org_code}} "
+        "SELECT ph.id ph_id,pch.id pch_id,seqno,pch.con_org_id,pch.con_org_code,pch.con_org_name,ph.price_cat_id,ph.price_cat_code,ph.price_cat_name,effect_date,ph.status,ph.creator_code,ph.creator_name,ph.created_at,ph.modifier_name,ph.last_modified_at,ph.remark,ph.note,ph.version FROM price_adjust_sal_head ph,price_catalog_sal_head pch WHERE ph.price_cat_id = pch.id and ph.deleted = 0 and pch.deleted = 0{{#seqno}} and seqno =:seqno{{/seqno}}{{#con_org_code_list_exists}} and pch.con_org_code in ({{#con_org_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/con_org_code_list}}){{/con_org_code_list_exists}}{{#price_cat_code_list_exists}} and ph.price_cat_code in ({{#price_cat_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/price_cat_code_list}}){{/price_cat_code_list_exists}}{{#effect_date1}} and ph.effect_date>=:effect_date1{{/effect_date1}}{{#effect_date2}} and effect_date<=:effect_date2{{/effect_date2}}{{#status}} and ph.status=:status{{/status}}{{#created_at1}} and ph.created_at>=:created_at1{{/created_at1}}{{#created_at2}} and ph.created_at<=:created_at2{{/created_at2}}{{#last_modified_at1}} and ph.last_modified_at>=:last_modified_at1{{/last_modified_at1}}{{#last_modified_at2}} and ph.last_modified_at <=:last_modified_at2{{/last_modified_at2}}{{#creator_org_code_exists}} and ph.creator_org_code in ({{#creator_org_code}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creator_org_code}}){{/creator_org_code_exists}} "
   )
   Page<FindAdjusNoListDTO> findAdjusNoList(
+      @Param("seqno") String seqno,
       @Param("con_org_code_list") List<String> conOrgCodeList,
       @Param("price_cat_code_list") List<String> priceCatCodeList,
       @Param("effect_date1") java.util.Date effectDate1,
-      @Param("created_at1") java.util.Date createdAt1,
-      @Param("creator_org_code") List<String> creatorOrgCode,
-      @Param("seqno") String seqno,
       @Param("effect_date2") java.util.Date effectDate2,
       @Param("status") Integer status,
+      @Param("created_at1") java.util.Date createdAt1,
       @Param("created_at2") java.util.Date createdAt2,
       @Param("last_modified_at1") java.util.Date lastModifiedAt1,
       @Param("last_modified_at2") java.util.Date lastModifiedAt2,
+      @Param("creator_org_code") List<String> creatorOrgCode,
       @Param("pageable") Pageable pageable);
 
   /**
    * 配送调价单列表
    *
+   * @param seqno
    * @param conOrgCodeList
    * @param priceCatCodeList
    * @param effectDate1
-   * @param createdAt1
-   * @param creatorOrgCode
-   * @param seqno
    * @param effectDate2
    * @param status
+   * @param createdAt1
    * @param createdAt2
    * @param lastModifiedAt1
    * @param lastModifiedAt2
+   * @param creatorOrgCode
    * @return
    */
   @SqlTemplate(
     name = "findAdjusNoList",
     sql =
-        "SELECT ph.id ph_id,pch.id pch_id,seqno,pch.con_org_id,pch.con_org_code,pch.con_org_name,ph.price_cat_id,ph.price_cat_code,ph.price_cat_name,effect_date,ph.status,ph.creator_code,ph.creator_name,ph.created_at,ph.modifier_name,ph.last_modified_at,ph.remark,ph.note,ph.version FROM price_adjust_sal_head ph,price_catalog_sal_head pch WHERE ph.price_cat_id = pch.id and ph.deleted = 0 and pch.deleted = 0{{ #seqno}} and seqno =:seqno{{/seqno}}{{#con_org_code_list_exists}} and pch.con_org_code in ({{#con_org_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/con_org_code_list}}){{/con_org_code_list_exists}}{{#price_cat_code_list_exists}} and ph.price_cat_code in ({{#price_cat_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/price_cat_code_list}}){{/price_cat_code_list_exists}}{{#effect_date1}} and ph.effect_date>=:effect_date1{{/effect_date1}}{{ #effect_date2}} and effect_date<=:effect_date2{{/effect_date2}}{{ #status}} and ph.status=:status{{/status}}{{#created_at1}} and ph.created_at>=:created_at1{{/created_at1}}{{ #created_at2}} and ph.created_at<=:created_at2{{/created_at2}}{{ #last_modified_at1}} and ph.last_modified_at>=:last_modified_at1{{/last_modified_at1}}{{ #last_modified_at2}} and ph.last_modified_at <=:last_modified_at2{{/last_modified_at2}}{{ #creator_org_code}} and ph.creator_org_code in ({{#creator_org_code}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creator_org_code}}){{/creator_org_code}} "
+        "SELECT ph.id ph_id,pch.id pch_id,seqno,pch.con_org_id,pch.con_org_code,pch.con_org_name,ph.price_cat_id,ph.price_cat_code,ph.price_cat_name,effect_date,ph.status,ph.creator_code,ph.creator_name,ph.created_at,ph.modifier_name,ph.last_modified_at,ph.remark,ph.note,ph.version FROM price_adjust_sal_head ph,price_catalog_sal_head pch WHERE ph.price_cat_id = pch.id and ph.deleted = 0 and pch.deleted = 0{{#seqno}} and seqno =:seqno{{/seqno}}{{#con_org_code_list_exists}} and pch.con_org_code in ({{#con_org_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/con_org_code_list}}){{/con_org_code_list_exists}}{{#price_cat_code_list_exists}} and ph.price_cat_code in ({{#price_cat_code_list}}{{^-first}}, {{/-first}}\"{{this}}\"{{/price_cat_code_list}}){{/price_cat_code_list_exists}}{{#effect_date1}} and ph.effect_date>=:effect_date1{{/effect_date1}}{{#effect_date2}} and effect_date<=:effect_date2{{/effect_date2}}{{#status}} and ph.status=:status{{/status}}{{#created_at1}} and ph.created_at>=:created_at1{{/created_at1}}{{#created_at2}} and ph.created_at<=:created_at2{{/created_at2}}{{#last_modified_at1}} and ph.last_modified_at>=:last_modified_at1{{/last_modified_at1}}{{#last_modified_at2}} and ph.last_modified_at <=:last_modified_at2{{/last_modified_at2}}{{#creator_org_code_exists}} and ph.creator_org_code in ({{#creator_org_code}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creator_org_code}}){{/creator_org_code_exists}} "
   )
   List<FindAdjusNoListDTO> findAdjusNoList(
+      @Param("seqno") String seqno,
       @Param("con_org_code_list") List<String> conOrgCodeList,
       @Param("price_cat_code_list") List<String> priceCatCodeList,
       @Param("effect_date1") java.util.Date effectDate1,
-      @Param("created_at1") java.util.Date createdAt1,
-      @Param("creator_org_code") List<String> creatorOrgCode,
-      @Param("seqno") String seqno,
       @Param("effect_date2") java.util.Date effectDate2,
       @Param("status") Integer status,
+      @Param("created_at1") java.util.Date createdAt1,
       @Param("created_at2") java.util.Date createdAt2,
       @Param("last_modified_at1") java.util.Date lastModifiedAt1,
-      @Param("last_modified_at2") java.util.Date lastModifiedAt2);
+      @Param("last_modified_at2") java.util.Date lastModifiedAt2,
+      @Param("creator_org_code") List<String> creatorOrgCode);
 
   /**
    * 动态执行一个无参数的sql,返回分页的结果

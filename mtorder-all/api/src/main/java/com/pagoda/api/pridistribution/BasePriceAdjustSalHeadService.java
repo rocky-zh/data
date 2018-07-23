@@ -208,34 +208,34 @@ public interface BasePriceAdjustSalHeadService {
   /**
    * 配送调价单列表
    *
+   * @param seqno
    * @param conOrgCodeList
    * @param priceCatCodeList
    * @param effectDate1
-   * @param createdAt1
-   * @param creatorOrgCode
-   * @param seqno
    * @param effectDate2
    * @param status
+   * @param createdAt1
    * @param createdAt2
    * @param lastModifiedAt1
    * @param lastModifiedAt2
+   * @param creatorOrgCode
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findAdjusNoList", notes = "")
   Page<FindAdjusNoListDTO> findAdjusNoList(
+      @ApiParam("seqno") String seqno,
       @ApiParam("con_org_code_list") List<String> conOrgCodeList,
       @ApiParam("price_cat_code_list") List<String> priceCatCodeList,
       @ApiParam("effect_date1") java.util.Date effectDate1,
-      @ApiParam("created_at1") java.util.Date createdAt1,
-      @ApiParam("creator_org_code") List<String> creatorOrgCode,
-      @ApiParam("seqno") String seqno,
       @ApiParam("effect_date2") java.util.Date effectDate2,
       @ApiParam("status") Integer status,
+      @ApiParam("created_at1") java.util.Date createdAt1,
       @ApiParam("created_at2") java.util.Date createdAt2,
       @ApiParam("last_modified_at1") java.util.Date lastModifiedAt1,
       @ApiParam("last_modified_at2") java.util.Date lastModifiedAt2,
+      @ApiParam("creator_org_code") List<String> creatorOrgCode,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }
