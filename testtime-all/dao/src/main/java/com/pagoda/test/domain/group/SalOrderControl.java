@@ -863,7 +863,7 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
   private Integer isCtrlOneOrder;
 
   @FieldMeta(
-    name = "placeOrderTime1",
+    name = "placeOrderTime",
     scene = "",
     nameCN = "允许下单的时段起始点",
     comment = "允许下单的时段起始点",
@@ -891,14 +891,14 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     index = 0
   )
   @Column(
-    name = "\"place_order_time1\"",
+    name = "\"place_order_time\"",
     nullable = true,
     precision = 0,
     scale = 0,
     columnDefinition = "DATE   COMMENT '允许下单的时段起始点'"
   )
   @Temporal(TemporalType.TIME)
-  private java.util.Date placeOrderTime1;
+  private java.util.Date placeOrderTime;
 
   @FieldMeta(
     name = "placeOrderTime2",

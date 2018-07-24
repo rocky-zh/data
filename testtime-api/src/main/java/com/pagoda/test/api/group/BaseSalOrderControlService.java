@@ -150,7 +150,7 @@ public interface BaseSalOrderControlService {
    * @param allowSafetyStockTimes
    * @param isCtrlExeBatchPolicy
    * @param isCtrlOneOrder
-   * @param placeOrderTime1
+   * @param placeOrderTime
    * @param placeOrderTime2
    * @param isCtrlReturn
    * @param returnGoodsTime1
@@ -181,7 +181,7 @@ public interface BaseSalOrderControlService {
       @ApiParam("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
       @ApiParam("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
       @ApiParam("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @ApiParam("placeOrderTime1") java.util.Date placeOrderTime1,
+      @ApiParam("placeOrderTime") java.util.Date placeOrderTime,
       @ApiParam("placeOrderTime2") java.util.Date placeOrderTime2,
       @ApiParam("isCtrlReturn") Integer isCtrlReturn,
       @ApiParam("returnGoodsTime1") java.util.Date returnGoodsTime1,
@@ -202,7 +202,7 @@ public interface BaseSalOrderControlService {
    */
   @ApiOperation(value = "selectWithTime", notes = "")
   Page<SalOrderControlDTO> selectWithTime(
-      @ApiParam("place_order_time1") String placeOrderTime1,
+      @ApiParam("place_order_time1") java.util.Date placeOrderTime1,
       @ApiParam("idList") List<Long> idList,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;

@@ -144,7 +144,7 @@ public class SalOrderControlController implements InitializingBean {
    * @param allowSafetyStockTimes
    * @param isCtrlExeBatchPolicy
    * @param isCtrlOneOrder
-   * @param placeOrderTime1
+   * @param placeOrderTime
    * @param placeOrderTime2
    * @param isCtrlReturn
    * @param returnGoodsTime1
@@ -177,7 +177,7 @@ public class SalOrderControlController implements InitializingBean {
           java.math.BigDecimal allowSafetyStockTimes,
       @RequestParam(required = false, value = "isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
       @RequestParam(required = false, value = "isCtrlOneOrder") Integer isCtrlOneOrder,
-      @RequestParam(required = false, value = "placeOrderTime1") java.util.Date placeOrderTime1,
+      @RequestParam(required = false, value = "placeOrderTime") java.util.Date placeOrderTime,
       @RequestParam(required = false, value = "placeOrderTime2") java.util.Date placeOrderTime2,
       @RequestParam(required = false, value = "isCtrlReturn") Integer isCtrlReturn,
       @RequestParam(required = false, value = "returnGoodsTime1") java.util.Date returnGoodsTime1,
@@ -204,7 +204,7 @@ public class SalOrderControlController implements InitializingBean {
         allowSafetyStockTimes,
         isCtrlExeBatchPolicy,
         isCtrlOneOrder,
-        placeOrderTime1,
+        placeOrderTime,
         placeOrderTime2,
         isCtrlReturn,
         returnGoodsTime1,

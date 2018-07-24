@@ -39,7 +39,7 @@ public interface SalOrderControlRepositoryCustom {
    * @param allowSafetyStockTimes
    * @param isCtrlExeBatchPolicy
    * @param isCtrlOneOrder
-   * @param placeOrderTime1
+   * @param placeOrderTime
    * @param placeOrderTime2
    * @param isCtrlReturn
    * @param returnGoodsTime1
@@ -68,7 +68,7 @@ public interface SalOrderControlRepositoryCustom {
       @Param("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
       @Param("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
       @Param("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @Param("placeOrderTime1") java.util.Date placeOrderTime1,
+      @Param("placeOrderTime") java.util.Date placeOrderTime,
       @Param("placeOrderTime2") java.util.Date placeOrderTime2,
       @Param("isCtrlReturn") Integer isCtrlReturn,
       @Param("returnGoodsTime1") java.util.Date returnGoodsTime1,
@@ -98,7 +98,7 @@ public interface SalOrderControlRepositoryCustom {
    * @param allowSafetyStockTimes
    * @param isCtrlExeBatchPolicy
    * @param isCtrlOneOrder
-   * @param placeOrderTime1
+   * @param placeOrderTime
    * @param placeOrderTime2
    * @param isCtrlReturn
    * @param returnGoodsTime1
@@ -126,7 +126,7 @@ public interface SalOrderControlRepositoryCustom {
       @Param("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
       @Param("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
       @Param("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @Param("placeOrderTime1") java.util.Date placeOrderTime1,
+      @Param("placeOrderTime") java.util.Date placeOrderTime,
       @Param("placeOrderTime2") java.util.Date placeOrderTime2,
       @Param("isCtrlReturn") Integer isCtrlReturn,
       @Param("returnGoodsTime1") java.util.Date returnGoodsTime1,

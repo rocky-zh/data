@@ -812,7 +812,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
   private Integer isCtrlOneOrder;
 
   @FieldMeta(
-    name = "placeOrderTime1",
+    name = "placeOrderTime",
     scene = "",
     nameCN = "允许下单的时段起始点",
     comment = "允许下单的时段起始点",
@@ -840,12 +840,12 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     index = 0
   )
   @ApiModelProperty(
-    name = "placeOrderTime1",
+    name = "placeOrderTime",
     value = "允许下单的时段起始点",
     dataType = "",
     notes = "5b505fae4772960001e54adc"
   )
-  private java.util.Date placeOrderTime1;
+  private java.util.Date placeOrderTime;
 
   @FieldMeta(
     name = "placeOrderTime2",
@@ -1106,8 +1106,8 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
         o -> o.getIsCtrlExeBatchPolicy();
     public static Function<SalOrderControlDTO, Integer> isCtrlOneOrder_ =
         o -> o.getIsCtrlOneOrder();
-    public static Function<SalOrderControlDTO, java.util.Date> placeOrderTime1_ =
-        o -> o.getPlaceOrderTime1();
+    public static Function<SalOrderControlDTO, java.util.Date> placeOrderTime_ =
+        o -> o.getPlaceOrderTime();
     public static Function<SalOrderControlDTO, java.util.Date> placeOrderTime2_ =
         o -> o.getPlaceOrderTime2();
     public static Function<SalOrderControlDTO, Integer> isCtrlReturn_ = o -> o.getIsCtrlReturn();

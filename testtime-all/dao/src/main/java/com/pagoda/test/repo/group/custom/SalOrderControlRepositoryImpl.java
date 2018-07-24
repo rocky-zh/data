@@ -46,7 +46,7 @@ public class SalOrderControlRepositoryImpl extends BaseRepositoryCustomImpl<SalO
       @Param("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
       @Param("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
       @Param("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @Param("placeOrderTime1") java.util.Date placeOrderTime1,
+      @Param("placeOrderTime") java.util.Date placeOrderTime,
       @Param("placeOrderTime2") java.util.Date placeOrderTime2,
       @Param("isCtrlReturn") Integer isCtrlReturn,
       @Param("returnGoodsTime1") java.util.Date returnGoodsTime1,
@@ -73,7 +73,7 @@ public class SalOrderControlRepositoryImpl extends BaseRepositoryCustomImpl<SalO
     obj.setAllowSafetyStockTimes(allowSafetyStockTimes);
     obj.setIsCtrlExeBatchPolicy(isCtrlExeBatchPolicy);
     obj.setIsCtrlOneOrder(isCtrlOneOrder);
-    obj.setPlaceOrderTime1(placeOrderTime1);
+    obj.setPlaceOrderTime(placeOrderTime);
     obj.setPlaceOrderTime2(placeOrderTime2);
     obj.setIsCtrlReturn(isCtrlReturn);
     obj.setReturnGoodsTime1(returnGoodsTime1);
@@ -105,7 +105,7 @@ public class SalOrderControlRepositoryImpl extends BaseRepositoryCustomImpl<SalO
       @Param("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
       @Param("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
       @Param("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @Param("placeOrderTime1") java.util.Date placeOrderTime1,
+      @Param("placeOrderTime") java.util.Date placeOrderTime,
       @Param("placeOrderTime2") java.util.Date placeOrderTime2,
       @Param("isCtrlReturn") Integer isCtrlReturn,
       @Param("returnGoodsTime1") java.util.Date returnGoodsTime1,
@@ -131,7 +131,7 @@ public class SalOrderControlRepositoryImpl extends BaseRepositoryCustomImpl<SalO
     obj.setAllowSafetyStockTimes(allowSafetyStockTimes);
     obj.setIsCtrlExeBatchPolicy(isCtrlExeBatchPolicy);
     obj.setIsCtrlOneOrder(isCtrlOneOrder);
-    obj.setPlaceOrderTime1(placeOrderTime1);
+    obj.setPlaceOrderTime(placeOrderTime);
     obj.setPlaceOrderTime2(placeOrderTime2);
     obj.setIsCtrlReturn(isCtrlReturn);
     obj.setReturnGoodsTime1(returnGoodsTime1);

@@ -47,7 +47,7 @@ public class SalOrderControlDynamicSqlSupport {
       salOrderControlTable.allowSafetyStockTimes;
   public static SqlColumn<Integer> isCtrlExeBatchPolicy = salOrderControlTable.isCtrlExeBatchPolicy;
   public static SqlColumn<Integer> isCtrlOneOrder = salOrderControlTable.isCtrlOneOrder;
-  public static SqlColumn<java.util.Date> placeOrderTime1 = salOrderControlTable.placeOrderTime1;
+  public static SqlColumn<java.util.Date> placeOrderTime = salOrderControlTable.placeOrderTime;
   public static SqlColumn<java.util.Date> placeOrderTime2 = salOrderControlTable.placeOrderTime2;
   public static SqlColumn<Integer> isCtrlReturn = salOrderControlTable.isCtrlReturn;
   public static SqlColumn<java.util.Date> returnGoodsTime1 = salOrderControlTable.returnGoodsTime1;
@@ -93,8 +93,8 @@ public class SalOrderControlDynamicSqlSupport {
     public final SqlColumn<Integer> isCtrlExeBatchPolicy =
         column("is_ctrl_exe_batch_policy", JDBCType.INTEGER);
     public final SqlColumn<Integer> isCtrlOneOrder = column("is_ctrl_one_order", JDBCType.INTEGER);
-    public final SqlColumn<java.util.Date> placeOrderTime1 =
-        column("place_order_time1", JDBCType.DATE);
+    public final SqlColumn<java.util.Date> placeOrderTime =
+        column("place_order_time", JDBCType.DATE);
     public final SqlColumn<java.util.Date> placeOrderTime2 =
         column("place_order_time2", JDBCType.DATE);
     public final SqlColumn<Integer> isCtrlReturn = column("is_ctrl_return", JDBCType.INTEGER);
