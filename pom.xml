@@ -20,12 +20,6 @@
         </argline>
         <arguments/>
 
-        <!-- Maven plugins -->
-        <!--<maven-release-plugin.version>2.5.3</maven-release-plugin.version>-->
-        <!--<jgitflow-maven-plugin.version>1.0-m5</jgitflow-maven-plugin.version>-->
-        <!--<sync-maven-plugin.version>1.0</sync-maven-plugin.version>-->
-        <!--<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>-->
-
         <!-- 跳过测试 -->
         <maven.test.skip>true</maven.test.skip>
     </properties>

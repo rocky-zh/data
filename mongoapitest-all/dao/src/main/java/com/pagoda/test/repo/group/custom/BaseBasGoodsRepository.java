@@ -79,7 +79,7 @@ public interface BaseBasGoodsRepository
       @Param("cat_class_id") String catClassId,
       @Param("cat_id") Long catId,
       @Param("goodsIds") List<Long> goodsIds,
-      @Param("goods_id") String goodsId,
+      @Param("goods_id") Long goodsId,
       @Param("is_enabled") Integer isEnabled,
       @Param("deleted") Long deleted,
       @Param("ent_id") Long entId,
@@ -108,7 +108,7 @@ public interface BaseBasGoodsRepository
       @Param("cat_class_id") String catClassId,
       @Param("cat_id") Long catId,
       @Param("goodsIds") List<Long> goodsIds,
-      @Param("goods_id") String goodsId,
+      @Param("goods_id") Long goodsId,
       @Param("is_enabled") Integer isEnabled,
       @Param("deleted") Long deleted,
       @Param("ent_id") Long entId);

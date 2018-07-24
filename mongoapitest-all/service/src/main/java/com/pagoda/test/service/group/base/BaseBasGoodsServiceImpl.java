@@ -328,7 +328,7 @@ public abstract class BaseBasGoodsServiceImpl implements BaseBasGoodsService, In
       @ApiParam("cat_class_id") String catClassId,
       @ApiParam("cat_id") Long catId,
       @ApiParam("goodsIds") List<Long> goodsIds,
-      @ApiParam("goods_id") String goodsId,
+      @ApiParam("goods_id") Long goodsId,
       @ApiParam("is_enabled") Integer isEnabled,
       @ApiParam("deleted") Long deleted,
       @ApiParam("ent_id") Long entId,

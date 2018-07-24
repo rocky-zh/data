@@ -138,8 +138,8 @@ public class SelectVenGoodsDetailUnSetDTO implements Serializable {
   @FieldMeta(
     name = "name",
     scene = "",
-    nameCN = "司机姓名[driver_name]",
-    comment = "司机姓名[driver_name]",
+    nameCN = "目录名称[cat]",
+    comment = "目录名称[cat]",
     nameEN = "name",
     type = "字符串",
     format = "",
@@ -165,11 +165,47 @@ public class SelectVenGoodsDetailUnSetDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "name",
-    value = "司机姓名[driver_name]",
+    value = "目录名称[cat]",
     dataType = "",
     notes = "5b4c7b9877604a00016948af"
   )
   private String name;
+
+  @FieldMeta(
+    name = "goodsId",
+    scene = "",
+    nameCN = "商品ID",
+    comment = "商品ID",
+    nameEN = "goods_id",
+    type = "长整型",
+    format = "",
+    displayLen = 1,
+    formSize = "",
+    constraint = "",
+    constraintParams = "",
+    persistent = false,
+    canQuery = false,
+    readOnly = false,
+    required = false,
+    visible = false,
+    defaultValue = "",
+    tag = "",
+    sortable = false,
+    total = false,
+    pageTotal = false,
+    enumerationType = false,
+    constraintParamsExtra = "",
+    fixed = "",
+    sensitive = false,
+    index = -1
+  )
+  @ApiModelProperty(
+    name = "goodsId",
+    value = "商品ID",
+    dataType = "",
+    notes = "5b528e564772960001e54d3c"
+  )
+  private Long goodsId;
 
   @FieldMeta(
     name = "basUnitCode",
@@ -210,8 +246,8 @@ public class SelectVenGoodsDetailUnSetDTO implements Serializable {
   @FieldMeta(
     name = "goodsSpec",
     scene = "",
-    nameCN = "商品规格",
-    comment = "商品规格",
+    nameCN = "商品规格[冗余]",
+    comment = "商品规格[冗余]",
     nameEN = "goods_spec",
     type = "字符串",
     format = "",
@@ -237,7 +273,7 @@ public class SelectVenGoodsDetailUnSetDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "goodsSpec",
-    value = "商品规格",
+    value = "商品规格[冗余]",
     dataType = "",
     notes = "5b4c7b9977604a00016948b9"
   )

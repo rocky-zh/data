@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pagoda.test</groupId>
-    <artifactId>mongoapitest-dao</artifactId>
+    <artifactId>mongoapitest-dao-auto</artifactId>
     <packaging>jar</packaging>
-    <name>mongoapitest-dao</name>
+    <name>mongoapitest-dao-auto</name>
     <version>1.0.1</version>
     <properties>
         <java.version>1.8</java.version>
@@ -16,23 +16,18 @@
 
         <pagoda-jms.version>1.0.5</pagoda-jms.version>
 
-        <!-- Maven plugins -->
-        <!--<spotbugs-maven-plugin.version>3.1.1</spotbugs-maven-plugin.version>-->
-        <!--<p3c-pmd.version>1.3.0</p3c-pmd.version>-->
-        <!--<maven-processor-plugin.version>2.0.5</maven-processor-plugin.version>-->
-        <!--<hibernate-jpamodelgen.version>5.3.1.Final</hibernate-jpamodelgen.version>-->
-        <!--<spotbugs.version>3.1.1</spotbugs.version>-->
-
         <!-- 它表示构建的开始时间。可通过变量 ${maven.build.timestamp}，在 POM 中的任何地方使用此变量 -->
         <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
 
         <!-- 跳过测试 -->
         <maven.test.skip>true</maven.test.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
+        <pmd.skip>true</pmd.skip>
+        <cpd.skip>true</cpd.skip>
     </properties>
     <parent>
         <groupId>com.pagoda.test</groupId>
-        <artifactId>mongoapitest-parent</artifactId>
+        <artifactId>mongoapitest-parent-auto</artifactId>
         <version>1.0.1</version>
         <relativePath/>
     </parent>
@@ -90,7 +85,7 @@
 
         <dependency>
             <groupId>com.pagoda.test</groupId>
-            <artifactId>mongoapitest-api</artifactId>
+            <artifactId>mongoapitest-api-auto</artifactId>
             <version>1.0.1</version>
         </dependency>
 

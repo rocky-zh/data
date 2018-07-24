@@ -202,8 +202,8 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   @FieldMeta(
     name = "name",
     scene = "",
-    nameCN = "司机姓名[driver_name]",
-    comment = "司机姓名[driver_name]",
+    nameCN = "目录名称[cat]",
+    comment = "目录名称[cat]",
     nameEN = "name",
     type = "字符串",
     format = "",
@@ -229,7 +229,7 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "name",
-    value = "司机姓名[driver_name]",
+    value = "目录名称[cat]",
     dataType = "",
     notes = "5b4c7b9877604a00016948af"
   )
@@ -382,8 +382,8 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   @FieldMeta(
     name = "goodsSpec",
     scene = "",
-    nameCN = "商品规格",
-    comment = "商品规格",
+    nameCN = "商品规格[冗余]",
+    comment = "商品规格[冗余]",
     nameEN = "goods_spec",
     type = "字符串",
     format = "",
@@ -409,7 +409,7 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "goodsSpec",
-    value = "商品规格",
+    value = "商品规格[冗余]",
     dataType = "",
     notes = "5b4c7b9977604a00016948b9"
   )
@@ -886,8 +886,8 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   @FieldMeta(
     name = "salUnitCode",
     scene = "",
-    nameCN = "销售单位代码[冗余]",
-    comment = "销售单位代码[冗余]",
+    nameCN = "销售计量单位代码[冗余]",
+    comment = "销售计量单位代码[冗余]",
     nameEN = "sal_unit_code",
     type = "字符串",
     format = "",
@@ -913,7 +913,7 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "salUnitCode",
-    value = "销售单位代码[冗余]",
+    value = "销售计量单位代码[冗余]",
     dataType = "",
     notes = "5b4c7b9977604a00016948d5"
   )
@@ -922,8 +922,8 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   @FieldMeta(
     name = "salUnitName",
     scene = "",
-    nameCN = "销售单位名称[冗余]",
-    comment = "销售单位名称[冗余]",
+    nameCN = "销售计量单位名称[冗余]",
+    comment = "销售计量单位名称[冗余]",
     nameEN = "sal_unit_name",
     type = "字符串",
     format = "",
@@ -949,7 +949,7 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "salUnitName",
-    value = "销售单位名称[冗余]",
+    value = "销售计量单位名称[冗余]",
     dataType = "",
     notes = "5b4c7b9977604a00016948d7"
   )
@@ -1390,8 +1390,8 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   @FieldMeta(
     name = "taxRate",
     scene = "",
-    nameCN = "企业级销项税率",
-    comment = "企业级销项税率",
+    nameCN = "税率",
+    comment = "税率",
     nameEN = "tax_rate",
     type = "小数",
     format = "",
@@ -1417,7 +1417,7 @@ public class BasGoodsDTO extends AbstractDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "taxRate",
-    value = "企业级销项税率",
+    value = "税率",
     dataType = "",
     notes = "5b4c7b9977604a00016948f1"
   )

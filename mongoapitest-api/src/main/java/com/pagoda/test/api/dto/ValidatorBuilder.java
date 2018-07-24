@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.*;
 import java.util.regex.*;
+import javax.validation.ValidationException;
 
 /**
  * DTO验证工具类
@@ -14,9 +15,13 @@ import java.util.regex.*;
  * @author PagodaGenerator
  * @generated
  */
+@Data
 public class ValidatorBuilder<T> {
 
   List<ValidatorItem> validators = new LinkedList<>();
+
+  /** 验证错误时是否跑出异常 */
+  boolean throwException = false;
 
   /**
    * 创建一个验证类
@@ -59,7 +64,9 @@ public class ValidatorBuilder<T> {
             error.append(validator.error).append("\n");
           }
         });
-
+    if (throwException && error.length() > 0) {
+      throw new ValidationException(error.toString());
+    }
     return error.length() == 0 ? Optional.empty() : Optional.of(error.toString());
   }
 

@@ -10,7 +10,7 @@
 
     <!--<dubbo:registry client="curator" address="${dubbo.registry}"/>-->
 
-    <dubbo:protocol serialization="hessian2" />
+    <!--<dubbo:protocol serialization="hessian2" />-->
 
     <!-- filter="tracingFilter,consumerFilter" -->
     <dubbo:consumer filter="consumerFilter" client="netty4" />

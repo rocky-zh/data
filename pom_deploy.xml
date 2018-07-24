@@ -36,10 +36,10 @@
 
     <modules>
     <!-- 不包括springboot项目 -->
-                <module>mongoapitest-parent</module>
-                <module>mongoapitest-api</module>
-                <module>mongoapitest-dao</module>
-                <module>mongoapitest-service</module>
+                <module>mongoapitest-parent-auto</module>
+                <module>mongoapitest-api-auto</module>
+                <module>mongoapitest-dao-auto</module>
+                <module>mongoapitest-service-auto</module>
     </modules>
 
     <build>

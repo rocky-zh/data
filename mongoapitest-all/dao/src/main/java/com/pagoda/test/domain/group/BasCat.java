@@ -233,8 +233,8 @@ public class BasCat extends BasCatDTO implements Serializable {
   @FieldMeta(
     name = "name",
     scene = "",
-    nameCN = "司机姓名[driver_name]",
-    comment = "司机姓名[driver_name]",
+    nameCN = "目录名称[cat]",
+    comment = "目录名称[cat]",
     nameEN = "name",
     type = "字符串",
     format = "",
@@ -263,7 +263,7 @@ public class BasCat extends BasCatDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "varchar(30)   COMMENT '司机姓名[driver_name]'"
+    columnDefinition = "varchar(60)   COMMENT '目录名称[cat]'"
   )
   private String name;
 

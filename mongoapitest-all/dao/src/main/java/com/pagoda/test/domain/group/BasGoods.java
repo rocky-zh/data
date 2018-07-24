@@ -230,8 +230,8 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
   @FieldMeta(
     name = "name",
     scene = "",
-    nameCN = "司机姓名[driver_name]",
-    comment = "司机姓名[driver_name]",
+    nameCN = "目录名称[cat]",
+    comment = "目录名称[cat]",
     nameEN = "name",
     type = "字符串",
     format = "",
@@ -260,7 +260,7 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "varchar(30)   COMMENT '司机姓名[driver_name]'"
+    columnDefinition = "varchar(60)   COMMENT '目录名称[cat]'"
   )
   private String name;
 
@@ -415,8 +415,8 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
   @FieldMeta(
     name = "goodsSpec",
     scene = "",
-    nameCN = "商品规格",
-    comment = "商品规格",
+    nameCN = "商品规格[冗余]",
+    comment = "商品规格[冗余]",
     nameEN = "goods_spec",
     type = "字符串",
     format = "",
@@ -445,7 +445,7 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "varchar(60)   COMMENT '商品规格'"
+    columnDefinition = "varchar(60)   COMMENT '商品规格[冗余]'"
   )
   private String goodsSpec;
 
@@ -933,8 +933,8 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
   @FieldMeta(
     name = "salUnitCode",
     scene = "",
-    nameCN = "销售单位代码[冗余]",
-    comment = "销售单位代码[冗余]",
+    nameCN = "销售计量单位代码[冗余]",
+    comment = "销售计量单位代码[冗余]",
     nameEN = "sal_unit_code",
     type = "字符串",
     format = "",
@@ -963,15 +963,15 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "varchar(35)   COMMENT '销售单位代码[冗余]'"
+    columnDefinition = "varchar(35)   COMMENT '销售计量单位代码[冗余]'"
   )
   private String salUnitCode;
 
   @FieldMeta(
     name = "salUnitName",
     scene = "",
-    nameCN = "销售单位名称[冗余]",
-    comment = "销售单位名称[冗余]",
+    nameCN = "销售计量单位名称[冗余]",
+    comment = "销售计量单位名称[冗余]",
     nameEN = "sal_unit_name",
     type = "字符串",
     format = "",
@@ -1000,7 +1000,7 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "varchar(60)   COMMENT '销售单位名称[冗余]'"
+    columnDefinition = "varchar(60)   COMMENT '销售计量单位名称[冗余]'"
   )
   private String salUnitName;
 
@@ -1451,8 +1451,8 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
   @FieldMeta(
     name = "taxRate",
     scene = "",
-    nameCN = "企业级销项税率",
-    comment = "企业级销项税率",
+    nameCN = "税率",
+    comment = "税率",
     nameEN = "tax_rate",
     type = "小数",
     format = "",
@@ -1481,7 +1481,7 @@ public class BasGoods extends BasGoodsDTO implements Serializable {
     nullable = true,
     precision = 0,
     scale = 6,
-    columnDefinition = "decimal(10,10)   COMMENT '企业级销项税率'"
+    columnDefinition = "decimal(10,10)   COMMENT '税率'"
   )
   private java.math.BigDecimal taxRate;
 

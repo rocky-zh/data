@@ -202,8 +202,8 @@ public class BasCatDTO extends AbstractDTO implements Serializable {
   @FieldMeta(
     name = "name",
     scene = "",
-    nameCN = "司机姓名[driver_name]",
-    comment = "司机姓名[driver_name]",
+    nameCN = "目录名称[cat]",
+    comment = "目录名称[cat]",
     nameEN = "name",
     type = "字符串",
     format = "",
@@ -229,7 +229,7 @@ public class BasCatDTO extends AbstractDTO implements Serializable {
   )
   @ApiModelProperty(
     name = "name",
-    value = "司机姓名[driver_name]",
+    value = "目录名称[cat]",
     dataType = "",
     notes = "5b4c7b9877604a00016948af"
   )
