@@ -1,2 +1,0 @@
-org.springframework.context.ApplicationContextInitializer=com.test.CustomApplicationContextInitializer
-org.springframework.context.ApplicationListener=com.test.CustomApplicationContextInitializer,org.springframework.boot.system.ApplicationPidFileWriter
