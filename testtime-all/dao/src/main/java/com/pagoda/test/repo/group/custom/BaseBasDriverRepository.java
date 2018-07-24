@@ -18,47 +18,14 @@ import org.springframework.data.repository.query.*;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * SalOrderControl 数据访问接口
+ * BasDriver 数据访问接口
  *
  * @author PagodaGenerator
  * @generated
  */
 @NoRepositoryBean
-public interface BaseSalOrderControlRepository
-    extends SalOrderControlRepositoryCustom, PagodaJpaRepository<SalOrderControl, Long> {
-
-  /**
-   * 根据时分秒查询
-   *
-   * @param placeOrderTime
-   * @param idList
-   * @param pageable
-   * @return
-   */
-  @SqlTemplate(
-    name = "selectWithTime",
-    sql =
-        "select * from sal_order_control where {{#place_order_time}}   place_order_time = :place_order_time{{/place_order_time}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
-  )
-  Page<SalOrderControlDTO> selectWithTime(
-      @Param("place_order_time") java.util.Date placeOrderTime,
-      @Param("idList") List<Long> idList,
-      @Param("pageable") Pageable pageable);
-
-  /**
-   * 根据时分秒查询
-   *
-   * @param placeOrderTime
-   * @param idList
-   * @return
-   */
-  @SqlTemplate(
-    name = "selectWithTime",
-    sql =
-        "select * from sal_order_control where {{#place_order_time}}   place_order_time = :place_order_time{{/place_order_time}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
-  )
-  List<SalOrderControlDTO> selectWithTime(
-      @Param("place_order_time") java.util.Date placeOrderTime, @Param("idList") List<Long> idList);
+public interface BaseBasDriverRepository
+    extends BasDriverRepositoryCustom, PagodaJpaRepository<BasDriver, Long> {
 
   /**
    * 动态执行一个无参数的sql,返回分页的结果

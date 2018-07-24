@@ -83,6 +83,11 @@ public class TestTimeDubboApplication {
           new DtoSerializer(
               com.pagoda.test.api.dto.group.SalConsignDetailDTO.class,
               serializerFactory.getClassLoader()));
+      staticSerializerMap.put(
+          com.pagoda.test.domain.group.BasDriver.class,
+          new DtoSerializer(
+              com.pagoda.test.api.dto.group.BasDriverDTO.class,
+              serializerFactory.getClassLoader()));
     } catch (Exception e) {
       log.error("addDubboSerializer", e);
     }

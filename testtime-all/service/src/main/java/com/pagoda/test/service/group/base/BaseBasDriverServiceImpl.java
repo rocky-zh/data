@@ -21,16 +21,15 @@ import org.springframework.transaction.annotation.*;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * 按客户维度进行配送订单、退货、货款等方面的控制服务实现类SalOrderControlServiceImpl继承的父类,实现一些平台共用的方法
+ * 司机定义服务实现类BasDriverServiceImpl继承的父类,实现一些平台共用的方法
  *
  * @author PagodaGenerator
  * @generated
  */
 @Validated
-public abstract class BaseSalOrderControlServiceImpl
-    implements BaseSalOrderControlService, InitializingBean {
+public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, InitializingBean {
 
-  @Autowired protected SalOrderControlRepository repository;
+  @Autowired protected BasDriverRepository repository;
 
   /**
    * 服务初始化
@@ -45,8 +44,8 @@ public abstract class BaseSalOrderControlServiceImpl
    *
    * @return
    */
-  public Iterable<SalOrderControlDTO> findAll() {
-    return SalOrderControl.batchConvert(repository.findAll());
+  public Iterable<BasDriverDTO> findAll() {
+    return BasDriver.batchConvert(repository.findAll());
   }
 
   /**
@@ -58,11 +57,11 @@ public abstract class BaseSalOrderControlServiceImpl
    */
   @ApiOperation(value = "create", notes = "新增一条记录")
   @Override
-  public SalOrderControlDTO create(
-      @ApiParam(value = "entity", required = true) @Valid SalOrderControlDTO entity)
+  public BasDriverDTO create(
+      @ApiParam(value = "entity", required = true) @Valid BasDriverDTO entity)
       throws ServiceException {
     try {
-      return repository.create(SalOrderControl.convertDTO(entity));
+      return repository.create(BasDriver.convertDTO(entity));
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -77,13 +76,12 @@ public abstract class BaseSalOrderControlServiceImpl
    */
   @ApiOperation(value = "batchCreate", notes = "批量插入多条记录")
   @Override
-  public Iterable<SalOrderControlDTO> batchCreate(
-      @ApiParam(value = "entities", required = true) @Valid Iterable<SalOrderControlDTO> entities)
+  public Iterable<BasDriverDTO> batchCreate(
+      @ApiParam(value = "entities", required = true) @Valid Iterable<BasDriverDTO> entities)
       throws ServiceException {
     try {
-      Iterable<SalOrderControl> itor =
-          repository.batchCreate(SalOrderControl.batchConvertDTO(entities));
-      return SalOrderControl.batchConvert(itor);
+      Iterable<BasDriver> itor = repository.batchCreate(BasDriver.batchConvertDTO(entities));
+      return BasDriver.batchConvert(itor);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -98,11 +96,10 @@ public abstract class BaseSalOrderControlServiceImpl
    */
   @ApiOperation(value = "update", notes = "更新一条记录")
   @Override
-  public SalOrderControlDTO update(
-      @ApiParam(value = "entity", required = true) SalOrderControlDTO entity)
+  public BasDriverDTO update(@ApiParam(value = "entity", required = true) BasDriverDTO entity)
       throws ServiceException {
     try {
-      return repository.update(SalOrderControl.convertDTO(entity));
+      return repository.update(BasDriver.convertDTO(entity));
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -117,13 +114,12 @@ public abstract class BaseSalOrderControlServiceImpl
    */
   @ApiOperation(value = "batchUpdate", notes = "批量更新多条记录")
   @Override
-  public Iterable<SalOrderControlDTO> batchUpdate(
-      @ApiParam(value = "entities", required = true) Iterable<SalOrderControlDTO> entities)
+  public Iterable<BasDriverDTO> batchUpdate(
+      @ApiParam(value = "entities", required = true) Iterable<BasDriverDTO> entities)
       throws ServiceException {
     try {
-      Iterable<SalOrderControl> itor =
-          repository.batchUpdate(SalOrderControl.batchConvertDTO(entities));
-      return SalOrderControl.batchConvert(itor);
+      Iterable<BasDriver> itor = repository.batchUpdate(BasDriver.batchConvertDTO(entities));
+      return BasDriver.batchConvert(itor);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -170,7 +166,7 @@ public abstract class BaseSalOrderControlServiceImpl
    */
   @ApiOperation(value = "getById", notes = "根据id查询记录")
   @Override
-  public SalOrderControlDTO getById(@ApiParam(value = "id", required = true) Long id)
+  public BasDriverDTO getById(@ApiParam(value = "id", required = true) Long id)
       throws ServiceException {
     try {
       return repository.getById(id);
@@ -188,10 +184,10 @@ public abstract class BaseSalOrderControlServiceImpl
    */
   @ApiOperation(value = "batchGetByIds", notes = "根据主键id批量查询")
   @Override
-  public Iterable<SalOrderControlDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
+  public Iterable<BasDriverDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
       throws ServiceException {
     try {
-      return SalOrderControl.batchConvert(repository.batchGetByIds(idList));
+      return BasDriver.batchConvert(repository.batchGetByIds(idList));
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -199,59 +195,37 @@ public abstract class BaseSalOrderControlServiceImpl
 
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
-  public Page<SalOrderControlDTO> findBy(
-      @ApiParam("cusOrgId") Long cusOrgId,
-      @ApiParam("cusOrgCode") String cusOrgCode,
-      @ApiParam("cusOrgName") String cusOrgName,
-      @ApiParam("isCtrlDep") Integer isCtrlDep,
-      @ApiParam("beforeDays") Integer beforeDays,
-      @ApiParam("allowPosGapD") Integer allowPosGapD,
-      @ApiParam("allowPosGapM") Integer allowPosGapM,
-      @ApiParam("isCtrlDepInput") Integer isCtrlDepInput,
-      @ApiParam("isCtrlAccnt") Integer isCtrlAccnt,
-      @ApiParam("isCtrlDuty") Integer isCtrlDuty,
-      @ApiParam("isCtrlVrfyTrans") Integer isCtrlVrfyTrans,
-      @ApiParam("isCtrlDistCyc") Integer isCtrlDistCyc,
-      @ApiParam("isCtrlMustSell") Integer isCtrlMustSell,
-      @ApiParam("isCtrlRouteSplit") Integer isCtrlRouteSplit,
-      @ApiParam("isCtrlSafetyStock") Integer isCtrlSafetyStock,
-      @ApiParam("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
-      @ApiParam("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
-      @ApiParam("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @ApiParam("placeOrderTime") java.util.Date placeOrderTime,
-      @ApiParam("placeOrderTime2") java.util.Date placeOrderTime2,
-      @ApiParam("isCtrlReturn") Integer isCtrlReturn,
-      @ApiParam("returnGoodsTime1") java.util.Date returnGoodsTime1,
-      @ApiParam("returnGoodsTime2") java.util.Date returnGoodsTime2,
+  public Page<BasDriverDTO> findBy(
+      @ApiParam("code") String code,
+      @ApiParam("name") String name,
+      @ApiParam("mobile") String mobile,
+      @ApiParam("shortNum") String shortNum,
+      @ApiParam("plateNum") String plateNum,
+      @ApiParam("loadingWeight") java.math.BigDecimal loadingWeight,
+      @ApiParam("loadingVolume") java.math.BigDecimal loadingVolume,
+      @ApiParam("payAcountNo") String payAcountNo,
+      @ApiParam("registeBank") String registeBank,
+      @ApiParam("driverIdNumber") String driverIdNumber,
+      @ApiParam("conOrgCode") String conOrgCode,
+      @ApiParam("conOrgName") String conOrgName,
       @ApiParam("enabled") Integer enabled,
       @ApiParam("remark") String remark,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
       return repository.findBy(
-          cusOrgId,
-          cusOrgCode,
-          cusOrgName,
-          isCtrlDep,
-          beforeDays,
-          allowPosGapD,
-          allowPosGapM,
-          isCtrlDepInput,
-          isCtrlAccnt,
-          isCtrlDuty,
-          isCtrlVrfyTrans,
-          isCtrlDistCyc,
-          isCtrlMustSell,
-          isCtrlRouteSplit,
-          isCtrlSafetyStock,
-          allowSafetyStockTimes,
-          isCtrlExeBatchPolicy,
-          isCtrlOneOrder,
-          placeOrderTime,
-          placeOrderTime2,
-          isCtrlReturn,
-          returnGoodsTime1,
-          returnGoodsTime2,
+          code,
+          name,
+          mobile,
+          shortNum,
+          plateNum,
+          loadingWeight,
+          loadingVolume,
+          payAcountNo,
+          registeBank,
+          driverIdNumber,
+          conOrgCode,
+          conOrgName,
           enabled,
           remark,
           pageable);
@@ -270,42 +244,28 @@ public abstract class BaseSalOrderControlServiceImpl
    */
   @ApiOperation(value = "findByExample", notes = "根据非空字段查询")
   @Override
-  public Page<SalOrderControlDTO> findByExample(
-      @ApiParam("example") SalOrderControlDTO example, @ApiParam("pageable") Pageable pageable)
+  public Page<BasDriverDTO> findByExample(
+      @ApiParam("example") BasDriverDTO example, @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findByExample(SalOrderControl.convertDTO(example), pageable);
-    } catch (Exception e) {
-      throw new ServiceException(e);
-    }
-  }
-
-  @ApiOperation(value = "selectWithTime", notes = "根据时分秒查询")
-  @Override
-  public Page<SalOrderControlDTO> selectWithTime(
-      @ApiParam("place_order_time") java.util.Date placeOrderTime,
-      @ApiParam("idList") List<Long> idList,
-      @ApiParam("pageable") Pageable pageable)
-      throws ServiceException {
-    try {
-      return repository.selectWithTime(placeOrderTime, idList, pageable);
+      return repository.findByExample(BasDriver.convertDTO(example), pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
   }
 
   /*  // 动态sql演示，正式的sql需要在开发平台定义 ， 参考 https://blog.olowolo.com/post/new-mybatis-dynamic-sql/
-   public Page<SalOrderControlDTO> dynamicSqlSelectTest(@ApiParam("nameVal") String nameVal){
+   public Page<BasDriverDTO> dynamicSqlSelectTest(@ApiParam("nameVal") String nameVal){
         // 开发测试
         // 方法 1, 注意生产环境不要使用字符串拼接构造sql，避免注入攻击
-        Page<SalOrderControlDTO> result1 = repository.dynamicSelectPage(SqlWrapper.asSelect("select * from sal_order_control"), new PageParam(0, 10), SalOrderControlDTO.class);
+        Page<BasDriverDTO> result1 = repository.dynamicSelectPage(SqlWrapper.asSelect("select * from bas_driver"), new PageParam(0, 10), BasDriverDTO.class);
         System.out.println(result1);
         // 方法 2
         SelectStatementProvider selectStatement = select(id)
-                .from(salOrderControlTable)
+                .from(basDriverTable)
                 .build()
                 .render(RenderingStrategy.SPRING_NAMED_PARAMETER);
-        Page<SalOrderControlDTO> result2 =  repository.dynamicSelectPage(selectStatement, new PageParam(0, 10), SalOrderControlDTO.class);
+        Page<BasDriverDTO> result2 =  repository.dynamicSelectPage(selectStatement, new PageParam(0, 10), BasDriverDTO.class);
         System.out.println(result2);
         return result1;
    }
@@ -314,10 +274,10 @@ public abstract class BaseSalOrderControlServiceImpl
    public void dynamicSqlUpdateTest(@ApiParam("idVal")Long idVal, @ApiParam("nameVal") String nameVal) {
       // 开发测试sql更新
       // 方法 1，注意生产环境不要使用字符串拼接构造sql，避免注入攻击
-      int ret1 = repository.dynamicUpdate(SqlWrapper.asUpdate("update sal_order_control set name=\"" + nameVal + "\" where id=" + idVal));
+      int ret1 = repository.dynamicUpdate(SqlWrapper.asUpdate("update bas_driver set name=\"" + nameVal + "\" where id=" + idVal));
 
       // 方法 2
-      UpdateStatementProvider updateStatement = SqlBuilder.update(salOrderControlTable).set(name).equalTo(nameVal).where(id, isEqualTo(idVal))
+      UpdateStatementProvider updateStatement = SqlBuilder.update(basDriverTable).set(name).equalTo(nameVal).where(id, isEqualTo(idVal))
               .build()
               .render(RenderingStrategy.SPRING_NAMED_PARAMETER);
       int ret2 = repository.dynamicUpdate(updateStatement);

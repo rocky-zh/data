@@ -30,7 +30,7 @@ public interface BaseSalOrderControlRepository
   /**
    * 根据时分秒查询
    *
-   * @param placeOrderTime1
+   * @param placeOrderTime
    * @param idList
    * @param pageable
    * @return
@@ -38,28 +38,27 @@ public interface BaseSalOrderControlRepository
   @SqlTemplate(
     name = "selectWithTime",
     sql =
-        "select * from sal_order_control where {{#place_order_time1}}   place_order_time1 = :place_order_time1{{/place_order_time1}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
+        "select * from sal_order_control where {{#place_order_time}}   place_order_time = :place_order_time{{/place_order_time}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
   )
   Page<SalOrderControlDTO> selectWithTime(
-      @Param("place_order_time1") java.util.Date placeOrderTime1,
+      @Param("place_order_time") java.util.Date placeOrderTime,
       @Param("idList") List<Long> idList,
       @Param("pageable") Pageable pageable);
 
   /**
    * 根据时分秒查询
    *
-   * @param placeOrderTime1
+   * @param placeOrderTime
    * @param idList
    * @return
    */
   @SqlTemplate(
     name = "selectWithTime",
     sql =
-        "select * from sal_order_control where {{#place_order_time1}}   place_order_time1 = :place_order_time1{{/place_order_time1}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
+        "select * from sal_order_control where {{#place_order_time}}   place_order_time = :place_order_time{{/place_order_time}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
   )
   List<SalOrderControlDTO> selectWithTime(
-      @Param("place_order_time1") java.util.Date placeOrderTime1,
-      @Param("idList") List<Long> idList);
+      @Param("place_order_time") java.util.Date placeOrderTime, @Param("idList") List<Long> idList);
 
   /**
    * 动态执行一个无参数的sql,返回分页的结果

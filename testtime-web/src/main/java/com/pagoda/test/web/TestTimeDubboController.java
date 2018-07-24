@@ -44,6 +44,7 @@ public class TestTimeDubboController {
 
   static {
     putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.SalOrderControlDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.BasDriverDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.SalConsignDetailDTO");
   }
 
@@ -51,6 +52,7 @@ public class TestTimeDubboController {
   public static final Map<String, String> API_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(API_PACKAGES, "com.pagoda.test.api.group.BasDriverService");
     putInMap(API_PACKAGES, "com.pagoda.test.api.group.SalOrderControlService");
     putInMap(API_PACKAGES, "com.pagoda.test.api.group.SalConsignDetailService");
   }

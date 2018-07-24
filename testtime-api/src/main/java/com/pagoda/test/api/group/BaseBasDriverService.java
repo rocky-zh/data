@@ -19,7 +19,7 @@ import org.springframework.validation.annotation.Validated;
  * @generated
  */
 @Validated
-public interface BaseSalOrderControlService {
+public interface BaseBasDriverService {
 
   /**
    * Create a given entity. Use the returned instance for further operations as the save operation
@@ -30,8 +30,7 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "create", notes = "新增一条记录")
-  SalOrderControlDTO create(
-      @ApiParam(value = "entity", required = true) @Valid SalOrderControlDTO entity)
+  BasDriverDTO create(@ApiParam(value = "entity", required = true) @Valid BasDriverDTO entity)
       throws ServiceException;
 
   /**
@@ -43,8 +42,8 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchCreate", notes = "批量插入多条记录")
-  Iterable<SalOrderControlDTO> batchCreate(
-      @ApiParam(value = "entities", required = true) @Valid Iterable<SalOrderControlDTO> entities)
+  Iterable<BasDriverDTO> batchCreate(
+      @ApiParam(value = "entities", required = true) @Valid Iterable<BasDriverDTO> entities)
       throws ServiceException;
 
   /**
@@ -56,7 +55,7 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "update", notes = "更新一条记录")
-  SalOrderControlDTO update(@ApiParam(value = "entity", required = true) SalOrderControlDTO entity)
+  BasDriverDTO update(@ApiParam(value = "entity", required = true) BasDriverDTO entity)
       throws ServiceException;
 
   /**
@@ -68,8 +67,8 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchUpdate", notes = "批量更新多条记录")
-  Iterable<SalOrderControlDTO> batchUpdate(
-      @ApiParam(value = "entities", required = true) Iterable<SalOrderControlDTO> entities)
+  Iterable<BasDriverDTO> batchUpdate(
+      @ApiParam(value = "entities", required = true) Iterable<BasDriverDTO> entities)
       throws ServiceException;
 
   /**
@@ -102,8 +101,7 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "getById", notes = "根据id查询记录")
-  SalOrderControlDTO getById(@ApiParam(value = "id", required = true) Long id)
-      throws ServiceException;
+  BasDriverDTO getById(@ApiParam(value = "id", required = true) Long id) throws ServiceException;
 
   /**
    * 根据主键id批量查询
@@ -113,7 +111,7 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchGetByIds", notes = "根据主键id批量查询")
-  Iterable<SalOrderControlDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
+  Iterable<BasDriverDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
       throws ServiceException;
 
   /**
@@ -125,36 +123,25 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "findByExample", notes = "根据非空字段查询")
-  Page<SalOrderControlDTO> findByExample(
-      @ApiParam("example") SalOrderControlDTO example, @ApiParam("pageable") Pageable pageable)
+  Page<BasDriverDTO> findByExample(
+      @ApiParam("example") BasDriverDTO example, @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 
   /**
    * 所有可查询的字段
    *
-   * @param cusOrgId
-   * @param cusOrgCode
-   * @param cusOrgName
-   * @param isCtrlDep
-   * @param beforeDays
-   * @param allowPosGapD
-   * @param allowPosGapM
-   * @param isCtrlDepInput
-   * @param isCtrlAccnt
-   * @param isCtrlDuty
-   * @param isCtrlVrfyTrans
-   * @param isCtrlDistCyc
-   * @param isCtrlMustSell
-   * @param isCtrlRouteSplit
-   * @param isCtrlSafetyStock
-   * @param allowSafetyStockTimes
-   * @param isCtrlExeBatchPolicy
-   * @param isCtrlOneOrder
-   * @param placeOrderTime
-   * @param placeOrderTime2
-   * @param isCtrlReturn
-   * @param returnGoodsTime1
-   * @param returnGoodsTime2
+   * @param code
+   * @param name
+   * @param mobile
+   * @param shortNum
+   * @param plateNum
+   * @param loadingWeight
+   * @param loadingVolume
+   * @param payAcountNo
+   * @param registeBank
+   * @param driverIdNumber
+   * @param conOrgCode
+   * @param conOrgName
    * @param enabled
    * @param remark
    * @param pageable
@@ -162,48 +149,21 @@ public interface BaseSalOrderControlService {
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
-  Page<SalOrderControlDTO> findBy(
-      @ApiParam("cusOrgId") Long cusOrgId,
-      @ApiParam("cusOrgCode") String cusOrgCode,
-      @ApiParam("cusOrgName") String cusOrgName,
-      @ApiParam("isCtrlDep") Integer isCtrlDep,
-      @ApiParam("beforeDays") Integer beforeDays,
-      @ApiParam("allowPosGapD") Integer allowPosGapD,
-      @ApiParam("allowPosGapM") Integer allowPosGapM,
-      @ApiParam("isCtrlDepInput") Integer isCtrlDepInput,
-      @ApiParam("isCtrlAccnt") Integer isCtrlAccnt,
-      @ApiParam("isCtrlDuty") Integer isCtrlDuty,
-      @ApiParam("isCtrlVrfyTrans") Integer isCtrlVrfyTrans,
-      @ApiParam("isCtrlDistCyc") Integer isCtrlDistCyc,
-      @ApiParam("isCtrlMustSell") Integer isCtrlMustSell,
-      @ApiParam("isCtrlRouteSplit") Integer isCtrlRouteSplit,
-      @ApiParam("isCtrlSafetyStock") Integer isCtrlSafetyStock,
-      @ApiParam("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
-      @ApiParam("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
-      @ApiParam("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @ApiParam("placeOrderTime") java.util.Date placeOrderTime,
-      @ApiParam("placeOrderTime2") java.util.Date placeOrderTime2,
-      @ApiParam("isCtrlReturn") Integer isCtrlReturn,
-      @ApiParam("returnGoodsTime1") java.util.Date returnGoodsTime1,
-      @ApiParam("returnGoodsTime2") java.util.Date returnGoodsTime2,
+  Page<BasDriverDTO> findBy(
+      @ApiParam("code") String code,
+      @ApiParam("name") String name,
+      @ApiParam("mobile") String mobile,
+      @ApiParam("shortNum") String shortNum,
+      @ApiParam("plateNum") String plateNum,
+      @ApiParam("loadingWeight") java.math.BigDecimal loadingWeight,
+      @ApiParam("loadingVolume") java.math.BigDecimal loadingVolume,
+      @ApiParam("payAcountNo") String payAcountNo,
+      @ApiParam("registeBank") String registeBank,
+      @ApiParam("driverIdNumber") String driverIdNumber,
+      @ApiParam("conOrgCode") String conOrgCode,
+      @ApiParam("conOrgName") String conOrgName,
       @ApiParam("enabled") Integer enabled,
       @ApiParam("remark") String remark,
-      @ApiParam("pageable") Pageable pageable)
-      throws ServiceException;
-
-  /**
-   * 根据时分秒查询
-   *
-   * @param placeOrderTime
-   * @param idList
-   * @param pageable
-   * @return
-   * @throws ServiceException
-   */
-  @ApiOperation(value = "selectWithTime", notes = "")
-  Page<SalOrderControlDTO> selectWithTime(
-      @ApiParam("place_order_time") java.util.Date placeOrderTime,
-      @ApiParam("idList") List<Long> idList,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }

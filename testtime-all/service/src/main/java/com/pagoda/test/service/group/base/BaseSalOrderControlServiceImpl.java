@@ -283,12 +283,12 @@ public abstract class BaseSalOrderControlServiceImpl
   @ApiOperation(value = "selectWithTime", notes = "根据时分秒查询")
   @Override
   public Page<SalOrderControlDTO> selectWithTime(
-      @ApiParam("place_order_time1") java.util.Date placeOrderTime1,
+      @ApiParam("place_order_time") java.util.Date placeOrderTime,
       @ApiParam("idList") List<Long> idList,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.selectWithTime(placeOrderTime1, idList, pageable);
+      return repository.selectWithTime(placeOrderTime, idList, pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }

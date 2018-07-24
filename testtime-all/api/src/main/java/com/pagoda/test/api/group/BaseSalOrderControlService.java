@@ -194,7 +194,7 @@ public interface BaseSalOrderControlService {
   /**
    * 根据时分秒查询
    *
-   * @param placeOrderTime1
+   * @param placeOrderTime
    * @param idList
    * @param pageable
    * @return
@@ -202,7 +202,7 @@ public interface BaseSalOrderControlService {
    */
   @ApiOperation(value = "selectWithTime", notes = "")
   Page<SalOrderControlDTO> selectWithTime(
-      @ApiParam("place_order_time1") java.util.Date placeOrderTime1,
+      @ApiParam("place_order_time") java.util.Date placeOrderTime,
       @ApiParam("idList") List<Long> idList,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
