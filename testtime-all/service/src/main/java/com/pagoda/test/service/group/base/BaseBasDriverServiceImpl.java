@@ -196,39 +196,12 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
   public Page<BasDriverDTO> findBy(
-      @ApiParam("code") String code,
-      @ApiParam("name") String name,
-      @ApiParam("mobile") String mobile,
+      @ApiParam("mnemWord") String mnemWord,
       @ApiParam("shortNum") String shortNum,
-      @ApiParam("plateNum") String plateNum,
-      @ApiParam("loadingWeight") java.math.BigDecimal loadingWeight,
-      @ApiParam("loadingVolume") java.math.BigDecimal loadingVolume,
-      @ApiParam("payAcountNo") String payAcountNo,
-      @ApiParam("registeBank") String registeBank,
-      @ApiParam("driverIdNumber") String driverIdNumber,
-      @ApiParam("conOrgCode") String conOrgCode,
-      @ApiParam("conOrgName") String conOrgName,
-      @ApiParam("enabled") Integer enabled,
-      @ApiParam("remark") String remark,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findBy(
-          code,
-          name,
-          mobile,
-          shortNum,
-          plateNum,
-          loadingWeight,
-          loadingVolume,
-          payAcountNo,
-          registeBank,
-          driverIdNumber,
-          conOrgCode,
-          conOrgName,
-          enabled,
-          remark,
-          pageable);
+      return repository.findBy(mnemWord, shortNum, pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -249,6 +222,17 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
       throws ServiceException {
     try {
       return repository.findByExample(BasDriver.convertDTO(example), pageable);
+    } catch (Exception e) {
+      throw new ServiceException(e);
+    }
+  }
+
+  @ApiOperation(value = "selectAll", notes = "查询所有记录")
+  @Override
+  public Page<BasDriverDTO> selectAll(@ApiParam("pageable") Pageable pageable)
+      throws ServiceException {
+    try {
+      return repository.selectAll(pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }

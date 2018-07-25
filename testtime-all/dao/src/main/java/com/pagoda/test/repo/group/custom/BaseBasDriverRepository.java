@@ -28,6 +28,23 @@ public interface BaseBasDriverRepository
     extends BasDriverRepositoryCustom, PagodaJpaRepository<BasDriver, Long> {
 
   /**
+   * 查询所有记录
+   *
+   * @param pageable
+   * @return
+   */
+  @SqlTemplate(name = "selectAll", sql = "select * from bas_driver")
+  Page<BasDriverDTO> selectAll(@Param("pageable") Pageable pageable);
+
+  /**
+   * 查询所有记录
+   *
+   * @return
+   */
+  @SqlTemplate(name = "selectAll", sql = "select * from bas_driver")
+  List<BasDriverDTO> selectAll();
+
+  /**
    * 动态执行一个无参数的sql,返回分页的结果
    *
    * @param selectProvider 通过SqlWrapper.asSelect封装sql

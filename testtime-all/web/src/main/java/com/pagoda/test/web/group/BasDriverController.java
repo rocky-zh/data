@@ -126,20 +126,8 @@ public class BasDriverController implements InitializingBean {
    * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
    * "资源属性对应的模型字段"))
    *
-   * @param code
-   * @param name
-   * @param mobile
+   * @param mnemWord
    * @param shortNum
-   * @param plateNum
-   * @param loadingWeight
-   * @param loadingVolume
-   * @param payAcountNo
-   * @param registeBank
-   * @param driverIdNumber
-   * @param conOrgCode
-   * @param conOrgName
-   * @param enabled
-   * @param remark
    * @param pageable
    * @return
    */
@@ -147,36 +135,9 @@ public class BasDriverController implements InitializingBean {
   @ApiOperation(value = "findBy", notes = "前端页面查询接口, 包含所有可查询的字段")
   @GetMapping(value = "/findBy")
   public Page<BasDriverDTO> findBy(
-      @RequestParam(required = false, value = "code") String code,
-      @RequestParam(required = false, value = "name") String name,
-      @RequestParam(required = false, value = "mobile") String mobile,
+      @RequestParam(required = false, value = "mnemWord") String mnemWord,
       @RequestParam(required = false, value = "shortNum") String shortNum,
-      @RequestParam(required = false, value = "plateNum") String plateNum,
-      @RequestParam(required = false, value = "loadingWeight") java.math.BigDecimal loadingWeight,
-      @RequestParam(required = false, value = "loadingVolume") java.math.BigDecimal loadingVolume,
-      @RequestParam(required = false, value = "payAcountNo") String payAcountNo,
-      @RequestParam(required = false, value = "registeBank") String registeBank,
-      @RequestParam(required = false, value = "driverIdNumber") String driverIdNumber,
-      @RequestParam(required = false, value = "conOrgCode") String conOrgCode,
-      @RequestParam(required = false, value = "conOrgName") String conOrgName,
-      @RequestParam(required = false, value = "enabled") Integer enabled,
-      @RequestParam(required = false, value = "remark") String remark,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
-    return basDriverService.findBy(
-        code,
-        name,
-        mobile,
-        shortNum,
-        plateNum,
-        loadingWeight,
-        loadingVolume,
-        payAcountNo,
-        registeBank,
-        driverIdNumber,
-        conOrgCode,
-        conOrgName,
-        enabled,
-        remark,
-        pageable);
+    return basDriverService.findBy(mnemWord, shortNum, pageable);
   }
 }

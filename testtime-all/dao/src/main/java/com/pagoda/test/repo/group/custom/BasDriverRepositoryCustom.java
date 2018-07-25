@@ -21,74 +21,24 @@ public interface BasDriverRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param code
-   * @param name
-   * @param mobile
+   * @param mnemWord
    * @param shortNum
-   * @param plateNum
-   * @param loadingWeight
-   * @param loadingVolume
-   * @param payAcountNo
-   * @param registeBank
-   * @param driverIdNumber
-   * @param conOrgCode
-   * @param conOrgName
-   * @param enabled
-   * @param remark
    * @param pageable
    * @return
    */
   Page<BasDriverDTO> findBy(
-      @Param("code") String code,
-      @Param("name") String name,
-      @Param("mobile") String mobile,
+      @Param("mnemWord") String mnemWord,
       @Param("shortNum") String shortNum,
-      @Param("plateNum") String plateNum,
-      @Param("loadingWeight") java.math.BigDecimal loadingWeight,
-      @Param("loadingVolume") java.math.BigDecimal loadingVolume,
-      @Param("payAcountNo") String payAcountNo,
-      @Param("registeBank") String registeBank,
-      @Param("driverIdNumber") String driverIdNumber,
-      @Param("conOrgCode") String conOrgCode,
-      @Param("conOrgName") String conOrgName,
-      @Param("enabled") Integer enabled,
-      @Param("remark") String remark,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param code
-   * @param name
-   * @param mobile
+   * @param mnemWord
    * @param shortNum
-   * @param plateNum
-   * @param loadingWeight
-   * @param loadingVolume
-   * @param payAcountNo
-   * @param registeBank
-   * @param driverIdNumber
-   * @param conOrgCode
-   * @param conOrgName
-   * @param enabled
-   * @param remark
    * @return
    */
-  List<BasDriverDTO> findBy(
-      @Param("code") String code,
-      @Param("name") String name,
-      @Param("mobile") String mobile,
-      @Param("shortNum") String shortNum,
-      @Param("plateNum") String plateNum,
-      @Param("loadingWeight") java.math.BigDecimal loadingWeight,
-      @Param("loadingVolume") java.math.BigDecimal loadingVolume,
-      @Param("payAcountNo") String payAcountNo,
-      @Param("registeBank") String registeBank,
-      @Param("driverIdNumber") String driverIdNumber,
-      @Param("conOrgCode") String conOrgCode,
-      @Param("conOrgName") String conOrgName,
-      @Param("enabled") Integer enabled,
-      @Param("remark") String remark);
+  List<BasDriverDTO> findBy(@Param("mnemWord") String mnemWord, @Param("shortNum") String shortNum);
 
   /**
    * 通用分页查询，用于后台查询

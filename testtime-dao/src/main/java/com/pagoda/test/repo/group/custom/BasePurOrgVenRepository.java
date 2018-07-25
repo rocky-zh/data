@@ -18,31 +18,14 @@ import org.springframework.data.repository.query.*;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * BasDriver 数据访问接口
+ * PurOrgVen 数据访问接口
  *
  * @author PagodaGenerator
  * @generated
  */
 @NoRepositoryBean
-public interface BaseBasDriverRepository
-    extends BasDriverRepositoryCustom, PagodaJpaRepository<BasDriver, Long> {
-
-  /**
-   * 查询所有记录
-   *
-   * @param pageable
-   * @return
-   */
-  @SqlTemplate(name = "selectAll", sql = "select * from bas_driver")
-  Page<BasDriverDTO> selectAll(@Param("pageable") Pageable pageable);
-
-  /**
-   * 查询所有记录
-   *
-   * @return
-   */
-  @SqlTemplate(name = "selectAll", sql = "select * from bas_driver")
-  List<BasDriverDTO> selectAll();
+public interface BasePurOrgVenRepository
+    extends PurOrgVenRepositoryCustom, PagodaJpaRepository<PurOrgVen, Long> {
 
   /**
    * 动态执行一个无参数的sql,返回分页的结果

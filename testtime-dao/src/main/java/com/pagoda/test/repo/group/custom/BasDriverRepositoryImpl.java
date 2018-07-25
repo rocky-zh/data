@@ -28,36 +28,12 @@ public class BasDriverRepositoryImpl extends BaseRepositoryCustomImpl<BasDriver,
 
   @Override
   public Page<BasDriverDTO> findBy(
-      @Param("code") String code,
-      @Param("name") String name,
-      @Param("mobile") String mobile,
+      @Param("mnemWord") String mnemWord,
       @Param("shortNum") String shortNum,
-      @Param("plateNum") String plateNum,
-      @Param("loadingWeight") java.math.BigDecimal loadingWeight,
-      @Param("loadingVolume") java.math.BigDecimal loadingVolume,
-      @Param("payAcountNo") String payAcountNo,
-      @Param("registeBank") String registeBank,
-      @Param("driverIdNumber") String driverIdNumber,
-      @Param("conOrgCode") String conOrgCode,
-      @Param("conOrgName") String conOrgName,
-      @Param("enabled") Integer enabled,
-      @Param("remark") String remark,
       @Param("pageable") Pageable pageable) {
     BasDriver obj = BasDriver.toExample();
-    obj.setCode(code);
-    obj.setName(name);
-    obj.setMobile(mobile);
+    obj.setMnemWord(mnemWord);
     obj.setShortNum(shortNum);
-    obj.setPlateNum(plateNum);
-    obj.setLoadingWeight(loadingWeight);
-    obj.setLoadingVolume(loadingVolume);
-    obj.setPayAcountNo(payAcountNo);
-    obj.setRegisteBank(registeBank);
-    obj.setDriverIdNumber(driverIdNumber);
-    obj.setConOrgCode(conOrgCode);
-    obj.setConOrgName(conOrgName);
-    obj.setEnabled(enabled);
-    obj.setRemark(remark);
     Example<BasDriver> example = Example.of(obj);
 
     return findAll(example, pageable).map(BasDriver.DTO_CONVERTER);
@@ -65,35 +41,10 @@ public class BasDriverRepositoryImpl extends BaseRepositoryCustomImpl<BasDriver,
 
   @Override
   public List<BasDriverDTO> findBy(
-      @Param("code") String code,
-      @Param("name") String name,
-      @Param("mobile") String mobile,
-      @Param("shortNum") String shortNum,
-      @Param("plateNum") String plateNum,
-      @Param("loadingWeight") java.math.BigDecimal loadingWeight,
-      @Param("loadingVolume") java.math.BigDecimal loadingVolume,
-      @Param("payAcountNo") String payAcountNo,
-      @Param("registeBank") String registeBank,
-      @Param("driverIdNumber") String driverIdNumber,
-      @Param("conOrgCode") String conOrgCode,
-      @Param("conOrgName") String conOrgName,
-      @Param("enabled") Integer enabled,
-      @Param("remark") String remark) {
+      @Param("mnemWord") String mnemWord, @Param("shortNum") String shortNum) {
     BasDriver obj = BasDriver.toExample();
-    obj.setCode(code);
-    obj.setName(name);
-    obj.setMobile(mobile);
+    obj.setMnemWord(mnemWord);
     obj.setShortNum(shortNum);
-    obj.setPlateNum(plateNum);
-    obj.setLoadingWeight(loadingWeight);
-    obj.setLoadingVolume(loadingVolume);
-    obj.setPayAcountNo(payAcountNo);
-    obj.setRegisteBank(registeBank);
-    obj.setDriverIdNumber(driverIdNumber);
-    obj.setConOrgCode(conOrgCode);
-    obj.setConOrgName(conOrgName);
-    obj.setEnabled(enabled);
-    obj.setRemark(remark);
     Example<BasDriver> example = Example.of(obj);
     return findAll(example, null).map(BasDriver.DTO_CONVERTER).getContent();
   }

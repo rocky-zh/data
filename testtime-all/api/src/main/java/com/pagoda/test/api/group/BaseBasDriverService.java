@@ -130,40 +130,26 @@ public interface BaseBasDriverService {
   /**
    * 所有可查询的字段
    *
-   * @param code
-   * @param name
-   * @param mobile
+   * @param mnemWord
    * @param shortNum
-   * @param plateNum
-   * @param loadingWeight
-   * @param loadingVolume
-   * @param payAcountNo
-   * @param registeBank
-   * @param driverIdNumber
-   * @param conOrgCode
-   * @param conOrgName
-   * @param enabled
-   * @param remark
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   Page<BasDriverDTO> findBy(
-      @ApiParam("code") String code,
-      @ApiParam("name") String name,
-      @ApiParam("mobile") String mobile,
+      @ApiParam("mnemWord") String mnemWord,
       @ApiParam("shortNum") String shortNum,
-      @ApiParam("plateNum") String plateNum,
-      @ApiParam("loadingWeight") java.math.BigDecimal loadingWeight,
-      @ApiParam("loadingVolume") java.math.BigDecimal loadingVolume,
-      @ApiParam("payAcountNo") String payAcountNo,
-      @ApiParam("registeBank") String registeBank,
-      @ApiParam("driverIdNumber") String driverIdNumber,
-      @ApiParam("conOrgCode") String conOrgCode,
-      @ApiParam("conOrgName") String conOrgName,
-      @ApiParam("enabled") Integer enabled,
-      @ApiParam("remark") String remark,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
+
+  /**
+   * 查询所有记录
+   *
+   * @param pageable
+   * @return
+   * @throws ServiceException
+   */
+  @ApiOperation(value = "selectAll", notes = "")
+  Page<BasDriverDTO> selectAll(@ApiParam("pageable") Pageable pageable) throws ServiceException;
 }

@@ -19,7 +19,7 @@ import org.springframework.validation.annotation.Validated;
  * @generated
  */
 @Validated
-public interface BaseBasDriverService {
+public interface BasePurOrgVenService {
 
   /**
    * Create a given entity. Use the returned instance for further operations as the save operation
@@ -30,7 +30,7 @@ public interface BaseBasDriverService {
    * @throws ServiceException
    */
   @ApiOperation(value = "create", notes = "新增一条记录")
-  BasDriverDTO create(@ApiParam(value = "entity", required = true) @Valid BasDriverDTO entity)
+  PurOrgVenDTO create(@ApiParam(value = "entity", required = true) @Valid PurOrgVenDTO entity)
       throws ServiceException;
 
   /**
@@ -42,8 +42,8 @@ public interface BaseBasDriverService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchCreate", notes = "批量插入多条记录")
-  Iterable<BasDriverDTO> batchCreate(
-      @ApiParam(value = "entities", required = true) @Valid Iterable<BasDriverDTO> entities)
+  Iterable<PurOrgVenDTO> batchCreate(
+      @ApiParam(value = "entities", required = true) @Valid Iterable<PurOrgVenDTO> entities)
       throws ServiceException;
 
   /**
@@ -55,7 +55,7 @@ public interface BaseBasDriverService {
    * @throws ServiceException
    */
   @ApiOperation(value = "update", notes = "更新一条记录")
-  BasDriverDTO update(@ApiParam(value = "entity", required = true) BasDriverDTO entity)
+  PurOrgVenDTO update(@ApiParam(value = "entity", required = true) PurOrgVenDTO entity)
       throws ServiceException;
 
   /**
@@ -67,8 +67,8 @@ public interface BaseBasDriverService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchUpdate", notes = "批量更新多条记录")
-  Iterable<BasDriverDTO> batchUpdate(
-      @ApiParam(value = "entities", required = true) Iterable<BasDriverDTO> entities)
+  Iterable<PurOrgVenDTO> batchUpdate(
+      @ApiParam(value = "entities", required = true) Iterable<PurOrgVenDTO> entities)
       throws ServiceException;
 
   /**
@@ -101,7 +101,7 @@ public interface BaseBasDriverService {
    * @throws ServiceException
    */
   @ApiOperation(value = "getById", notes = "根据id查询记录")
-  BasDriverDTO getById(@ApiParam(value = "id", required = true) Long id) throws ServiceException;
+  PurOrgVenDTO getById(@ApiParam(value = "id", required = true) Long id) throws ServiceException;
 
   /**
    * 根据主键id批量查询
@@ -111,7 +111,7 @@ public interface BaseBasDriverService {
    * @throws ServiceException
    */
   @ApiOperation(value = "batchGetByIds", notes = "根据主键id批量查询")
-  Iterable<BasDriverDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
+  Iterable<PurOrgVenDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
       throws ServiceException;
 
   /**
@@ -123,33 +123,51 @@ public interface BaseBasDriverService {
    * @throws ServiceException
    */
   @ApiOperation(value = "findByExample", notes = "根据非空字段查询")
-  Page<BasDriverDTO> findByExample(
-      @ApiParam("example") BasDriverDTO example, @ApiParam("pageable") Pageable pageable)
+  Page<PurOrgVenDTO> findByExample(
+      @ApiParam("example") PurOrgVenDTO example, @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 
   /**
    * 所有可查询的字段
    *
-   * @param mnemWord
-   * @param shortNum
+   * @param venOrgCode
+   * @param venOrgName
+   * @param venOrgId
+   * @param orgOrgId
+   * @param orgOrgCode
+   * @param orgOrgName
+   * @param isAllowOrder
+   * @param isAllowRec
+   * @param isReturnable
+   * @param isPausePay
+   * @param isOrderCheck
+   * @param isRecCheck
+   * @param isReturnCheck
+   * @param isInvCheck
+   * @param settlementType
+   * @param remark
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
-  Page<BasDriverDTO> findBy(
-      @ApiParam("mnemWord") String mnemWord,
-      @ApiParam("shortNum") String shortNum,
+  Page<PurOrgVenDTO> findBy(
+      @ApiParam("venOrgCode") String venOrgCode,
+      @ApiParam("venOrgName") String venOrgName,
+      @ApiParam("venOrgId") Long venOrgId,
+      @ApiParam("orgOrgId") Long orgOrgId,
+      @ApiParam("orgOrgCode") String orgOrgCode,
+      @ApiParam("orgOrgName") String orgOrgName,
+      @ApiParam("isAllowOrder") Integer isAllowOrder,
+      @ApiParam("isAllowRec") Integer isAllowRec,
+      @ApiParam("isReturnable") Integer isReturnable,
+      @ApiParam("isPausePay") Integer isPausePay,
+      @ApiParam("isOrderCheck") Integer isOrderCheck,
+      @ApiParam("isRecCheck") Integer isRecCheck,
+      @ApiParam("isReturnCheck") Integer isReturnCheck,
+      @ApiParam("isInvCheck") Integer isInvCheck,
+      @ApiParam("settlementType") Integer settlementType,
+      @ApiParam("remark") String remark,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
-
-  /**
-   * 查询所有记录
-   *
-   * @param pageable
-   * @return
-   * @throws ServiceException
-   */
-  @ApiOperation(value = "selectAll", notes = "")
-  Page<BasDriverDTO> selectAll(@ApiParam("pageable") Pageable pageable) throws ServiceException;
 }

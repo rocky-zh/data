@@ -21,15 +21,15 @@ import org.springframework.transaction.annotation.*;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * 司机定义服务实现类BasDriverServiceImpl继承的父类,实现一些平台共用的方法
+ * 供应商机构服务实现类PurOrgVenServiceImpl继承的父类,实现一些平台共用的方法
  *
  * @author PagodaGenerator
  * @generated
  */
 @Validated
-public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, InitializingBean {
+public abstract class BasePurOrgVenServiceImpl implements BasePurOrgVenService, InitializingBean {
 
-  @Autowired protected BasDriverRepository repository;
+  @Autowired protected PurOrgVenRepository repository;
 
   /**
    * 服务初始化
@@ -44,8 +44,8 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    *
    * @return
    */
-  public Iterable<BasDriverDTO> findAll() {
-    return BasDriver.batchConvert(repository.findAll());
+  public Iterable<PurOrgVenDTO> findAll() {
+    return PurOrgVen.batchConvert(repository.findAll());
   }
 
   /**
@@ -57,11 +57,11 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    */
   @ApiOperation(value = "create", notes = "新增一条记录")
   @Override
-  public BasDriverDTO create(
-      @ApiParam(value = "entity", required = true) @Valid BasDriverDTO entity)
+  public PurOrgVenDTO create(
+      @ApiParam(value = "entity", required = true) @Valid PurOrgVenDTO entity)
       throws ServiceException {
     try {
-      return repository.create(BasDriver.convertDTO(entity));
+      return repository.create(PurOrgVen.convertDTO(entity));
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -76,12 +76,12 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    */
   @ApiOperation(value = "batchCreate", notes = "批量插入多条记录")
   @Override
-  public Iterable<BasDriverDTO> batchCreate(
-      @ApiParam(value = "entities", required = true) @Valid Iterable<BasDriverDTO> entities)
+  public Iterable<PurOrgVenDTO> batchCreate(
+      @ApiParam(value = "entities", required = true) @Valid Iterable<PurOrgVenDTO> entities)
       throws ServiceException {
     try {
-      Iterable<BasDriver> itor = repository.batchCreate(BasDriver.batchConvertDTO(entities));
-      return BasDriver.batchConvert(itor);
+      Iterable<PurOrgVen> itor = repository.batchCreate(PurOrgVen.batchConvertDTO(entities));
+      return PurOrgVen.batchConvert(itor);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -96,10 +96,10 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    */
   @ApiOperation(value = "update", notes = "更新一条记录")
   @Override
-  public BasDriverDTO update(@ApiParam(value = "entity", required = true) BasDriverDTO entity)
+  public PurOrgVenDTO update(@ApiParam(value = "entity", required = true) PurOrgVenDTO entity)
       throws ServiceException {
     try {
-      return repository.update(BasDriver.convertDTO(entity));
+      return repository.update(PurOrgVen.convertDTO(entity));
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -114,12 +114,12 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    */
   @ApiOperation(value = "batchUpdate", notes = "批量更新多条记录")
   @Override
-  public Iterable<BasDriverDTO> batchUpdate(
-      @ApiParam(value = "entities", required = true) Iterable<BasDriverDTO> entities)
+  public Iterable<PurOrgVenDTO> batchUpdate(
+      @ApiParam(value = "entities", required = true) Iterable<PurOrgVenDTO> entities)
       throws ServiceException {
     try {
-      Iterable<BasDriver> itor = repository.batchUpdate(BasDriver.batchConvertDTO(entities));
-      return BasDriver.batchConvert(itor);
+      Iterable<PurOrgVen> itor = repository.batchUpdate(PurOrgVen.batchConvertDTO(entities));
+      return PurOrgVen.batchConvert(itor);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -166,7 +166,7 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    */
   @ApiOperation(value = "getById", notes = "根据id查询记录")
   @Override
-  public BasDriverDTO getById(@ApiParam(value = "id", required = true) Long id)
+  public PurOrgVenDTO getById(@ApiParam(value = "id", required = true) Long id)
       throws ServiceException {
     try {
       return repository.getById(id);
@@ -184,10 +184,10 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    */
   @ApiOperation(value = "batchGetByIds", notes = "根据主键id批量查询")
   @Override
-  public Iterable<BasDriverDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
+  public Iterable<PurOrgVenDTO> batchGetByIds(@ApiParam("idList") List<Long> idList)
       throws ServiceException {
     try {
-      return BasDriver.batchConvert(repository.batchGetByIds(idList));
+      return PurOrgVen.batchConvert(repository.batchGetByIds(idList));
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -195,13 +195,44 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
 
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
-  public Page<BasDriverDTO> findBy(
-      @ApiParam("mnemWord") String mnemWord,
-      @ApiParam("shortNum") String shortNum,
+  public Page<PurOrgVenDTO> findBy(
+      @ApiParam("venOrgCode") String venOrgCode,
+      @ApiParam("venOrgName") String venOrgName,
+      @ApiParam("venOrgId") Long venOrgId,
+      @ApiParam("orgOrgId") Long orgOrgId,
+      @ApiParam("orgOrgCode") String orgOrgCode,
+      @ApiParam("orgOrgName") String orgOrgName,
+      @ApiParam("isAllowOrder") Integer isAllowOrder,
+      @ApiParam("isAllowRec") Integer isAllowRec,
+      @ApiParam("isReturnable") Integer isReturnable,
+      @ApiParam("isPausePay") Integer isPausePay,
+      @ApiParam("isOrderCheck") Integer isOrderCheck,
+      @ApiParam("isRecCheck") Integer isRecCheck,
+      @ApiParam("isReturnCheck") Integer isReturnCheck,
+      @ApiParam("isInvCheck") Integer isInvCheck,
+      @ApiParam("settlementType") Integer settlementType,
+      @ApiParam("remark") String remark,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findBy(mnemWord, shortNum, pageable);
+      return repository.findBy(
+          venOrgCode,
+          venOrgName,
+          venOrgId,
+          orgOrgId,
+          orgOrgCode,
+          orgOrgName,
+          isAllowOrder,
+          isAllowRec,
+          isReturnable,
+          isPausePay,
+          isOrderCheck,
+          isRecCheck,
+          isReturnCheck,
+          isInvCheck,
+          settlementType,
+          remark,
+          pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -217,39 +248,28 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    */
   @ApiOperation(value = "findByExample", notes = "根据非空字段查询")
   @Override
-  public Page<BasDriverDTO> findByExample(
-      @ApiParam("example") BasDriverDTO example, @ApiParam("pageable") Pageable pageable)
+  public Page<PurOrgVenDTO> findByExample(
+      @ApiParam("example") PurOrgVenDTO example, @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findByExample(BasDriver.convertDTO(example), pageable);
-    } catch (Exception e) {
-      throw new ServiceException(e);
-    }
-  }
-
-  @ApiOperation(value = "selectAll", notes = "查询所有记录")
-  @Override
-  public Page<BasDriverDTO> selectAll(@ApiParam("pageable") Pageable pageable)
-      throws ServiceException {
-    try {
-      return repository.selectAll(pageable);
+      return repository.findByExample(PurOrgVen.convertDTO(example), pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
   }
 
   /*  // 动态sql演示，正式的sql需要在开发平台定义 ， 参考 https://blog.olowolo.com/post/new-mybatis-dynamic-sql/
-   public Page<BasDriverDTO> dynamicSqlSelectTest(@ApiParam("nameVal") String nameVal){
+   public Page<PurOrgVenDTO> dynamicSqlSelectTest(@ApiParam("nameVal") String nameVal){
         // 开发测试
         // 方法 1, 注意生产环境不要使用字符串拼接构造sql，避免注入攻击
-        Page<BasDriverDTO> result1 = repository.dynamicSelectPage(SqlWrapper.asSelect("select * from bas_driver"), new PageParam(0, 10), BasDriverDTO.class);
+        Page<PurOrgVenDTO> result1 = repository.dynamicSelectPage(SqlWrapper.asSelect("select * from pur_org_ven"), new PageParam(0, 10), PurOrgVenDTO.class);
         System.out.println(result1);
         // 方法 2
         SelectStatementProvider selectStatement = select(id)
-                .from(basDriverTable)
+                .from(purOrgVenTable)
                 .build()
                 .render(RenderingStrategy.SPRING_NAMED_PARAMETER);
-        Page<BasDriverDTO> result2 =  repository.dynamicSelectPage(selectStatement, new PageParam(0, 10), BasDriverDTO.class);
+        Page<PurOrgVenDTO> result2 =  repository.dynamicSelectPage(selectStatement, new PageParam(0, 10), PurOrgVenDTO.class);
         System.out.println(result2);
         return result1;
    }
@@ -258,10 +278,10 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
    public void dynamicSqlUpdateTest(@ApiParam("idVal")Long idVal, @ApiParam("nameVal") String nameVal) {
       // 开发测试sql更新
       // 方法 1，注意生产环境不要使用字符串拼接构造sql，避免注入攻击
-      int ret1 = repository.dynamicUpdate(SqlWrapper.asUpdate("update bas_driver set name=\"" + nameVal + "\" where id=" + idVal));
+      int ret1 = repository.dynamicUpdate(SqlWrapper.asUpdate("update pur_org_ven set name=\"" + nameVal + "\" where id=" + idVal));
 
       // 方法 2
-      UpdateStatementProvider updateStatement = SqlBuilder.update(basDriverTable).set(name).equalTo(nameVal).where(id, isEqualTo(idVal))
+      UpdateStatementProvider updateStatement = SqlBuilder.update(purOrgVenTable).set(name).equalTo(nameVal).where(id, isEqualTo(idVal))
               .build()
               .render(RenderingStrategy.SPRING_NAMED_PARAMETER);
       int ret2 = repository.dynamicUpdate(updateStatement);
