@@ -28,78 +28,12 @@ public class SalConsignDetailRepositoryImpl extends BaseRepositoryCustomImpl<Sal
 
   @Override
   public Page<SalConsignDetailDTO> findBy(
-      @Param("conId") Long conId,
-      @Param("conSeqno") String conSeqno,
-      @Param("orderId") Long orderId,
-      @Param("orderSeqno") String orderSeqno,
-      @Param("goodsId") Long goodsId,
-      @Param("goodsCode") String goodsCode,
-      @Param("goodsName") String goodsName,
-      @Param("salunitId") Long salunitId,
-      @Param("salUnitRate") java.math.BigDecimal salUnitRate,
-      @Param("salConOutDepotId") Long salConOutDepotId,
-      @Param("salConOutDepotCode") String salConOutDepotCode,
-      @Param("salConOutDepotName") String salConOutDepotName,
-      @Param("grossWeight") java.math.BigDecimal grossWeight,
-      @Param("shippedGrossWeight") java.math.BigDecimal shippedGrossWeight,
-      @Param("netWeight") java.math.BigDecimal netWeight,
-      @Param("shippedNetWeight") java.math.BigDecimal shippedNetWeight,
-      @Param("qty") java.math.BigDecimal qty,
-      @Param("shippedQty") java.math.BigDecimal shippedQty,
-      @Param("volume") java.math.BigDecimal volume,
-      @Param("shippedVolume") java.math.BigDecimal shippedVolume,
-      @Param("taxAmt") java.math.BigDecimal taxAmt,
-      @Param("price") java.math.BigDecimal price,
-      @Param("totalAmt") java.math.BigDecimal totalAmt,
-      @Param("discountRate") java.math.BigDecimal discountRate,
-      @Param("actualAmt") java.math.BigDecimal actualAmt,
-      @Param("discountPrice") java.math.BigDecimal discountPrice,
-      @Param("shippedPrice") java.math.BigDecimal shippedPrice,
-      @Param("shippedCount") Integer shippedCount,
-      @Param("shippedAmt") java.math.BigDecimal shippedAmt,
-      @Param("entId") Long entId,
-      @Param("goodsSpec") String goodsSpec,
-      @Param("salUnitCode") String salUnitCode,
-      @Param("salUnitName") String salUnitName,
-      @Param("taxRate") java.math.BigDecimal taxRate,
-      @Param("remark") String remark,
+      @Param("mnemWord") String mnemWord,
+      @Param("registeBank") String registeBank,
       @Param("pageable") Pageable pageable) {
     SalConsignDetail obj = SalConsignDetail.toExample();
-    obj.setConId(conId);
-    obj.setConSeqno(conSeqno);
-    obj.setOrderId(orderId);
-    obj.setOrderSeqno(orderSeqno);
-    obj.setGoodsId(goodsId);
-    obj.setGoodsCode(goodsCode);
-    obj.setGoodsName(goodsName);
-    obj.setSalunitId(salunitId);
-    obj.setSalUnitRate(salUnitRate);
-    obj.setSalConOutDepotId(salConOutDepotId);
-    obj.setSalConOutDepotCode(salConOutDepotCode);
-    obj.setSalConOutDepotName(salConOutDepotName);
-    obj.setGrossWeight(grossWeight);
-    obj.setShippedGrossWeight(shippedGrossWeight);
-    obj.setNetWeight(netWeight);
-    obj.setShippedNetWeight(shippedNetWeight);
-    obj.setQty(qty);
-    obj.setShippedQty(shippedQty);
-    obj.setVolume(volume);
-    obj.setShippedVolume(shippedVolume);
-    obj.setTaxAmt(taxAmt);
-    obj.setPrice(price);
-    obj.setTotalAmt(totalAmt);
-    obj.setDiscountRate(discountRate);
-    obj.setActualAmt(actualAmt);
-    obj.setDiscountPrice(discountPrice);
-    obj.setShippedPrice(shippedPrice);
-    obj.setShippedCount(shippedCount);
-    obj.setShippedAmt(shippedAmt);
-    obj.setEntId(entId);
-    obj.setGoodsSpec(goodsSpec);
-    obj.setSalUnitCode(salUnitCode);
-    obj.setSalUnitName(salUnitName);
-    obj.setTaxRate(taxRate);
-    obj.setRemark(remark);
+    obj.setMnemWord(mnemWord);
+    obj.setRegisteBank(registeBank);
     Example<SalConsignDetail> example = Example.of(obj);
 
     return findAll(example, pageable).map(SalConsignDetail.DTO_CONVERTER);
@@ -107,77 +41,10 @@ public class SalConsignDetailRepositoryImpl extends BaseRepositoryCustomImpl<Sal
 
   @Override
   public List<SalConsignDetailDTO> findBy(
-      @Param("conId") Long conId,
-      @Param("conSeqno") String conSeqno,
-      @Param("orderId") Long orderId,
-      @Param("orderSeqno") String orderSeqno,
-      @Param("goodsId") Long goodsId,
-      @Param("goodsCode") String goodsCode,
-      @Param("goodsName") String goodsName,
-      @Param("salunitId") Long salunitId,
-      @Param("salUnitRate") java.math.BigDecimal salUnitRate,
-      @Param("salConOutDepotId") Long salConOutDepotId,
-      @Param("salConOutDepotCode") String salConOutDepotCode,
-      @Param("salConOutDepotName") String salConOutDepotName,
-      @Param("grossWeight") java.math.BigDecimal grossWeight,
-      @Param("shippedGrossWeight") java.math.BigDecimal shippedGrossWeight,
-      @Param("netWeight") java.math.BigDecimal netWeight,
-      @Param("shippedNetWeight") java.math.BigDecimal shippedNetWeight,
-      @Param("qty") java.math.BigDecimal qty,
-      @Param("shippedQty") java.math.BigDecimal shippedQty,
-      @Param("volume") java.math.BigDecimal volume,
-      @Param("shippedVolume") java.math.BigDecimal shippedVolume,
-      @Param("taxAmt") java.math.BigDecimal taxAmt,
-      @Param("price") java.math.BigDecimal price,
-      @Param("totalAmt") java.math.BigDecimal totalAmt,
-      @Param("discountRate") java.math.BigDecimal discountRate,
-      @Param("actualAmt") java.math.BigDecimal actualAmt,
-      @Param("discountPrice") java.math.BigDecimal discountPrice,
-      @Param("shippedPrice") java.math.BigDecimal shippedPrice,
-      @Param("shippedCount") Integer shippedCount,
-      @Param("shippedAmt") java.math.BigDecimal shippedAmt,
-      @Param("entId") Long entId,
-      @Param("goodsSpec") String goodsSpec,
-      @Param("salUnitCode") String salUnitCode,
-      @Param("salUnitName") String salUnitName,
-      @Param("taxRate") java.math.BigDecimal taxRate,
-      @Param("remark") String remark) {
+      @Param("mnemWord") String mnemWord, @Param("registeBank") String registeBank) {
     SalConsignDetail obj = SalConsignDetail.toExample();
-    obj.setConId(conId);
-    obj.setConSeqno(conSeqno);
-    obj.setOrderId(orderId);
-    obj.setOrderSeqno(orderSeqno);
-    obj.setGoodsId(goodsId);
-    obj.setGoodsCode(goodsCode);
-    obj.setGoodsName(goodsName);
-    obj.setSalunitId(salunitId);
-    obj.setSalUnitRate(salUnitRate);
-    obj.setSalConOutDepotId(salConOutDepotId);
-    obj.setSalConOutDepotCode(salConOutDepotCode);
-    obj.setSalConOutDepotName(salConOutDepotName);
-    obj.setGrossWeight(grossWeight);
-    obj.setShippedGrossWeight(shippedGrossWeight);
-    obj.setNetWeight(netWeight);
-    obj.setShippedNetWeight(shippedNetWeight);
-    obj.setQty(qty);
-    obj.setShippedQty(shippedQty);
-    obj.setVolume(volume);
-    obj.setShippedVolume(shippedVolume);
-    obj.setTaxAmt(taxAmt);
-    obj.setPrice(price);
-    obj.setTotalAmt(totalAmt);
-    obj.setDiscountRate(discountRate);
-    obj.setActualAmt(actualAmt);
-    obj.setDiscountPrice(discountPrice);
-    obj.setShippedPrice(shippedPrice);
-    obj.setShippedCount(shippedCount);
-    obj.setShippedAmt(shippedAmt);
-    obj.setEntId(entId);
-    obj.setGoodsSpec(goodsSpec);
-    obj.setSalUnitCode(salUnitCode);
-    obj.setSalUnitName(salUnitName);
-    obj.setTaxRate(taxRate);
-    obj.setRemark(remark);
+    obj.setMnemWord(mnemWord);
+    obj.setRegisteBank(registeBank);
     Example<SalConsignDetail> example = Example.of(obj);
     return findAll(example, null).map(SalConsignDetail.DTO_CONVERTER).getContent();
   }

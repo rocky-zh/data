@@ -133,82 +133,27 @@ public interface BaseSalConsignDetailService {
   /**
    * 所有可查询的字段
    *
-   * @param conId
-   * @param conSeqno
-   * @param orderId
-   * @param orderSeqno
-   * @param goodsId
-   * @param goodsCode
-   * @param goodsName
-   * @param salunitId
-   * @param salUnitRate
-   * @param salConOutDepotId
-   * @param salConOutDepotCode
-   * @param salConOutDepotName
-   * @param grossWeight
-   * @param shippedGrossWeight
-   * @param netWeight
-   * @param shippedNetWeight
-   * @param qty
-   * @param shippedQty
-   * @param volume
-   * @param shippedVolume
-   * @param taxAmt
-   * @param price
-   * @param totalAmt
-   * @param discountRate
-   * @param actualAmt
-   * @param discountPrice
-   * @param shippedPrice
-   * @param shippedCount
-   * @param shippedAmt
-   * @param entId
-   * @param goodsSpec
-   * @param salUnitCode
-   * @param salUnitName
-   * @param taxRate
-   * @param remark
+   * @param mnemWord
+   * @param registeBank
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   Page<SalConsignDetailDTO> findBy(
-      @ApiParam("conId") Long conId,
-      @ApiParam("conSeqno") String conSeqno,
-      @ApiParam("orderId") Long orderId,
-      @ApiParam("orderSeqno") String orderSeqno,
-      @ApiParam("goodsId") Long goodsId,
-      @ApiParam("goodsCode") String goodsCode,
-      @ApiParam("goodsName") String goodsName,
-      @ApiParam("salunitId") Long salunitId,
-      @ApiParam("salUnitRate") java.math.BigDecimal salUnitRate,
-      @ApiParam("salConOutDepotId") Long salConOutDepotId,
-      @ApiParam("salConOutDepotCode") String salConOutDepotCode,
-      @ApiParam("salConOutDepotName") String salConOutDepotName,
-      @ApiParam("grossWeight") java.math.BigDecimal grossWeight,
-      @ApiParam("shippedGrossWeight") java.math.BigDecimal shippedGrossWeight,
-      @ApiParam("netWeight") java.math.BigDecimal netWeight,
-      @ApiParam("shippedNetWeight") java.math.BigDecimal shippedNetWeight,
-      @ApiParam("qty") java.math.BigDecimal qty,
-      @ApiParam("shippedQty") java.math.BigDecimal shippedQty,
-      @ApiParam("volume") java.math.BigDecimal volume,
-      @ApiParam("shippedVolume") java.math.BigDecimal shippedVolume,
-      @ApiParam("taxAmt") java.math.BigDecimal taxAmt,
-      @ApiParam("price") java.math.BigDecimal price,
-      @ApiParam("totalAmt") java.math.BigDecimal totalAmt,
-      @ApiParam("discountRate") java.math.BigDecimal discountRate,
-      @ApiParam("actualAmt") java.math.BigDecimal actualAmt,
-      @ApiParam("discountPrice") java.math.BigDecimal discountPrice,
-      @ApiParam("shippedPrice") java.math.BigDecimal shippedPrice,
-      @ApiParam("shippedCount") Integer shippedCount,
-      @ApiParam("shippedAmt") java.math.BigDecimal shippedAmt,
-      @ApiParam("entId") Long entId,
-      @ApiParam("goodsSpec") String goodsSpec,
-      @ApiParam("salUnitCode") String salUnitCode,
-      @ApiParam("salUnitName") String salUnitName,
-      @ApiParam("taxRate") java.math.BigDecimal taxRate,
-      @ApiParam("remark") String remark,
+      @ApiParam("mnemWord") String mnemWord,
+      @ApiParam("registeBank") String registeBank,
       @ApiParam("pageable") Pageable pageable)
+      throws ServiceException;
+
+  /**
+   * 查询所有记录
+   *
+   * @param pageable
+   * @return
+   * @throws ServiceException
+   */
+  @ApiOperation(value = "selectAll", notes = "")
+  Page<SalConsignDetailDTO> selectAll(@ApiParam("pageable") Pageable pageable)
       throws ServiceException;
 }

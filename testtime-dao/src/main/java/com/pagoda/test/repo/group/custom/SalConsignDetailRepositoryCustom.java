@@ -21,158 +21,25 @@ public interface SalConsignDetailRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param conId
-   * @param conSeqno
-   * @param orderId
-   * @param orderSeqno
-   * @param goodsId
-   * @param goodsCode
-   * @param goodsName
-   * @param salunitId
-   * @param salUnitRate
-   * @param salConOutDepotId
-   * @param salConOutDepotCode
-   * @param salConOutDepotName
-   * @param grossWeight
-   * @param shippedGrossWeight
-   * @param netWeight
-   * @param shippedNetWeight
-   * @param qty
-   * @param shippedQty
-   * @param volume
-   * @param shippedVolume
-   * @param taxAmt
-   * @param price
-   * @param totalAmt
-   * @param discountRate
-   * @param actualAmt
-   * @param discountPrice
-   * @param shippedPrice
-   * @param shippedCount
-   * @param shippedAmt
-   * @param entId
-   * @param goodsSpec
-   * @param salUnitCode
-   * @param salUnitName
-   * @param taxRate
-   * @param remark
+   * @param mnemWord
+   * @param registeBank
    * @param pageable
    * @return
    */
   Page<SalConsignDetailDTO> findBy(
-      @Param("conId") Long conId,
-      @Param("conSeqno") String conSeqno,
-      @Param("orderId") Long orderId,
-      @Param("orderSeqno") String orderSeqno,
-      @Param("goodsId") Long goodsId,
-      @Param("goodsCode") String goodsCode,
-      @Param("goodsName") String goodsName,
-      @Param("salunitId") Long salunitId,
-      @Param("salUnitRate") java.math.BigDecimal salUnitRate,
-      @Param("salConOutDepotId") Long salConOutDepotId,
-      @Param("salConOutDepotCode") String salConOutDepotCode,
-      @Param("salConOutDepotName") String salConOutDepotName,
-      @Param("grossWeight") java.math.BigDecimal grossWeight,
-      @Param("shippedGrossWeight") java.math.BigDecimal shippedGrossWeight,
-      @Param("netWeight") java.math.BigDecimal netWeight,
-      @Param("shippedNetWeight") java.math.BigDecimal shippedNetWeight,
-      @Param("qty") java.math.BigDecimal qty,
-      @Param("shippedQty") java.math.BigDecimal shippedQty,
-      @Param("volume") java.math.BigDecimal volume,
-      @Param("shippedVolume") java.math.BigDecimal shippedVolume,
-      @Param("taxAmt") java.math.BigDecimal taxAmt,
-      @Param("price") java.math.BigDecimal price,
-      @Param("totalAmt") java.math.BigDecimal totalAmt,
-      @Param("discountRate") java.math.BigDecimal discountRate,
-      @Param("actualAmt") java.math.BigDecimal actualAmt,
-      @Param("discountPrice") java.math.BigDecimal discountPrice,
-      @Param("shippedPrice") java.math.BigDecimal shippedPrice,
-      @Param("shippedCount") Integer shippedCount,
-      @Param("shippedAmt") java.math.BigDecimal shippedAmt,
-      @Param("entId") Long entId,
-      @Param("goodsSpec") String goodsSpec,
-      @Param("salUnitCode") String salUnitCode,
-      @Param("salUnitName") String salUnitName,
-      @Param("taxRate") java.math.BigDecimal taxRate,
-      @Param("remark") String remark,
+      @Param("mnemWord") String mnemWord,
+      @Param("registeBank") String registeBank,
       @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param conId
-   * @param conSeqno
-   * @param orderId
-   * @param orderSeqno
-   * @param goodsId
-   * @param goodsCode
-   * @param goodsName
-   * @param salunitId
-   * @param salUnitRate
-   * @param salConOutDepotId
-   * @param salConOutDepotCode
-   * @param salConOutDepotName
-   * @param grossWeight
-   * @param shippedGrossWeight
-   * @param netWeight
-   * @param shippedNetWeight
-   * @param qty
-   * @param shippedQty
-   * @param volume
-   * @param shippedVolume
-   * @param taxAmt
-   * @param price
-   * @param totalAmt
-   * @param discountRate
-   * @param actualAmt
-   * @param discountPrice
-   * @param shippedPrice
-   * @param shippedCount
-   * @param shippedAmt
-   * @param entId
-   * @param goodsSpec
-   * @param salUnitCode
-   * @param salUnitName
-   * @param taxRate
-   * @param remark
+   * @param mnemWord
+   * @param registeBank
    * @return
    */
   List<SalConsignDetailDTO> findBy(
-      @Param("conId") Long conId,
-      @Param("conSeqno") String conSeqno,
-      @Param("orderId") Long orderId,
-      @Param("orderSeqno") String orderSeqno,
-      @Param("goodsId") Long goodsId,
-      @Param("goodsCode") String goodsCode,
-      @Param("goodsName") String goodsName,
-      @Param("salunitId") Long salunitId,
-      @Param("salUnitRate") java.math.BigDecimal salUnitRate,
-      @Param("salConOutDepotId") Long salConOutDepotId,
-      @Param("salConOutDepotCode") String salConOutDepotCode,
-      @Param("salConOutDepotName") String salConOutDepotName,
-      @Param("grossWeight") java.math.BigDecimal grossWeight,
-      @Param("shippedGrossWeight") java.math.BigDecimal shippedGrossWeight,
-      @Param("netWeight") java.math.BigDecimal netWeight,
-      @Param("shippedNetWeight") java.math.BigDecimal shippedNetWeight,
-      @Param("qty") java.math.BigDecimal qty,
-      @Param("shippedQty") java.math.BigDecimal shippedQty,
-      @Param("volume") java.math.BigDecimal volume,
-      @Param("shippedVolume") java.math.BigDecimal shippedVolume,
-      @Param("taxAmt") java.math.BigDecimal taxAmt,
-      @Param("price") java.math.BigDecimal price,
-      @Param("totalAmt") java.math.BigDecimal totalAmt,
-      @Param("discountRate") java.math.BigDecimal discountRate,
-      @Param("actualAmt") java.math.BigDecimal actualAmt,
-      @Param("discountPrice") java.math.BigDecimal discountPrice,
-      @Param("shippedPrice") java.math.BigDecimal shippedPrice,
-      @Param("shippedCount") Integer shippedCount,
-      @Param("shippedAmt") java.math.BigDecimal shippedAmt,
-      @Param("entId") Long entId,
-      @Param("goodsSpec") String goodsSpec,
-      @Param("salUnitCode") String salUnitCode,
-      @Param("salUnitName") String salUnitName,
-      @Param("taxRate") java.math.BigDecimal taxRate,
-      @Param("remark") String remark);
+      @Param("mnemWord") String mnemWord, @Param("registeBank") String registeBank);
 
   /**
    * 通用分页查询，用于后台查询

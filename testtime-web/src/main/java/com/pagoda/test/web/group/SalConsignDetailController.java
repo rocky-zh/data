@@ -126,41 +126,8 @@ public class SalConsignDetailController implements InitializingBean {
    * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
    * "资源属性对应的模型字段"))
    *
-   * @param conId
-   * @param conSeqno
-   * @param orderId
-   * @param orderSeqno
-   * @param goodsId
-   * @param goodsCode
-   * @param goodsName
-   * @param salunitId
-   * @param salUnitRate
-   * @param salConOutDepotId
-   * @param salConOutDepotCode
-   * @param salConOutDepotName
-   * @param grossWeight
-   * @param shippedGrossWeight
-   * @param netWeight
-   * @param shippedNetWeight
-   * @param qty
-   * @param shippedQty
-   * @param volume
-   * @param shippedVolume
-   * @param taxAmt
-   * @param price
-   * @param totalAmt
-   * @param discountRate
-   * @param actualAmt
-   * @param discountPrice
-   * @param shippedPrice
-   * @param shippedCount
-   * @param shippedAmt
-   * @param entId
-   * @param goodsSpec
-   * @param salUnitCode
-   * @param salUnitName
-   * @param taxRate
-   * @param remark
+   * @param mnemWord
+   * @param registeBank
    * @param pageable
    * @return
    */
@@ -168,80 +135,9 @@ public class SalConsignDetailController implements InitializingBean {
   @ApiOperation(value = "findBy", notes = "前端页面查询接口, 包含所有可查询的字段")
   @GetMapping(value = "/findBy")
   public Page<SalConsignDetailDTO> findBy(
-      @RequestParam(required = false, value = "conId") Long conId,
-      @RequestParam(required = false, value = "conSeqno") String conSeqno,
-      @RequestParam(required = false, value = "orderId") Long orderId,
-      @RequestParam(required = false, value = "orderSeqno") String orderSeqno,
-      @RequestParam(required = false, value = "goodsId") Long goodsId,
-      @RequestParam(required = false, value = "goodsCode") String goodsCode,
-      @RequestParam(required = false, value = "goodsName") String goodsName,
-      @RequestParam(required = false, value = "salunitId") Long salunitId,
-      @RequestParam(required = false, value = "salUnitRate") java.math.BigDecimal salUnitRate,
-      @RequestParam(required = false, value = "salConOutDepotId") Long salConOutDepotId,
-      @RequestParam(required = false, value = "salConOutDepotCode") String salConOutDepotCode,
-      @RequestParam(required = false, value = "salConOutDepotName") String salConOutDepotName,
-      @RequestParam(required = false, value = "grossWeight") java.math.BigDecimal grossWeight,
-      @RequestParam(required = false, value = "shippedGrossWeight")
-          java.math.BigDecimal shippedGrossWeight,
-      @RequestParam(required = false, value = "netWeight") java.math.BigDecimal netWeight,
-      @RequestParam(required = false, value = "shippedNetWeight")
-          java.math.BigDecimal shippedNetWeight,
-      @RequestParam(required = false, value = "qty") java.math.BigDecimal qty,
-      @RequestParam(required = false, value = "shippedQty") java.math.BigDecimal shippedQty,
-      @RequestParam(required = false, value = "volume") java.math.BigDecimal volume,
-      @RequestParam(required = false, value = "shippedVolume") java.math.BigDecimal shippedVolume,
-      @RequestParam(required = false, value = "taxAmt") java.math.BigDecimal taxAmt,
-      @RequestParam(required = false, value = "price") java.math.BigDecimal price,
-      @RequestParam(required = false, value = "totalAmt") java.math.BigDecimal totalAmt,
-      @RequestParam(required = false, value = "discountRate") java.math.BigDecimal discountRate,
-      @RequestParam(required = false, value = "actualAmt") java.math.BigDecimal actualAmt,
-      @RequestParam(required = false, value = "discountPrice") java.math.BigDecimal discountPrice,
-      @RequestParam(required = false, value = "shippedPrice") java.math.BigDecimal shippedPrice,
-      @RequestParam(required = false, value = "shippedCount") Integer shippedCount,
-      @RequestParam(required = false, value = "shippedAmt") java.math.BigDecimal shippedAmt,
-      @RequestParam(required = false, value = "entId") Long entId,
-      @RequestParam(required = false, value = "goodsSpec") String goodsSpec,
-      @RequestParam(required = false, value = "salUnitCode") String salUnitCode,
-      @RequestParam(required = false, value = "salUnitName") String salUnitName,
-      @RequestParam(required = false, value = "taxRate") java.math.BigDecimal taxRate,
-      @RequestParam(required = false, value = "remark") String remark,
+      @RequestParam(required = false, value = "mnemWord") String mnemWord,
+      @RequestParam(required = false, value = "registeBank") String registeBank,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
-    return salConsignDetailService.findBy(
-        conId,
-        conSeqno,
-        orderId,
-        orderSeqno,
-        goodsId,
-        goodsCode,
-        goodsName,
-        salunitId,
-        salUnitRate,
-        salConOutDepotId,
-        salConOutDepotCode,
-        salConOutDepotName,
-        grossWeight,
-        shippedGrossWeight,
-        netWeight,
-        shippedNetWeight,
-        qty,
-        shippedQty,
-        volume,
-        shippedVolume,
-        taxAmt,
-        price,
-        totalAmt,
-        discountRate,
-        actualAmt,
-        discountPrice,
-        shippedPrice,
-        shippedCount,
-        shippedAmt,
-        entId,
-        goodsSpec,
-        salUnitCode,
-        salUnitName,
-        taxRate,
-        remark,
-        pageable);
+    return salConsignDetailService.findBy(mnemWord, registeBank, pageable);
   }
 }

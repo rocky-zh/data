@@ -200,81 +200,12 @@ public abstract class BaseSalConsignDetailServiceImpl
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
   public Page<SalConsignDetailDTO> findBy(
-      @ApiParam("conId") Long conId,
-      @ApiParam("conSeqno") String conSeqno,
-      @ApiParam("orderId") Long orderId,
-      @ApiParam("orderSeqno") String orderSeqno,
-      @ApiParam("goodsId") Long goodsId,
-      @ApiParam("goodsCode") String goodsCode,
-      @ApiParam("goodsName") String goodsName,
-      @ApiParam("salunitId") Long salunitId,
-      @ApiParam("salUnitRate") java.math.BigDecimal salUnitRate,
-      @ApiParam("salConOutDepotId") Long salConOutDepotId,
-      @ApiParam("salConOutDepotCode") String salConOutDepotCode,
-      @ApiParam("salConOutDepotName") String salConOutDepotName,
-      @ApiParam("grossWeight") java.math.BigDecimal grossWeight,
-      @ApiParam("shippedGrossWeight") java.math.BigDecimal shippedGrossWeight,
-      @ApiParam("netWeight") java.math.BigDecimal netWeight,
-      @ApiParam("shippedNetWeight") java.math.BigDecimal shippedNetWeight,
-      @ApiParam("qty") java.math.BigDecimal qty,
-      @ApiParam("shippedQty") java.math.BigDecimal shippedQty,
-      @ApiParam("volume") java.math.BigDecimal volume,
-      @ApiParam("shippedVolume") java.math.BigDecimal shippedVolume,
-      @ApiParam("taxAmt") java.math.BigDecimal taxAmt,
-      @ApiParam("price") java.math.BigDecimal price,
-      @ApiParam("totalAmt") java.math.BigDecimal totalAmt,
-      @ApiParam("discountRate") java.math.BigDecimal discountRate,
-      @ApiParam("actualAmt") java.math.BigDecimal actualAmt,
-      @ApiParam("discountPrice") java.math.BigDecimal discountPrice,
-      @ApiParam("shippedPrice") java.math.BigDecimal shippedPrice,
-      @ApiParam("shippedCount") Integer shippedCount,
-      @ApiParam("shippedAmt") java.math.BigDecimal shippedAmt,
-      @ApiParam("entId") Long entId,
-      @ApiParam("goodsSpec") String goodsSpec,
-      @ApiParam("salUnitCode") String salUnitCode,
-      @ApiParam("salUnitName") String salUnitName,
-      @ApiParam("taxRate") java.math.BigDecimal taxRate,
-      @ApiParam("remark") String remark,
+      @ApiParam("mnemWord") String mnemWord,
+      @ApiParam("registeBank") String registeBank,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findBy(
-          conId,
-          conSeqno,
-          orderId,
-          orderSeqno,
-          goodsId,
-          goodsCode,
-          goodsName,
-          salunitId,
-          salUnitRate,
-          salConOutDepotId,
-          salConOutDepotCode,
-          salConOutDepotName,
-          grossWeight,
-          shippedGrossWeight,
-          netWeight,
-          shippedNetWeight,
-          qty,
-          shippedQty,
-          volume,
-          shippedVolume,
-          taxAmt,
-          price,
-          totalAmt,
-          discountRate,
-          actualAmt,
-          discountPrice,
-          shippedPrice,
-          shippedCount,
-          shippedAmt,
-          entId,
-          goodsSpec,
-          salUnitCode,
-          salUnitName,
-          taxRate,
-          remark,
-          pageable);
+      return repository.findBy(mnemWord, registeBank, pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -295,6 +226,17 @@ public abstract class BaseSalConsignDetailServiceImpl
       throws ServiceException {
     try {
       return repository.findByExample(SalConsignDetail.convertDTO(example), pageable);
+    } catch (Exception e) {
+      throw new ServiceException(e);
+    }
+  }
+
+  @ApiOperation(value = "selectAll", notes = "查询所有记录")
+  @Override
+  public Page<SalConsignDetailDTO> selectAll(@ApiParam("pageable") Pageable pageable)
+      throws ServiceException {
+    try {
+      return repository.selectAll(pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
