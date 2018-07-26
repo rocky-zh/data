@@ -1,2 +1,0 @@
-org.springframework.context.ApplicationContextInitializer=com.pagoda.CustomApplicationContextInitializer
-org.springframework.context.ApplicationListener=com.pagoda.CustomApplicationContextInitializer,org.springframework.boot.system.ApplicationPidFileWriter

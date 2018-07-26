@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.pagoda</groupId>
-    <artifactId>datatest-build</artifactId>
+    <groupId>com.pagoda.test</groupId>
+    <artifactId>testtime-build</artifactId>
     <packaging>pom</packaging>
-    <name>datatest-build</name>
+    <name>testtime-build</name>
     <version>1.0.1</version>
     <properties>
         <java.version>1.8</java.version>
@@ -30,12 +30,12 @@
         <relativePath/>
     </parent>
     <modules>
-            <module>datatest-parent</module>
-            <module>datatest-api</module>
-            <module>datatest-dao</module>
-            <module>datatest-service</module>
-            <module>datatest-dubbo-container</module>
-            <module>datatest-web</module>
+            <module>testtime-parent</module>
+            <module>testtime-api</module>
+            <module>testtime-dao</module>
+            <module>testtime-service</module>
+            <module>testtime-dubbo-container</module>
+            <module>testtime-web</module>
     </modules>
 
 <!-- 配置Nexus私服地址 -->
