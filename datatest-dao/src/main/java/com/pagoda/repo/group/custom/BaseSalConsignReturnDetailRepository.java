@@ -30,14 +30,14 @@ public interface BaseSalConsignReturnDetailRepository extends SalConsignReturnDe
      * @param pageable
      * @return
      */
-    @SqlTemplate(name="findSalConsignDetail" , sql="select con_seqno,con_id,goods_id,order_seqno,goods_code,goods_name,goods_spec,sal_unit_name,net_weight,  shipped_net_weight ,qty, shipped_qty,tax_rate,tax_amt,price,total_amt ,discount_rate,discount_price, actual_amt,shipped_price,shipped_cou nt,shipped_amt,remark,shipped_gross_weight, gross_weight, version  from sal_consign_detail  where  deleted = 0 {{#con_id}}  and con_id=:con_id  {{/con_id}} {{#creator_org_code_exists}} and creator_org_code in ({{#creator_org_code}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creator_org_code}})  {{/creator_org_code_exists}} ")
+    @SqlTemplate(name="findSalConsignDetail" , sql="select con_seqno,con_id,goods_id,order_seqno,goods_code,goods_name,goods_spec,sal_unit_name,net_weight,  shipped_net_weight ,qty, shipped_qty,tax_rate,tax_amt,price,total_amt ,discount_rate,discount_price, actual_amt,shipped_price,shipped_cou nt,shipped_amt,remark,shipped_gross_weight, gross_weight, version  from sal_consign_detail  where  deleted = 0 {{#con_id}}  and con_id=:con_id  {{/con_id}} {{#creatorOrgCode_exists}} and creator_org_code in ({{#creatorOrgCode}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creatorOrgCode}})  {{/creatorOrgCode_exists}} ")
     Page<> findSalConsignDetail( @Param("pageable") Pageable pageable);
 
         /**
         * 根据  发货单id  查询明细,用于   发货 时操作
         * @return
         */
-        @SqlTemplate(name="findSalConsignDetail" , sql="select con_seqno,con_id,goods_id,order_seqno,goods_code,goods_name,goods_spec,sal_unit_name,net_weight,  shipped_net_weight ,qty, shipped_qty,tax_rate,tax_amt,price,total_amt ,discount_rate,discount_price, actual_amt,shipped_price,shipped_cou nt,shipped_amt,remark,shipped_gross_weight, gross_weight, version  from sal_consign_detail  where  deleted = 0 {{#con_id}}  and con_id=:con_id  {{/con_id}} {{#creator_org_code_exists}} and creator_org_code in ({{#creator_org_code}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creator_org_code}})  {{/creator_org_code_exists}} ")
+        @SqlTemplate(name="findSalConsignDetail" , sql="select con_seqno,con_id,goods_id,order_seqno,goods_code,goods_name,goods_spec,sal_unit_name,net_weight,  shipped_net_weight ,qty, shipped_qty,tax_rate,tax_amt,price,total_amt ,discount_rate,discount_price, actual_amt,shipped_price,shipped_cou nt,shipped_amt,remark,shipped_gross_weight, gross_weight, version  from sal_consign_detail  where  deleted = 0 {{#con_id}}  and con_id=:con_id  {{/con_id}} {{#creatorOrgCode_exists}} and creator_org_code in ({{#creatorOrgCode}}{{^-first}}, {{/-first}}\"{{this}}\"{{/creatorOrgCode}})  {{/creatorOrgCode_exists}} ")
         List<> findSalConsignDetail();
 
 
