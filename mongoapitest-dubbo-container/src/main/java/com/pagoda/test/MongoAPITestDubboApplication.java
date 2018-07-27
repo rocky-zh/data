@@ -73,14 +73,6 @@ public class MongoAPITestDubboApplication {
           com.pagoda.test.api.SortParam.class, SortParamDeserializer.instance);
       staticDeserializerMap.put(Sort.class, SortParamDeserializer.instance);
       // 处理DTO序列化
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.BasGoods.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.BasGoodsDTO.class, serializerFactory.getClassLoader()));
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.BasCat.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.BasCatDTO.class, serializerFactory.getClassLoader()));
     } catch (Exception e) {
       log.error("addDubboSerializer", e);
     }

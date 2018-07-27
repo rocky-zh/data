@@ -19,28 +19,43 @@ spring:
       port: 8500
       discovery:
         register: false
- #       hostname: 10.9.10.215
+    #       hostname: 10.9.10.215
         serviceName: ${spring.application.name}
         healthCheckPath: /actuator/health
         healthCheckInterval: 15s
         tags: urlprefix-/${spring.application.name}
         instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}    
   
-  # rabbitmq消息队列
-  rabbitmq:
-    host: erp2.test.pagoda.com.cn
-    port: 5672
-    username: guest
-    password: guest
-#    virtual-host: /dev_udf-sample
-    template:
-      retry:
-      #发送方是否重试
-        enabled: true 
-    listener:
-      retry:
-      #消费方是否重试
-        enabled: true 
+    # 消息队列
+    stream:
+      bindings:
+        input:
+          destination: my.queue.log.messages
+          binder: local_rabbit
+          group: logMessageConsumers
+        output:
+          destination: my.queue.log.messages
+          binder: local_rabbit
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: erp2.test.pagoda.com.cn
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
+                template:
+                  retry:
+                  #发送方是否重试
+                    enabled: true 
+                listener:
+                  retry:
+                  #消费方是否重试
+                    enabled: true 
+ 
 
 # 集成Spring Boot Admin监控系统
   boot:

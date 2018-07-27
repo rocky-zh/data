@@ -43,17 +43,12 @@ public class MongoAPITestDubboController {
   public static final Map<String, String> DTO_PACKAGES = new HashMap<>();
 
   static {
-    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.SelectVenGoodsDetailUnSetDTO");
-    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.BasGoodsDTO");
-    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.BasCatDTO");
   }
 
   /** api包名 * */
   public static final Map<String, String> API_PACKAGES = new HashMap<>();
 
   static {
-    putInMap(API_PACKAGES, "com.pagoda.test.api.group.BasCatService");
-    putInMap(API_PACKAGES, "com.pagoda.test.api.group.BasGoodsService");
   }
 
   /** 查询方法名 * */
