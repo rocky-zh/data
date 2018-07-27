@@ -43,8 +43,10 @@ public class TestTimeDubboController {
   public static final Map<String, String> DTO_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.SalOrderControlDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.BasDriverDTO");
     putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.PurOrgVenDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.SalConsignDetailDTO");
   }
 
   /** api包名 * */
@@ -53,6 +55,8 @@ public class TestTimeDubboController {
   static {
     putInMap(API_PACKAGES, "com.pagoda.test.api.group.PurOrgVenService");
     putInMap(API_PACKAGES, "com.pagoda.test.api.group.BasDriverService");
+    putInMap(API_PACKAGES, "com.pagoda.test.api.group.SalOrderControlService");
+    putInMap(API_PACKAGES, "com.pagoda.test.api.group.SalConsignDetailService");
   }
 
   /** 查询方法名 * */

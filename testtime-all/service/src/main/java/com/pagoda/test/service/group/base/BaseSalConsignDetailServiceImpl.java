@@ -242,6 +242,28 @@ public abstract class BaseSalConsignDetailServiceImpl
     }
   }
 
+  @ApiOperation(value = "selectAll", notes = "查询所有记录")
+  @Override
+  public Page<SalConsignDetailDTO> selectAll(@ApiParam("pageable") Pageable pageable)
+      throws ServiceException {
+    try {
+      return repository.selectAll(pageable);
+    } catch (Exception e) {
+      throw new ServiceException(e);
+    }
+  }
+
+  @ApiOperation(value = "selectAll", notes = "查询所有记录")
+  @Override
+  public Page<SalConsignDetailDTO> selectAll(@ApiParam("pageable") Pageable pageable)
+      throws ServiceException {
+    try {
+      return repository.selectAll(pageable);
+    } catch (Exception e) {
+      throw new ServiceException(e);
+    }
+  }
+
   /*  // 动态sql演示，正式的sql需要在开发平台定义 ， 参考 https://blog.olowolo.com/post/new-mybatis-dynamic-sql/
    public Page<SalConsignDetailDTO> dynamicSqlSelectTest(@ApiParam("nameVal") String nameVal){
         // 开发测试
