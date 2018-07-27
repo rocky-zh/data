@@ -28,6 +28,23 @@ public interface BasePurOrgVenRepository
     extends PurOrgVenRepositoryCustom, PagodaJpaRepository<PurOrgVen, Long> {
 
   /**
+   * 查询所有的记录
+   *
+   * @param pageable
+   * @return
+   */
+  @SqlTemplate(name = "selectPurAll", sql = "select * from pur_org_ven")
+  Page<PurOrgVenDTO> selectPurAll(@Param("pageable") Pageable pageable);
+
+  /**
+   * 查询所有的记录
+   *
+   * @return
+   */
+  @SqlTemplate(name = "selectPurAll", sql = "select * from pur_org_ven")
+  List<PurOrgVenDTO> selectPurAll();
+
+  /**
    * 动态执行一个无参数的sql,返回分页的结果
    *
    * @param selectProvider 通过SqlWrapper.asSelect封装sql

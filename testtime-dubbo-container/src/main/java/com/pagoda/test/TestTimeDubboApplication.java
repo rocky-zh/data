@@ -16,7 +16,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.data.domain.Sort;
 import com.pagoda.platform.dubbo.util.SortParamSerializer;
 import com.pagoda.platform.dubbo.util.SortParamDeserializer;
@@ -73,16 +72,6 @@ public class TestTimeDubboApplication {
           com.pagoda.test.api.SortParam.class, SortParamDeserializer.instance);
       staticDeserializerMap.put(Sort.class, SortParamDeserializer.instance);
       // 处理DTO序列化
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.SalOrderControl.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.SalOrderControlDTO.class,
-              serializerFactory.getClassLoader()));
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.SalConsignDetail.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.SalConsignDetailDTO.class,
-              serializerFactory.getClassLoader()));
       staticSerializerMap.put(
           com.pagoda.test.domain.group.BasDriver.class,
           new DtoSerializer(

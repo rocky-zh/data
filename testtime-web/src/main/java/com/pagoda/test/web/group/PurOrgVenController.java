@@ -126,22 +126,7 @@ public class PurOrgVenController implements InitializingBean {
    * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
    * "资源属性对应的模型字段"))
    *
-   * @param venOrgCode
-   * @param venOrgName
-   * @param venOrgId
-   * @param orgOrgId
-   * @param orgOrgCode
-   * @param orgOrgName
-   * @param isAllowOrder
-   * @param isAllowRec
-   * @param isReturnable
-   * @param isPausePay
-   * @param isOrderCheck
-   * @param isRecCheck
-   * @param isReturnCheck
-   * @param isInvCheck
-   * @param settlementType
-   * @param remark
+   * @param shortNum
    * @param pageable
    * @return
    */
@@ -149,40 +134,8 @@ public class PurOrgVenController implements InitializingBean {
   @ApiOperation(value = "findBy", notes = "前端页面查询接口, 包含所有可查询的字段")
   @GetMapping(value = "/findBy")
   public Page<PurOrgVenDTO> findBy(
-      @RequestParam(required = false, value = "venOrgCode") String venOrgCode,
-      @RequestParam(required = false, value = "venOrgName") String venOrgName,
-      @RequestParam(required = false, value = "venOrgId") Long venOrgId,
-      @RequestParam(required = false, value = "orgOrgId") Long orgOrgId,
-      @RequestParam(required = false, value = "orgOrgCode") String orgOrgCode,
-      @RequestParam(required = false, value = "orgOrgName") String orgOrgName,
-      @RequestParam(required = false, value = "isAllowOrder") Integer isAllowOrder,
-      @RequestParam(required = false, value = "isAllowRec") Integer isAllowRec,
-      @RequestParam(required = false, value = "isReturnable") Integer isReturnable,
-      @RequestParam(required = false, value = "isPausePay") Integer isPausePay,
-      @RequestParam(required = false, value = "isOrderCheck") Integer isOrderCheck,
-      @RequestParam(required = false, value = "isRecCheck") Integer isRecCheck,
-      @RequestParam(required = false, value = "isReturnCheck") Integer isReturnCheck,
-      @RequestParam(required = false, value = "isInvCheck") Integer isInvCheck,
-      @RequestParam(required = false, value = "settlementType") Integer settlementType,
-      @RequestParam(required = false, value = "remark") String remark,
+      @RequestParam(required = false, value = "shortNum") String shortNum,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
-    return purOrgVenService.findBy(
-        venOrgCode,
-        venOrgName,
-        venOrgId,
-        orgOrgId,
-        orgOrgCode,
-        orgOrgName,
-        isAllowOrder,
-        isAllowRec,
-        isReturnable,
-        isPausePay,
-        isOrderCheck,
-        isRecCheck,
-        isReturnCheck,
-        isInvCheck,
-        settlementType,
-        remark,
-        pageable);
+    return purOrgVenService.findBy(shortNum, pageable);
   }
 }

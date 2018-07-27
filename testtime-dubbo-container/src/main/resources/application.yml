@@ -65,8 +65,11 @@ opentracing:
         strategy:
           enabled: true
       log:
-        enabled: false      
-
+        enabled: false
+hystrix:
+  stream:
+    endpoint:
+      enabled: false
 ---
 spring:
   profiles: dev

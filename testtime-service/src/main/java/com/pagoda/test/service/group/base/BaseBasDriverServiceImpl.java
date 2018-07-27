@@ -196,12 +196,10 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
   public Page<BasDriverDTO> findBy(
-      @ApiParam("mnemWord") String mnemWord,
-      @ApiParam("shortNum") String shortNum,
-      @ApiParam("pageable") Pageable pageable)
+      @ApiParam("mnemWord") String mnemWord, @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findBy(mnemWord, shortNum, pageable);
+      return repository.findBy(mnemWord, pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -222,17 +220,6 @@ public abstract class BaseBasDriverServiceImpl implements BaseBasDriverService, 
       throws ServiceException {
     try {
       return repository.findByExample(BasDriver.convertDTO(example), pageable);
-    } catch (Exception e) {
-      throw new ServiceException(e);
-    }
-  }
-
-  @ApiOperation(value = "selectAll", notes = "查询所有记录")
-  @Override
-  public Page<BasDriverDTO> selectAll(@ApiParam("pageable") Pageable pageable)
-      throws ServiceException {
-    try {
-      return repository.selectAll(pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }

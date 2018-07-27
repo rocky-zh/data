@@ -130,44 +130,23 @@ public interface BasePurOrgVenService {
   /**
    * 所有可查询的字段
    *
-   * @param venOrgCode
-   * @param venOrgName
-   * @param venOrgId
-   * @param orgOrgId
-   * @param orgOrgCode
-   * @param orgOrgName
-   * @param isAllowOrder
-   * @param isAllowRec
-   * @param isReturnable
-   * @param isPausePay
-   * @param isOrderCheck
-   * @param isRecCheck
-   * @param isReturnCheck
-   * @param isInvCheck
-   * @param settlementType
-   * @param remark
+   * @param shortNum
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   Page<PurOrgVenDTO> findBy(
-      @ApiParam("venOrgCode") String venOrgCode,
-      @ApiParam("venOrgName") String venOrgName,
-      @ApiParam("venOrgId") Long venOrgId,
-      @ApiParam("orgOrgId") Long orgOrgId,
-      @ApiParam("orgOrgCode") String orgOrgCode,
-      @ApiParam("orgOrgName") String orgOrgName,
-      @ApiParam("isAllowOrder") Integer isAllowOrder,
-      @ApiParam("isAllowRec") Integer isAllowRec,
-      @ApiParam("isReturnable") Integer isReturnable,
-      @ApiParam("isPausePay") Integer isPausePay,
-      @ApiParam("isOrderCheck") Integer isOrderCheck,
-      @ApiParam("isRecCheck") Integer isRecCheck,
-      @ApiParam("isReturnCheck") Integer isReturnCheck,
-      @ApiParam("isInvCheck") Integer isInvCheck,
-      @ApiParam("settlementType") Integer settlementType,
-      @ApiParam("remark") String remark,
-      @ApiParam("pageable") Pageable pageable)
+      @ApiParam("shortNum") String shortNum, @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
+
+  /**
+   * 查询所有的记录
+   *
+   * @param pageable
+   * @return
+   * @throws ServiceException
+   */
+  @ApiOperation(value = "selectPurAll", notes = "")
+  Page<PurOrgVenDTO> selectPurAll(@ApiParam("pageable") Pageable pageable) throws ServiceException;
 }

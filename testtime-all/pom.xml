@@ -4,7 +4,7 @@
     <artifactId>testtime-all</artifactId>
     <packaging>jar</packaging>
     <name>testtime-all</name>
-    <version>1.0.1</version>
+    <!--<version>1.0.1</version>-->
     <properties>
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
@@ -36,6 +36,8 @@
         <!-- 跳过测试 -->
         <maven.test.skip>true</maven.test.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
+        <pmd.skip>true</pmd.skip>
+        <cpd.skip>true</cpd.skip>
     </properties>
     <parent>
         <groupId>com.pagoda.test</groupId>
@@ -86,14 +88,18 @@
             <artifactId>opentracing-core</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>de.codecentric</groupId>-->
+            <!--<artifactId>spring-boot-admin-starter-client</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-consul-discovery</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
+        <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>org.springframework.cloud</groupId>-->
             <!--<artifactId>spring-cloud-stream-binder-kafka</artifactId>-->
@@ -101,6 +107,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!--
@@ -114,11 +121,6 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
-
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-        </dependency>
         <!-- 分页参数导致dubbo序列化问题 -->
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -135,7 +137,7 @@
             <artifactId>mybatis-dynamic-sql</artifactId>
         </dependency>
 
-        <!-- JDBC连接数据库，因为要用HikariCP，所以需要将SpringBoot中的tomcat-jdbc排除 -->
+        <!-- JDBC连接数据库，需要将SpringBoot中的tomcat-jdbc排除 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -146,15 +148,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- HikariCP 连接池依赖，从父依赖获取额版本 -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-        </dependency>
+
         <!-- 当当分库分表 -->
         <dependency>
             <groupId>io.shardingjdbc</groupId>
             <artifactId>sharding-jdbc-core</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -192,10 +191,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-        </dependency>
 
         <!-- 携程配置中心 -->
         <dependency>
@@ -207,6 +202,7 @@
         <dependency>
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
+            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <groupId>javax.servlet</groupId>
@@ -233,11 +229,7 @@
             <optional>true</optional>
         </dependency>
             -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -294,47 +286,59 @@
             <artifactId>commons-io</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.google.googlejavaformat</groupId>
             <artifactId>google-java-format</artifactId>
+            <scope>provided</scope>
         </dependency>
-        <!-- 通过代码指定host绑定的ip，类似hosts文件 -->
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dns-cache-manipulator</artifactId>
         </dependency>
-        <!-- 解决异步执行时上下文传递的问题  https://github.com/alibaba/transmittable-thread-local -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>transmittable-thread-local</artifactId>
-        </dependency>
+        <!--   <dependency>
+             <groupId>com.alibaba</groupId>
+             <artifactId>transmittable-thread-local</artifactId>
+         </dependency>
+         -->
 
         <!-- cache -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- excel导入导出 -->
         <dependency>
             <groupId>org.jxls</groupId>
             <artifactId>jxls</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jxls</groupId>
             <artifactId>jxls-poi</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jxls</groupId>
             <artifactId>jxls-reader</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
