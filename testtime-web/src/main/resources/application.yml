@@ -222,6 +222,10 @@ requestLogging:
 
 
 # spring actuator配置
+hystrix:
+  stream:
+    endpoint:
+      enabled: false
 endpoints:
   metrics:
     sensitive: false

@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.condition.*;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCache;
@@ -141,6 +141,7 @@ public class CacheConfiguration {
   @Bean
   @Primary
   @ConditionalOnMissingBean
+  @ConditionalOnClass(Caffeine.class)
   public CacheManager caffeineCacheManager() {
     SimpleCacheManager cacheManager = new SimpleCacheManager();
 

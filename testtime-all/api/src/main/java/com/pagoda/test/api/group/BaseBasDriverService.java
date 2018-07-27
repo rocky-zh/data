@@ -131,25 +131,12 @@ public interface BaseBasDriverService {
    * 所有可查询的字段
    *
    * @param mnemWord
-   * @param shortNum
    * @param pageable
    * @return
    * @throws ServiceException
    */
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   Page<BasDriverDTO> findBy(
-      @ApiParam("mnemWord") String mnemWord,
-      @ApiParam("shortNum") String shortNum,
-      @ApiParam("pageable") Pageable pageable)
+      @ApiParam("mnemWord") String mnemWord, @ApiParam("pageable") Pageable pageable)
       throws ServiceException;
-
-  /**
-   * 查询所有记录
-   *
-   * @param pageable
-   * @return
-   * @throws ServiceException
-   */
-  @ApiOperation(value = "selectAll", notes = "")
-  Page<BasDriverDTO> selectAll(@ApiParam("pageable") Pageable pageable) throws ServiceException;
 }

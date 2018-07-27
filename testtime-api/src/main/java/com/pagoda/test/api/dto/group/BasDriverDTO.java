@@ -199,42 +199,6 @@ public class BasDriverDTO extends AbstractDTO implements Serializable {
   )
   private String mnemWord;
 
-  @FieldMeta(
-    name = "shortNum",
-    scene = "",
-    nameCN = "短号",
-    comment = "短号",
-    nameEN = "short_num",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @ApiModelProperty(
-    name = "shortNum",
-    value = "短号",
-    dataType = "",
-    notes = "5b519d8f4772960001e54c21"
-  )
-  private String shortNum;
-
   /** DTO字段的getter */
   public static class Getters {
     public static Function<BasDriverDTO, Long> id_ = o -> o.getId();
@@ -252,7 +216,6 @@ public class BasDriverDTO extends AbstractDTO implements Serializable {
     public static Function<BasDriverDTO, Integer> version_ = o -> o.getVersion();
 
     public static Function<BasDriverDTO, String> mnemWord_ = o -> o.getMnemWord();
-    public static Function<BasDriverDTO, String> shortNum_ = o -> o.getShortNum();
   }
 
   public static ValidatorBuilder<BasDriverDTO> validatorExample() {

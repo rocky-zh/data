@@ -29,7 +29,6 @@ public class BasDriverDynamicSqlSupport {
   public static SqlColumn<String> modifierOrgCode = basDriverTable.modifierOrgCode;
   public static SqlColumn<Integer> version = basDriverTable.version;
   public static SqlColumn<String> mnemWord = basDriverTable.mnemWord;
-  public static SqlColumn<String> shortNum = basDriverTable.shortNum;
 
   public static final class BasDriverTable extends SqlTable {
     public final SqlColumn<Long> id = column("id", JDBCType.BIGINT);
@@ -47,7 +46,6 @@ public class BasDriverDynamicSqlSupport {
     public final SqlColumn<Integer> version = column("version", JDBCType.INTEGER);
 
     public final SqlColumn<String> mnemWord = column("mnem_word", JDBCType.VARCHAR);
-    public final SqlColumn<String> shortNum = column("short_num", JDBCType.VARCHAR);
 
     public BasDriverTable() {
       super("BasDriver");

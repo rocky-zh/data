@@ -43,12 +43,16 @@ public class TestTimeDubboController {
   public static final Map<String, String> DTO_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.BasDriverDTO");
+    putInMap(DTO_PACKAGES, "com.pagoda.test.api.dto.group.SalConsignDetailDTO");
   }
 
   /** api包名 * */
   public static final Map<String, String> API_PACKAGES = new HashMap<>();
 
   static {
+    putInMap(API_PACKAGES, "com.pagoda.test.api.group.BasDriverService");
+    putInMap(API_PACKAGES, "com.pagoda.test.api.group.SalConsignDetailService");
   }
 
   /** 查询方法名 * */
