@@ -196,43 +196,10 @@ public abstract class BasePurOrgVenServiceImpl implements BasePurOrgVenService, 
   @ApiOperation(value = "findBy", notes = "根据非空字段查询")
   @Override
   public Page<PurOrgVenDTO> findBy(
-      @ApiParam("venOrgCode") String venOrgCode,
-      @ApiParam("venOrgName") String venOrgName,
-      @ApiParam("venOrgId") Long venOrgId,
-      @ApiParam("orgOrgId") Long orgOrgId,
-      @ApiParam("orgOrgCode") String orgOrgCode,
-      @ApiParam("orgOrgName") String orgOrgName,
-      @ApiParam("isAllowOrder") Integer isAllowOrder,
-      @ApiParam("isAllowRec") Integer isAllowRec,
-      @ApiParam("isReturnable") Integer isReturnable,
-      @ApiParam("isPausePay") Integer isPausePay,
-      @ApiParam("isOrderCheck") Integer isOrderCheck,
-      @ApiParam("isRecCheck") Integer isRecCheck,
-      @ApiParam("isReturnCheck") Integer isReturnCheck,
-      @ApiParam("isInvCheck") Integer isInvCheck,
-      @ApiParam("settlementType") Integer settlementType,
-      @ApiParam("remark") String remark,
-      @ApiParam("pageable") Pageable pageable)
+      @ApiParam("shortNum") String shortNum, @ApiParam("pageable") Pageable pageable)
       throws ServiceException {
     try {
-      return repository.findBy(
-          venOrgCode,
-          venOrgName,
-          venOrgId,
-          orgOrgId,
-          orgOrgCode,
-          orgOrgName,
-          isAllowOrder,
-          isAllowRec,
-          isReturnable,
-          isPausePay,
-          isOrderCheck,
-          isRecCheck,
-          isReturnCheck,
-          isInvCheck,
-          settlementType,
-          remark,
-          pageable);
+      return repository.findBy(shortNum, pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }
@@ -253,6 +220,17 @@ public abstract class BasePurOrgVenServiceImpl implements BasePurOrgVenService, 
       throws ServiceException {
     try {
       return repository.findByExample(PurOrgVen.convertDTO(example), pageable);
+    } catch (Exception e) {
+      throw new ServiceException(e);
+    }
+  }
+
+  @ApiOperation(value = "selectPurAll", notes = "查询所有的记录")
+  @Override
+  public Page<PurOrgVenDTO> selectPurAll(@ApiParam("pageable") Pageable pageable)
+      throws ServiceException {
+    try {
+      return repository.selectPurAll(pageable);
     } catch (Exception e) {
       throw new ServiceException(e);
     }

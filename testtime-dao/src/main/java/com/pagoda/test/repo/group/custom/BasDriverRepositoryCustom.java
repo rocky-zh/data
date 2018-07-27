@@ -22,23 +22,19 @@ public interface BasDriverRepositoryCustom {
    * 包含所有可查询的字段
    *
    * @param mnemWord
-   * @param shortNum
    * @param pageable
    * @return
    */
   Page<BasDriverDTO> findBy(
-      @Param("mnemWord") String mnemWord,
-      @Param("shortNum") String shortNum,
-      @Param("pageable") Pageable pageable);
+      @Param("mnemWord") String mnemWord, @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
    * @param mnemWord
-   * @param shortNum
    * @return
    */
-  List<BasDriverDTO> findBy(@Param("mnemWord") String mnemWord, @Param("shortNum") String shortNum);
+  List<BasDriverDTO> findBy(@Param("mnemWord") String mnemWord);
 
   /**
    * 通用分页查询，用于后台查询

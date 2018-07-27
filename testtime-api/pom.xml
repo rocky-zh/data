@@ -4,7 +4,7 @@
     <artifactId>testtime-api-auto</artifactId>
     <packaging>jar</packaging>
     <name>testtime-api-auto</name>
-    <version>1.0.1</version>
+     <!--<version>1.0.1</version>-->
     <properties>
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
@@ -22,7 +22,8 @@
         <!-- 跳过测试 -->
         <maven.test.skip>true</maven.test.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
-
+        <pmd.skip>true</pmd.skip>
+        <cpd.skip>true</cpd.skip>
     </properties>
     <parent>
         <groupId>com.pagoda.test</groupId>
@@ -35,6 +36,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
 
         <!-- 分页参数导致dubbo序列化问题 -->

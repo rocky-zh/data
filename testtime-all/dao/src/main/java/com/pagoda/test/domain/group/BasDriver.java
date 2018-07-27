@@ -227,43 +227,6 @@ public class BasDriver extends BasDriverDTO implements Serializable {
   )
   private String mnemWord;
 
-  @FieldMeta(
-    name = "shortNum",
-    scene = "",
-    nameCN = "短号",
-    comment = "短号",
-    nameEN = "short_num",
-    type = "字符串",
-    format = "",
-    displayLen = 1,
-    formSize = "",
-    constraint = "",
-    constraintParams = "",
-    persistent = true,
-    canQuery = true,
-    readOnly = false,
-    required = false,
-    visible = true,
-    defaultValue = "",
-    tag = "",
-    sortable = false,
-    total = false,
-    pageTotal = false,
-    enumerationType = false,
-    constraintParamsExtra = "",
-    fixed = "",
-    sensitive = false,
-    index = 0
-  )
-  @Column(
-    name = "\"short_num\"",
-    nullable = true,
-    precision = 0,
-    scale = 0,
-    columnDefinition = "varchar(35)   COMMENT '短号'"
-  )
-  private String shortNum;
-
   static MapperFacade mapper;
 
   static {

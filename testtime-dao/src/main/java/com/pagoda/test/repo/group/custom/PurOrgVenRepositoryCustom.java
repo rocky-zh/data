@@ -21,82 +21,20 @@ public interface PurOrgVenRepositoryCustom {
   /**
    * 包含所有可查询的字段
    *
-   * @param venOrgCode
-   * @param venOrgName
-   * @param venOrgId
-   * @param orgOrgId
-   * @param orgOrgCode
-   * @param orgOrgName
-   * @param isAllowOrder
-   * @param isAllowRec
-   * @param isReturnable
-   * @param isPausePay
-   * @param isOrderCheck
-   * @param isRecCheck
-   * @param isReturnCheck
-   * @param isInvCheck
-   * @param settlementType
-   * @param remark
+   * @param shortNum
    * @param pageable
    * @return
    */
   Page<PurOrgVenDTO> findBy(
-      @Param("venOrgCode") String venOrgCode,
-      @Param("venOrgName") String venOrgName,
-      @Param("venOrgId") Long venOrgId,
-      @Param("orgOrgId") Long orgOrgId,
-      @Param("orgOrgCode") String orgOrgCode,
-      @Param("orgOrgName") String orgOrgName,
-      @Param("isAllowOrder") Integer isAllowOrder,
-      @Param("isAllowRec") Integer isAllowRec,
-      @Param("isReturnable") Integer isReturnable,
-      @Param("isPausePay") Integer isPausePay,
-      @Param("isOrderCheck") Integer isOrderCheck,
-      @Param("isRecCheck") Integer isRecCheck,
-      @Param("isReturnCheck") Integer isReturnCheck,
-      @Param("isInvCheck") Integer isInvCheck,
-      @Param("settlementType") Integer settlementType,
-      @Param("remark") String remark,
-      @Param("pageable") Pageable pageable);
+      @Param("shortNum") String shortNum, @Param("pageable") Pageable pageable);
 
   /**
    * 包含所有可查询的字段
    *
-   * @param venOrgCode
-   * @param venOrgName
-   * @param venOrgId
-   * @param orgOrgId
-   * @param orgOrgCode
-   * @param orgOrgName
-   * @param isAllowOrder
-   * @param isAllowRec
-   * @param isReturnable
-   * @param isPausePay
-   * @param isOrderCheck
-   * @param isRecCheck
-   * @param isReturnCheck
-   * @param isInvCheck
-   * @param settlementType
-   * @param remark
+   * @param shortNum
    * @return
    */
-  List<PurOrgVenDTO> findBy(
-      @Param("venOrgCode") String venOrgCode,
-      @Param("venOrgName") String venOrgName,
-      @Param("venOrgId") Long venOrgId,
-      @Param("orgOrgId") Long orgOrgId,
-      @Param("orgOrgCode") String orgOrgCode,
-      @Param("orgOrgName") String orgOrgName,
-      @Param("isAllowOrder") Integer isAllowOrder,
-      @Param("isAllowRec") Integer isAllowRec,
-      @Param("isReturnable") Integer isReturnable,
-      @Param("isPausePay") Integer isPausePay,
-      @Param("isOrderCheck") Integer isOrderCheck,
-      @Param("isRecCheck") Integer isRecCheck,
-      @Param("isReturnCheck") Integer isReturnCheck,
-      @Param("isInvCheck") Integer isInvCheck,
-      @Param("settlementType") Integer settlementType,
-      @Param("remark") String remark);
+  List<PurOrgVenDTO> findBy(@Param("shortNum") String shortNum);
 
   /**
    * 通用分页查询，用于后台查询

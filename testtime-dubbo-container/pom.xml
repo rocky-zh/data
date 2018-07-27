@@ -5,7 +5,7 @@
     <artifactId>testtime-dubbo-container</artifactId>
     <groupId>com.pagoda.test</groupId>
     <name>testtime-dubbo-container</name>
-    <version>1.0.1</version>
+     <!--<version>1.0.1</version>-->
     <properties>
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
@@ -39,7 +39,6 @@
         <dependency>
             <groupId>com.pagoda.test</groupId>
             <artifactId>testtime-service-auto</artifactId>
-            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.pagoda.platform</groupId>
@@ -69,6 +68,18 @@
             <artifactId>spring-data-commons</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <scope>provided</scope>
+        </dependency>
+          <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
         <!-- 携程配置中心 -->
         <dependency>
             <groupId>com.ctrip.framework.apollo</groupId>
@@ -93,6 +104,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-spring-legacy</artifactId>
@@ -101,16 +113,19 @@
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
-
+        <!-- 定时任务 -->
         <dependency>
-            <groupId>org.apache.ivy</groupId>
-            <artifactId>ivy</artifactId>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
@@ -148,16 +163,27 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
-        <!-- 通过代码指定host绑定的ip，类似hosts文件 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-archaius</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dns-cache-manipulator</artifactId>
         </dependency>
-        <!-- 解决异步执行时上下文传递的问题  https://github.com/alibaba/transmittable-thread-local -->
+        <!--
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>transmittable-thread-local</artifactId>
         </dependency>
+        -->
         <!-- 热加载
         <dependency>
             <groupId>org.springframework.boot</groupId>

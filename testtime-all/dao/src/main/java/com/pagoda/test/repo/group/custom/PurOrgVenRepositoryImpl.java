@@ -28,80 +28,18 @@ public class PurOrgVenRepositoryImpl extends BaseRepositoryCustomImpl<PurOrgVen,
 
   @Override
   public Page<PurOrgVenDTO> findBy(
-      @Param("venOrgCode") String venOrgCode,
-      @Param("venOrgName") String venOrgName,
-      @Param("venOrgId") Long venOrgId,
-      @Param("orgOrgId") Long orgOrgId,
-      @Param("orgOrgCode") String orgOrgCode,
-      @Param("orgOrgName") String orgOrgName,
-      @Param("isAllowOrder") Integer isAllowOrder,
-      @Param("isAllowRec") Integer isAllowRec,
-      @Param("isReturnable") Integer isReturnable,
-      @Param("isPausePay") Integer isPausePay,
-      @Param("isOrderCheck") Integer isOrderCheck,
-      @Param("isRecCheck") Integer isRecCheck,
-      @Param("isReturnCheck") Integer isReturnCheck,
-      @Param("isInvCheck") Integer isInvCheck,
-      @Param("settlementType") Integer settlementType,
-      @Param("remark") String remark,
-      @Param("pageable") Pageable pageable) {
+      @Param("shortNum") String shortNum, @Param("pageable") Pageable pageable) {
     PurOrgVen obj = PurOrgVen.toExample();
-    obj.setVenOrgCode(venOrgCode);
-    obj.setVenOrgName(venOrgName);
-    obj.setVenOrgId(venOrgId);
-    obj.setOrgOrgId(orgOrgId);
-    obj.setOrgOrgCode(orgOrgCode);
-    obj.setOrgOrgName(orgOrgName);
-    obj.setIsAllowOrder(isAllowOrder);
-    obj.setIsAllowRec(isAllowRec);
-    obj.setIsReturnable(isReturnable);
-    obj.setIsPausePay(isPausePay);
-    obj.setIsOrderCheck(isOrderCheck);
-    obj.setIsRecCheck(isRecCheck);
-    obj.setIsReturnCheck(isReturnCheck);
-    obj.setIsInvCheck(isInvCheck);
-    obj.setSettlementType(settlementType);
-    obj.setRemark(remark);
+    obj.setShortNum(shortNum);
     Example<PurOrgVen> example = Example.of(obj);
 
     return findAll(example, pageable).map(PurOrgVen.DTO_CONVERTER);
   }
 
   @Override
-  public List<PurOrgVenDTO> findBy(
-      @Param("venOrgCode") String venOrgCode,
-      @Param("venOrgName") String venOrgName,
-      @Param("venOrgId") Long venOrgId,
-      @Param("orgOrgId") Long orgOrgId,
-      @Param("orgOrgCode") String orgOrgCode,
-      @Param("orgOrgName") String orgOrgName,
-      @Param("isAllowOrder") Integer isAllowOrder,
-      @Param("isAllowRec") Integer isAllowRec,
-      @Param("isReturnable") Integer isReturnable,
-      @Param("isPausePay") Integer isPausePay,
-      @Param("isOrderCheck") Integer isOrderCheck,
-      @Param("isRecCheck") Integer isRecCheck,
-      @Param("isReturnCheck") Integer isReturnCheck,
-      @Param("isInvCheck") Integer isInvCheck,
-      @Param("settlementType") Integer settlementType,
-      @Param("remark") String remark) {
+  public List<PurOrgVenDTO> findBy(@Param("shortNum") String shortNum) {
     PurOrgVen obj = PurOrgVen.toExample();
-    obj.setVenOrgCode(venOrgCode);
-    obj.setVenOrgName(venOrgName);
-    obj.setVenOrgId(venOrgId);
-    obj.setOrgOrgId(orgOrgId);
-    obj.setOrgOrgCode(orgOrgCode);
-    obj.setOrgOrgName(orgOrgName);
-    obj.setIsAllowOrder(isAllowOrder);
-    obj.setIsAllowRec(isAllowRec);
-    obj.setIsReturnable(isReturnable);
-    obj.setIsPausePay(isPausePay);
-    obj.setIsOrderCheck(isOrderCheck);
-    obj.setIsRecCheck(isRecCheck);
-    obj.setIsReturnCheck(isReturnCheck);
-    obj.setIsInvCheck(isInvCheck);
-    obj.setSettlementType(settlementType);
-    obj.setRemark(remark);
+    obj.setShortNum(shortNum);
     Example<PurOrgVen> example = Example.of(obj);
     return findAll(example, null).map(PurOrgVen.DTO_CONVERTER).getContent();
   }

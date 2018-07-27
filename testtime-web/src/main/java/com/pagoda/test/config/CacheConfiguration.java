@@ -1,6 +1,6 @@
 package com.pagoda.test.config;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.*;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -65,6 +65,7 @@ public class CacheConfiguration {
   @Bean
   @Primary
   @ConditionalOnMissingBean
+  @ConditionalOnClass(Caffeine.class)
   public CacheManager caffeineCacheManager() {
     SimpleCacheManager cacheManager = new SimpleCacheManager();
 

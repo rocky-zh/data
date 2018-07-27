@@ -28,23 +28,18 @@ public class BasDriverRepositoryImpl extends BaseRepositoryCustomImpl<BasDriver,
 
   @Override
   public Page<BasDriverDTO> findBy(
-      @Param("mnemWord") String mnemWord,
-      @Param("shortNum") String shortNum,
-      @Param("pageable") Pageable pageable) {
+      @Param("mnemWord") String mnemWord, @Param("pageable") Pageable pageable) {
     BasDriver obj = BasDriver.toExample();
     obj.setMnemWord(mnemWord);
-    obj.setShortNum(shortNum);
     Example<BasDriver> example = Example.of(obj);
 
     return findAll(example, pageable).map(BasDriver.DTO_CONVERTER);
   }
 
   @Override
-  public List<BasDriverDTO> findBy(
-      @Param("mnemWord") String mnemWord, @Param("shortNum") String shortNum) {
+  public List<BasDriverDTO> findBy(@Param("mnemWord") String mnemWord) {
     BasDriver obj = BasDriver.toExample();
     obj.setMnemWord(mnemWord);
-    obj.setShortNum(shortNum);
     Example<BasDriver> example = Example.of(obj);
     return findAll(example, null).map(BasDriver.DTO_CONVERTER).getContent();
   }

@@ -127,7 +127,6 @@ public class BasDriverController implements InitializingBean {
    * "资源属性对应的模型字段"))
    *
    * @param mnemWord
-   * @param shortNum
    * @param pageable
    * @return
    */
@@ -136,8 +135,7 @@ public class BasDriverController implements InitializingBean {
   @GetMapping(value = "/findBy")
   public Page<BasDriverDTO> findBy(
       @RequestParam(required = false, value = "mnemWord") String mnemWord,
-      @RequestParam(required = false, value = "shortNum") String shortNum,
       @RequestParam(required = false, value = "pageable") Pageable pageable) {
-    return basDriverService.findBy(mnemWord, shortNum, pageable);
+    return basDriverService.findBy(mnemWord, pageable);
   }
 }

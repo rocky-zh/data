@@ -20,6 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Configuration("serviceXxlJob")
 @ConditionalOnProperty(name = "xxl.job.enabled", havingValue = "true", matchIfMissing = false)
+@ConditionalOnClass({IJobHandler.class})
 public class XxlJobConfig {
 
   @Value("${xxl.job.admin.addresses}")

@@ -1,5 +1,6 @@
 package com.pagoda.test.config;
 
+import com.pagoda.DemoJobHandler;
 import com.xxl.job.core.executor.XxlJobExecutor;
 import com.xxl.job.core.handler.IJobHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Configuration("webXxlJob")
 @ConditionalOnProperty(name = "xxl.job.enabled", havingValue = "true", matchIfMissing = false)
+@ConditionalOnClass({IJobHandler.class})
 public class XxlJobConfig {
 
   @Bean(initMethod = "start", destroyMethod = "destroy")
@@ -38,5 +40,11 @@ public class XxlJobConfig {
       e.printStackTrace();
     }
     return xxlJobExecutor;
+  }
+
+  @Bean
+  @ConditionalOnClass(IJobHandler.class)
+  public IJobHandler webDemoJob() {
+    return new DemoJobHandler();
   }
 }

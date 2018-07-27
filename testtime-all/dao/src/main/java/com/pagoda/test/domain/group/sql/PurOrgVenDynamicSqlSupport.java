@@ -28,22 +28,7 @@ public class PurOrgVenDynamicSqlSupport {
   public static SqlColumn<String> modifierName = purOrgVenTable.modifierName;
   public static SqlColumn<String> modifierOrgCode = purOrgVenTable.modifierOrgCode;
   public static SqlColumn<Integer> version = purOrgVenTable.version;
-  public static SqlColumn<String> venOrgCode = purOrgVenTable.venOrgCode;
-  public static SqlColumn<String> venOrgName = purOrgVenTable.venOrgName;
-  public static SqlColumn<Long> venOrgId = purOrgVenTable.venOrgId;
-  public static SqlColumn<Long> orgOrgId = purOrgVenTable.orgOrgId;
-  public static SqlColumn<String> orgOrgCode = purOrgVenTable.orgOrgCode;
-  public static SqlColumn<String> orgOrgName = purOrgVenTable.orgOrgName;
-  public static SqlColumn<Integer> isAllowOrder = purOrgVenTable.isAllowOrder;
-  public static SqlColumn<Integer> isAllowRec = purOrgVenTable.isAllowRec;
-  public static SqlColumn<Integer> isReturnable = purOrgVenTable.isReturnable;
-  public static SqlColumn<Integer> isPausePay = purOrgVenTable.isPausePay;
-  public static SqlColumn<Integer> isOrderCheck = purOrgVenTable.isOrderCheck;
-  public static SqlColumn<Integer> isRecCheck = purOrgVenTable.isRecCheck;
-  public static SqlColumn<Integer> isReturnCheck = purOrgVenTable.isReturnCheck;
-  public static SqlColumn<Integer> isInvCheck = purOrgVenTable.isInvCheck;
-  public static SqlColumn<Integer> settlementType = purOrgVenTable.settlementType;
-  public static SqlColumn<String> remark = purOrgVenTable.remark;
+  public static SqlColumn<String> shortNum = purOrgVenTable.shortNum;
 
   public static final class PurOrgVenTable extends SqlTable {
     public final SqlColumn<Long> id = column("id", JDBCType.BIGINT);
@@ -60,22 +45,7 @@ public class PurOrgVenDynamicSqlSupport {
     public final SqlColumn<String> modifierOrgCode = column("modifier_org_code", JDBCType.VARCHAR);
     public final SqlColumn<Integer> version = column("version", JDBCType.INTEGER);
 
-    public final SqlColumn<String> venOrgCode = column("ven_org_code", JDBCType.VARCHAR);
-    public final SqlColumn<String> venOrgName = column("ven_org_name", JDBCType.VARCHAR);
-    public final SqlColumn<Long> venOrgId = column("ven_org_id", JDBCType.BIGINT);
-    public final SqlColumn<Long> orgOrgId = column("org_org_id", JDBCType.BIGINT);
-    public final SqlColumn<String> orgOrgCode = column("org_org_code", JDBCType.VARCHAR);
-    public final SqlColumn<String> orgOrgName = column("org_org_name", JDBCType.VARCHAR);
-    public final SqlColumn<Integer> isAllowOrder = column("is_allow_order", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isAllowRec = column("is_allow_rec", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isReturnable = column("is_returnable", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isPausePay = column("is_pause_pay", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isOrderCheck = column("is_order_check", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isRecCheck = column("is_rec_check", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isReturnCheck = column("is_return_check", JDBCType.INTEGER);
-    public final SqlColumn<Integer> isInvCheck = column("is_inv_check", JDBCType.INTEGER);
-    public final SqlColumn<Integer> settlementType = column("settlement_type", JDBCType.INTEGER);
-    public final SqlColumn<String> remark = column("remark", JDBCType.VARCHAR);
+    public final SqlColumn<String> shortNum = column("short_num", JDBCType.VARCHAR);
 
     public PurOrgVenTable() {
       super("PurOrgVen");

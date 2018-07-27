@@ -6,6 +6,7 @@
     <name>testtime-parent-auto</name>
     <version>1.0.1</version>
     <properties>
+        <testtime-parent-auto.version>1.0.1</testtime-parent-auto.version>
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
@@ -17,7 +18,11 @@
         <project.encoding>UTF-8</project.encoding>
 
         <pagoda-jms.version>1.0.5</pagoda-jms.version>
+        <lombok.version>1.16.12</lombok.version>
         <maven.javadoc.skip>true</maven.javadoc.skip>
+        <pmd.skip>true</pmd.skip>
+        <cpd.skip>true</cpd.skip>
+        <maven.format.skip>true</maven.format.skip>
     </properties>
 
     <parent>
@@ -35,6 +40,31 @@
                 <version>${pagoda-jms.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda.test</groupId>
+                <artifactId>testtime-api-auto</artifactId>
+                <version>${testtime-parent-auto.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda.test</groupId>
+                <artifactId>testtime-dao-auto</artifactId>
+                <version>${testtime-parent-auto.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda.test</groupId>
+                <artifactId>testtime-service-auto</artifactId>
+                <version>${testtime-parent-auto.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda.test</groupId>
+                <artifactId>testtime-dubbo-container</artifactId>
+                <version>${testtime-parent-auto.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda.test</groupId>
+                <artifactId>testtime-web</artifactId>
+                <version>${testtime-parent-auto.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -133,6 +163,12 @@
                 <groupId>com.coveo</groupId>
                 <artifactId>fmt-maven-plugin</artifactId>
                 <version>${fmt-maven-plugin.version}</version>
+                <configuration>
+                    <verbose>false</verbose>
+                    <filesNamePattern>.*\.java</filesNamePattern>
+                    <skip>${maven.format.skip}</skip>
+                    <style>google</style>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
