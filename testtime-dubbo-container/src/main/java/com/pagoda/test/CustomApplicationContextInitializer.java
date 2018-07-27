@@ -3,7 +3,7 @@ package com.pagoda.test;
 import com.alibaba.dcm.DnsCacheManipulator;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.boot.context.event.*;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ApplicationEvent;

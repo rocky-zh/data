@@ -11,7 +11,7 @@ import cn.com.pagoda.common.shiro.subject.*;
 
 import io.micrometer.core.annotation.*;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;

@@ -1,5 +1,6 @@
 package com.pagoda.test.service.config;
 
+import com.pagoda.test.service.*;
 import com.xxl.job.core.executor.XxlJobExecutor;
 import com.xxl.job.core.handler.IJobHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Configuration("serviceXxlJob")
 @ConditionalOnProperty(name = "xxl.job.enabled", havingValue = "true", matchIfMissing = false)
-@ConditionalOnClass({IJobHandler.class})
+@ConditionalOnClass(name = {"com.xxl.job.core.handler.IJobHandler"})
 public class XxlJobConfig {
 
   @Value("${xxl.job.admin.addresses}")
@@ -67,5 +68,11 @@ public class XxlJobConfig {
       e.printStackTrace();
     }
     return xxlJobExecutor;
+  }
+
+  @Bean
+  @ConditionalOnClass(name = {"com.xxl.job.core.handler.IJobHandler"})
+  public IJobHandler serviceDemoJob() {
+    return new DemoJobHandler();
   }
 }

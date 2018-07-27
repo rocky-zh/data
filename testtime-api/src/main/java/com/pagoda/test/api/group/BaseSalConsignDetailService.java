@@ -156,26 +156,4 @@ public interface BaseSalConsignDetailService {
   @ApiOperation(value = "selectAll", notes = "")
   Page<SalConsignDetailDTO> selectAll(@ApiParam("pageable") Pageable pageable)
       throws ServiceException;
-
-  /**
-   * 查询所有记录
-   *
-   * @param pageable
-   * @return
-   * @throws ServiceException
-   */
-  @ApiOperation(value = "selectAll", notes = "")
-  Page<SalConsignDetailDTO> selectAll(@ApiParam("pageable") Pageable pageable)
-      throws ServiceException;
-
-  /**
-   * 查询所有记录
-   *
-   * @param pageable
-   * @return
-   * @throws ServiceException
-   */
-  @ApiOperation(value = "selectAll", notes = "")
-  Page<SalConsignDetailDTO> selectAll(@ApiParam("pageable") Pageable pageable)
-      throws ServiceException;
 }

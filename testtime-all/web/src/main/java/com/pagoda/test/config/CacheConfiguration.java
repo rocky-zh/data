@@ -65,7 +65,7 @@ public class CacheConfiguration {
   @Bean
   @Primary
   @ConditionalOnMissingBean
-  @ConditionalOnClass(Caffeine.class)
+  @ConditionalOnClass(name = {"com.github.benmanes.caffeine.cache.Caffeine"})
   public CacheManager caffeineCacheManager() {
     SimpleCacheManager cacheManager = new SimpleCacheManager();
 

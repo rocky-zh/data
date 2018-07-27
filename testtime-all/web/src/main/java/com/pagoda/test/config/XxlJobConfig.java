@@ -43,7 +43,7 @@ public class XxlJobConfig {
   }
 
   @Bean
-  @ConditionalOnClass(IJobHandler.class)
+  @ConditionalOnClass(name = {"com.xxl.job.core.handler.IJobHandler"})
   public IJobHandler webDemoJob() {
     return new DemoJobHandler();
   }

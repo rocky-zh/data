@@ -3,7 +3,7 @@ package com.pagoda.test.aop;
 import com.alibaba.dubbo.rpc.service.GenericException;
 import com.alibaba.fastjson.JSONObject;
 import com.pagoda.test.Result;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;

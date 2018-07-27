@@ -20,7 +20,6 @@ import java.util.concurrent.TimeUnit;
  * @generated
  */
 @JobHandler(value = "serviceDemoJob")
-@Component(value = "serviceDemoJob")
 public class DemoJobHandler extends IJobHandler {
 
   @Override
