@@ -73,26 +73,6 @@ public class TestTimeDubboApplication {
           com.pagoda.test.api.SortParam.class, SortParamDeserializer.instance);
       staticDeserializerMap.put(Sort.class, SortParamDeserializer.instance);
       // 处理DTO序列化
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.SalOrderControl.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.SalOrderControlDTO.class,
-              serializerFactory.getClassLoader()));
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.SalConsignDetail.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.SalConsignDetailDTO.class,
-              serializerFactory.getClassLoader()));
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.BasDriver.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.BasDriverDTO.class,
-              serializerFactory.getClassLoader()));
-      staticSerializerMap.put(
-          com.pagoda.test.domain.group.PurOrgVen.class,
-          new DtoSerializer(
-              com.pagoda.test.api.dto.group.PurOrgVenDTO.class,
-              serializerFactory.getClassLoader()));
     } catch (Exception e) {
       log.error("addDubboSerializer", e);
     }

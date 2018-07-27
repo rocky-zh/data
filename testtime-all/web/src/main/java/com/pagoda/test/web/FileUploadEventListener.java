@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class FileUploadEventListener
-    implements ApplicationListener<TestTimeUploadController.FileUploadEvent> {
+    implements ApplicationListener<HelloUploadController.FileUploadEvent> {
 
   @Override
-  public void onApplicationEvent(TestTimeUploadController.FileUploadEvent event) {
+  public void onApplicationEvent(HelloUploadController.FileUploadEvent event) {
     log.debug("Received file upload event | filePath={} | event={}", event.getFilePath(), event);
     // 待业务处理
   }
