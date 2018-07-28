@@ -31,40 +31,42 @@ import static com.pagoda.test.api.dto.group.SalOrderControlDTO.Getters.*;
 @RequestMapping("/SalOrderControlService")
 @Slf4j
 public class SalOrderControlController implements InitializingBean {
-  @Autowired private SalOrderControlService salOrderControlService;
+    @Autowired
+    private SalOrderControlService salOrderControlService;
 
-  @Autowired private SalOrderControlValidator salOrderControlValidator;
+    @Autowired
+    private SalOrderControlValidator salOrderControlValidator;
 
-  @Override
-  public void afterPropertiesSet() throws Exception {
-    // 初始化自定义验证器
-
-  }
-
-  @InitBinder()
-  public void setupBinder(WebDataBinder binder) {
-    if (binder.getTarget() == null) {
-      return;
+    @Override
+    public void afterPropertiesSet() throws Exception {
+       // 初始化自定义验证器
+            
     }
-    if (salOrderControlValidator.supports(binder.getTarget().getClass())) {
-      binder.addValidators(salOrderControlValidator);
+
+    @InitBinder()
+    public void setupBinder(WebDataBinder binder) {
+        if(binder.getTarget() == null) {
+            return ;
+        }
+        if(salOrderControlValidator.supports(binder.getTarget().getClass())) {
+            binder.addValidators(salOrderControlValidator);
+        }
     }
-  }
 
-  /**
-   * 插入一条SalOrderControl记录
-   *
-   * @param dto
-   * @return
-   */
-  @Timed
-  @ApiOperation(value = "create", notes = "插入一条SalOrderControl记录")
-  @PostMapping(value = "/create")
-  public SalOrderControlDTO create(@Valid @RequestBody SalOrderControlDTO dto) {
-    return salOrderControlService.create(dto);
-  }
+    /**
+     * 插入一条SalOrderControl记录
+     *
+     * @param dto
+     * @return
+     */
+    @Timed
+    @ApiOperation(value = "create", notes = "插入一条SalOrderControl记录")
+    @PostMapping(value = "/create")
+    public SalOrderControlDTO create(@Valid @RequestBody SalOrderControlDTO dto) {
+        return salOrderControlService.create(dto);
+    }
 
-  /**
+    /**
    * 删除一条SalOrderControl记录
    *
    * @param id
@@ -88,13 +90,13 @@ public class SalOrderControlController implements InitializingBean {
   @ApiOperation(value = "update", notes = "更新一条SalOrderControl记录")
   @PostMapping(value = "/update")
   public SalOrderControlDTO update(@RequestBody SalOrderControlDTO dto) {
-    Objects.requireNonNull(dto.getId(), "id is null");
+    Objects.requireNonNull(dto.getId(),"id is null");
     return salOrderControlService.update(dto);
   }
 
-  /**
+   /**
    * 根据主键查询SalOrderControl记录
-   *
+   * 
    * @param id
    * @return
    */
@@ -114,103 +116,48 @@ public class SalOrderControlController implements InitializingBean {
   @Timed
   @ApiOperation(value = "batchGetByIds", notes = "根据主键批量查询{entity.upperCaseName}}记录，不分页")
   @GetMapping(value = "/batchGetByIds")
-  public Iterable<SalOrderControlDTO> batchGetByIds(
-      @RequestParam(required = true, value = "idList") List<Long> idList) {
+  public Iterable<SalOrderControlDTO> batchGetByIds(@RequestParam(required = true, value = "idList") List<Long> idList) {
     return salOrderControlService.batchGetByIds(idList);
   }
 
-  /**
-   * 针对前端页面, 所有可查询的字段。
-   * 权限控制需要添加如下的注解，取值要跟权限系统的配置参数一致，CAS配置也要启用，用户登录后会查询其拥有的所有的权限。 @RequiresOperation(page =
-   * "需要权限访问的页面", operations = "需要具备的操作权限", note =
-   * "说明") @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field =
-   * "资源属性对应的模型字段"))
-   *
-   * @param cusOrgId
-   * @param cusOrgCode
-   * @param cusOrgName
-   * @param isCtrlDep
-   * @param beforeDays
-   * @param allowPosGapD
-   * @param allowPosGapM
-   * @param isCtrlDepInput
-   * @param isCtrlAccnt
-   * @param isCtrlDuty
-   * @param isCtrlVrfyTrans
-   * @param isCtrlDistCyc
-   * @param isCtrlMustSell
-   * @param isCtrlRouteSplit
-   * @param isCtrlSafetyStock
-   * @param allowSafetyStockTimes
-   * @param isCtrlExeBatchPolicy
-   * @param isCtrlOneOrder
-   * @param placeOrderTime
-   * @param placeOrderTime2
-   * @param isCtrlReturn
-   * @param returnGoodsTime1
-   * @param returnGoodsTime2
-   * @param enabled
-   * @param remark
-   * @param pageable
-   * @return
-   */
-  @Timed
-  @ApiOperation(value = "findBy", notes = "前端页面查询接口, 包含所有可查询的字段")
-  @GetMapping(value = "/findBy")
-  public Page<SalOrderControlDTO> findBy(
-      @RequestParam(required = false, value = "cusOrgId") Long cusOrgId,
-      @RequestParam(required = false, value = "cusOrgCode") String cusOrgCode,
-      @RequestParam(required = false, value = "cusOrgName") String cusOrgName,
-      @RequestParam(required = false, value = "isCtrlDep") Integer isCtrlDep,
-      @RequestParam(required = false, value = "beforeDays") Integer beforeDays,
-      @RequestParam(required = false, value = "allowPosGapD") Integer allowPosGapD,
-      @RequestParam(required = false, value = "allowPosGapM") Integer allowPosGapM,
-      @RequestParam(required = false, value = "isCtrlDepInput") Integer isCtrlDepInput,
-      @RequestParam(required = false, value = "isCtrlAccnt") Integer isCtrlAccnt,
-      @RequestParam(required = false, value = "isCtrlDuty") Integer isCtrlDuty,
-      @RequestParam(required = false, value = "isCtrlVrfyTrans") Integer isCtrlVrfyTrans,
-      @RequestParam(required = false, value = "isCtrlDistCyc") Integer isCtrlDistCyc,
-      @RequestParam(required = false, value = "isCtrlMustSell") Integer isCtrlMustSell,
-      @RequestParam(required = false, value = "isCtrlRouteSplit") Integer isCtrlRouteSplit,
-      @RequestParam(required = false, value = "isCtrlSafetyStock") Integer isCtrlSafetyStock,
-      @RequestParam(required = false, value = "allowSafetyStockTimes")
-          java.math.BigDecimal allowSafetyStockTimes,
-      @RequestParam(required = false, value = "isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
-      @RequestParam(required = false, value = "isCtrlOneOrder") Integer isCtrlOneOrder,
-      @RequestParam(required = false, value = "placeOrderTime") java.util.Date placeOrderTime,
-      @RequestParam(required = false, value = "placeOrderTime2") java.util.Date placeOrderTime2,
-      @RequestParam(required = false, value = "isCtrlReturn") Integer isCtrlReturn,
-      @RequestParam(required = false, value = "returnGoodsTime1") java.util.Date returnGoodsTime1,
-      @RequestParam(required = false, value = "returnGoodsTime2") java.util.Date returnGoodsTime2,
-      @RequestParam(required = false, value = "enabled") Integer enabled,
-      @RequestParam(required = false, value = "remark") String remark,
-      @RequestParam(required = false, value = "pageable") Pageable pageable) {
-    return salOrderControlService.findBy(
-        cusOrgId,
-        cusOrgCode,
-        cusOrgName,
-        isCtrlDep,
-        beforeDays,
-        allowPosGapD,
-        allowPosGapM,
-        isCtrlDepInput,
-        isCtrlAccnt,
-        isCtrlDuty,
-        isCtrlVrfyTrans,
-        isCtrlDistCyc,
-        isCtrlMustSell,
-        isCtrlRouteSplit,
-        isCtrlSafetyStock,
-        allowSafetyStockTimes,
-        isCtrlExeBatchPolicy,
-        isCtrlOneOrder,
-        placeOrderTime,
-        placeOrderTime2,
-        isCtrlReturn,
-        returnGoodsTime1,
-        returnGoodsTime2,
-        enabled,
-        remark,
-        pageable);
-  }
+    /**
+     * 针对前端页面, 所有可查询的字段。
+     * 权限控制需要添加如下的注解，取值要跟权限系统的配置参数一致，CAS配置也要启用，用户登录后会查询其拥有的所有的权限。
+     * @RequiresOperation(page = "需要权限访问的页面", operations = "需要具备的操作权限", note = "说明")
+     * @RequiresResource(@ResourceFilter(resourceCode = "资源属性代码", model = "需要权限过滤的模型", field = "资源属性对应的模型字段"))
+     *
+     * @param cusOrgId
+     * @param cusOrgCode
+     * @param cusOrgName
+     * @param isCtrlDep
+     * @param beforeDays
+     * @param allowPosGapD
+     * @param allowPosGapM
+     * @param isCtrlDepInput
+     * @param isCtrlAccnt
+     * @param isCtrlDuty
+     * @param isCtrlVrfyTrans
+     * @param isCtrlDistCyc
+     * @param isCtrlMustSell
+     * @param isCtrlRouteSplit
+     * @param isCtrlSafetyStock
+     * @param allowSafetyStockTimes
+     * @param isCtrlExeBatchPolicy
+     * @param isCtrlOneOrder
+     * @param placeOrderTime
+     * @param placeOrderTime2
+     * @param isCtrlReturn
+     * @param returnGoodsTime1
+     * @param returnGoodsTime2
+     * @param enabled
+     * @param remark
+     * @param pageable
+     * @return
+     */   
+    @Timed
+    @ApiOperation(value = "findBy", notes = "前端页面查询接口, 包含所有可查询的字段")
+    @GetMapping(value = "/findBy")
+    public Page<SalOrderControlDTO> findBy(@RequestParam(required=false, value="cusOrgId")Long cusOrgId, @RequestParam(required=false, value="cusOrgCode")String cusOrgCode, @RequestParam(required=false, value="cusOrgName")String cusOrgName, @RequestParam(required=false, value="isCtrlDep")Integer isCtrlDep, @RequestParam(required=false, value="beforeDays")Integer beforeDays, @RequestParam(required=false, value="allowPosGapD")Integer allowPosGapD, @RequestParam(required=false, value="allowPosGapM")Integer allowPosGapM, @RequestParam(required=false, value="isCtrlDepInput")Integer isCtrlDepInput, @RequestParam(required=false, value="isCtrlAccnt")Integer isCtrlAccnt, @RequestParam(required=false, value="isCtrlDuty")Integer isCtrlDuty, @RequestParam(required=false, value="isCtrlVrfyTrans")Integer isCtrlVrfyTrans, @RequestParam(required=false, value="isCtrlDistCyc")Integer isCtrlDistCyc, @RequestParam(required=false, value="isCtrlMustSell")Integer isCtrlMustSell, @RequestParam(required=false, value="isCtrlRouteSplit")Integer isCtrlRouteSplit, @RequestParam(required=false, value="isCtrlSafetyStock")Integer isCtrlSafetyStock, @RequestParam(required=false, value="allowSafetyStockTimes")java.math.BigDecimal allowSafetyStockTimes, @RequestParam(required=false, value="isCtrlExeBatchPolicy")Integer isCtrlExeBatchPolicy, @RequestParam(required=false, value="isCtrlOneOrder")Integer isCtrlOneOrder, @RequestParam(required=false, value="placeOrderTime")null placeOrderTime, @RequestParam(required=false, value="placeOrderTime2")null placeOrderTime2, @RequestParam(required=false, value="isCtrlReturn")Integer isCtrlReturn, @RequestParam(required=false, value="returnGoodsTime1")null returnGoodsTime1, @RequestParam(required=false, value="returnGoodsTime2")null returnGoodsTime2, @RequestParam(required=false, value="enabled")Integer enabled, @RequestParam(required=false, value="remark")String remark, @RequestParam(required = false, value = "pageable") Pageable pageable) {
+        return salOrderControlService.findBy(cusOrgId,cusOrgCode,cusOrgName,isCtrlDep,beforeDays,allowPosGapD,allowPosGapM,isCtrlDepInput,isCtrlAccnt,isCtrlDuty,isCtrlVrfyTrans,isCtrlDistCyc,isCtrlMustSell,isCtrlRouteSplit,isCtrlSafetyStock,allowSafetyStockTimes,isCtrlExeBatchPolicy,isCtrlOneOrder,placeOrderTime,placeOrderTime2,isCtrlReturn,returnGoodsTime1,returnGoodsTime2,enabled,remark, pageable);
+    }
 }
