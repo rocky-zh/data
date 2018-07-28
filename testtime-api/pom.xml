@@ -29,7 +29,7 @@
         <groupId>com.pagoda.test</groupId>
         <artifactId>testtime-parent-auto</artifactId>
         <version>1.0.1</version>
-        <relativePath/>
+        <relativePath>../testtime-parent</relativePath>
     </parent>
 
     <dependencies>

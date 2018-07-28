@@ -43,7 +43,7 @@
         <groupId>com.pagoda.test</groupId>
         <artifactId>testtime-parent-auto</artifactId>
         <version>1.0.1</version>
-        <relativePath/>
+        <relativePath>../testtime-parent</relativePath>
     </parent>
 
 
@@ -341,12 +341,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <scm>
-        <connection>scm:git:https://github.com/chenchuanyuan/data.git</connection>
-        <url>scm:git:https://github.com/chenchuanyuan/data.git</url>
-        <developerConnection>scm:git:https://github.com/chenchuanyuan/data.git</developerConnection>
-    </scm>
 
     <build>
         <finalName>${war.name}</finalName>
