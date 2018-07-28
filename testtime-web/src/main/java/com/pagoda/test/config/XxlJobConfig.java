@@ -1,6 +1,6 @@
 package com.pagoda.test.config;
 
-import com.pagoda.DemoJobHandler;
+import com.pagoda.test.DemoJobHandler;
 import com.xxl.job.core.executor.XxlJobExecutor;
 import com.xxl.job.core.handler.IJobHandler;
 import lombok.extern.slf4j.Slf4j;
