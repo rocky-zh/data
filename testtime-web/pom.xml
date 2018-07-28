@@ -38,7 +38,6 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <pmd.skip>true</pmd.skip>
         <cpd.skip>true</cpd.skip>
-        <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
     <parent>
         <groupId>com.pagoda.test</groupId>
@@ -497,7 +496,7 @@
             <dependencies>
                 <dependency>
                     <groupId>com.pagoda.test</groupId>
-                    <artifactId>testTime-service</artifactId>
+                    <artifactId>testtime-service-auto</artifactId>
                 </dependency>
             </dependencies>
         </profile>
