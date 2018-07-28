@@ -496,7 +496,7 @@
             <dependencies>
                 <dependency>
                     <groupId>com.pagoda.test</groupId>
-                    <artifactId>testtime-service</artifactId>
+                    <artifactId>testtime-service-auto</artifactId>
                 </dependency>
             </dependencies>
         </profile>
