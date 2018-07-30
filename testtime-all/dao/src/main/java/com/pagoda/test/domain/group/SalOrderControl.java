@@ -895,9 +895,10 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "TIME   COMMENT '允许下单的时段起始点'"
+    columnDefinition = "DATE   COMMENT '允许下单的时段起始点'"
   )
-  private java.sql.Time placeOrderTime;
+  @Temporal(TemporalType.TIME)
+  private java.util.Date placeOrderTime;
 
   @FieldMeta(
     name = "placeOrderTime2",
@@ -932,9 +933,10 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "TIMESTAMP   COMMENT '允许下单的时段结束点'"
+    columnDefinition = "DATE   COMMENT '允许下单的时段结束点'"
   )
-  private java.sql.Timestamp placeOrderTime2;
+  @Temporal(TemporalType.TIMESTAMP)
+  private java.util.Date placeOrderTime2;
 
   @FieldMeta(
     name = "isCtrlReturn",
@@ -1006,9 +1008,10 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "TIME   COMMENT '可退货开始时间,如'13:00''"
+    columnDefinition = "DATE   COMMENT '可退货开始时间,如'13:00''"
   )
-  private java.sql.Time returnGoodsTime1;
+  @Temporal(TemporalType.TIME)
+  private java.util.Date returnGoodsTime1;
 
   @FieldMeta(
     name = "returnGoodsTime2",
@@ -1043,9 +1046,10 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "TIME   COMMENT '可退货结束时间,如'21:00''"
+    columnDefinition = "DATE   COMMENT '可退货结束时间,如'21:00''"
   )
-  private java.sql.Time returnGoodsTime2;
+  @Temporal(TemporalType.TIME)
+  private java.util.Date returnGoodsTime2;
 
   @FieldMeta(
     name = "enabled",

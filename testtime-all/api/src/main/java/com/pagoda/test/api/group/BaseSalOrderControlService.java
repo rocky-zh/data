@@ -181,11 +181,11 @@ public interface BaseSalOrderControlService {
       @ApiParam("allowSafetyStockTimes") java.math.BigDecimal allowSafetyStockTimes,
       @ApiParam("isCtrlExeBatchPolicy") Integer isCtrlExeBatchPolicy,
       @ApiParam("isCtrlOneOrder") Integer isCtrlOneOrder,
-      @ApiParam("placeOrderTime") java.sql.Time placeOrderTime,
-      @ApiParam("placeOrderTime2") java.sql.Timestamp placeOrderTime2,
+      @ApiParam("placeOrderTime") java.util.Date placeOrderTime,
+      @ApiParam("placeOrderTime2") java.util.Date placeOrderTime2,
       @ApiParam("isCtrlReturn") Integer isCtrlReturn,
-      @ApiParam("returnGoodsTime1") java.sql.Time returnGoodsTime1,
-      @ApiParam("returnGoodsTime2") java.sql.Time returnGoodsTime2,
+      @ApiParam("returnGoodsTime1") java.util.Date returnGoodsTime1,
+      @ApiParam("returnGoodsTime2") java.util.Date returnGoodsTime2,
       @ApiParam("enabled") Integer enabled,
       @ApiParam("remark") String remark,
       @ApiParam("pageable") Pageable pageable)
@@ -202,7 +202,7 @@ public interface BaseSalOrderControlService {
    */
   @ApiOperation(value = "selectWithTime", notes = "")
   Page<SalOrderControlDTO> selectWithTime(
-      @ApiParam("place_order_time") java.sql.Time placeOrderTime,
+      @ApiParam("place_order_time") java.util.Date placeOrderTime,
       @ApiParam("idList") List<Long> idList,
       @ApiParam("pageable") Pageable pageable)
       throws ServiceException;

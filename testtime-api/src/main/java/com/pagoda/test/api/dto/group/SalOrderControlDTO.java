@@ -845,7 +845,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54adc"
   )
-  private java.sql.Time placeOrderTime;
+  private java.util.Date placeOrderTime;
 
   @FieldMeta(
     name = "placeOrderTime2",
@@ -881,7 +881,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ade"
   )
-  private java.sql.Timestamp placeOrderTime2;
+  private java.util.Date placeOrderTime2;
 
   @FieldMeta(
     name = "isCtrlReturn",
@@ -953,7 +953,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ae2"
   )
-  private java.sql.Time returnGoodsTime1;
+  private java.util.Date returnGoodsTime1;
 
   @FieldMeta(
     name = "returnGoodsTime2",
@@ -989,7 +989,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ae4"
   )
-  private java.sql.Time returnGoodsTime2;
+  private java.util.Date returnGoodsTime2;
 
   @FieldMeta(
     name = "enabled",
@@ -1106,14 +1106,14 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
         o -> o.getIsCtrlExeBatchPolicy();
     public static Function<SalOrderControlDTO, Integer> isCtrlOneOrder_ =
         o -> o.getIsCtrlOneOrder();
-    public static Function<SalOrderControlDTO, java.sql.Time> placeOrderTime_ =
+    public static Function<SalOrderControlDTO, java.util.Date> placeOrderTime_ =
         o -> o.getPlaceOrderTime();
-    public static Function<SalOrderControlDTO, java.sql.Timestamp> placeOrderTime2_ =
+    public static Function<SalOrderControlDTO, java.util.Date> placeOrderTime2_ =
         o -> o.getPlaceOrderTime2();
     public static Function<SalOrderControlDTO, Integer> isCtrlReturn_ = o -> o.getIsCtrlReturn();
-    public static Function<SalOrderControlDTO, java.sql.Time> returnGoodsTime1_ =
+    public static Function<SalOrderControlDTO, java.util.Date> returnGoodsTime1_ =
         o -> o.getReturnGoodsTime1();
-    public static Function<SalOrderControlDTO, java.sql.Time> returnGoodsTime2_ =
+    public static Function<SalOrderControlDTO, java.util.Date> returnGoodsTime2_ =
         o -> o.getReturnGoodsTime2();
     public static Function<SalOrderControlDTO, Integer> enabled_ = o -> o.getEnabled();
     public static Function<SalOrderControlDTO, String> remark_ = o -> o.getRemark();

@@ -47,12 +47,11 @@ public class SalOrderControlDynamicSqlSupport {
       salOrderControlTable.allowSafetyStockTimes;
   public static SqlColumn<Integer> isCtrlExeBatchPolicy = salOrderControlTable.isCtrlExeBatchPolicy;
   public static SqlColumn<Integer> isCtrlOneOrder = salOrderControlTable.isCtrlOneOrder;
-  public static SqlColumn<java.sql.Time> placeOrderTime = salOrderControlTable.placeOrderTime;
-  public static SqlColumn<java.sql.Timestamp> placeOrderTime2 =
-      salOrderControlTable.placeOrderTime2;
+  public static SqlColumn<java.util.Date> placeOrderTime = salOrderControlTable.placeOrderTime;
+  public static SqlColumn<java.util.Date> placeOrderTime2 = salOrderControlTable.placeOrderTime2;
   public static SqlColumn<Integer> isCtrlReturn = salOrderControlTable.isCtrlReturn;
-  public static SqlColumn<java.sql.Time> returnGoodsTime1 = salOrderControlTable.returnGoodsTime1;
-  public static SqlColumn<java.sql.Time> returnGoodsTime2 = salOrderControlTable.returnGoodsTime2;
+  public static SqlColumn<java.util.Date> returnGoodsTime1 = salOrderControlTable.returnGoodsTime1;
+  public static SqlColumn<java.util.Date> returnGoodsTime2 = salOrderControlTable.returnGoodsTime2;
   public static SqlColumn<Integer> enabled = salOrderControlTable.enabled;
   public static SqlColumn<String> remark = salOrderControlTable.remark;
 
@@ -94,15 +93,15 @@ public class SalOrderControlDynamicSqlSupport {
     public final SqlColumn<Integer> isCtrlExeBatchPolicy =
         column("is_ctrl_exe_batch_policy", JDBCType.INTEGER);
     public final SqlColumn<Integer> isCtrlOneOrder = column("is_ctrl_one_order", JDBCType.INTEGER);
-    public final SqlColumn<java.sql.Time> placeOrderTime =
-        column("place_order_time", JDBCType.TIME);
-    public final SqlColumn<java.sql.Timestamp> placeOrderTime2 =
-        column("place_order_time2", JDBCType.TIMESTAMP);
+    public final SqlColumn<java.util.Date> placeOrderTime =
+        column("place_order_time", JDBCType.DATE);
+    public final SqlColumn<java.util.Date> placeOrderTime2 =
+        column("place_order_time2", JDBCType.DATE);
     public final SqlColumn<Integer> isCtrlReturn = column("is_ctrl_return", JDBCType.INTEGER);
-    public final SqlColumn<java.sql.Time> returnGoodsTime1 =
-        column("return_goods_time1", JDBCType.TIME);
-    public final SqlColumn<java.sql.Time> returnGoodsTime2 =
-        column("return_goods_time2", JDBCType.TIME);
+    public final SqlColumn<java.util.Date> returnGoodsTime1 =
+        column("return_goods_time1", JDBCType.DATE);
+    public final SqlColumn<java.util.Date> returnGoodsTime2 =
+        column("return_goods_time2", JDBCType.DATE);
     public final SqlColumn<Integer> enabled = column("enabled", JDBCType.INTEGER);
     public final SqlColumn<String> remark = column("remark", JDBCType.VARCHAR);
 
