@@ -48,6 +48,8 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
   protected static final String DATE_FORMAT = "yyyy-MM-dd";
 
+  protected static final String TIME_FORMAT = "HH:mm:ss";
+
   protected static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
   /**
@@ -150,6 +152,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     mapping.put(java.util.Date.class, new SimpleDateFormatSerializer(DATE_FORMAT));
     mapping.put(java.sql.Date.class, new SimpleDateFormatSerializer(DATE_FORMAT));
     mapping.put(java.sql.Timestamp.class, new SimpleDateFormatSerializer(DATE_TIME_FORMAT));
+    mapping.put(java.sql.Time.class, new SimpleDateFormatSerializer(TIME_FORMAT));
     config.setSerializeConfig(mapping);
     config.setSerializeFilters(classFilter);
     converter.setFastJsonConfig(config);

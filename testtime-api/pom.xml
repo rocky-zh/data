@@ -14,6 +14,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <pagoda-jms.version>1.0.5</pagoda-jms.version>
+         
+        <!-- 它表示构建的开始时间。可通过变量 ${maven.build.timestamp}，在 POM 中的任何地方使用此变量 -->
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
+
+        <!-- 跳过测试 -->
+        <maven.test.skip>true</maven.test.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <pmd.skip>true</pmd.skip>
+        <cpd.skip>true</cpd.skip>
     </properties>
     <parent>
         <groupId>com.pagoda.test</groupId>

@@ -7,8 +7,6 @@
     <version>1.0.1</version>
     <properties>
         <testtime-parent-auto.version>1.0.1</testtime-parent-auto.version>
-        <pagoda-jms.version>1.0.5</pagoda-jms.version>
-
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
@@ -20,19 +18,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.encoding>UTF-8</project.encoding>
 
+        <pagoda-jms.version>1.0.5</pagoda-jms.version>
         <lombok.version>1.16.12</lombok.version>
-
-        <docker.image.prefix>pagoda</docker.image.prefix>
-
-        <!-- 它表示构建的开始时间。可通过变量 ${maven.build.timestamp}，在 POM 中的任何地方使用此变量 -->
-        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
-
-        <!-- 跳过测试 -->
-        <maven.test.skip>true</maven.test.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
-        <maven.format.skip>true</maven.format.skip>
         <pmd.skip>true</pmd.skip>
         <cpd.skip>true</cpd.skip>
+        <maven.format.skip>true</maven.format.skip>
     </properties>
 
     <parent>
