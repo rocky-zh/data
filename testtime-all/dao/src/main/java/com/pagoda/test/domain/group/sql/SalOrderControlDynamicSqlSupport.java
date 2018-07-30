@@ -95,14 +95,14 @@ public class SalOrderControlDynamicSqlSupport {
         column("is_ctrl_exe_batch_policy", JDBCType.INTEGER);
     public final SqlColumn<Integer> isCtrlOneOrder = column("is_ctrl_one_order", JDBCType.INTEGER);
     public final SqlColumn<java.sql.Time> placeOrderTime =
-        column("place_order_time", JDBCType.VARCHAR);
+        column("place_order_time", JDBCType.TIME);
     public final SqlColumn<java.sql.Timestamp> placeOrderTime2 =
-        column("place_order_time2", JDBCType.DATETIME);
+        column("place_order_time2", JDBCType.TIMESTAMP);
     public final SqlColumn<Integer> isCtrlReturn = column("is_ctrl_return", JDBCType.INTEGER);
     public final SqlColumn<java.sql.Time> returnGoodsTime1 =
-        column("return_goods_time1", JDBCType.VARCHAR);
+        column("return_goods_time1", JDBCType.TIME);
     public final SqlColumn<java.sql.Time> returnGoodsTime2 =
-        column("return_goods_time2", JDBCType.VARCHAR);
+        column("return_goods_time2", JDBCType.TIME);
     public final SqlColumn<Integer> enabled = column("enabled", JDBCType.INTEGER);
     public final SqlColumn<String> remark = column("remark", JDBCType.VARCHAR);
 

@@ -895,7 +895,7 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "VARCHAR   COMMENT '允许下单的时段起始点'"
+    columnDefinition = "TIME   COMMENT '允许下单的时段起始点'"
   )
   private java.sql.Time placeOrderTime;
 
@@ -932,7 +932,7 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "DATETIME   COMMENT '允许下单的时段结束点'"
+    columnDefinition = "TIMESTAMP   COMMENT '允许下单的时段结束点'"
   )
   private java.sql.Timestamp placeOrderTime2;
 
@@ -1006,7 +1006,7 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "VARCHAR   COMMENT '可退货开始时间,如'13:00''"
+    columnDefinition = "TIME   COMMENT '可退货开始时间,如'13:00''"
   )
   private java.sql.Time returnGoodsTime1;
 
@@ -1043,7 +1043,7 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nullable = true,
     precision = 0,
     scale = 0,
-    columnDefinition = "VARCHAR   COMMENT '可退货结束时间,如'21:00''"
+    columnDefinition = "TIME   COMMENT '可退货结束时间,如'21:00''"
   )
   private java.sql.Time returnGoodsTime2;
 
