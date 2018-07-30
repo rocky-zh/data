@@ -906,7 +906,7 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     nameCN = "允许下单的时段结束点",
     comment = "允许下单的时段结束点",
     nameEN = "place_order_time2",
-    type = "时分秒",
+    type = "时间",
     format = "",
     displayLen = 1,
     formSize = "",
@@ -935,7 +935,7 @@ public class SalOrderControl extends SalOrderControlDTO implements Serializable 
     scale = 0,
     columnDefinition = "DATE   COMMENT '允许下单的时段结束点'"
   )
-  @Temporal(TemporalType.TIME)
+  @Temporal(TemporalType.TIMESTAMP)
   private java.util.Date placeOrderTime2;
 
   @FieldMeta(

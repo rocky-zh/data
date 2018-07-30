@@ -853,7 +853,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     nameCN = "允许下单的时段结束点",
     comment = "允许下单的时段结束点",
     nameEN = "place_order_time2",
-    type = "时分秒",
+    type = "时间",
     format = "",
     displayLen = 1,
     formSize = "",
