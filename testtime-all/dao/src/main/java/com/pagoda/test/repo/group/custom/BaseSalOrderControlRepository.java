@@ -41,7 +41,7 @@ public interface BaseSalOrderControlRepository
         "select * from sal_order_control where {{#place_order_time}}   place_order_time = :place_order_time{{/place_order_time}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
   )
   Page<SalOrderControlDTO> selectWithTime(
-      @Param("place_order_time") java.util.Date placeOrderTime,
+      @Param("place_order_time") java.sql.Time placeOrderTime,
       @Param("idList") List<Long> idList,
       @Param("pageable") Pageable pageable);
 
@@ -58,7 +58,7 @@ public interface BaseSalOrderControlRepository
         "select * from sal_order_control where {{#place_order_time}}   place_order_time = :place_order_time{{/place_order_time}}{{#idList_exists}}    and id in ({{#idList}}{{^-first}}, {{/-first}}{{this}}{{/idList}}){{/idList_exists}}"
   )
   List<SalOrderControlDTO> selectWithTime(
-      @Param("place_order_time") java.util.Date placeOrderTime, @Param("idList") List<Long> idList);
+      @Param("place_order_time") java.sql.Time placeOrderTime, @Param("idList") List<Long> idList);
 
   /**
    * 动态执行一个无参数的sql,返回分页的结果
