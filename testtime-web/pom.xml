@@ -15,10 +15,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <pagoda-jms.version>1.0.5</pagoda-jms.version>
-    
-        <docker.image.prefix>pagoda</docker.image.prefix>
-
         <sonar.sources>src/main</sonar.sources>
         <sonar.tests>src/test</sonar.tests>
         <!-- Below property indicates the pattern of the test suite -->
@@ -30,14 +26,7 @@
         <sonar.language>java</sonar.language>
         <sonar.java.binaries>target/classes</sonar.java.binaries>
 
-        <!-- 它表示构建的开始时间。可通过变量 ${maven.build.timestamp}，在 POM 中的任何地方使用此变量 -->
-        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
-
-        <!-- 跳过测试 -->
-        <maven.test.skip>true</maven.test.skip>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-        <pmd.skip>true</pmd.skip>
-        <cpd.skip>true</cpd.skip>
+        <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
     <parent>
         <groupId>com.pagoda.test</groupId>
@@ -496,7 +485,7 @@
             <dependencies>
                 <dependency>
                     <groupId>com.pagoda.test</groupId>
-                    <artifactId>testtime-service-auto</artifactId>
+                    <artifactId>testTime-service</artifactId>
                 </dependency>
             </dependencies>
         </profile>
