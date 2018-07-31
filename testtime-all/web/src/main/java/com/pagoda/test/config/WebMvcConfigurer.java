@@ -4,6 +4,7 @@ import static com.alibaba.fastjson.util.IOUtils.UTF8;
 
 import com.pagoda.test.api.*;
 import com.pagoda.test.aop.*;
+import com.pagoda.platform.jms.serializer.*;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer;
 import com.alibaba.fastjson.serializer.JSONSerializer;
@@ -196,19 +197,10 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
           public void registerCustomEditors(PropertyEditorRegistry registry) {
             registry.registerCustomEditor(Pageable.class, new PageableEditorSupport());
             registry.registerCustomEditor(
-                Date.class, new CustomDateEditor(new SimpleDateFormat(DATE_FORMAT), false));
+                Date.class, new CustomDateTimeEditor(new SimpleDateFormat(DATE_FORMAT), false));
             registry.registerCustomEditor(
                 Timestamp.class,
-                new CustomDateEditor(new SimpleDateFormat(DATE_TIME_FORMAT), false) {
-                  @Override
-                  public void setValue(Object value) {
-                    if (value instanceof Date) {
-                      super.setValue(new Timestamp(((Date) value).getTime()));
-                    } else {
-                      super.setValue(value);
-                    }
-                  }
-                });
+                new CustomTimestampEditor(new SimpleDateFormat(DATE_TIME_FORMAT), false));
           }
         };
     return registrar;

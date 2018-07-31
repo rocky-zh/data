@@ -482,12 +482,10 @@
                 <war.name>testtime-web</war.name>
                 <dubbo.enabled>false</dubbo.enabled>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.pagoda.test</groupId>
-                    <artifactId>testTime-service</artifactId>
-                </dependency>
-            </dependencies>
+                    <dependency>
+                        <groupId>com.pagoda.test</groupId>
+                        <artifactId>testtime-service-auto</artifactId>
+                    </dependency>
         </profile>
 
         <profile>
