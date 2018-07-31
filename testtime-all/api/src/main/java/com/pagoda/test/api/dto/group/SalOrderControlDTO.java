@@ -1,8 +1,10 @@
 package com.pagoda.test.api.dto.group;
 
 import com.pagoda.test.api.dto.*;
+import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.pagoda.platform.jms.annotation.*;
+import com.pagoda.platform.jms.serializer.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import java.lang.reflect.*;
@@ -845,6 +847,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54adc"
   )
+  @JSONField(serializeUsing = TimeSerializer.class)
   private java.util.Date placeOrderTime;
 
   @FieldMeta(
@@ -881,6 +884,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ade"
   )
+  @JSONField(serializeUsing = TimestampSerializer.class)
   private java.util.Date placeOrderTime2;
 
   @FieldMeta(
@@ -953,6 +957,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ae2"
   )
+  @JSONField(serializeUsing = TimeSerializer.class)
   private java.util.Date returnGoodsTime1;
 
   @FieldMeta(
@@ -989,6 +994,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ae4"
   )
+  @JSONField(serializeUsing = TimeSerializer.class)
   private java.util.Date returnGoodsTime2;
 
   @FieldMeta(

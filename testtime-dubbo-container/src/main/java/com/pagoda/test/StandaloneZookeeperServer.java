@@ -14,6 +14,7 @@ import org.apache.zookeeper.server.quorum.QuorumPeerConfig;
  * @author PagodaGenerator
  * @generated
  */
+@javax.annotation.Generated("com.pagoda.platform.PagodaProcessor")
 public class StandaloneZookeeperServer {
 
   private static final Logger logger = Logger.getLogger(StandaloneZookeeperServer.class);

@@ -25,6 +25,7 @@ import com.pagoda.platform.jms.ApplicationContextHolder;
  * @author PagodaGenerator
  * @generated
  */
+@javax.annotation.Generated("com.pagoda.platform.PagodaProcessor")
 @Slf4j
 @EnableHystrix
 @EnableApolloConfig

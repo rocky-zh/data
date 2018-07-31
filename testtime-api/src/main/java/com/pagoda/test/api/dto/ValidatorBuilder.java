@@ -17,7 +17,7 @@ import javax.validation.ValidationException;
  * @generated
  */
 @Data
-public class ValidatorBuilder<T> {
+public class ValidatorBuilder<T> implements Predicate<T> {
 
   List<ValidatorItem> validators = new LinkedList<>();
 
@@ -109,6 +109,12 @@ public class ValidatorBuilder<T> {
     return error.length() == 0 ? Optional.empty() : Optional.of(error.toString());
   }
 
+  @Override
+  public boolean test(T t) {
+    Optional<String> error = validate(t);
+    return !error.isPresent();
+  }
+
   @Data
   static class ValidatorItem {
     Function getter;
@@ -121,6 +127,20 @@ public class ValidatorBuilder<T> {
 
   /** 通用验证方法 */
   public static class Predicates {
+    public static <T> Predicate<T> and(Predicate<T>... predicates) {
+      if (predicates == null || predicates.length == 0) {
+        throw new IllegalArgumentException("predicates is null");
+      }
+      if (predicates.length == 1) {
+        return predicates[0];
+      }
+      Predicate<T> res = predicates[0];
+      for (int i = 1; i < predicates.length; i++) {
+        res = res.and(predicates[i]);
+      }
+      return res;
+    }
+
     public static Predicate<String> stringNotEmpty = s -> s != null && s.length() > 0;
 
     public static Predicate<?> notNull = o -> o != null;
@@ -133,12 +153,20 @@ public class ValidatorBuilder<T> {
       return v -> v >= minVal;
     }
 
+    public static Predicate<Long> range(Long minVal, Long maxVal) {
+      return v -> v >= minVal && v < -maxVal;
+    }
+
     public static Predicate<String> minLength(int length) {
       return v -> v != null && v.length() >= length;
     }
 
     public static Predicate<String> maxLength(int length) {
       return v -> v != null && v.length() <= length;
+    }
+
+    public static Predicate<String> lengthBetween(int minLength, int maxLength) {
+      return v -> v != null && v.length() >= minLength && v.length() <= maxLength;
     }
 
     public static Predicate<String> regexp(Pattern pattern) {

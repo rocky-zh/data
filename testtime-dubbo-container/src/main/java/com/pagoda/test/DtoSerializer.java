@@ -13,6 +13,7 @@ import java.lang.reflect.Method;
  * @author PagodaGenerator
  * @generated
  */
+@javax.annotation.Generated("com.pagoda.platform.PagodaProcessor")
 @Slf4j
 public class DtoSerializer extends JavaSerializer {
   /** DTO类名后缀 */
