@@ -849,7 +849,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54adc"
   )
-  @JSONField(serializeUsing = TimeSerializer.class)
+  @JSONField(serializeUsing = TimeSerializer.class, format = "HH:mm:ss")
   private java.util.Date placeOrderTime;
 
   @FieldMeta(
@@ -886,7 +886,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ade"
   )
-  @JSONField(serializeUsing = TimestampSerializer.class)
+  @JSONField(serializeUsing = TimestampSerializer.class, format = "yyyy-MM-dd HH:mm:ss")
   private java.util.Date placeOrderTime2;
 
   @FieldMeta(
@@ -959,7 +959,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ae2"
   )
-  @JSONField(serializeUsing = TimeSerializer.class)
+  @JSONField(serializeUsing = TimeSerializer.class, format = "HH:mm:ss")
   private java.util.Date returnGoodsTime1;
 
   @FieldMeta(
@@ -996,7 +996,7 @@ public class SalOrderControlDTO extends AbstractDTO implements Serializable {
     dataType = "",
     notes = "5b505fae4772960001e54ae4"
   )
-  @JSONField(serializeUsing = TimeSerializer.class)
+  @JSONField(serializeUsing = TimeSerializer.class, format = "HH:mm:ss")
   private java.util.Date returnGoodsTime2;
 
   @FieldMeta(

@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/dubboAPI")
 @Slf4j
-public class TestTimeDubboController {
+public class TestTimeDubboController implements InitializingBean {
 
   /** 模块名 * */
   public static final String MODULE_NAME = "TestTime";
@@ -82,7 +83,31 @@ public class TestTimeDubboController {
 
   @Autowired private ReflectionInvoker reflectionInvoker;
 
-  // @FastJsonView(exclude = {@FastJsonFilter(clazz = HashMap.class, props = {"class"})})
+  /** 实体和dto映射关系 * */
+  public static final Map<String, String> ENTITY_DTO_MAPPING = new HashMap<>();
+
+  static {
+    ENTITY_DTO_MAPPING.put(
+        "com.pagoda.test.domain.timegroup.SalOrderControl",
+        "com.pagoda.test.api.dto.timegroup.SalOrderControlDTO");
+    ENTITY_DTO_MAPPING.put(
+        "com.pagoda.test.domain.timegroup.SalConsignDetail",
+        "com.pagoda.test.api.dto.timegroup.SalConsignDetailDTO");
+    ENTITY_DTO_MAPPING.put(
+        "com.pagoda.test.domain.timegroup.BasDriver",
+        "com.pagoda.test.api.dto.timegroup.BasDriverDTO");
+    ENTITY_DTO_MAPPING.put(
+        "com.pagoda.test.domain.timegroup.PurOrgVen",
+        "com.pagoda.test.api.dto.timegroup.PurOrgVenDTO");
+  }
+
+  @Override
+  public void afterPropertiesSet() throws Exception {
+    if (dubboGenericServiceInvoker != null) {
+      dubboGenericServiceInvoker.setEntityDtoMappings(ENTITY_DTO_MAPPING);
+    }
+  }
+
   /**
    * 将Dubbo RPC转换成Rest API
    *

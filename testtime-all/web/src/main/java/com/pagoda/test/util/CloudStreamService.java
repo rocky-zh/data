@@ -16,7 +16,8 @@ import org.springframework.messaging.support.MessageBuilder;
 @EnableBinding(Processor.class)
 public class CloudStreamService {
 
-  @Autowired private Processor stream;
+  @Autowired(required = false)
+  private Processor stream;
 
   public void sendMessage(String msg) {
     try {
