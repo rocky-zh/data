@@ -73,35 +73,41 @@ public class TestTimeDubboApplication {
       staticDeserializerMap.put(
           com.pagoda.test.api.SortParam.class, SortParamDeserializer.instance);
       staticDeserializerMap.put(Sort.class, SortParamDeserializer.instance);
+
+      ClassLoader factoryLoader = serializerFactory.getClassLoader();
       // 处理DTO序列化
       addDtoSerializer(
           staticSerializerMap,
           "com.pagoda.test.domain.timegroup.SalOrderControl",
-          "com.pagoda.test.api.dto.timegroup.SalOrderControlDTO");
+          "com.pagoda.test.api.dto.timegroup.SalOrderControlDTO",
+          factoryLoader);
       addDtoSerializer(
           staticSerializerMap,
           "com.pagoda.test.domain.timegroup.SalConsignDetail",
-          "com.pagoda.test.api.dto.timegroup.SalConsignDetailDTO");
+          "com.pagoda.test.api.dto.timegroup.SalConsignDetailDTO",
+          factoryLoader);
       addDtoSerializer(
           staticSerializerMap,
           "com.pagoda.test.domain.timegroup.BasDriver",
-          "com.pagoda.test.api.dto.timegroup.BasDriverDTO");
+          "com.pagoda.test.api.dto.timegroup.BasDriverDTO",
+          factoryLoader);
       addDtoSerializer(
           staticSerializerMap,
           "com.pagoda.test.domain.timegroup.PurOrgVen",
-          "com.pagoda.test.api.dto.timegroup.PurOrgVenDTO");
+          "com.pagoda.test.api.dto.timegroup.PurOrgVenDTO",
+          factoryLoader);
     } catch (Exception e) {
       log.error("addDubboSerializer", e);
     }
   }
 
   private static void addDtoSerializer(
-      Map staticSerializerMap, String entityClass, String dtoClass) {
+      Map staticSerializerMap, String entityClass, String dtoClass, ClassLoader factoryLoader)
+      throws ClassNotFoundException {
     if (ClassUtils.isPresent(entityClass, null) && ClassUtils.isPresent(dtoClass, null)) {
       staticSerializerMap.put(
           ClassUtils.forName(entityClass, null),
-          new DtoSerializer(
-              ClassUtils.forName(dtoClass, null), serializerFactory.getClassLoader()));
+          new DtoSerializer(ClassUtils.forName(dtoClass, null), factoryLoader));
     }
   }
 }
