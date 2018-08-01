@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pagoda.test</groupId>
-    <artifactId>testtime-build</artifactId>
+    <artifactId>time-build</artifactId>
     <packaging>pom</packaging>
-    <name>testtime-build</name>
-    <version>1.0.1</version>
+    <name>time-build</name>
+    <version>1.0.0</version>
     <properties>
         <java.version>1.8</java.version>
         <java.source.version>1.8</java.source.version>
@@ -32,12 +32,12 @@
         <relativePath/>
     </parent>
     <modules>
-            <module>testtime-parent</module>
-            <module>testtime-api</module>
-            <module>testtime-dao</module>
-            <module>testtime-service</module>
-            <module>testtime-dubbo-container</module>
-            <module>testtime-web</module>
+            <module>time-parent</module>
+            <module>time-api</module>
+            <module>time-dao</module>
+            <module>time-service</module>
+            <module>time-dubbo-container</module>
+            <module>time-web</module>
     </modules>
 
     <scm>

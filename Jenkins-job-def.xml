@@ -1,5 +1,5 @@
 
-<!-- curl -u username:password -H "Content-Type: application/xml" -X POST http://erp2.test.pagoda.com.cn:8200/createItem?name=TestTime --data-binary "@jenkins-job-def.xml"-->
+<!-- curl -u username:password -H "Content-Type: application/xml" -X POST http://erp2.test.pagoda.com.cn:8200/createItem?name=Time --data-binary "@jenkins-job-def.xml"-->
 
 <flow-definition plugin="workflow-job@2.21">
     <actions/>
