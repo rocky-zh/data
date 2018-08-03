@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -21,7 +22,6 @@ import java.util.Map;
  * @author PagodaGenerator
  * @generated
  */
-@javax.annotation.Generated("com.pagoda.platform.PagodaProcessor")
 @javax.annotation.Generated("com.pagoda.platform.PagodaProcessor")
 public class AuditLogHandlerInterceptor extends AbstractAuditLogHandlerInterceptor
     implements AsyncHandlerInterceptor {
