@@ -45,7 +45,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
   @Autowired private ApplicationProperties applicationProperties;
 
   @Autowired(required = false)
-  private AuditLogHandlerInterceptor auditLogHandlerInterceptorAdapter;
+  private AuditLogHandlerInterceptorAdapter auditLogHandlerInterceptorAdapter;
 
   /** 返回前端数据中忽略class属性 */
   protected static final String CLASS = "class";
