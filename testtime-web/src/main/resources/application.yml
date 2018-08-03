@@ -29,12 +29,12 @@ spring:
     # 消息队列
     stream:
       bindings:
-        input:
-          destination: my.queue.log.messages
-          binder: local_rabbit
-          group: logMessageConsumers
+        #input:
+        #  destination: auditlog.messages
+        #  binder: local_rabbit
+        #  group: logMessageConsumers
         output:
-          destination: my.queue.log.messages
+          destination: auditlog.messages
           binder: local_rabbit
       binders:
         local_rabbit:
