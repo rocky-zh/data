@@ -63,6 +63,11 @@
 
         <dependency>
             <groupId>com.pagoda.platform</groupId>
+            <artifactId>jms-audit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.pagoda.platform</groupId>
             <artifactId>dubbo-core</artifactId>
             <exclusions>
                 <exclusion>
@@ -566,32 +571,25 @@
             <id>dev</id>
             <properties>
                 <package.environment>default,dev</package.environment>
-                <war.name>hello-web</war.name>
-                <dubbo.enabled>true</dubbo.enabled>
+                <war.name>testtime-all</war.name>
+                <dubbo.enabled>false</dubbo.enabled>
             </properties>
         </profile>
         <profile>
             <id>debug</id>
             <properties>
                 <package.environment>default,dev</package.environment>
-                <war.name>bgkj-web</war.name>
+                <war.name>testtime-all</war.name>
                 <dubbo.enabled>false</dubbo.enabled>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.pagoda</groupId>
-                    <artifactId>hello-service</artifactId>
-                    <version>0.0.1</version>
-                </dependency>
-            </dependencies>
         </profile>
 
         <profile>
             <id>test</id>
             <properties>
                 <package.environment>default,test</package.environment>
-                <war.name>hello-web</war.name>
-                <dubbo.enabled>true</dubbo.enabled>
+                <war.name>testtime-all</war.name>
+                <dubbo.enabled>false</dubbo.enabled>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -601,23 +599,23 @@
             <id>staging</id>
             <properties>
                 <package.environment>default,staging</package.environment>
-                <war.name>hello-web</war.name>
-                <dubbo.enabled>true</dubbo.enabled>
+                <war.name>testtime-all</war.name>
+                <dubbo.enabled>false</dubbo.enabled>
             </properties>
         </profile>
         <profile>
             <id>production</id>
             <properties>
                 <package.environment>default,production</package.environment>
-                <war.name>hello-web</war.name>
-                <dubbo.enabled>true</dubbo.enabled>
+                <war.name>testtime-all</war.name>
+                <dubbo.enabled>false</dubbo.enabled>
             </properties>
         </profile>
         <profile>
             <id>sonar-coverage</id>
             <properties>
                 <package.environment>default,production</package.environment>
-                <war.name>hello-web</war.name>
+                <war.name>testtime-all</war.name>
             </properties>
             <build>
                 <pluginManagement>
