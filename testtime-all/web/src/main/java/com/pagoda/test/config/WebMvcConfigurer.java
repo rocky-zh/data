@@ -2,6 +2,7 @@ package com.pagoda.test.config;
 
 import static com.alibaba.fastjson.util.IOUtils.UTF8;
 
+import com.pagoda.platform.jms.audit.*;
 import com.pagoda.test.api.*;
 import com.pagoda.test.aop.*;
 import com.pagoda.platform.jms.serializer.*;
